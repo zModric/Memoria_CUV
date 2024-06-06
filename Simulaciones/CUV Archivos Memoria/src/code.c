@@ -15,6 +15,11 @@ void control(double In, double Ref, double* Out, double kp, double ki, double sa
     else if (*Out < sat_down)
         *Out = sat_down;
 }
+
+void Sx(int* Sx, int S1, int S2, int S3, int S4){
+    *Sx= S1-S4*(1-S1)*(S3+(1-S3)*(1-S2));
+}
+
 void abc_dq(double* d, double* q, double theta, double a, double b, double c) {
     double PI23=2.0943951023931954923084289221863;
     double CS=0.666666666666666666667;
