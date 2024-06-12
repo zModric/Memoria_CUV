@@ -74,7 +74,7 @@ Plecs {
   Schematic {
     Location      [0, 27; 1366, 693]
     ZoomFactor    0.763604
-    SliderPosition [1110, 53]
+    SliderPosition [0, 663]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -205,9 +205,9 @@ Plecs {
 "#include <time.h>\n"
 "#include <stdio.h>\n"
 "#include <complex.h>\n"
-"#include <code.c> \n"
-"#include <code.h>  \n"
-"#include <variables.c> \n"
+"#include <src\\code.c> \n"
+"#include <src\\code.h>  \n"
+"#include <src\\variables.c> \n"
 "\n"
 "\n"
 "/***** Entradas ****/\n"
@@ -8738,7 +8738,7 @@ Plecs {
 "#include <time.h>\n"
 "#include <stdio.h>\n"
 "#include <complex.h>\n"
-"#include <mat_2L.h>\n"
+"#include <src\\mat_2L.h>\n"
 "\n"
 "static double hb;\n"
 "//static double gain;\n"
