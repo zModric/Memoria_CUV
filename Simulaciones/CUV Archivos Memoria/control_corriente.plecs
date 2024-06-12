@@ -74,7 +74,7 @@ Plecs {
   Schematic {
     Location      [0, 27; 1366, 693]
     ZoomFactor    0.763604
-    SliderPosition [1110, 53]
+    SliderPosition [1110, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -123,7 +123,7 @@ Plecs {
       Type          CScript
       Name          "Control Corriente"
       Show          on
-      Position      [2185, 520]
+      Position      [2185, 515]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -205,9 +205,9 @@ Plecs {
 "#include <time.h>\n"
 "#include <stdio.h>\n"
 "#include <complex.h>\n"
-"#include <code.c> \n"
-"#include <code.h>  \n"
-"#include <variables.c> \n"
+"#include <src\\code.c> \n"
+"#include <src\\code.h>  \n"
+"#include <src\\variables.c> \n"
 "\n"
 "\n"
 "/***** Entradas ****/\n"
@@ -2000,17 +2000,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 742]
+      Location      [0, 27; 1366, 762]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAD6PwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAASQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAA+gAAABmAP///wAAAAMAAAVWAAAA0vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKwAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAALEAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"QAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAJAA"
-"AAZAAAAAgAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"QAAAGQAAAAIAAAAZAAAAAcAAABkAAAABgAAAGQAAAAFAAAAZAAAAAQAAABkAAAAAwAAAGQAAAACAA"
+"AAZAAAAAEAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -4698,7 +4698,7 @@ Plecs {
       Type          DCVoltageSource
       Name          "Vdc"
       Show          on
-      Position      [1105, 1115]
+      Position      [1105, 1110]
       Direction     down
       Flipped       on
       LabelPosition east
@@ -4712,7 +4712,7 @@ Plecs {
       Type          SignalDemux
       Name          "Demux6"
       Show          off
-      Position      [435, 1475]
+      Position      [435, 1470]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -4726,7 +4726,7 @@ Plecs {
       Type          Goto
       Name          "Goto40"
       Show          off
-      Position      [465, 1465]
+      Position      [465, 1460]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -4745,7 +4745,7 @@ Plecs {
       Type          Goto
       Name          "Goto41"
       Show          off
-      Position      [475, 1475]
+      Position      [475, 1470]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -4764,7 +4764,7 @@ Plecs {
       Type          Goto
       Name          "Goto42"
       Show          off
-      Position      [485, 1485]
+      Position      [485, 1480]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -4783,7 +4783,7 @@ Plecs {
       Type          Step
       Name          "Irradiancia"
       Show          on
-      Position      [395, 1475]
+      Position      [395, 1470]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -4812,7 +4812,7 @@ Plecs {
       Type          Subsystem
       Name          base64 "U2XDsWFsZXMgSUdCVCdTMQ=="
       Show          on
-      Position      [1090, 1435]
+      Position      [1090, 1430]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -5463,7 +5463,7 @@ Plecs {
       Type          Subsystem
       Name          base64 "U2XDsWFsZXM="
       Show          on
-      Position      [1090, 1370]
+      Position      [1090, 1365]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -6893,7 +6893,7 @@ Plecs {
       Type          Scope
       Name          "Resultados"
       Show          on
-      Position      [850, 1605]
+      Position      [850, 1600]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -7041,7 +7041,7 @@ Plecs {
       Type          From
       Name          "From91"
       Show          off
-      Position      [795, 1585]
+      Position      [795, 1580]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7060,7 +7060,7 @@ Plecs {
       Type          From
       Name          "From75"
       Show          off
-      Position      [780, 1595]
+      Position      [780, 1590]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7079,7 +7079,7 @@ Plecs {
       Type          From
       Name          "From88"
       Show          off
-      Position      [765, 1605]
+      Position      [765, 1600]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7098,7 +7098,7 @@ Plecs {
       Type          From
       Name          "From93"
       Show          off
-      Position      [780, 1615]
+      Position      [780, 1610]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7117,7 +7117,7 @@ Plecs {
       Type          From
       Name          "From96"
       Show          off
-      Position      [795, 1625]
+      Position      [795, 1620]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7136,7 +7136,7 @@ Plecs {
       Type          Scope
       Name          "Scope9"
       Show          on
-      Position      [1065, 1080]
+      Position      [1065, 1075]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -7196,7 +7196,7 @@ Plecs {
       Type          Goto
       Name          "Goto30"
       Show          off
-      Position      [535, 1015]
+      Position      [535, 1010]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7215,7 +7215,7 @@ Plecs {
       Type          Inductor
       Name          "L10"
       Show          off
-      Position      [660, 1035]
+      Position      [660, 1030]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -7234,7 +7234,7 @@ Plecs {
       Type          Diode
       Name          "D6"
       Show          off
-      Position      [985, 1035]
+      Position      [985, 1030]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -7278,7 +7278,7 @@ Plecs {
       Type          From
       Name          "From76"
       Show          off
-      Position      [915, 1120]
+      Position      [915, 1115]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7297,7 +7297,7 @@ Plecs {
       Type          Capacitor
       Name          "C"
       Show          on
-      Position      [530, 1130]
+      Position      [530, 1125]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -7316,7 +7316,7 @@ Plecs {
       Type          Goto
       Name          "Goto5"
       Show          off
-      Position      [570, 1075]
+      Position      [570, 1070]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7335,7 +7335,7 @@ Plecs {
       Type          Voltmeter
       Name          "Vm6"
       Show          off
-      Position      [565, 1130]
+      Position      [565, 1125]
       Direction     up
       Flipped       off
       LabelPosition west
@@ -7344,7 +7344,7 @@ Plecs {
       Type          Goto
       Name          "Goto31"
       Show          off
-      Position      [600, 1130]
+      Position      [600, 1125]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7363,7 +7363,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "I1"
       Show          on
-      Position      [955, 1120]
+      Position      [955, 1115]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -7392,7 +7392,7 @@ Plecs {
       Type          Diode
       Name          "D7"
       Show          off
-      Position      [985, 1000]
+      Position      [985, 995]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -7436,7 +7436,7 @@ Plecs {
       Type          Diode
       Name          "D8"
       Show          off
-      Position      [985, 970]
+      Position      [985, 965]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -7480,7 +7480,7 @@ Plecs {
       Type          Ammeter
       Name          "Am10"
       Show          off
-      Position      [545, 1035]
+      Position      [545, 1030]
       Direction     right
       Flipped       on
       LabelPosition north
@@ -7489,7 +7489,7 @@ Plecs {
       Type          Inductor
       Name          "L11"
       Show          off
-      Position      [660, 1000]
+      Position      [660, 995]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -7508,7 +7508,7 @@ Plecs {
       Type          Inductor
       Name          "L12"
       Show          off
-      Position      [660, 970]
+      Position      [660, 965]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -7527,7 +7527,7 @@ Plecs {
       Type          From
       Name          "From77"
       Show          off
-      Position      [820, 1120]
+      Position      [820, 1115]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7546,7 +7546,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "I2"
       Show          on
-      Position      [855, 1120]
+      Position      [855, 1115]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -7575,7 +7575,7 @@ Plecs {
       Type          From
       Name          "From78"
       Show          off
-      Position      [715, 1120]
+      Position      [715, 1115]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7594,7 +7594,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "I3"
       Show          on
-      Position      [755, 1120]
+      Position      [755, 1115]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -7623,7 +7623,7 @@ Plecs {
       Type          Ammeter
       Name          "Am11"
       Show          on
-      Position      [510, 1035]
+      Position      [510, 1030]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -7632,7 +7632,7 @@ Plecs {
       Type          Resistor
       Name          "R7"
       Show          on
-      Position      [605, 1035]
+      Position      [605, 1030]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7646,7 +7646,7 @@ Plecs {
       Type          Ammeter
       Name          "Am12"
       Show          on
-      Position      [755, 1070]
+      Position      [755, 1065]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -7655,7 +7655,7 @@ Plecs {
       Type          Goto
       Name          "Goto8"
       Show          off
-      Position      [720, 1070]
+      Position      [720, 1065]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -7674,7 +7674,7 @@ Plecs {
       Type          Ammeter
       Name          "Am16"
       Show          off
-      Position      [1040, 1035]
+      Position      [1040, 1030]
       Direction     right
       Flipped       on
       LabelPosition north
@@ -7683,7 +7683,7 @@ Plecs {
       Type          Goto
       Name          "Goto12"
       Show          off
-      Position      [1060, 1055]
+      Position      [1060, 1050]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7702,7 +7702,7 @@ Plecs {
       Type          From
       Name          "From79"
       Show          off
-      Position      [385, 1130]
+      Position      [385, 1125]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7721,7 +7721,7 @@ Plecs {
       Type          From
       Name          "From80"
       Show          off
-      Position      [405, 1140]
+      Position      [405, 1135]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -7740,7 +7740,7 @@ Plecs {
       Type          Diode
       Name          "D12"
       Show          off
-      Position      [475, 1135]
+      Position      [475, 1130]
       Direction     down
       Flipped       off
       LabelPosition east
@@ -7784,7 +7784,7 @@ Plecs {
       Type          Subsystem
       Name          "PV_Villalva6"
       Show          off
-      Position      [440, 1135]
+      Position      [440, 1130]
       Direction     up
       Flipped       off
       LabelPosition northwest
@@ -8555,7 +8555,7 @@ Plecs {
       Type          SignalMux
       Name          "Mux21"
       Show          off
-      Position      [835, 935]
+      Position      [835, 930]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -8569,7 +8569,7 @@ Plecs {
       Type          Ammeter
       Name          "Am14"
       Show          on
-      Position      [710, 1000]
+      Position      [710, 995]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -8578,7 +8578,7 @@ Plecs {
       Type          Scope
       Name          "Scope10"
       Show          on
-      Position      [880, 935]
+      Position      [880, 930]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -8639,7 +8639,7 @@ Plecs {
       Type          Ammeter
       Name          "Am17"
       Show          on
-      Position      [725, 1035]
+      Position      [725, 1030]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -8648,7 +8648,7 @@ Plecs {
       Type          Ammeter
       Name          "Am13"
       Show          on
-      Position      [695, 970]
+      Position      [695, 965]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -8657,7 +8657,7 @@ Plecs {
       Type          CScript
       Name          "Script1"
       Show          on
-      Position      [830, 1410]
+      Position      [830, 1405]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -8738,7 +8738,7 @@ Plecs {
 "#include <time.h>\n"
 "#include <stdio.h>\n"
 "#include <complex.h>\n"
-"#include <mat_2L.h>\n"
+"#include <src\\mat_2L.h>\n"
 "\n"
 "static double hb;\n"
 "//static double gain;\n"
@@ -9020,7 +9020,7 @@ Plecs {
       Type          SignalMux
       Name          "Mux20"
       Show          off
-      Position      [780, 1410]
+      Position      [780, 1405]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9034,7 +9034,7 @@ Plecs {
       Type          SignalDemux
       Name          "Demux2"
       Show          off
-      Position      [900, 1410]
+      Position      [900, 1405]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -9048,7 +9048,7 @@ Plecs {
       Type          Goto
       Name          "Goto56"
       Show          off
-      Position      [925, 1360]
+      Position      [925, 1355]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9067,7 +9067,7 @@ Plecs {
       Type          Goto
       Name          "Goto57"
       Show          off
-      Position      [970, 1370]
+      Position      [970, 1365]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9086,7 +9086,7 @@ Plecs {
       Type          Goto
       Name          "Goto58"
       Show          off
-      Position      [925, 1380]
+      Position      [925, 1375]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9105,7 +9105,7 @@ Plecs {
       Type          Goto
       Name          "Goto59"
       Show          off
-      Position      [970, 1400]
+      Position      [970, 1395]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9124,7 +9124,7 @@ Plecs {
       Type          Goto
       Name          "Goto60"
       Show          off
-      Position      [925, 1460]
+      Position      [925, 1455]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9143,7 +9143,7 @@ Plecs {
       Type          Goto
       Name          "Goto61"
       Show          off
-      Position      [925, 1410]
+      Position      [925, 1405]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9162,7 +9162,7 @@ Plecs {
       Type          Goto
       Name          "Goto62"
       Show          off
-      Position      [970, 1450]
+      Position      [970, 1445]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9181,7 +9181,7 @@ Plecs {
       Type          Goto
       Name          "Goto63"
       Show          off
-      Position      [970, 1420]
+      Position      [970, 1415]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9200,7 +9200,7 @@ Plecs {
       Type          Scope
       Name          "vpv11"
       Show          on
-      Position      [1005, 1390]
+      Position      [1005, 1385]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -9261,7 +9261,7 @@ Plecs {
       Type          Goto
       Name          "Goto64"
       Show          off
-      Position      [925, 1430]
+      Position      [925, 1425]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9280,7 +9280,7 @@ Plecs {
       Type          Goto
       Name          "Goto65"
       Show          off
-      Position      [945, 1440]
+      Position      [945, 1435]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9299,7 +9299,7 @@ Plecs {
       Type          Step
       Name          "deltaTmppt"
       Show          on
-      Position      [395, 1530]
+      Position      [395, 1525]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9328,7 +9328,7 @@ Plecs {
       Type          Goto
       Name          "Goto43"
       Show          off
-      Position      [445, 1530]
+      Position      [445, 1525]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9347,7 +9347,7 @@ Plecs {
       Type          From
       Name          "From42"
       Show          off
-      Position      [740, 1365]
+      Position      [740, 1360]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9366,7 +9366,7 @@ Plecs {
       Type          Clock
       Name          "time1"
       Show          on
-      Position      [705, 1375]
+      Position      [705, 1370]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9375,7 +9375,7 @@ Plecs {
       Type          From
       Name          "From81"
       Show          off
-      Position      [740, 1385]
+      Position      [740, 1380]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9394,7 +9394,7 @@ Plecs {
       Type          From
       Name          "From82"
       Show          off
-      Position      [755, 1395]
+      Position      [755, 1390]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9413,7 +9413,7 @@ Plecs {
       Type          Constant
       Name          "L1"
       Show          on
-      Position      [680, 1405]
+      Position      [680, 1400]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9433,7 +9433,7 @@ Plecs {
       Type          Constant
       Name          "C4"
       Show          on
-      Position      [730, 1415]
+      Position      [730, 1410]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9453,7 +9453,7 @@ Plecs {
       Type          PlecsProbe
       Name          "Probe"
       Show          on
-      Position      [650, 1435]
+      Position      [650, 1430]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9477,7 +9477,7 @@ Plecs {
       Type          SignalDemux
       Name          "Demux7"
       Show          off
-      Position      [750, 1435]
+      Position      [750, 1430]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -9491,7 +9491,7 @@ Plecs {
       Type          From
       Name          "From83"
       Show          off
-      Position      [715, 1450]
+      Position      [715, 1445]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9510,7 +9510,7 @@ Plecs {
       Type          Step
       Name          "deltaVmppt"
       Show          on
-      Position      [395, 1585]
+      Position      [395, 1580]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9539,7 +9539,7 @@ Plecs {
       Type          Goto
       Name          "Goto66"
       Show          off
-      Position      [445, 1585]
+      Position      [445, 1580]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9558,7 +9558,7 @@ Plecs {
       Type          SignalMux
       Name          "Mux24"
       Show          off
-      Position      [735, 1455]
+      Position      [735, 1450]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9572,7 +9572,7 @@ Plecs {
       Type          From
       Name          "From84"
       Show          off
-      Position      [700, 1460]
+      Position      [700, 1455]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9591,7 +9591,7 @@ Plecs {
       Type          ManualSwitch2
       Name          "S2"
       Show          on
-      Position      [1080, 1035]
+      Position      [1080, 1030]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -9605,7 +9605,7 @@ Plecs {
       Type          ManualSwitch2
       Name          "S3"
       Show          on
-      Position      [1075, 1185]
+      Position      [1075, 1180]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -9619,7 +9619,7 @@ Plecs {
       Type          Label
       Name          "Label3"
       Show          off
-      Position      [1095, 1205]
+      Position      [1095, 1200]
       Direction     down
       Flipped       off
       LabelPosition west
@@ -9638,7 +9638,7 @@ Plecs {
       Type          Label
       Name          "Label4"
       Show          off
-      Position      [1100, 1005]
+      Position      [1100, 1000]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -9657,7 +9657,7 @@ Plecs {
       Type          Lookup1D
       Name          "Experimental data"
       Show          on
-      Position      [395, 1300]
+      Position      [395, 1295]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9681,7 +9681,7 @@ Plecs {
       Type          Clock
       Name          "time2"
       Show          on
-      Position      [340, 1300]
+      Position      [340, 1295]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9690,7 +9690,7 @@ Plecs {
       Type          Scope
       Name          "vpv12"
       Show          on
-      Position      [525, 1300]
+      Position      [525, 1295]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -9751,7 +9751,7 @@ Plecs {
       Type          Goto
       Name          "Goto67"
       Show          off
-      Position      [1035, 1370]
+      Position      [1035, 1365]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9770,7 +9770,7 @@ Plecs {
       Type          Gain
       Name          "Gain2"
       Show          on
-      Position      [460, 1300]
+      Position      [460, 1295]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -9799,7 +9799,7 @@ Plecs {
       Type          Goto
       Name          "Goto33"
       Show          off
-      Position      [540, 1355]
+      Position      [540, 1350]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -10022,6 +10022,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux"
       SrcTerminal   1
+      Points        [2135, 520; 2135, 515]
       DstComponent  "Control Corriente"
       DstTerminal   1
     }
@@ -10029,6 +10030,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Control Corriente"
       SrcTerminal   2
+      Points        [2225, 515]
       DstComponent  "Demux"
       DstTerminal   1
     }
@@ -11251,7 +11253,7 @@ Plecs {
     }
     Connection {
       Type          Signal
-      Points        [440, 1385; 460, 1385]
+      Points        [440, 1380; 460, 1380]
     }
     Connection {
       Type          Signal
@@ -11285,7 +11287,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Am10"
       SrcTerminal   3
-      Points        [545, 1075]
+      Points        [545, 1070]
       DstComponent  "Goto5"
       DstTerminal   1
     }
@@ -11307,14 +11309,14 @@ Plecs {
       Type          Wire
       SrcComponent  "D7"
       SrcTerminal   2
-      Points        [1020, 1000]
+      Points        [1020, 995]
       Branch {
-        Points        [1020, 970]
+        Points        [1020, 965]
         DstComponent  "D8"
         DstTerminal   2
       }
       Branch {
-        Points        [1020, 1035]
+        Points        [1020, 1030]
         Branch {
           DstComponent  "D6"
           DstTerminal   2
@@ -11329,15 +11331,15 @@ Plecs {
       Type          Wire
       SrcComponent  "Am11"
       SrcTerminal   2
-      Points        [530, 1035]
+      Points        [530, 1030]
       Branch {
-        Points        [530, 1095]
+        Points        [530, 1090]
         Branch {
           DstComponent  "C"
           DstTerminal   1
         }
         Branch {
-          Points        [565, 1095]
+          Points        [565, 1090]
           DstComponent  "Vm6"
           DstTerminal   1
         }
@@ -11358,27 +11360,27 @@ Plecs {
       Type          Wire
       SrcComponent  "D12"
       SrcTerminal   1
-      Points        [475, 1165; 450, 1165]
+      Points        [475, 1160; 450, 1160]
       Branch {
-        Points        [450, 1185; 530, 1185]
+        Points        [450, 1180; 530, 1180]
         Branch {
-          Points        [530, 1165]
+          Points        [530, 1160]
           Branch {
             DstComponent  "C"
             DstTerminal   2
           }
           Branch {
-            Points        [565, 1165]
+            Points        [565, 1160]
             DstComponent  "Vm6"
             DstTerminal   2
           }
         }
         Branch {
-          Points        [755, 1185]
+          Points        [755, 1180]
           Branch {
-            Points        [855, 1185]
+            Points        [855, 1180]
             Branch {
-              Points        [955, 1185]
+              Points        [955, 1180]
               Branch {
                 DstComponent  "I1"
                 DstTerminal   2
@@ -11408,7 +11410,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Am11"
       SrcTerminal   3
-      Points        [510, 1015]
+      Points        [510, 1010]
       DstComponent  "Goto30"
       DstTerminal   1
     }
@@ -11451,14 +11453,14 @@ Plecs {
       Type          Wire
       SrcComponent  "D12"
       SrcTerminal   2
-      Points        [475, 1100; 450, 1100]
+      Points        [475, 1095; 450, 1095]
       Branch {
-        Points        [450, 1035]
+        Points        [450, 1030]
         DstComponent  "Am11"
         DstTerminal   1
       }
       Branch {
-        Points        [440, 1100]
+        Points        [440, 1095]
         DstComponent  "PV_Villalva6"
         DstTerminal   1
       }
@@ -11467,7 +11469,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Am14"
       SrcTerminal   3
-      Points        [710, 935]
+      Points        [710, 930]
       DstComponent  "Mux21"
       DstTerminal   3
     }
@@ -11475,7 +11477,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Am17"
       SrcTerminal   3
-      Points        [725, 945]
+      Points        [725, 940]
       DstComponent  "Mux21"
       DstTerminal   4
     }
@@ -11490,7 +11492,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Am13"
       SrcTerminal   3
-      Points        [695, 925]
+      Points        [695, 920]
       DstComponent  "Mux21"
       DstTerminal   2
     }
@@ -11603,19 +11605,19 @@ Plecs {
       Type          Wire
       SrcComponent  "R7"
       SrcTerminal   1
-      Points        [630, 1035]
+      Points        [630, 1030]
       Branch {
         DstComponent  "L10"
         DstTerminal   1
       }
       Branch {
-        Points        [630, 1000]
+        Points        [630, 995]
         Branch {
           DstComponent  "L11"
           DstTerminal   1
         }
         Branch {
-          Points        [630, 970]
+          Points        [630, 965]
           DstComponent  "L12"
           DstTerminal   1
         }
@@ -11625,7 +11627,7 @@ Plecs {
       Type          Wire
       SrcComponent  "Am13"
       SrcTerminal   2
-      Points        [755, 970]
+      Points        [755, 965]
       Branch {
         DstComponent  "D8"
         DstTerminal   1
@@ -11646,9 +11648,9 @@ Plecs {
       Type          Signal
       SrcComponent  "Am16"
       SrcTerminal   3
-      Points        [1040, 1055]
+      Points        [1040, 1050]
       Branch {
-        Points        [1040, 1080]
+        Points        [1040, 1075]
         DstComponent  "Scope9"
         DstTerminal   1
       }
@@ -11661,7 +11663,7 @@ Plecs {
       Type          Wire
       SrcComponent  "D6"
       SrcTerminal   1
-      Points        [955, 1035]
+      Points        [955, 1030]
       Branch {
         DstComponent  "Am17"
         DstTerminal   2
@@ -11675,7 +11677,7 @@ Plecs {
       Type          Wire
       SrcComponent  "D7"
       SrcTerminal   1
-      Points        [855, 1000]
+      Points        [855, 995]
       Branch {
         DstComponent  "Am14"
         DstTerminal   2
@@ -11836,7 +11838,7 @@ Plecs {
       Type          Wire
       SrcComponent  "Vdc"
       SrcTerminal   1
-      Points        [1105, 1045]
+      Points        [1105, 1040]
       DstComponent  "S2"
       DstTerminal   2
     }
@@ -11844,7 +11846,7 @@ Plecs {
       Type          Wire
       SrcComponent  "Vdc"
       SrcTerminal   2
-      Points        [1105, 1175]
+      Points        [1105, 1170]
       DstComponent  "S3"
       DstTerminal   3
     }
@@ -11873,13 +11875,13 @@ Plecs {
       Type          Signal
       SrcComponent  "Demux2"
       SrcTerminal   5
-      Points        [970, 1390]
+      Points        [970, 1385]
       Branch {
         DstComponent  "vpv11"
         DstTerminal   1
       }
       Branch {
-        Points        [970, 1370]
+        Points        [970, 1365]
         DstComponent  "Goto67"
         DstTerminal   1
       }
@@ -11895,13 +11897,13 @@ Plecs {
       Type          Signal
       SrcComponent  "Gain2"
       SrcTerminal   2
-      Points        [485, 1300]
+      Points        [485, 1295]
       Branch {
         DstComponent  "vpv12"
         DstTerminal   1
       }
       Branch {
-        Points        [485, 1355]
+        Points        [485, 1350]
         DstComponent  "Goto33"
         DstTerminal   1
       }
@@ -11969,19 +11971,19 @@ Plecs {
 "kZSB0ZW5zacOzbjogZGUgdW4gb3JkZW4gZGUgbWFnbml0dWQgbWF5b3IgcXVlIGVsIGRlIGNvcnJp"
 "ZW50ZS4gfFRpZW1wbyBkZSBhc2VudGFtaWVudG89IDQwIFttc10gfHNvYnJlcGFzbz0gMTAlLjwvc"
 "D48L2JvZHk+PC9odG1sPg=="
-      Position      [725, 1260]
+      Position      [725, 1255]
     } 
     Annotation {
       Name          "<html><body>\n<p align=\"center\">Control de corriente: T"
 "iempo de asentamiento=3.5 [ms] | sobrepaso=10%.</p></body></html>"
-      Position      [830, 1290]
+      Position      [830, 1285]
     } 
     Annotation {
       Name          "<html><body>\n<p align=\"center\">Muestreo de MPPT: tanto"
 " tiempo como para que control de corriente se establezca: Ts=1000 * 0.0001=0."
 "1 [s]  y </p>\n<p align=\"center\">un cambio de Ts a los 15 [s] a 40[ms]</p><"
 "/body></html>"
-      Position      [845, 1320]
+      Position      [845, 1315]
     } 
   }
   Script {
