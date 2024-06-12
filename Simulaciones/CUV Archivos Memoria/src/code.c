@@ -16,10 +16,6 @@ void control(double In, double Ref, double* Out, double kp, double ki, double sa
         *Out = sat_down;
 }
 
-void Sx(int* Sx, int S1, int S3){
-    *Sx= S1-S3;
-}
-
 void abc_dq(double* d, double* q, double theta, double a, double b, double c) {
     double PI23=2.0943951023931954923084289221863;
     double CS=0.666666666666666666667;
@@ -45,10 +41,6 @@ void Vck1(double* Vcd_k1, double* Vcq_k1, double Vd_ant, double Vq_ant, double V
     *Vcq_k1= Vq_ant*h*h*d1_L1C + 2*Vcq - Vcq_ant*(1-w*w*h*h+h*h*d1_L1C) - Vcd*2*w*h + Vcd_ant*2*w*h - i2q_k*L1*h*d1_L1C + i2q_ant*L1*h*d1_L1C - i2d_ant*w*L1*h*h*d1_L1C;
 }
 
-//void ik1(double* ik1_a, double* ik1_b, double ik_a, double ik_b, double V_a, double V_b, double h, double R1, double tau1, double e_d, double e_q){
-//    *ik1_a = ((V_a-e_d)*R1+ik_b)*(1-exp(-h*tau1)) - ik_a*exp(-h*(tau1));
-//    *ik1_b = ((V_b-e_q)*R1-ik_a)*(1-exp(-h*tau1)) - ik_b*exp(-h*(tau1));
-//}
 void ik1(double* ik1_d, double* ik1_q, double i2d_k, double i2q_k, double Vcd, double Vcq, double h, double w, double R, double d1_L2, double Vgd, double Vgq){
     *ik1_d = h*(Vcd-Vgd-i2d_k*R)*d1_L2 + i2d_k - w*h*i2q_k;
     *ik1_q = h*(Vcq-Vgq-i2q_k*R)*d1_L2 + i2q_k + w*h*i2d_k;
@@ -70,6 +62,7 @@ void act(double* Vgd_ant, double* Vgq_ant, double* Vd_ant, double* Vq_ant, doubl
     *i2d_ant=i2d_k;
     *i2q_ant=i2q_k;
 }
+
 
 
 
