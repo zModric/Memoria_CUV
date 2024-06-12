@@ -64,8 +64,6 @@ void act(double* Vgd_ant, double* Vgq_ant, double* Vd_ant, double* Vq_ant, doubl
 }
 
 
-
-
 void FC_cuad(double* gx, double ia_ref, double ib_ref, double ik1_a, double ik1_b){
     *gx=sqrt((ia_ref - ik1_a)*(ia_ref - ik1_a)) + sqrt((ib_ref - ik1_b)*(ib_ref - ik1_b));
 }
