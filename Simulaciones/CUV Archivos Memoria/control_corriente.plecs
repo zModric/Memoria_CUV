@@ -74,7 +74,7 @@ Plecs {
   Schematic {
     Location      [0, 27; 1366, 693]
     ZoomFactor    0.763604
-    SliderPosition [1138, 76]
+    SliderPosition [1138, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -1980,21 +1980,21 @@ Plecs {
       Type          Scope
       Name          "Scope5"
       Show          on
-      Position      [3190, 480]
+      Position      [3195, 475]
       Direction     up
       Flipped       off
       LabelPosition south
       Location      [0, 23; 1366, 708]
-      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAD6PwCAAAAA/sAAAAQAFoAbwBvA"
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAASQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAA+gAAABmAP///wAAAAMAAAVWAAAA0vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKSAAAA"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMBAAAALwAAApIAAABmAP///wAAAAMAAAVWAAAA0vw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABJ4AAAKSAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAABAAAAGQAAAAFAAAAZAAAAAYAAABkAAAABwAAAGQAAAAIAA"
-"AAZAAAAAkAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"QAAAGQAAAACAAAAZAAAAAMAAABkAAAAAQAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAAFAA"
+"AAZAAAAAgAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -12156,7 +12156,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux15"
       SrcTerminal   1
-      Points        [3155, 560; 3155, 500]
+      Points        [3155, 560; 3155, 495]
       DstComponent  "Scope5"
       DstTerminal   6
     }
@@ -12164,7 +12164,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From54"
       SrcTerminal   1
-      Points        [3160, 590]
+      Points        [3160, 590; 3160, 505]
       DstComponent  "Scope5"
       DstTerminal   7
     }
@@ -12172,7 +12172,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux14"
       SrcTerminal   1
-      Points        [3150, 540; 3150, 490]
+      Points        [3150, 540; 3150, 485]
       DstComponent  "Scope5"
       DstTerminal   5
     }
@@ -12180,7 +12180,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux13"
       SrcTerminal   1
-      Points        [3145, 515; 3145, 480]
+      Points        [3145, 515; 3145, 475]
       DstComponent  "Scope5"
       DstTerminal   4
     }
@@ -12188,7 +12188,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux16"
       SrcTerminal   1
-      Points        [3130, 460; 3130, 470]
+      Points        [3130, 460; 3130, 465]
       DstComponent  "Scope5"
       DstTerminal   3
     }
@@ -12196,7 +12196,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux11"
       SrcTerminal   1
-      Points        [3135, 430; 3135, 460]
+      Points        [3135, 430; 3135, 455]
       DstComponent  "Scope5"
       DstTerminal   2
     }
@@ -12204,7 +12204,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux12"
       SrcTerminal   1
-      Points        [3140, 400; 3140, 450]
+      Points        [3140, 400; 3140, 445]
       DstComponent  "Scope5"
       DstTerminal   1
     }
