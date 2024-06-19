@@ -67,11 +67,21 @@ void act(double* Vgd_ant, double* Vgq_ant, double* Vd_ant, double* Vq_ant, doubl
 void FC_cuad(double* gx, double ia_ref, double ib_ref, double ik1_a, double ik1_b){
     *gx=sqrt((ia_ref - ik1_a)*(ia_ref - ik1_a)) + sqrt((ib_ref - ik1_b)*(ib_ref - ik1_b));
 }
+
 void opt(double* g_opt, int* x_opt, double gx, int x){
     if (gx < *g_opt) {
         *g_opt = gx;
         *x_opt = x;
+    }
+}
+
+void optp(double* g_opt, int* x_opt, double gx, int x, double Sa, double Sb, double Sc, double Sao, double Sbo, double Sco){
+    if(  (Sa == Sao+0.5 || Sa == Sao-0.5 || Sa == Sao ) && (Sb == Sbo+0.5 || Sb == Sbo-0.5 || Sb == Sbo) && (Sc == Sco+0.5 || Sc == Sco-0.5 || Sc == Sco) ){
+        if (gx < *g_opt) {
+        *g_opt = gx;
+        *x_opt = x;
         }
+    }
 }
 
 void dq_abc(double theta, double* a, double* b, double* c, double d, double q) {
