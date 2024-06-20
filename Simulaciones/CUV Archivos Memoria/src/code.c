@@ -203,4 +203,79 @@ else
 }
 
 
+void CTension(double* ic_ref,double* i_ref, double ipv, double* ic_act, double e_actv, double* x_actv, double vpv_ref, double vpv, double* x_antv, double* ic_ant, double C1v, double C2v, double kpv, double satv){
+    e_actv=vpv_ref-vpv;
+    *x_actv=C1v*(*x_antv) + C2v*(*ic_ant);
+    *ic_act= kpv*(e_actv-(*x_actv));
+    if(*ic_act>satv){*ic_act=satv;}
+    if(*ic_act<-satv){*ic_act=-satv;}
+    
+    *x_antv = *x_actv;
+    *ic_ant = *ic_act;
+    *ic_ref=*ic_act;
+    *i_ref=ipv-*ic_ref;
+}
 
+void CCorriente(double* d_acta, double i_refa, double e_acta, double C1, double C2, double i_La, double* x_acta, double* x_anta, double* d_anta, double kp, double sat){
+    e_acta=(i_refa)-i_La;
+    *x_acta=C1*(*x_anta) + C2*(*d_anta);
+    *d_acta = kp*(e_acta-(*x_acta));
+    if (*d_acta>sat){*d_acta = sat;}
+    if (*d_acta<0){*d_acta = 0;}
+
+    *x_anta = *x_acta;
+    *d_anta= *d_acta;
+}
+
+
+void MPPT(double* vpvk, double* ipvk, double* ppvk, double* cont, double* cont2, double* cont4, double* vpvk_1, double* ppvk_1, double* vpv_ref, double* vpv_ref_1, double* vpv_ref_max, double* ppvk_ref_max, double* rampa, double Fs, double deltaV, double deltaV2, double vpv_min, double vpv_max){
+    *cont=0;
+    *ipvk=(*ipvk)*Fs;
+    *vpvk=(*vpvk)*Fs;
+    *ppvk=(*ipvk)*(*vpvk);
+    if((*cont2)<10000)
+    {
+        if((*ppvk)>(*ppvk_1)){
+	        if((*vpvk)>(*vpvk_1)){
+                *vpv_ref=(*vpv_ref_1)+deltaV;
+            }
+	        else {
+                *vpv_ref=(*vpv_ref_1)-deltaV;
+            }
+	    }
+        else if((*ppvk)==(*ppvk_1)){
+            *vpv_ref=(*vpv_ref_1);
+        }
+
+        else{
+	        if((*vpvk)>(*vpvk_1)){
+                *vpv_ref=(*vpv_ref_1)-deltaV;
+            }
+	        else {
+                *vpv_ref=(*vpv_ref_1)+deltaV;
+            }
+	    }
+    (*vpvk_1)=(*vpvk); // Guardo valor anterior
+    (*ppvk_1)=(*ppvk); // Guardo valor anterior
+    *vpv_ref_1=(*vpv_ref); // Guardo valor anterior
+    }
+
+    if((*cont2)>=10000 & (*rampa)==1){
+	    *vpv_ref_1=(*vpv_ref);
+	    *cont4=(*cont4)+1;
+	    *vpv_ref=vpv_min+deltaV2*(*cont4);	
+	    if((*ppvk)>(*ppvk_ref_max)){
+            *vpv_ref_max=*vpv_ref_1;
+		    *ppvk_ref_max=(*ppvk);
+        }
+	    if((*vpv_ref)>=vpv_max){
+            *cont2=0;
+		    *cont4=0;
+		    *vpv_ref=*vpv_ref_max;
+		    *vpv_ref_1=*vpv_ref;
+		    *rampa=0;
+		}
+	}
+    *vpvk=0;
+    *ipvk=0;
+}

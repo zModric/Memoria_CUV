@@ -76,9 +76,9 @@ Plecs {
   ScriptsDialogGeometry "[2130 399 446 243]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [0, 23; 1366, 689]
-    ZoomFactor    0.583093
-    SliderPosition [143, 0]
+    Location      [0, 27; 1366, 693]
+    ZoomFactor    0.763604
+    SliderPosition [1138, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -4535,6 +4535,25 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          LogicalOperator
+      Name          "Logical\nOperator5"
+      Show          off
+      Position      [25, 1705]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Operator"
+        Value         "6"
+        Show          off
+      }
+      Parameter {
+        Variable      "Inputs"
+        Value         "2"
         Show          off
       }
     }
