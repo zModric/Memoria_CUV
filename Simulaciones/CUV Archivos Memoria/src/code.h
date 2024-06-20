@@ -4,6 +4,7 @@
 //void control(double In, double Ref, double* Out, double kp, double ki, double sat_up, double sat_down, double* x);
 void  abc_ab(double* alpha, double* beta, double a, double b, double c);
 void FC_cuad(double* gx, double ia_ref, double ib_ref, double ik1_a, double ik1_b);
+void optp(double* g_opt, int* x_opt, double gx, int x, double Sa, double Sb, double Sc, double Sao, double Sbo, double Sco);
 void opt(double* g_opt, int* x_opt, double gx, int x);
 void abc_dq(double* d, double* q, double theta, double a, double b, double c);
 void Vabc_dq(double* d, double* q, double theta, int Vdc, double a, double b, double c);
