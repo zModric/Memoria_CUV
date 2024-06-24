@@ -2,6 +2,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void i1p(double* ik1_d, double* ik1_q, double h, double d1_L1, double w, double i1d, double i1q, double Vd, double Vq, double Vcd, double Vcq){
+    *ik1_d= (h*d1_L1)*(Vd-Vcd) + w*h*i1q + i1d;
+    *ik1_q= (h*d1_L1)*(Vq-Vcq) - w*h*i1d + i1q;
+}
+
+void Vcp(double* Vcd_k1, double* Vcq_k1, double h, double d1_c, double w, double i1d, double i1q, double i2d, double i2q, double Vcd, double Vcq){
+    *Vcd_k1=(h*d1_c)*(i1d-i2d) + w*h*Vcq + Vcd;
+    *Vcq_k1=(h*d1_c)*(i1q-i2q) - w*h*Vcd + Vcq;
+}
+
+void i2p(double* ik1_d, double* ik1_q, double i2d_k, double i2q_k, double Vcd, double Vcq, double h, double w, double R, double d1_L2, double Vgd, double Vgq){
+    *ik1_d = h*(Vcd-Vgd-i2d_k*R)*d1_L2 + i2d_k + w*h*i2q_k;
+    *ik1_q = h*(Vcq-Vgq-i2q_k*R)*d1_L2 + i2q_k - w*h*i2d_k;
+}
+
 void control(double In, double Ref, double* Out, double kp, double ki, double sat_up, double sat_down, double* x) {
     double e, C1, C2;
     //*Out = 1; // Asignar el valor 1 a la ubicación de memoria apuntada por Out

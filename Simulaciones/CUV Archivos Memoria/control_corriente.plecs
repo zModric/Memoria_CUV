@@ -29,29 +29,25 @@ Plecs {
   AssertionAction "1"
   FixedPointDatatypeOverride "1"
   InitializationCommands "h=2e-04;\nVdc=800;\n%L1=4e-3;\n%L2=1e-3;\n%Cf=1e-3;"
-"\nL1=1.422e-3;\nL2=0.396e-3;\nCf=0.329e-3;\nR=0.001;\nrc=10;\nRg=15;\nw=314.1"
-"593;\nR1=1/R;\nVgd_r=220;\nVgq_r=0;\nid_r=Vgd_r/Rg;\niq_r=0;\nVcd_r=Vgd_r+id_"
-"r*R;\nVcq_r=0;\ne=0;\nd1_L1C=1/(L1*Cf);\nd1_L2=1/L2;\nC2=1e-4;\nd1_C2=1/C2;\n"
-"\n\nIrradiancia_r;\nf2=30e3;\nhb=1/(f2);\nf=30e3;\ndes=-1/180000\nT=1/f;\nL1="
-"1.422e-3;\n%L1=2e-3;\nL2=0.396e-3;\nCf=0.329e-3;\nR=5;\nrc=10;\nRg=6;\nw=314."
+"\nL1=1.422e-3;\nL2=0.396e-3/2;\nCf=0.329e-3;\nR=0.001;\nrc=10;\nRg=1;\nw=314."
 "1593;\nR1=1/R;\nVgd_r=220;\nVgq_r=0;\nid_r=Vgd_r/Rg;\niq_r=0;\nVcd_r=Vgd_r+id"
 "_r*R;\nVcq_r=0;\ne=0;\nd1_L1C=1/(L1*Cf);\nd1_L2=1/L2;\nC2=1e-4;\nd1_C2=1/C2;"
-"\n\n\nIrradiancia_r;\nf2=30e3;\nhb=1/(f2);\nf=30e3;\ndes=-1/180000\nT=1/f;\nD"
-"1=T/3;\nD2=2*T/3;\nD3=D1/3;\nD4=2*D1/3;\nL=3*0.3588e-3;\nC=250e-6;%1500e-6;\n"
-"NumberOfSeriesConnectedPanels = 1;%16;   % [] - number of panels connected in"
-" series in the system\n\n%%% Lumeta powerply400\n\nSP.Ns = 72;%160;       % ["
-"] - number of solar cells in a string in solar array\nSP.Np = 1;        % [] "
-"- number of solar cell strings in parallel solar array\n\nSP.T_n = 20;%25;   "
-"   % [C] - nominal temperature of solar cells\nSP.G_n = 800;%1000;    % [W/m^"
-"2] - nominal irradiation of solar cells\nSP.V_OC_n = 45.9;%98.90; % [V] - nom"
-"inal open circuit voltage of array (single panel in system)\nSP.I_SC_n = 9.02"
-";%5.330; % [A] - nominal short circuit current of array\n\nSP.Rs = 0.221;%1.4"
-"22;%0.286;    % [ohm] - equvalent series resistance of array\nSP.Rp = 415.405"
-";%900;%1200;  % [ohm] - equvalent parallel resistance of array\n\nSP.a = 1.1;"
-"       % [] - diode ideality constant\n\nSP.K_V = -0.157;%-0.346; % [V/K] - t"
-"hermal voltage coefficient of array FALTA\nSP.K_I = 0.0067;%0.0011;  % [A/K] "
-"- thermal current coefficient of array FALTA\n\nSP.C_in = 22e-6;%C;  % [F] - "
-"input capacitance of the DC/DC converter\n\n\n\n"
+"\nd1_L1=1/L1;\nd1_c=1/Cf;\n\nIrradiancia_r;\nf2=30e3;\nhb=1/(f2);\nf=30e3;\nd"
+"es=-1/180000\nT=1/f;\nD1=T/3;\nD2=2*T/3;\nD3=D1/3;\nD4=2*D1/3;\nL=3*0.3588e-3"
+";\nC=250e-6;%1500e-6;\nNumberOfSeriesConnectedPanels = 1;%16;   % [] - number"
+" of panels connected in series in the system\n\n%%% Lumeta powerply400\n\nSP."
+"Ns = 72;%160;       % [] - number of solar cells in a string in solar array\n"
+"SP.Np = 1;        % [] - number of solar cell strings in parallel solar array"
+"\n\nSP.T_n = 20;%25;      % [C] - nominal temperature of solar cells\nSP.G_n "
+"= 800;%1000;    % [W/m^2] - nominal irradiation of solar cells\nSP.V_OC_n = 4"
+"5.9;%98.90; % [V] - nominal open circuit voltage of array (single panel in sy"
+"stem)\nSP.I_SC_n = 9.02;%5.330; % [A] - nominal short circuit current of arra"
+"y\n\nSP.Rs = 0.221;%1.422;%0.286;    % [ohm] - equvalent series resistance of"
+" array\nSP.Rp = 415.405;%900;%1200;  % [ohm] - equvalent parallel resistance "
+"of array\n\nSP.a = 1.1;       % [] - diode ideality constant\n\nSP.K_V = -0.1"
+"57;%-0.346; % [V/K] - thermal voltage coefficient of array FALTA\nSP.K_I = 0."
+"0067;%0.0011;  % [A/K] - thermal current coefficient of array FALTA\n\nSP.C_i"
+"n = 22e-6;%C;  % [F] - input capacitance of the DC/DC converter"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -77,8 +73,8 @@ Plecs {
   ScriptsDialogSplitterPos "100"
   Schematic {
     Location      [0, 23; 1366, 689]
-    ZoomFactor    0.999996
-    SliderPosition [1238, 192]
+    ZoomFactor    0.667272
+    SliderPosition [378, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -127,7 +123,7 @@ Plecs {
       Type          CScript
       Name          "Control Corriente"
       Show          on
-      Position      [1515, 570]
+      Position      [1505, 570]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -138,7 +134,7 @@ Plecs {
       }
       Parameter {
         Variable      "NumInputs"
-        Value         "6"
+        Value         "12"
         Show          off
       }
       Parameter {
@@ -179,7 +175,7 @@ Plecs {
       Parameter {
         Variable      "Parameters"
         Value         "h,Vdc,R,w,R1,id_r,iq_r,e,L1,L2,Cf,Vcd_r,Vcq_r,d1_L1C,d1"
-"_L2,d1_C2,Vgd_r,Vgq_r"
+"_L2,d1_C2,Vgd_r,Vgq_r,d1_L1,d1_c"
         Show          off
       }
       Parameter {
@@ -213,7 +209,6 @@ Plecs {
 "#include <src\\code.h>  \n"
 "#include <src\\variables.c> \n"
 "\n"
-"\n"
 "/***** Entradas ****/\n"
 "#define isa Input(0)\n"
 "#define isb Input(1)\n"
@@ -223,6 +218,13 @@ Plecs {
 "#define Vc_b Input(4)\n"
 "#define Vc_c Input(5)\n"
 "\n"
+"#define i1a Input(6)\n"
+"#define i1b Input(7)\n"
+"#define i1c Input(8)\n"
+"\n"
+"#define Vg_a Input(9)\n"
+"#define Vg_b Input(10)\n"
+"#define Vg_c Input(11)\n"
 "\n"
 "/***** Salidas ****/\n"
 "#define Out0 Output(0)\n"
@@ -269,6 +271,8 @@ Plecs {
 "d1_C2 = ParamRealData(15,0);\n"
 "Vgd_r = ParamRealData(16,0);\n"
 "Vgq_r = ParamRealData(17,0);\n"
+"d1_L1 = ParamRealData(18,0);\n"
+"d1_c = ParamRealData(19,0);"
         Show          off
       }
       Parameter {
@@ -290,32 +294,47 @@ Plecs {
       Parameter {
         Variable      "UpdateFcn"
         Value         base64 "YW5nbGUoJnRoZXRhLCBoLCB3LCBkcCk7CgovKioqKioqKioq"
-"KioqIFZlY3RvciBkZSBjb3JyaWVudGUgbWVkaWRhIGVuIGNhcmdhICoqKioqKioqKioqKi8KICAKY"
-"WJjX2RxKCAmaTJkX2sgLCAmaTJxX2sgLCB0aGV0YSAsIGlzYSAsIGlzYiAsIGlzYyk7CgovKioqKi"
-"oqKioqKioqIFZlY3RvciBkZSB0ZW5zaW9uIGNhcGFjaXRvcmVzICoqKioqKioqKioqKi8KIAphYmN"
-"fZHEoICZWY2QgLCAmVmNxICwgdGhldGEgLCBWY19hICwgVmNfYiAsIFZjX2MpOwoKCi8qKioqKioq"
-"KioqKiogUHJlZGljY2nDs24gaysxICoqKioqKioqKioqKi8KClZhYmNfZHEoJlZfZCwgJlZfcSwgd"
-"GhldGEsIFZkYywgU2FbeF9vcHRdLCBTYlt4X29wdF0sIFNjW3hfb3B0XSk7ICAvL1RlbnNpb24gYS"
-"BsYSBzYWxpZGEgZGVsIGNvbnZlcnRpZG9yCgpWY2sxKCZWY2RfazAsICZWY3FfazAsIFZfZCwgVl9"
-"xLCBWY2QsIFZjcSwgVmNkX2FudCwgVmNxX2FudCwgaTJkX2ssIGkycV9rLCBpMmRfYW50LCBpMnFf"
-"YW50LCBMMSwgaCwgQ2YsIHcsIGQxX0wxQyk7ICAvLyBwcmVkaWNjacOzbiBkZSBsYSB0ZW5zacOzb"
-"iBlbiBjYXBhY2l0b3JlcwoKaWsxKCZpMmRfazAsICZpMnFfazAsIGkyZF9rLCBpMnFfaywgVmNkX2"
-"swLCBWY3FfazAsIGgsIHcsIFIsIGQxX0wyLCAyMjAsIGVxKTsJCS8vIHByZWRpY2Npb24gZGUgY29"
-"ycmllbnRlIGEgbGEgc2FsaWRhIGRlbCBmaWx0cm8KCi8qKioqKioqKioqKiogTG9vcCBwYXJhIGRl"
-"dGVybWluYXIgY29tYmluYWNpb24gb3B0aW1hICoqKioqKioqKioqKi8KIApnX29wdD0xZTIwOwpmb"
-"3IgKHg9MDsgeCA8PSAxMjQ7IHg9eCsxKSB7CgkgCgkgVmFiY19kcSgmVl9kLCAmVl9xLCB0aGV0YS"
-"wgVmRjLCBTYVt4XSwgU2JbeF0sIFNjW3hdKTsKCSAKCSBWY2sxKCZWY2RfazEsICZWY3FfazEsIFZ"
-"fZCwgVl9xLCBWY2RfazAsIFZjcV9rMCwgVmNkLCBWY3EsIGkyZF9rMCwgaTJxX2swLCBpMmRfaywg"
-"aTJxX2ssIEwxLCBoLCBDZiwgdywgZDFfTDFDKTsJIAoJIAoJIGlrMSgmaTJkX2sxLCAmaTJxX2sxL"
-"CBpMmRfazAsIGkycV9rMCwgVmNkX2sxLCBWY3FfazEsIGgsIHcsIFIsIGQxX0wyLCAyMjAsIGVxKT"
-"sKCQogICAgRkNfY3VhZCgmZ1t4XSwgaWRfciwgIGlxX3IsICBpMmRfazEsICBpMnFfazEpOwogICA"
-"gRkNfY3VhZCgmZ3ZbeF0sIFZjZF9yLCBWY3FfciwgIFZjZF9rMSwgIFZjcV9rMSk7CgogICAgb3B0"
-"KCZnX29wdCwgJnhfb3B0LCAgMC41KihnW3hdK2d2W3hdKSwgIHgpOwkJCQkJCQkJCQkvLyBhY3R1Y"
-"WxpemFyIGNvbWJpbmFjaW9uIGRlIHN3aXRjaCBvcHRpbWEKCSAvL29wdHAoJmdfb3B0LCAmeF9vcH"
-"QsIDAuNSooZ1t4XStndlt4XSksIHgsIFNhW3hdLCBTYlt4XSwgU2NbeF0sIFNhW3hfb3B0XSwgU2J"
-"beF9vcHRdLCBTY1t4X29wdF0pOwp9CgphY3QoJlZnZF9hbnQsICZWZ3FfYW50LCAmVmRfYW50LCAm"
-"VnFfYW50LCAmVmNkX2FudCwgJlZjcV9hbnQsICZpMmRfYW50LCAmaTJxX2FudCwgZWQsIGVxLCBWX"
-"2QsIFZfcSwgVmNkLCBWY3EsIGkyZF9rLCBpMnFfayk7CgoKCgoK"
+"KioqIFZlY3RvciBkZSBjb3JyaWVudGUgbWVkaWRhIHNhbGlkYSBkZWwgY29udiAqKioqKioqKioqK"
+"iovCiAgCmFiY19kcSggJmkxZF9rICwgJmkxcV9rICwgdGhldGEgLCBpMWEgLCBpMWIgLCBpMWMpOw"
+"oKLyoqKioqKioqKioqKiBWZWN0b3IgZGUgY29ycmllbnRlIG1lZGlkYSBlbiBjYXJnYSAqKioqKio"
+"qKioqKiovCiAgCmFiY19kcSggJmkyZF9rICwgJmkycV9rICwgdGhldGEgLCBpc2EgLCBpc2IgLCBp"
+"c2MpOwoKLyoqKioqKioqKioqKiBWZWN0b3IgZGUgdGVuc2lvbiBjYXBhY2l0b3JlcyAqKioqKioqK"
+"ioqKiovCiAKYWJjX2RxKCAmVmNkICwgJlZjcSAsIHRoZXRhICwgVmNfYSAsIFZjX2IgLCBWY19jKT"
+"sKCi8qKioqKioqKioqKiogVmVjdG9yIGRlIHRlbnNpb24gY2FyZ2EgKioqKioqKioqKioqLwogCmF"
+"iY19kcSggJlZnZF9rICwgJlZncV9rICwgdGhldGEgLCBWZ19hICwgVmdfYiAsIFZnX2MpOwoKLyoq"
+"KioqKioqKioqKiBQcmVkaWNjacOzbiBrKzEgKioqKioqKioqKioqLwoKVmFiY19kcSgmVl9kLCAmV"
+"l9xLCB0aGV0YSwgVmRjLCBTYVt4X29wdF0sIFNiW3hfb3B0XSwgU2NbeF9vcHRdKTsgIC8vVGVuc2"
+"lvbiBhIGxhIHNhbGlkYSBkZWwgY29udmVydGlkb3IKCi8vVmNrMSgmVmNkX2swLCAmVmNxX2swLCB"
+"WX2QsIFZfcSwgVmNkLCBWY3EsIFZjZF9hbnQsIFZjcV9hbnQsIGkyZF9rLCBpMnFfaywgaTJkX2Fu"
+"dCwgaTJxX2FudCwgTDEsIGgsIENmLCB3LCBkMV9MMUMpOyAgLy8gcHJlZGljY2nDs24gZGUgbGEgd"
+"GVuc2nDs24gZW4gY2FwYWNpdG9yZXMKLy9pazEoJmkyZF9rMCwgJmkycV9rMCwgaTJkX2ssIGkycV"
+"9rLCBWY2RfazAsIFZjcV9rMCwgaCwgdywgUiwgZDFfTDIsIDIyMCwgZXEpOwkJLy8gcHJlZGljY2l"
+"vbiBkZSBjb3JyaWVudGUgYSBsYSBzYWxpZGEgZGVsIGZpbHRybwoKaTFwKCZpMWRfazAsICZpMXFf"
+"azAsIGgsIGQxX0wxLCB3LCBpMWRfaywgaTFxX2ssIFZfZCwgVl9xLCBWY2QsIFZjcSk7ClZjcCgmV"
+"mNkX2swLCAmVmNxX2swLCBoLCBkMV9jLCB3LCBpMWRfazAsIGkxcV9rMCwgaTJkX2ssIGkycV9rLC"
+"BWY2QsIFZjcSk7CmkycCgmaTJkX2swLCAmaTJxX2swLCBpMmRfaywgaTJxX2ssIFZjZF9rMCwgVmN"
+"xX2swLCBoLCB3LCBSLCBkMV9MMiwgVmdkX2ssIFZncV9rKTsKCgovKioqKioqKioqKioqIExvb3Ag"
+"cGFyYSBkZXRlcm1pbmFyIGNvbWJpbmFjaW9uIG9wdGltYSAqKioqKioqKioqKiovCiAKZ19vcHQ9M"
+"WUyMDsKZm9yICh4PTA7IHggPD0gMTI0OyB4PXgrMSkgewoJIAoJIFZhYmNfZHEoJlZfZCwgJlZfcS"
+"wgdGhldGEsIFZkYywgU2FbeF0sIFNiW3hdLCBTY1t4XSk7CgkgCgkgLy9WY2sxKCZWY2RfazEsICZ"
+"WY3FfazEsIFZfZCwgVl9xLCBWY2RfazAsIFZjcV9rMCwgVmNkLCBWY3EsIGkyZF9rMCwgaTJxX2sw"
+"LCBpMmRfaywgaTJxX2ssIEwxLCBoLCBDZiwgdywgZDFfTDFDKTsJIAoJIC8vaWsxKCZpMmRfazEsI"
+"CZpMnFfazEsIGkyZF9rMCwgaTJxX2swLCBWY2RfazEsIFZjcV9rMSwgaCwgdywgUiwgZDFfTDIsID"
+"IyMCwgZXEpOwoJCgkgaTFwKCZpMWRfazEsICZpMXFfazEsIGgsIGQxX0wxLCB3LCBpMWRfazAsIGk"
+"xcV9rMCwgVl9kLCBWX3EsIFZjZF9rMCwgVmNxX2swKTsKCSBWY3AoJlZjZF9rMSwgJlZjcV9rMSwg"
+"aCwgZDFfYywgdywgaTFkX2sxLCBpMXFfazEsIGkyZF9rMCwgaTJxX2swLCBWY2RfazAsIFZjcV9rM"
+"Ck7CgkgaTJwKCZpMmRfazEsICZpMnFfazEsIGkyZF9rMCwgaTJxX2swLCBWY2RfazEsIFZjcV9rMS"
+"wgaCwgdywgUiwgZDFfTDIsIFZnZF9rLCBWZ3Ffayk7CQoJIAogICAgRkNfY3VhZCgmZ1t4XSwgaWR"
+"fciwgIGlxX3IsICBpMmRfazEsICBpMnFfazEpOwogICAgRkNfY3VhZCgmZ3ZbeF0sIFZjZF9yLCBW"
+"Y3FfciwgIFZjZF9rMSwgIFZjcV9rMSk7CgkgRkNfY3VhZCgmZ2JbeF0sIGlkX3IsICBpcV9yLCAga"
+"TFkX2sxLCAgaTFxX2sxKTsKCSBGQ19jdWFkKCZnZ1t4XSwgMjIwLCAwLCAgVmdkX2ssICBWZ3Ffay"
+"k7CgkKICAgIC8vb3B0KCZnX29wdCwgJnhfb3B0LCAgMC4yNSooZ1t4XStndlt4XStnYlt4XStnZ1t"
+"4XSksICB4KTsJCQkJCQkJCQkJLy8gYWN0dWFsaXphciBjb21iaW5hY2lvbiBkZSBzd2l0Y2ggb3B0"
+"aW1hCgkgb3B0cCgmZ19vcHQsICZ4X29wdCwgMC4yNSooZ1t4XStndlt4XStnYlt4XStnZ1t4XSksI"
+"HgsIFNhW3hdLCBTYlt4XSwgU2NbeF0sIFNhW3hfb3B0XSwgU2JbeF9vcHRdLCBTY1t4X29wdF0pOw"
+"p9CgphY3QoJlZnZF9hbnQsICZWZ3FfYW50LCAmVmRfYW50LCAmVnFfYW50LCAmVmNkX2FudCwgJlZ"
+"jcV9hbnQsICZpMmRfYW50LCAmaTJxX2FudCwgZWQsIGVxLCBWX2QsIFZfcSwgVmNkLCBWY3EsIGky"
+"ZF9rLCBpMnFfayk7CgoKCgoK"
         Show          off
       }
       Parameter {
@@ -357,7 +376,7 @@ Plecs {
       Type          From
       Name          "From5"
       Show          off
-      Position      [1290, 550]
+      Position      [1260, 520]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -376,7 +395,7 @@ Plecs {
       Type          From
       Name          "From7"
       Show          off
-      Position      [1300, 560]
+      Position      [1270, 530]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -395,7 +414,7 @@ Plecs {
       Type          From
       Name          "From8"
       Show          off
-      Position      [1310, 570]
+      Position      [1280, 540]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -420,7 +439,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "Width"
-        Value         "6"
+        Value         "12"
         Show          off
       }
     }
@@ -432,17 +451,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 756]
+      Location      [0, 27; 1366, 762]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAFwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAAAivw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAK+AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAALEAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"AAAAGQAAAAFAAAAZAAAAAYAAABkAAAABwAAAGQAAAABAAAAZAAAAAIAAABkAAAAAwAAAGQAAAAIAA"
-"AAZAAAAAkAAABkAAAAoQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB9AAA"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAAoQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB9AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -547,7 +566,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold1"
       Show          off
-      Position      [1345, 550]
+      Position      [1315, 520]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -561,7 +580,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold2"
       Show          off
-      Position      [1355, 560]
+      Position      [1325, 530]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -814,7 +833,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold3"
       Show          off
-      Position      [1365, 570]
+      Position      [1335, 540]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -832,17 +851,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 732]
+      Location      [0, 27; 1366, 742]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAFwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAAAY/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAI/AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJJAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAABAAAAGQAAAAFAAAAZAAAAAYAAABkAAAABwAAAGQAAAAIAA"
-"AAZAAAAAkAAABkAAAFRQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC0AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAFRQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC0AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "ASRAAAAAQAAAAAAAAPoAAAAACQ="
@@ -1273,7 +1292,7 @@ Plecs {
       Type          From
       Name          "From33"
       Show          off
-      Position      [1320, 580]
+      Position      [1290, 550]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1292,7 +1311,7 @@ Plecs {
       Type          From
       Name          "From34"
       Show          off
-      Position      [1330, 590]
+      Position      [1300, 560]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1311,7 +1330,7 @@ Plecs {
       Type          From
       Name          "From35"
       Show          off
-      Position      [1340, 600]
+      Position      [1310, 570]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1330,7 +1349,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold7"
       Show          off
-      Position      [1395, 600]
+      Position      [1365, 570]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1344,7 +1363,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold8"
       Show          off
-      Position      [1375, 580]
+      Position      [1345, 550]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1358,7 +1377,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold9"
       Show          off
-      Position      [1385, 590]
+      Position      [1355, 560]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1516,17 +1535,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 806]
+      Location      [0, 27; 1366, 846]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAD6PwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAA+gAAABmAP///wAAAAMAAAVWAAAAffw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAALwAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAMYAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAGQAAAAGAAAAZAAAAAEAAABkAAAAAwAAAGQAAAACAAAAZAAAAAkAAABkAAAACAAAAGQAAAAFAA"
-"AAZAAAAAQAAABkAAAAzQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACpAAA"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAAzQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACpAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -1705,17 +1724,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 722]
+      Location      [0, 27; 1366, 752]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAD6PwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAA+gAAABmAP///wAAAAMAAAVWAAAAW/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAI9AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJbAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAGQAAAAGAAAAZAAAAAEAAABkAAAAAwAAAGQAAAACAAAAZAAAAAkAAABkAAAACAAAAGQAAAAFAA"
-"AAZAAAAAQAAABkAAAFRQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACpAAA"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAFRQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACpAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AScAAAAAQAAAAAAAAPoAAAAACQ="
@@ -1814,21 +1833,21 @@ Plecs {
       Type          Scope
       Name          "Scope5"
       Show          on
-      Position      [2520, 520]
+      Position      [2510, 520]
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 752]
+      Location      [0, 27; 1366, 722]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAASQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAVWAAAA0vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAK6AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKcAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAGQAAAAGAAAAZAAAAAEAAABkAAAAAwAAAGQAAAACAAAAZAAAAAkAAABkAAAACAAAAGQAAAAFAA"
-"AAZAAAAAQAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -3574,20 +3593,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 832]
+      Location      [0, 27; 1366, 842]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAANQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAAAsfw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJVAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJfAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL+AMAAAAHAAAAA"
-"wAAAGQAAAAEAAAAZAAAAAUAAABkAAAABgAAAGQAAAAHAAAAZAAAAAgAAABkAAAACQAAAGQAAAVFAA"
-"AACwEAAAEAAAAAAAAAAAAAAABk/////wAAAIEAAAAAAAAACwAAAKMAAAABAAAAAAAAAGQAAAABAAA"
-"AAAAAAGQAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAB"
-"AAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAAAAAAAAA9oAAAABAAAAAAAAA+gAA"
-"AAAJA=="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAFRQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACjAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"ASiAAAAAQAAAAAAAAPoAAAAACQ="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -3798,17 +3817,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 762]
+      Location      [0, 27; 1366, 772]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAKwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAALEAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAALOAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAABAAAAGQAAAAFAAAAZAAAAAYAAABkAAAABwAAAGQAAAAIAA"
-"AAZAAAAAkAAABkAAAAxwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACjAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAAxwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACjAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -4154,11 +4173,11 @@ Plecs {
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAGQAAAAGAAAAZAAAAAEAAABkAAAAAwAAAGQAAAACAAAAZAAAAAkAAABkAAAACAAAAGQAAAAFAA"
-"AAZAAAAAQAAABkAAAFVgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"AShAAAAAQAAAAAAAAPoAAAAACQ="
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "=="
@@ -4307,19 +4326,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 722]
+      Location      [0, 27; 1366, 732]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACUfwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAFwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAAlEAAABmAP///wAAAAMAAAVWAAAAW/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAI9AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJHAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGAAAAB"
-"wAAAGQAAAAGAAAAZAAAAAkAAABkAAAACAAAAGQAAAAFAAAAZAAAAAQAAABkAAAFRQAAAAsBAAABAA"
-"AAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACiAAAAAQAAAAAAAABkAAAAAQAAAAAAAABkAAA"
-"AAQAAAAAAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
-"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAN3AAAAAQAAAAAAAAPoAAAAACQ="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAFRQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACiAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"ASjAAAAAQAAAAAAAAPoAAAAACQ="
       PlotPalettes  "AAAAAQAAAAMAAAABAAAAAwAAAAEC//8u4P//zMwAAAAAAAEC//8AAP///"
 "/8AAAAAAAEC//9PsP////8AAAAAAAMAAAABAAAAAAEAAAAAAQAAAAADAAAAAQAAAAEAAAABAAAAAQ"
 "AAAAEAAAABAAAAAwAAAAEAAAAAAQAAAAABAAAAAAMAAAABP/AAAAAAAAAAAAABP/AAAAAAAAAAAAA"
@@ -6166,21 +6186,21 @@ Plecs {
       Type          Scope
       Name          "Scope11"
       Show          on
-      Position      [1575, 820]
+      Position      [1575, 810]
       Direction     down
       Flipped       on
       LabelPosition south
-      Location      [0, 27; 1366, 732]
+      Location      [0, 23; 1366, 708]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACT/wCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAIQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAAk8AAABmAP///wAAAAMAAAVWAAAAifw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKmAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKSAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAGQAAAAGAAAAZAAAAAEAAABkAAAAAwAAAGQAAAACAAAAZAAAAAkAAABkAAAACAAAAGQAAAAFAA"
-"AAZAAAAAQAAABkAAAAxwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACjAAA"
+"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
+"AAZAAAAAcAAABkAAAAxwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACjAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -6271,7 +6291,7 @@ Plecs {
       Type          From
       Name          "From45"
       Show          off
-      Position      [2030, 675]
+      Position      [2030, 680]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6457,6 +6477,204 @@ Plecs {
         Show          off
       }
     }
+    Component {
+      Type          From
+      Name          "From42"
+      Show          off
+      Position      [1320, 580]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i1a"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From75"
+      Show          off
+      Position      [1330, 590]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i1b"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From76"
+      Show          off
+      Position      [1340, 600]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i1c"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          ZeroOrderHold
+      Name          "Zero-Order\nHold10"
+      Show          off
+      Position      [1390, 600]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Ts"
+        Value         "h"
+        Show          off
+      }
+    }
+    Component {
+      Type          ZeroOrderHold
+      Name          "Zero-Order\nHold11"
+      Show          off
+      Position      [1370, 580]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Ts"
+        Value         "h"
+        Show          off
+      }
+    }
+    Component {
+      Type          ZeroOrderHold
+      Name          "Zero-Order\nHold12"
+      Show          off
+      Position      [1380, 590]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Ts"
+        Value         "h"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From77"
+      Show          off
+      Position      [1350, 610]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vg_a"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From78"
+      Show          off
+      Position      [1360, 620]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vg_b"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From79"
+      Show          off
+      Position      [1370, 630]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vg_c"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          ZeroOrderHold
+      Name          "Zero-Order\nHold14"
+      Show          off
+      Position      [1415, 630]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Ts"
+        Value         "h"
+        Show          off
+      }
+    }
+    Component {
+      Type          ZeroOrderHold
+      Name          "Zero-Order\nHold15"
+      Show          off
+      Position      [1395, 610]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Ts"
+        Value         "h"
+        Show          off
+      }
+    }
+    Component {
+      Type          ZeroOrderHold
+      Name          "Zero-Order\nHold16"
+      Show          off
+      Position      [1405, 620]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Ts"
+        Value         "h"
+        Show          off
+      }
+    }
     Connection {
       Type          Wire
       SrcComponent  "Vm2"
@@ -6504,7 +6722,6 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux"
       SrcTerminal   1
-      Points        [1465, 575; 1465, 570]
       DstComponent  "Control Corriente"
       DstTerminal   1
     }
@@ -6512,7 +6729,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Control Corriente"
       SrcTerminal   2
-      Points        [1555, 570]
+      Points        [1550, 570; 1550, 575]
       DstComponent  "Demux"
       DstTerminal   1
     }
@@ -6885,7 +7102,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux15"
       SrcTerminal   1
-      Points        [2485, 615; 2485, 540]
+      Points        [2475, 615; 2475, 540]
       DstComponent  "Scope5"
       DstTerminal   6
     }
@@ -6893,7 +7110,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From54"
       SrcTerminal   1
-      Points        [2490, 645]
+      Points        [2480, 645]
       DstComponent  "Scope5"
       DstTerminal   7
     }
@@ -6901,7 +7118,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux14"
       SrcTerminal   1
-      Points        [2480, 595; 2480, 530]
+      Points        [2470, 595; 2470, 530]
       DstComponent  "Scope5"
       DstTerminal   5
     }
@@ -6909,7 +7126,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux13"
       SrcTerminal   1
-      Points        [2475, 570; 2475, 520]
+      Points        [2465, 570; 2465, 520]
       DstComponent  "Scope5"
       DstTerminal   4
     }
@@ -7161,48 +7378,6 @@ Plecs {
       SrcTerminal   2
       DstComponent  "IGBTD14"
       DstTerminal   2
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold1"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   2
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold2"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold3"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   4
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold8"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   5
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold9"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   6
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold7"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   7
     }
     Connection {
       Type          Wire
@@ -7582,7 +7757,7 @@ Plecs {
         DstTerminal   5
       }
       Branch {
-        Points        [1660, 810]
+        Points        [1660, 800]
         DstComponent  "Scope11"
         DstTerminal   1
       }
@@ -7597,7 +7772,7 @@ Plecs {
         DstTerminal   5
       }
       Branch {
-        Points        [1680, 820]
+        Points        [1680, 810]
         DstComponent  "Scope11"
         DstTerminal   2
       }
@@ -7612,7 +7787,7 @@ Plecs {
         DstTerminal   5
       }
       Branch {
-        Points        [1675, 900; 1605, 900]
+        Points        [1675, 900; 1610, 900; 1610, 820]
         DstComponent  "Scope11"
         DstTerminal   3
       }
@@ -7621,7 +7796,6 @@ Plecs {
       Type          Signal
       SrcComponent  "From45"
       SrcTerminal   1
-      Points        [2080, 675; 2080, 680]
       DstComponent  "Scope1"
       DstTerminal   1
     }
@@ -7808,6 +7982,132 @@ Plecs {
         DstComponent  "L4"
         DstTerminal   2
       }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From75"
+      SrcTerminal   1
+      DstComponent  "Zero-Order\nHold12"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From76"
+      SrcTerminal   1
+      DstComponent  "Zero-Order\nHold10"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From42"
+      SrcTerminal   1
+      DstComponent  "Zero-Order\nHold11"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From78"
+      SrcTerminal   1
+      DstComponent  "Zero-Order\nHold16"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From79"
+      SrcTerminal   1
+      DstComponent  "Zero-Order\nHold14"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From77"
+      SrcTerminal   1
+      DstComponent  "Zero-Order\nHold15"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold14"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   13
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold16"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   12
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold15"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   11
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold10"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   10
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold12"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   9
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold11"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   8
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold7"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   7
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold9"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   6
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold8"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   5
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold3"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold2"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Zero-Order\nHold1"
+      SrcTerminal   2
+      DstComponent  "Mux"
+      DstTerminal   2
     }
   }
   Script {
