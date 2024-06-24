@@ -79,9 +79,9 @@ Plecs {
   ScriptsDialogGeometry "[2130 399 446 243]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [0, 27; 1366, 693]
-    ZoomFactor    0.999995
-    SliderPosition [1238, 154]
+    Location      [0, 23; 1366, 689]
+    ZoomFactor    1.14436
+    SliderPosition [939, 372]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -141,7 +141,7 @@ Plecs {
       }
       Parameter {
         Variable      "NumInputs"
-        Value         "12"
+        Value         "9"
         Show          off
       }
       Parameter {
@@ -229,9 +229,6 @@ Plecs {
 "#define i1b Input(7)\n"
 "#define i1c Input(8)\n"
 "\n"
-"#define Vg_a Input(9)\n"
-"#define Vg_b Input(10)\n"
-"#define Vg_c Input(11)\n"
 "\n"
 "/***** Salidas ****/\n"
 "#define Out0 Output(0)\n"
@@ -307,41 +304,38 @@ Plecs {
 "qKioqKiovCiAgCmFiY19kcSggJmkyZF9rICwgJmkycV9rICwgdGhldGEgLCBpc2EgLCBpc2IgLCBp"
 "c2MpOwoKLyoqKioqKioqKioqKiBWZWN0b3IgZGUgdGVuc2lvbiBjYXBhY2l0b3JlcyAqKioqKioqK"
 "ioqKiovCiAKYWJjX2RxKCAmVmNkICwgJlZjcSAsIHRoZXRhICwgVmNfYSAsIFZjX2IgLCBWY19jKT"
-"sKCi8qKioqKioqKioqKiogVmVjdG9yIGRlIHRlbnNpb24gY2FyZ2EgKioqKioqKioqKioqLwogCmF"
-"iY19kcSggJlZnZF9rICwgJlZncV9rICwgdGhldGEgLCBWZ19hICwgVmdfYiAsIFZnX2MpOwoKLyoq"
-"KioqKioqKioqKiBQcmVkaWNjacOzbiBrKzEgKioqKioqKioqKioqLwoKVmFiY19kcSgmVl9kLCAmV"
-"l9xLCB0aGV0YSwgVmRjLCBTYVt4X29wdF0sIFNiW3hfb3B0XSwgU2NbeF9vcHRdKTsgIC8vVGVuc2"
-"lvbiBhIGxhIHNhbGlkYSBkZWwgY29udmVydGlkb3IKCi8vVmNrMSgmVmNkX2swLCAmVmNxX2swLCB"
-"WX2QsIFZfcSwgVmNkLCBWY3EsIFZjZF9hbnQsIFZjcV9hbnQsIGkyZF9rLCBpMnFfaywgaTJkX2Fu"
-"dCwgaTJxX2FudCwgTDEsIGgsIENmLCB3LCBkMV9MMUMpOyAgLy8gcHJlZGljY2nDs24gZGUgbGEgd"
-"GVuc2nDs24gZW4gY2FwYWNpdG9yZXMKLy9pazEoJmkyZF9rMCwgJmkycV9rMCwgaTJkX2ssIGkycV"
-"9rLCBWY2RfazAsIFZjcV9rMCwgaCwgdywgUiwgZDFfTDIsIDIyMCwgZXEpOwkJLy8gcHJlZGljY2l"
-"vbiBkZSBjb3JyaWVudGUgYSBsYSBzYWxpZGEgZGVsIGZpbHRybwoKaTFwKCZpMWRfazAsICZpMXFf"
-"azAsIGgsIGQxX0wxLCB3LCBpMWRfaywgaTFxX2ssIFZfZCwgVl9xLCBWY2QsIFZjcSk7ClZjcCgmV"
-"mNkX2swLCAmVmNxX2swLCBoLCBkMV9jLCB3LCBpMWRfazAsIGkxcV9rMCwgaTJkX2ssIGkycV9rLC"
-"BWY2QsIFZjcSk7CmkycCgmaTJkX2swLCAmaTJxX2swLCBpMmRfaywgaTJxX2ssIFZjZF9rMCwgVmN"
-"xX2swLCBoLCB3LCBSLCBkMV9MMiwgVmdkX2ssIFZncV9rKTsKCgovKioqKioqKioqKioqIExvb3Ag"
-"cGFyYSBkZXRlcm1pbmFyIGNvbWJpbmFjaW9uIG9wdGltYSAqKioqKioqKioqKiovCiAKZ19vcHQ9M"
-"WUyMDsKZm9yICh4PTA7IHggPD0gMTI0OyB4PXgrMSkgewoJIAoJIFZhYmNfZHEoJlZfZCwgJlZfcS"
-"wgdGhldGEsIFZkYywgU2FbeF0sIFNiW3hdLCBTY1t4XSk7CgkgCgkgLy9WY2sxKCZWY2RfazEsICZ"
-"WY3FfazEsIFZfZCwgVl9xLCBWY2RfazAsIFZjcV9rMCwgVmNkLCBWY3EsIGkyZF9rMCwgaTJxX2sw"
-"LCBpMmRfaywgaTJxX2ssIEwxLCBoLCBDZiwgdywgZDFfTDFDKTsJIAoJIC8vaWsxKCZpMmRfazEsI"
-"CZpMnFfazEsIGkyZF9rMCwgaTJxX2swLCBWY2RfazEsIFZjcV9rMSwgaCwgdywgUiwgZDFfTDIsID"
-"IyMCwgZXEpOwoJCgkgaTFwKCZpMWRfazEsICZpMXFfazEsIGgsIGQxX0wxLCB3LCBpMWRfazAsIGk"
-"xcV9rMCwgVl9kLCBWX3EsIFZjZF9rMCwgVmNxX2swKTsKCSBWY3AoJlZjZF9rMSwgJlZjcV9rMSwg"
-"aCwgZDFfYywgdywgaTFkX2sxLCBpMXFfazEsIGkyZF9rMCwgaTJxX2swLCBWY2RfazAsIFZjcV9rM"
-"Ck7CgkgaTJwKCZpMmRfazEsICZpMnFfazEsIGkyZF9rMCwgaTJxX2swLCBWY2RfazEsIFZjcV9rMS"
-"wgaCwgdywgUiwgZDFfTDIsIFZnZF9rLCBWZ3Ffayk7CQoJIAogICAgRkNfY3VhZCgmZ1t4XSwgaWR"
-"fciwgIGlxX3IsICBpMmRfazEsICBpMnFfazEpOwogICAgRkNfY3VhZCgmZ3ZbeF0sIFZjZF9yLCBW"
-"Y3FfciwgIFZjZF9rMSwgIFZjcV9rMSk7CgkgRkNfY3VhZCgmZ2JbeF0sIGlkX3IsICBpcV9yLCAga"
-"TFkX2sxLCAgaTFxX2sxKTsKCSBGQ19jdWFkKCZnZ1t4XSwgMjIwLCAwLCAgVmdkX2ssICBWZ3Ffay"
-"k7CgkKICAgIC8vb3B0KCZnX29wdCwgJnhfb3B0LCAgMC4yNSooZ1t4XStndlt4XStnYlt4XStnZ1t"
-"4XSksICB4KTsJCQkJCQkJCQkJLy8gYWN0dWFsaXphciBjb21iaW5hY2lvbiBkZSBzd2l0Y2ggb3B0"
-"aW1hCgkgb3B0cCgmZ19vcHQsICZ4X29wdCwgMC4yNSooZ1t4XStndlt4XStnYlt4XStnZ1t4XSksI"
-"HgsIFNhW3hdLCBTYlt4XSwgU2NbeF0sIFNhW3hfb3B0XSwgU2JbeF9vcHRdLCBTY1t4X29wdF0pOw"
-"p9CgphY3QoJlZnZF9hbnQsICZWZ3FfYW50LCAmVmRfYW50LCAmVnFfYW50LCAmVmNkX2FudCwgJlZ"
-"jcV9hbnQsICZpMmRfYW50LCAmaTJxX2FudCwgZWQsIGVxLCBWX2QsIFZfcSwgVmNkLCBWY3EsIGky"
-"ZF9rLCBpMnFfayk7CgoKCgoK"
+"sKCi8qKioqKioqKioqKiogUHJlZGljY2nDs24gaysxICoqKioqKioqKioqKi8KClZhYmNfZHEoJlZ"
+"fZCwgJlZfcSwgdGhldGEsIFZkYywgU2FbeF9vcHRdLCBTYlt4X29wdF0sIFNjW3hfb3B0XSk7ICAv"
+"L1RlbnNpb24gYSBsYSBzYWxpZGEgZGVsIGNvbnZlcnRpZG9yCgovL1ZjazEoJlZjZF9rMCwgJlZjc"
+"V9rMCwgVl9kLCBWX3EsIFZjZCwgVmNxLCBWY2RfYW50LCBWY3FfYW50LCBpMmRfaywgaTJxX2ssIG"
+"kyZF9hbnQsIGkycV9hbnQsIEwxLCBoLCBDZiwgdywgZDFfTDFDKTsgIC8vIHByZWRpY2Npw7NuIGR"
+"lIGxhIHRlbnNpw7NuIGVuIGNhcGFjaXRvcmVzCi8vaWsxKCZpMmRfazAsICZpMnFfazAsIGkyZF9r"
+"LCBpMnFfaywgVmNkX2swLCBWY3FfazAsIGgsIHcsIFIsIGQxX0wyLCAyMjAsIGVxKTsJCS8vIHByZ"
+"WRpY2Npb24gZGUgY29ycmllbnRlIGEgbGEgc2FsaWRhIGRlbCBmaWx0cm8KCmkxcCgmaTFkX2swLC"
+"AmaTFxX2swLCBoLCBkMV9MMSwgdywgaTFkX2ssIGkxcV9rLCBWX2QsIFZfcSwgVmNkLCBWY3EpOwp"
+"WY3AoJlZjZF9rMCwgJlZjcV9rMCwgaCwgZDFfYywgdywgaTFkX2swLCBpMXFfazAsIGkyZF9rLCBp"
+"MnFfaywgVmNkLCBWY3EpOwppMnAoJmkyZF9rMCwgJmkycV9rMCwgaTJkX2ssIGkycV9rLCBWY2Rfa"
+"zAsIFZjcV9rMCwgaCwgdywgUiwgZDFfTDIsIFZnZF9yLCBWZ3Ffcik7CgoKLyoqKioqKioqKioqKi"
+"BMb29wIHBhcmEgZGV0ZXJtaW5hciBjb21iaW5hY2lvbiBvcHRpbWEgKioqKioqKioqKioqLwogCmd"
+"fb3B0PTFlMjA7CmZvciAoeD0wOyB4IDw9IDEyNDsgeD14KzEpIHsKCSAKCSBWYWJjX2RxKCZWX2Qs"
+"ICZWX3EsIHRoZXRhLCBWZGMsIFNhW3hdLCBTYlt4XSwgU2NbeF0pOwoJIAoJIC8vVmNrMSgmVmNkX"
+"2sxLCAmVmNxX2sxLCBWX2QsIFZfcSwgVmNkX2swLCBWY3FfazAsIFZjZCwgVmNxLCBpMmRfazAsIG"
+"kycV9rMCwgaTJkX2ssIGkycV9rLCBMMSwgaCwgQ2YsIHcsIGQxX0wxQyk7CSAKCSAvL2lrMSgmaTJ"
+"kX2sxLCAmaTJxX2sxLCBpMmRfazAsIGkycV9rMCwgVmNkX2sxLCBWY3FfazEsIGgsIHcsIFIsIGQx"
+"X0wyLCAyMjAsIGVxKTsKCQoJIGkxcCgmaTFkX2sxLCAmaTFxX2sxLCBoLCBkMV9MMSwgdywgaTFkX"
+"2swLCBpMXFfazAsIFZfZCwgVl9xLCBWY2RfazAsIFZjcV9rMCk7CgkgVmNwKCZWY2RfazEsICZWY3"
+"FfazEsIGgsIGQxX2MsIHcsIGkxZF9rMSwgaTFxX2sxLCBpMmRfazAsIGkycV9rMCwgVmNkX2swLCB"
+"WY3FfazApOwoJIGkycCgmaTJkX2sxLCAmaTJxX2sxLCBpMmRfazAsIGkycV9rMCwgVmNkX2sxLCBW"
+"Y3FfazEsIGgsIHcsIFIsIGQxX0wyLCBWZ2RfciwgVmdxX3IpOwkKCSAKICAgIEZDX2N1YWQoJmdbe"
+"F0sIGlkX3IsICBpcV9yLCAgaTJkX2sxLCAgaTJxX2sxKTsKICAgIEZDX2N1YWQoJmd2W3hdLCBWY2"
+"RfciwgVmNxX3IsICBWY2RfazEsICBWY3FfazEpOwoJIEZDX2N1YWQoJmdiW3hdLCBpZF9yLCAgaXF"
+"fciwgIGkxZF9rMSwgIGkxcV9rMSk7CgkKICAgIC8vb3B0KCZnX29wdCwgJnhfb3B0LCAgMC4yNSoo"
+"Z1t4XStndlt4XStnYlt4XStnZ1t4XSksICB4KTsJCQkJCQkJCQkJLy8gYWN0dWFsaXphciBjb21ia"
+"W5hY2lvbiBkZSBzd2l0Y2ggb3B0aW1hCgkgb3B0cCgmZ19vcHQsICZ4X29wdCwgMC4zMzMzKihnW3"
+"hdK2d2W3hdK2diW3hdKSwgeCwgU2FbeF0sIFNiW3hdLCBTY1t4XSwgU2FbeF9vcHRdLCBTYlt4X29"
+"wdF0sIFNjW3hfb3B0XSk7Cn0KCmFjdCgmVmdkX2FudCwgJlZncV9hbnQsICZWZF9hbnQsICZWcV9h"
+"bnQsICZWY2RfYW50LCAmVmNxX2FudCwgJmkyZF9hbnQsICZpMnFfYW50LCBlZCwgZXEsIFZfZCwgV"
+"l9xLCBWY2QsIFZjcSwgaTJkX2ssIGkycV9rKTsKCgoKCgo="
         Show          off
       }
       Parameter {
@@ -383,7 +377,7 @@ Plecs {
       Type          From
       Name          "From5"
       Show          off
-      Position      [1260, 520]
+      Position      [1275, 535]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -402,7 +396,7 @@ Plecs {
       Type          From
       Name          "From7"
       Show          off
-      Position      [1270, 530]
+      Position      [1285, 545]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -421,7 +415,7 @@ Plecs {
       Type          From
       Name          "From8"
       Show          off
-      Position      [1280, 540]
+      Position      [1295, 555]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -446,7 +440,7 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "Width"
-        Value         "12"
+        Value         "9"
         Show          off
       }
     }
@@ -573,7 +567,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold1"
       Show          off
-      Position      [1315, 520]
+      Position      [1330, 535]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -587,7 +581,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold2"
       Show          off
-      Position      [1325, 530]
+      Position      [1340, 545]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -840,7 +834,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold3"
       Show          off
-      Position      [1335, 540]
+      Position      [1350, 555]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1299,7 +1293,7 @@ Plecs {
       Type          From
       Name          "From33"
       Show          off
-      Position      [1290, 550]
+      Position      [1305, 565]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1318,7 +1312,7 @@ Plecs {
       Type          From
       Name          "From34"
       Show          off
-      Position      [1300, 560]
+      Position      [1315, 575]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1337,7 +1331,7 @@ Plecs {
       Type          From
       Name          "From35"
       Show          off
-      Position      [1310, 570]
+      Position      [1325, 585]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1356,7 +1350,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold7"
       Show          off
-      Position      [1365, 570]
+      Position      [1380, 585]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1370,7 +1364,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold8"
       Show          off
-      Position      [1345, 550]
+      Position      [1360, 565]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1384,7 +1378,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold9"
       Show          off
-      Position      [1355, 560]
+      Position      [1370, 575]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1844,17 +1838,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 23; 1366, 708]
+      Location      [0, 27; 1366, 762]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAASQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAVWAAAA0vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKSAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAALEAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"wAAAGQAAAAIAAAAZAAAAAkAAABkAAAABAAAAGQAAAAFAAAAZAAAAAYAAABkAAAABwAAAGQAAAABAA"
-"AAZAAAAAIAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"wAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAAAJAAAAZAAAAAgAAABkAAAAAwAAAGQAAAACAA"
+"AAZAAAAAEAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -6197,17 +6191,17 @@ Plecs {
       Direction     down
       Flipped       on
       LabelPosition south
-      Location      [0, 23; 1366, 708]
+      Location      [0, 27; 1366, 742]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACT/wCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAIQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAAk8AAABmAP///wAAAAMAAAVWAAAAifw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKSAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKwAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
-"AAZAAAAAcAAABkAAAAxwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACjAAA"
+"wAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAAAJAAAAZAAAAAgAAABkAAAAAwAAAGQAAAACAA"
+"AAZAAAAAEAAABkAAAAxwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACjAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -6488,7 +6482,7 @@ Plecs {
       Type          From
       Name          "From42"
       Show          off
-      Position      [1320, 580]
+      Position      [1335, 595]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6507,7 +6501,7 @@ Plecs {
       Type          From
       Name          "From75"
       Show          off
-      Position      [1330, 590]
+      Position      [1345, 605]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6526,7 +6520,7 @@ Plecs {
       Type          From
       Name          "From76"
       Show          off
-      Position      [1340, 600]
+      Position      [1355, 615]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6545,7 +6539,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold10"
       Show          off
-      Position      [1390, 600]
+      Position      [1405, 615]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6559,7 +6553,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold11"
       Show          off
-      Position      [1370, 580]
+      Position      [1385, 595]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -6573,106 +6567,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold12"
       Show          off
-      Position      [1380, 590]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Ts"
-        Value         "h"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From77"
-      Show          off
-      Position      [1350, 610]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "Vg_a"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From78"
-      Show          off
-      Position      [1360, 620]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "Vg_b"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          From
-      Name          "From79"
-      Show          off
-      Position      [1370, 630]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "Vg_c"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          ZeroOrderHold
-      Name          "Zero-Order\nHold14"
-      Show          off
-      Position      [1415, 630]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Ts"
-        Value         "h"
-        Show          off
-      }
-    }
-    Component {
-      Type          ZeroOrderHold
-      Name          "Zero-Order\nHold15"
-      Show          off
-      Position      [1395, 610]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Ts"
-        Value         "h"
-        Show          off
-      }
-    }
-    Component {
-      Type          ZeroOrderHold
-      Name          "Zero-Order\nHold16"
-      Show          off
-      Position      [1405, 620]
+      Position      [1395, 605]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -8037,45 +7932,24 @@ Plecs {
     }
     Connection {
       Type          Signal
-      SrcComponent  "From78"
-      SrcTerminal   1
-      DstComponent  "Zero-Order\nHold16"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From79"
-      SrcTerminal   1
-      DstComponent  "Zero-Order\nHold14"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "From77"
-      SrcTerminal   1
-      DstComponent  "Zero-Order\nHold15"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold14"
+      SrcComponent  "Zero-Order\nHold1"
       SrcTerminal   2
       DstComponent  "Mux"
-      DstTerminal   13
+      DstTerminal   2
     }
     Connection {
       Type          Signal
-      SrcComponent  "Zero-Order\nHold16"
+      SrcComponent  "Zero-Order\nHold2"
       SrcTerminal   2
       DstComponent  "Mux"
-      DstTerminal   12
+      DstTerminal   3
     }
     Connection {
       Type          Signal
-      SrcComponent  "Zero-Order\nHold15"
+      SrcComponent  "Zero-Order\nHold3"
       SrcTerminal   2
       DstComponent  "Mux"
-      DstTerminal   11
+      DstTerminal   4
     }
     Connection {
       Type          Signal
@@ -8118,27 +7992,6 @@ Plecs {
       SrcTerminal   2
       DstComponent  "Mux"
       DstTerminal   5
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold3"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   4
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold2"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   3
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Zero-Order\nHold1"
-      SrcTerminal   2
-      DstComponent  "Mux"
-      DstTerminal   2
     }
   }
   Script {
