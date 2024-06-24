@@ -29,25 +29,25 @@ Plecs {
   AssertionAction "1"
   FixedPointDatatypeOverride "1"
   InitializationCommands "h=2e-04;\nVdc=800;\n%L1=4e-3;\n%L2=1e-3;\n%Cf=1e-3;"
-"\nL1=1.422e-3;\nL2=0.396e-3/2;\nCf=0.329e-3;\nR=0.001;\nrc=10;\nRg=1;\nw=314."
-"1593;\nR1=1/R;\nVgd_r=220;\nVgq_r=0;\nid_r=Vgd_r/Rg;\niq_r=0;\nVcd_r=Vgd_r+id"
-"_r*R;\nVcq_r=0;\ne=0;\nd1_L1C=1/(L1*Cf);\nd1_L2=1/L2;\nC2=1e-4;\nd1_C2=1/C2;"
-"\nd1_L1=1/L1;\nd1_c=1/Cf;\n\nIrradiancia_r;\nf2=30e3;\nhb=1/(f2);\nf=30e3;\nd"
-"es=-1/180000\nT=1/f;\nD1=T/3;\nD2=2*T/3;\nD3=D1/3;\nD4=2*D1/3;\nL=3*0.3588e-3"
-";\nC=250e-6;%1500e-6;\nNumberOfSeriesConnectedPanels = 1;%16;   % [] - number"
-" of panels connected in series in the system\n\n%%% Lumeta powerply400\n\nSP."
-"Ns = 72;%160;       % [] - number of solar cells in a string in solar array\n"
-"SP.Np = 1;        % [] - number of solar cell strings in parallel solar array"
-"\n\nSP.T_n = 20;%25;      % [C] - nominal temperature of solar cells\nSP.G_n "
-"= 800;%1000;    % [W/m^2] - nominal irradiation of solar cells\nSP.V_OC_n = 4"
-"5.9;%98.90; % [V] - nominal open circuit voltage of array (single panel in sy"
-"stem)\nSP.I_SC_n = 9.02;%5.330; % [A] - nominal short circuit current of arra"
-"y\n\nSP.Rs = 0.221;%1.422;%0.286;    % [ohm] - equvalent series resistance of"
-" array\nSP.Rp = 415.405;%900;%1200;  % [ohm] - equvalent parallel resistance "
-"of array\n\nSP.a = 1.1;       % [] - diode ideality constant\n\nSP.K_V = -0.1"
-"57;%-0.346; % [V/K] - thermal voltage coefficient of array FALTA\nSP.K_I = 0."
-"0067;%0.0011;  % [A/K] - thermal current coefficient of array FALTA\n\nSP.C_i"
-"n = 22e-6;%C;  % [F] - input capacitance of the DC/DC converter"
+"\nL1=1.422e-3;\nL2=0.396e-3/2;\nCf=0.329e-3;\nR=0.001;\nrc=10;\nRg=0.48;\nw=3"
+"14.1593;\nR1=1/R;\nVgd_r=220;\nVgq_r=0;\nid_r=Vgd_r/Rg;\niq_r=0;\nVcd_r=Vgd_r"
+"+id_r*R;\nVcq_r=0;\ne=0;\nd1_L1C=1/(L1*Cf);\nd1_L2=1/L2;\nC2=1e-4;\nd1_C2=1/C"
+"2;\nd1_L1=1/L1;\nd1_c=1/Cf;\n\nIrradiancia_r;\nf2=30e3;\nhb=1/(f2);\nf=30e3;"
+"\ndes=-1/180000\nT=1/f;\nD1=T/3;\nD2=2*T/3;\nD3=D1/3;\nD4=2*D1/3;\nL=3*0.3588"
+"e-3;\nC=250e-6;%1500e-6;\nNumberOfSeriesConnectedPanels = 1;%16;   % [] - num"
+"ber of panels connected in series in the system\n\n%%% Lumeta powerply400\n\n"
+"SP.Ns = 72;%160;       % [] - number of solar cells in a string in solar arra"
+"y\nSP.Np = 1;        % [] - number of solar cell strings in parallel solar ar"
+"ray\n\nSP.T_n = 20;%25;      % [C] - nominal temperature of solar cells\nSP.G"
+"_n = 800;%1000;    % [W/m^2] - nominal irradiation of solar cells\nSP.V_OC_n "
+"= 45.9;%98.90; % [V] - nominal open circuit voltage of array (single panel in"
+" system)\nSP.I_SC_n = 9.02;%5.330; % [A] - nominal short circuit current of a"
+"rray\n\nSP.Rs = 0.221;%1.422;%0.286;    % [ohm] - equvalent series resistance"
+" of array\nSP.Rp = 415.405;%900;%1200;  % [ohm] - equvalent parallel resistan"
+"ce of array\n\nSP.a = 1.1;       % [] - diode ideality constant\n\nSP.K_V = -"
+"0.157;%-0.346; % [V/K] - thermal voltage coefficient of array FALTA\nSP.K_I ="
+" 0.0067;%0.0011;  % [A/K] - thermal current coefficient of array FALTA\n\nSP."
+"C_in = 22e-6;%C;  % [F] - input capacitance of the DC/DC converter"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -72,9 +72,9 @@ Plecs {
   ScriptsDialogGeometry "[2130 399 446 243]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [0, 23; 1366, 689]
-    ZoomFactor    0.667272
-    SliderPosition [378, 0]
+    Location      [0, 27; 1366, 693]
+    ZoomFactor    0.999995
+    SliderPosition [1238, 154]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -1837,17 +1837,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 722]
+      Location      [0, 27; 1366, 732]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAASQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAVWAAAA0vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKcAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABVYAAAKmAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"gAAAGQAAAAFAAAAZAAAAAQAAABkAAAACQAAAGQAAAAIAAAAZAAAAAMAAABkAAAAAgAAAGQAAAABAA"
-"AAZAAAAAcAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"gAAAGQAAAADAAAAZAAAAAQAAABkAAAABQAAAGQAAAAGAAAAZAAAAAcAAABkAAAACAAAAGQAAAAJAA"
+"AAZAAAAAEAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -6673,6 +6673,30 @@ Plecs {
         Variable      "Ts"
         Value         "h"
         Show          off
+      }
+    }
+    Component {
+      Type          PlecsProbe
+      Name          "Potencia carga"
+      Show          on
+      Position      [2010, 465]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Probe {
+        Component     "R4"
+        Path          ""
+        Signals       {"Resistor power"}
+      }
+      Probe {
+        Component     "R5"
+        Path          ""
+        Signals       {"Resistor power"}
+      }
+      Probe {
+        Component     "R6"
+        Path          ""
+        Signals       {"Resistor power"}
       }
     }
     Connection {
