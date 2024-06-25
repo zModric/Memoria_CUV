@@ -18,7 +18,7 @@
 #define vpv_max 90
 #define L0 0.01
 #define C0 2200e-6
-#define V0 37
+#define V0 37*10
 
 
 double e_acta=0;

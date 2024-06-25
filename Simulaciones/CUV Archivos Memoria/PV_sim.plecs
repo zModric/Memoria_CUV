@@ -29,21 +29,22 @@ Plecs {
   AssertionAction "1"
   FixedPointDatatypeOverride "1"
   InitializationCommands "Irradiancia_r;\nf2=30e3;\nhb=1/(f2);\nf=30e3;\ndes=-"
-"1/180000\nT=1/f;\nD1=T/3;\nD2=2*T/3;\nD3=D1/3;\nD4=2*D1/3;\nL=3*0.3588e-3;\nC"
-"=250e-6;%1500e-6;\nNumberOfSeriesConnectedPanels = 1;%16;   % [] - number of "
-"panels connected in series in the system\n\n%%% Lumeta powerply400\n\nSP.Ns ="
-" 72;%160;       % [] - number of solar cells in a string in solar array\nSP.N"
-"p = 1;        % [] - number of solar cell strings in parallel solar array\n\n"
-"SP.T_n = 20;%25;      % [C] - nominal temperature of solar cells\nSP.G_n = 80"
-"0;%1000;    % [W/m^2] - nominal irradiation of solar cells\nSP.V_OC_n = 45.9;"
-"%98.90; % [V] - nominal open circuit voltage of array (single panel in system"
-")\nSP.I_SC_n = 9.02;%5.330; % [A] - nominal short circuit current of array\n"
-"\nSP.Rs = 0.221;%1.422;%0.286;    % [ohm] - equvalent series resistance of ar"
-"ray\nSP.Rp = 415.405;%900;%1200;  % [ohm] - equvalent parallel resistance of "
-"array\n\nSP.a = 1.1;       % [] - diode ideality constant\n\nSP.K_V = -0.157;"
-"%-0.346; % [V/K] - thermal voltage coefficient of array FALTA\nSP.K_I = 0.006"
-"7;%0.0011;  % [A/K] - thermal current coefficient of array FALTA\n\nSP.C_in ="
-" 22e-6;%C;  % [F] - input capacitance of the DC/DC converter"
+"1/180000\nT=1/f;\nD1=T/3;\nD2=2*T/3;\nD3=D1/3;\nD4=2*D1/3;\n%L=3*0.3588e-3;\n"
+"L=3*0.5e-3;\nC=250e-6;%1500e-6;\nNumberOfSeriesConnectedPanels = 1;%16;   % ["
+"] - number of panels connected in series in the system\nNps = 10;\nNpp = 1*45"
+";\n\n%%% Lumeta powerply400\n\nSP.Ns = 72;%160;       % [] - number of solar "
+"cells in a string in solar array\nSP.Np = 1;        % [] - number of solar ce"
+"ll strings in parallel solar array\n\nSP.T_n = 20;%25;      % [C] - nominal t"
+"emperature of solar cells\nSP.G_n = 800;%1000;    % [W/m^2] - nominal irradia"
+"tion of solar cells\nSP.V_OC_n = 45.9;%98.90; % [V] - nominal open circuit vo"
+"ltage of array (single panel in system)\nSP.I_SC_n = 9.02;%5.330; % [A] - nom"
+"inal short circuit current of array\n\nSP.Rs = 0.221;%1.422;%0.286;    % [ohm"
+"] - equvalent series resistance of array\nSP.Rp = 415.405;%900;%1200;  % [ohm"
+"] - equvalent parallel resistance of array\n\nSP.a = 1.1;       % [] - diode "
+"ideality constant\n\nSP.K_V = -0.157;%-0.346; % [V/K] - thermal voltage coeff"
+"icient of array FALTA\nSP.K_I = 0.0067;%0.0011;  % [A/K] - thermal current co"
+"efficient of array FALTA\n\nSP.C_in = 22e-6;%C;  % [F] - input capacitance of"
+" the DC/DC converter"
   InitialState  "1"
   SystemState   ""
   TaskingMode   "1"
@@ -68,9 +69,9 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 27; 1366, 693]
-    ZoomFactor    0.763602
-    SliderPosition [0, 0]
+    Location      [0, 23; 1366, 689]
+    ZoomFactor    0.999992
+    SliderPosition [0, 105]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -83,7 +84,7 @@ Plecs {
       LabelPosition east
       Parameter {
         Variable      "V"
-        Value         "400"
+        Value         "800"
         Show          on
       }
     }
@@ -2183,21 +2184,21 @@ Plecs {
       Type          Scope
       Name          "Resultados"
       Show          on
-      Position      [535, 700]
+      Position      [535, 695]
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 23; 1366, 708]
+      Location      [0, 27; 1366, 722]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADyvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAANQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAA8oAAABmAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAAKSAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAAKcAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"QAAAGQAAAAIAAAAZAAAAAcAAABkAAAABgAAAGQAAAAFAAAAZAAAAAQAAABkAAAAAwAAAGQAAAACAA"
-"AAZAAAAAEAAABkAAAFDQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAATpAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"wAAAGQAAAACAAAAZAAAAAEAAABkAAAABwAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAFDQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAATpAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -2438,20 +2439,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 722]
+      Location      [0, 27; 1366, 732]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAAAY/w"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAI1AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAI/AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"AAAAGQAAAAJAAAAZAAAAAEAAABkAAAAAgAAAGQAAAADAAAAZAAAAAQAAABkAAAABQAAAGQAAAAGAA"
-"AAZAAAAAcAAABkAAAFVgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAABcAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"wAAAGQAAAACAAAAZAAAAAEAAABkAAAABwAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAFVgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC6AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"AT6AAAAAQAAAAAAAAPoAAAAACQ="
+"AScAAAAAQAAAAAAAAPoAAAAACQ="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
       Axes          "1"
       TimeRange     "0.0"
@@ -3102,6 +3103,24 @@ Plecs {
       MaskInit      "k = 1.3806503e-23; % [J/K] - Boltzmann constant\n"
 "q = 1.60217646e-19; % [C] - electron charge"
       Parameter {
+        Variable      "Npp"
+        Prompt        "Num Pv parallel"
+        Type          FreeText
+        Value         "Npp"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Parameter {
+        Variable      "Nps"
+        Prompt        "Num Pv series"
+        Type          FreeText
+        Value         "Nps"
+        Show          off
+        Tunable       off
+        TabName       ""
+      }
+      Parameter {
         Variable      "Ns"
         Prompt        "Number of PV cells in string"
         Type          FreeText
@@ -3230,8 +3249,8 @@ Plecs {
         Direction     down
       }
       Schematic {
-        Location      [0, 23; 1366, 689]
-        ZoomFactor    0.76361
+        Location      [0, 27; 1366, 693]
+        ZoomFactor    1.49864
         SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
@@ -3239,7 +3258,7 @@ Plecs {
           Type          Ammeter
           Name          "I_PV"
           Show          off
-          Position      [510, 85]
+          Position      [610, 85]
           Direction     left
           Flipped       off
           LabelPosition south
@@ -3248,7 +3267,7 @@ Plecs {
           Type          SignalMux
           Name          "CMux"
           Show          off
-          Position      [560, 30]
+          Position      [660, 30]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -3262,7 +3281,7 @@ Plecs {
           Type          CurrentSource
           Name          "Im"
           Show          on
-          Position      [390, 125]
+          Position      [490, 125]
           Direction     down
           Flipped       on
           LabelPosition east
@@ -3281,7 +3300,7 @@ Plecs {
           Type          Voltmeter
           Name          "V1"
           Show          off
-          Position      [555, 125]
+          Position      [655, 125]
           Direction     down
           Flipped       on
           LabelPosition east
@@ -3290,7 +3309,7 @@ Plecs {
           Type          Function
           Name          "Power"
           Show          on
-          Position      [615, 30]
+          Position      [715, 30]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -3305,7 +3324,7 @@ Plecs {
           Type          Port
           Name          "+"
           Show          off
-          Position      [617, 85]
+          Position      [717, 85]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -3343,7 +3362,7 @@ Plecs {
           Type          Resistor
           Name          "Rp"
           Show          on
-          Position      [430, 125]
+          Position      [530, 125]
           Direction     up
           Flipped       off
           LabelPosition east
@@ -3357,7 +3376,7 @@ Plecs {
           Type          Resistor
           Name          "Rs"
           Show          on
-          Position      [465, 85]
+          Position      [565, 85]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -3665,7 +3684,7 @@ Plecs {
           Type          Port
           Name          "-"
           Show          off
-          Position      [632, 165]
+          Position      [732, 165]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -3680,13 +3699,100 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          Gain
+          Name          "Gain"
+          Show          off
+          Position      [435, 125]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "Npp"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Gain1"
+          Show          off
+          Position      [390, 25]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "1/Nps"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Gain2"
+          Show          off
+          Position      [390, 50]
+          Direction     right
+          Flipped       on
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "1/Npp"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
+        }
         Connection {
           Type          Wire
           SrcComponent  "Im"
           SrcTerminal   1
-          Points        [390, 165; 430, 165]
+          Points        [490, 165; 530, 165]
           Branch {
-            Points        [555, 165]
+            Points        [655, 165]
             Branch {
               DstComponent  "-"
               DstTerminal   1
@@ -3712,7 +3818,7 @@ Plecs {
           Type          Wire
           SrcComponent  "V1"
           SrcTerminal   1
-          Points        [555, 85]
+          Points        [655, 85]
           Branch {
             DstComponent  "I_PV"
             DstTerminal   2
@@ -3740,11 +3846,10 @@ Plecs {
           Type          Signal
           SrcComponent  "V1"
           SrcTerminal   3
-          Points        [535, 125; 535, 25]
+          Points        [635, 125; 635, 25]
           Branch {
-            Points        [105, 25; 105, 120]
-            DstComponent  "CMux2"
-            DstTerminal   3
+            DstComponent  "Gain1"
+            DstTerminal   1
           }
           Branch {
             DstComponent  "CMux"
@@ -3755,24 +3860,24 @@ Plecs {
           Type          Signal
           SrcComponent  "I_PV"
           SrcTerminal   3
-          Points        [510, 35]
+          Points        [610, 50]
           Branch {
+            Points        [610, 35]
             DstComponent  "CMux"
             DstTerminal   3
           }
           Branch {
-            Points        [115, 35]
-            DstComponent  "CMux2"
-            DstTerminal   2
+            DstComponent  "Gain2"
+            DstTerminal   1
           }
         }
         Connection {
           Type          Wire
           SrcComponent  "Rs"
           SrcTerminal   2
-          Points        [430, 85]
+          Points        [530, 85]
           Branch {
-            Points        [390, 85]
+            Points        [490, 85]
             DstComponent  "Im"
             DstTerminal   2
           }
@@ -3819,7 +3924,30 @@ Plecs {
         }
         Connection {
           Type          Signal
+          SrcComponent  "Gain1"
+          SrcTerminal   2
+          Points        [105, 25; 105, 120]
+          DstComponent  "CMux2"
+          DstTerminal   3
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Gain2"
+          SrcTerminal   2
+          Points        [110, 50; 110, 110]
+          DstComponent  "CMux2"
+          DstTerminal   2
+        }
+        Connection {
+          Type          Signal
           SrcComponent  "LPF"
+          SrcTerminal   2
+          DstComponent  "Gain"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Gain"
           SrcTerminal   2
           DstComponent  "Im"
           DstTerminal   3
@@ -4637,17 +4765,17 @@ Plecs {
       LabelPosition south
       Parameter {
         Variable      "Time"
-        Value         "9"
+        Value         "3"
         Show          off
       }
       Parameter {
         Variable      "Before"
-        Value         "0.5"
+        Value         "0.5*Nps"
         Show          off
       }
       Parameter {
         Variable      "After"
-        Value         "0.5"
+        Value         "0.5*Nps"
         Show          off
       }
       Parameter {
@@ -5045,6 +5173,26 @@ Plecs {
       Parameter {
         Variable      "Visibility"
         Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Constant
+      Name          "Constant"
+      Show          on
+      Position      [155, 460]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Frame         [-10, -10; 10, 10]
+      Parameter {
+        Variable      "Value"
+        Value         "0.7"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataType"
+        Value         "10"
         Show          off
       }
     }
@@ -5571,7 +5719,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From93"
       SrcTerminal   1
-      Points        [500, 720; 500, 710]
+      Points        [500, 720; 500, 705]
       DstComponent  "Resultados"
       DstTerminal   4
     }
@@ -5579,7 +5727,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From88"
       SrcTerminal   1
-      Points        [495, 710; 495, 700]
+      Points        [495, 710; 495, 695]
       DstComponent  "Resultados"
       DstTerminal   3
     }
@@ -5587,7 +5735,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From72"
       SrcTerminal   1
-      Points        [490, 700; 490, 690]
+      Points        [490, 700; 490, 685]
       DstComponent  "Resultados"
       DstTerminal   2
     }
@@ -5595,7 +5743,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From91"
       SrcTerminal   1
-      Points        [485, 690; 485, 680]
+      Points        [485, 690; 485, 675]
       DstComponent  "Resultados"
       DstTerminal   1
     }
@@ -5667,21 +5815,6 @@ Plecs {
     }
     Connection {
       Type          Signal
-      SrcComponent  "Gain2"
-      SrcTerminal   2
-      Points        [160, 405]
-      Branch {
-        DstComponent  "vpv12"
-        DstTerminal   1
-      }
-      Branch {
-        Points        [160, 460]
-        DstComponent  "Goto32"
-        DstTerminal   1
-      }
-    }
-    Connection {
-      Type          Signal
       SrcComponent  "time3"
       SrcTerminal   1
       DstComponent  "Experimental data1"
@@ -5701,6 +5834,20 @@ Plecs {
         DstComponent  "Goto33"
         DstTerminal   1
       }
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Gain2"
+      SrcTerminal   2
+      DstComponent  "vpv12"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Constant"
+      SrcTerminal   1
+      DstComponent  "Goto32"
+      DstTerminal   1
     }
     Annotation {
       Name          base64 "PGh0bWw+PGJvZHk+CjxwIGFsaWduPSJjZW50ZXIiPiAgICAgIC"
