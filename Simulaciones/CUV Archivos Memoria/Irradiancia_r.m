@@ -12,7 +12,7 @@ Time=0:1:1439;
 %plot(Time7, ID_prom); hold on;
 %plot(Time7, ID_invierno)
 
-%% Temperatura
+% Temperatura
 
 TempD_verano=[17; 18; 19; 20; 22; 24; 25; 26; 27; 27; 26; 24; 23];
 TempN_verano=[23; 21; 19; 18; 18; 17; 17; 16; 16; 16; 15; 15; 17];
@@ -22,8 +22,8 @@ TempD_invierno=[11; 12; 13; 15; 16; 17; 17; 18; 17; 17; 16; 14; 13];
 TempN_invierno=[13; 12; 12; 11; 11; 11; 11; 11; 11; 11; 11; 11; 11];
 
 
-%% Potencia
+% Potencia
 
 Demanda = [150; 108; 78; 65; 58; 54; 60; 74; 96; 110; 121; 132; 134; 134; 135; 135; 134; 142; 185; 229; 244; 240; 225; 195; 149];
-h= 0:1:24;
+horas= 0:1:24;
 %plot(h,Demanda)
