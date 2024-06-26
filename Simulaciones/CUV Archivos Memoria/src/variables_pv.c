@@ -8,6 +8,9 @@
 #define C1v 0.9936003551156946 
 #define C2v -0.0097259040794916
 
+
+
+
 #define sat 1
 #define satv 150
 #define deltaV2 0.1
@@ -15,7 +18,7 @@
 #define vpv_max 90
 #define L0 0.01
 #define C0 2200e-6
-#define V0 37
+#define V0 37*10
 
 
 double e_acta=0;
