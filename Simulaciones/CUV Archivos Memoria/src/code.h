@@ -20,5 +20,6 @@ void CCorriente(double* d_acta, double i_refa, double e_acta, double C1, double 
 void i1p(double* ik1_d, double* ik1_q, double h, double d1_L1, double w, double i1d, double i1q, double Vd, double Vq, double Vcd, double Vcq);
 void Vcp(double* Vcd_k1, double* Vcq_k1, double h, double d1_c, double w, double i1d, double i1q, double i2d, double i2q, double Vcd, double Vcq);
 void i2p(double* ik1_d, double* ik1_q, double i2d_k, double i2q_k, double Vcd, double Vcq, double h, double w, double R, double d1_L2, double Vgd, double Vgq);
+void Ref(double* id_r, double* Vcd_r, double P, double Vgd_r, double R);
 
 #endif
