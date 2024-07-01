@@ -8,6 +8,14 @@ void Ref(double* id_r, double* Vcd_r, double P, double Vgd_r, double R){
 }
 
 
+//void Ref(double* id_r, double* iq_r, double* Vcd_r, double* Vcq_r, double P, double Vgd_r, double Vgq_r, double R){
+//    *id_r = P/Vgd_r;
+//    *iq_r = P/Vgq_r;
+//    *Vcd_r = Vgd_r+(*id_r)*R;
+//    *Vcq_r = Vgq_r+(*iq_r)*R;
+//}
+
+
 void i1p(double* ik1_d, double* ik1_q, double h, double d1_L1, double w, double i1d, double i1q, double Vd, double Vq, double Vcd, double Vcq){
     *ik1_d= (h*d1_L1)*(Vd-Vcd) + w*h*i1q + i1d;
     *ik1_q= (h*d1_L1)*(Vq-Vcq) - w*h*i1d + i1q;
