@@ -17,6 +17,7 @@ void Sx(int* Sx, int S1, int S3);
 void MPPT(double* vpvk, double* ipvk, double* ppvk, double* cont, double* cont2, double* cont4, double* vpvk_1, double* ppvk_1, double* vpv_ref, double* vpv_ref_1, double* vpv_ref_max, double* ppvk_ref_max, double* rampa, double Fs, double deltaV, double deltaV2, double vpv_min, double vpv_max);
 void CTension(double* ic_ref,double* i_ref, double ipv, double* ic_act, double e_actv, double* x_actv, double vpv_ref, double vpv, double* x_antv, double* ic_ant, double C1v, double C2v, double kpv, double satv);
 void CCorriente(double* d_acta, double i_refa, double e_acta, double C1, double C2, double i_La, double* x_acta, double* x_anta, double* d_anta, double kp, double sat);
+void CT_bess(double* u_actv, double vf_ref, double e_actv, double C1v, double C2v, double vf, double* x_actv, double* x_antv, double* u_antv, double kpv, double vcontmax, double vcontmin);
 void i1p(double* ik1_d, double* ik1_q, double h, double d1_L1, double w, double i1d, double i1q, double Vd, double Vq, double Vcd, double Vcq);
 void Vcp(double* Vcd_k1, double* Vcq_k1, double h, double d1_c, double w, double i1d, double i1q, double i2d, double i2q, double Vcd, double Vcq);
 void i2p(double* ik1_d, double* ik1_q, double i2d_k, double i2q_k, double Vcd, double Vcq, double h, double w, double R, double d1_L2, double Vgd, double Vgq);

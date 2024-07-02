@@ -256,6 +256,19 @@ void CCorriente(double* d_acta, double i_refa, double e_acta, double C1, double 
     *d_anta= *d_acta;
 }
 
+void CT_bess(double* u_actv, double vf_ref, double e_actv, double C1v, double C2v, double vf, double* x_actv, double* x_antv, double* u_antv, double kpv, double vcontmax, double vcontmin){
+    
+    e_actv=vf_ref-vf;
+    *x_actv=C1v*(*x_antv) + C2v*(*u_antv);
+    *u_actv = kpv*(e_actv-(*x_actv));
+    if (*u_actv>vcontmax){*u_actv = vcontmax;}
+    if (*u_actv<vcontmin){*u_actv = vcontmin;}
+
+    *x_antv = *x_actv;
+    *u_antv= *u_actv;
+}
+
+
 
 void MPPT(double* vpvk, double* ipvk, double* ppvk, double* cont, double* cont2, double* cont4, double* vpvk_1, double* ppvk_1, double* vpv_ref, double* vpv_ref_1, double* vpv_ref_max, double* ppvk_ref_max, double* rampa, double Fs, double deltaV, double deltaV2, double vpv_min, double vpv_max){
     *cont=0;
