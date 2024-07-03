@@ -2,6 +2,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void Ref(double* id_r, double* Vcd_r, double P, double Vgd_r, double R){
+    *id_r = P/Vgd_r;
+    *Vcd_r = Vgd_r+(*id_r)*R;
+}
+
+
+//void Ref(double* id_r, double* iq_r, double* Vcd_r, double* Vcq_r, double P, double Vgd_r, double Vgq_r, double R){
+//    *id_r = P/Vgd_r;
+//    *iq_r = P/Vgq_r;
+//    *Vcd_r = Vgd_r+(*id_r)*R;
+//    *Vcq_r = Vgq_r+(*iq_r)*R;
+//}
+
+
 void i1p(double* ik1_d, double* ik1_q, double h, double d1_L1, double w, double i1d, double i1q, double Vd, double Vq, double Vcd, double Vcq){
     *ik1_d= (h*d1_L1)*(Vd-Vcd) + w*h*i1q + i1d;
     *ik1_q= (h*d1_L1)*(Vq-Vcq) - w*h*i1d + i1q;
@@ -241,6 +255,19 @@ void CCorriente(double* d_acta, double i_refa, double e_acta, double C1, double 
     *x_anta = *x_acta;
     *d_anta= *d_acta;
 }
+
+void CT_bess(double* u_actv, double vf_ref, double e_actv, double C1v, double C2v, double vf, double* x_actv, double* x_antv, double* u_antv, double kpv, double vcontmax, double vcontmin){
+    
+    e_actv=vf_ref-vf;
+    *x_actv=C1v*(*x_antv) + C2v*(*u_antv);
+    *u_actv = kpv*(e_actv-(*x_actv));
+    if (*u_actv>vcontmax){*u_actv = vcontmax;}
+    if (*u_actv<vcontmin){*u_actv = vcontmin;}
+
+    *x_antv = *x_actv;
+    *u_antv= *u_actv;
+}
+
 
 
 void MPPT(double* vpvk, double* ipvk, double* ppvk, double* cont, double* cont2, double* cont4, double* vpvk_1, double* ppvk_1, double* vpv_ref, double* vpv_ref_1, double* vpv_ref_max, double* ppvk_ref_max, double* rampa, double Fs, double deltaV, double deltaV2, double vpv_min, double vpv_max){
