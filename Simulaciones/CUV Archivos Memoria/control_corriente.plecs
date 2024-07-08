@@ -1,9 +1,9 @@
 Plecs {
   Name          "control_corriente"
-  Version       "4.7"
+  Version       "4.8"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
-  TimeSpan      "24"
+  TimeSpan      "5"
   Timeout       ""
   Solver        "auto"
   MaxStep       "1e-4"
@@ -14,15 +14,20 @@ Plecs {
   RelTol        "1e-3"
   AbsTol        "-1"
   TurnOnThreshold "0"
+  NonIdealSwitchResistance "1"
   SyncFixedStepTasks "2"
   UseSingleCommonBaseRate "2"
   LossVariableLimitExceededMsg "3"
   NegativeSwitchLossMsg "3"
   DivisionByZeroMsg "3"
+  DatatypeOverflowMsg "2"
+  DatatypeInheritanceConflictMsg "1"
+  ContSampleTimeConflictMsg "1"
   StiffnessDetectionMsg "2"
   MaxConsecutiveZCs "1000"
   AlgebraicLoopWithStateMachineMsg "3"
   AssertionAction "1"
+  FixedPointDatatypeOverride "1"
   InitializationCommands base64 "SXJyYWRpYW5jaWFfcjsKCmg9MmUtMDQ7ClZkYz04MDA7C"
 "kwxPTEuNDIyZS0zOwpMMj0wLjE0MmUtMzsKQ2Y9MC4zMjllLTM7CiVMMT0xZS0zOwolTDI9MC4xZS"
 "0zOwpSPTAuMDAxOwpyYz0xMDsKJVJnPTIuOTsgJVZhbG9yIGRlIG1pbmltYSBwb3RlbmNpYQolUmc"
@@ -82,6 +87,7 @@ Plecs {
   CodeGenTargetSettings ""
   ExtendedMatrixPrecision "1"
   MatrixSignificanceCheck "2"
+  RemoveUnusedStateSpaceOutputs "1"
   EnableStateSpaceSplitting "2"
   DisplayStateSpaceSplitting "1"
   DiscretizationMethod "2"
@@ -142,7 +148,7 @@ Plecs {
       Type          CScript
       Name          "Control Corriente"
       Show          on
-      Position      [1425, 530]
+      Position      [1420, 525]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -187,6 +193,11 @@ Plecs {
         Show          off
       }
       Parameter {
+        Variable      "TerminalBasedSampleTimes"
+        Value         "1"
+        Show          off
+      }
+      Parameter {
         Variable      "Parameters"
         Value         "h,Vdc,R,w,R1,e,L1,L2,Cf,d1_L1C,d1_L2,d1_C2,Vgd_r,Vgq_r,"
 "d1_L1,d1_c"
@@ -208,6 +219,11 @@ Plecs {
         Show          off
       }
       Parameter {
+        Variable      "HighlightLevel"
+        Value         "0"
+        Show          off
+      }
+      Parameter {
         Variable      "Declarations"
         Value         "#include <float.h>\n"
 "#include <math.h>\n"
@@ -217,6 +233,7 @@ Plecs {
 "#include <src\\code.c> \n"
 "#include <src\\code.h>  \n"
 "#include <src\\variables.c> \n"
+"\n"
 "\n"
 "/***** Entradas ****/\n"
 "#define isa Input(0)\n"
@@ -305,47 +322,47 @@ Plecs {
       }
       Parameter {
         Variable      "UpdateFcn"
-        Value         base64 "YW5nbGUoJnRoZXRhLCBoLCB3LCBkcCk7CgpSZWYoICZpZF9y"
-"LCAmVmNkX3IsIFBvdCwgVmdkX3IsIFIpOwovL1JlZigmaWRfciwgJmlxX3IsICZWY2RfciwgJlZjc"
-"V9yLCBQb3QsIFZnZF9yLCBWZ3FfciwgUik7CgoKLyoqKioqKioqKioqKiBWZWN0b3IgZGUgY29ycm"
-"llbnRlIG1lZGlkYSBzYWxpZGEgZGVsIGNvbnYgKioqKioqKioqKioqLwogIAphYmNfZHEoICZpMWR"
-"fayAsICZpMXFfayAsIHRoZXRhICwgaTFhICwgaTFiICwgaTFjKTsKCi8qKioqKioqKioqKiogVmVj"
-"dG9yIGRlIGNvcnJpZW50ZSBtZWRpZGEgZW4gY2FyZ2EgKioqKioqKioqKioqLwogIAphYmNfZHEoI"
-"CZpMmRfayAsICZpMnFfayAsIHRoZXRhICwgaXNhICwgaXNiICwgaXNjKTsKCi8qKioqKioqKioqKi"
-"ogVmVjdG9yIGRlIHRlbnNpb24gY2FwYWNpdG9yZXMgKioqKioqKioqKioqLwogCmFiY19kcSggJlZ"
-"jZCAsICZWY3EgLCB0aGV0YSAsIFZjX2EgLCBWY19iICwgVmNfYyk7CgovKioqKioqKioqKioqIFBy"
-"ZWRpY2Npw7NuIGsrMSAqKioqKioqKioqKiovCgpWYWJjX2RxKCZWX2QsICZWX3EsIHRoZXRhLCBWZ"
-"GMsIFNhW3hfb3B0XSwgU2JbeF9vcHRdLCBTY1t4X29wdF0pOyAgLy9UZW5zaW9uIGEgbGEgc2FsaW"
-"RhIGRlbCBjb252ZXJ0aWRvcgoKLy9WY2sxKCZWY2RfazAsICZWY3FfazAsIFZfZCwgVl9xLCBWY2Q"
-"sIFZjcSwgVmNkX2FudCwgVmNxX2FudCwgaTJkX2ssIGkycV9rLCBpMmRfYW50LCBpMnFfYW50LCBM"
-"MSwgaCwgQ2YsIHcsIGQxX0wxQyk7ICAvLyBwcmVkaWNjacOzbiBkZSBsYSB0ZW5zacOzbiBlbiBjY"
-"XBhY2l0b3JlcwovL2lrMSgmaTJkX2swLCAmaTJxX2swLCBpMmRfaywgaTJxX2ssIFZjZF9rMCwgVm"
-"NxX2swLCBoLCB3LCBSLCBkMV9MMiwgMjIwLCBlcSk7CQkvLyBwcmVkaWNjaW9uIGRlIGNvcnJpZW5"
-"0ZSBhIGxhIHNhbGlkYSBkZWwgZmlsdHJvCgppMXAoJmkxZF9rMCwgJmkxcV9rMCwgaCwgZDFfTDEs"
-"IHcsIGkxZF9rLCBpMXFfaywgVl9kLCBWX3EsIFZjZCwgVmNxKTsKVmNwKCZWY2RfazAsICZWY3Ffa"
-"zAsIGgsIGQxX2MsIHcsIGkxZF9rMCwgaTFxX2swLCBpMmRfaywgaTJxX2ssIFZjZCwgVmNxKTsKaT"
-"JwKCZpMmRfazAsICZpMnFfazAsIGkyZF9rLCBpMnFfaywgVmNkX2swLCBWY3FfazAsIGgsIHcsIFI"
-"sIGQxX0wyLCBWZ2RfciwgVmdxX3IpOwoKCi8qKioqKioqKioqKiogTG9vcCBwYXJhIGRldGVybWlu"
-"YXIgY29tYmluYWNpb24gb3B0aW1hICoqKioqKioqKioqKi8KIApnX29wdD0xZTIwOwpmb3IgKHg9M"
-"DsgeCA8PSAxMjQ7IHg9eCsxKSB7CgkgCgkgVmFiY19kcSgmVl9kLCAmVl9xLCB0aGV0YSwgVmRjLC"
-"BTYVt4XSwgU2JbeF0sIFNjW3hdKTsKCSAKCSAvL1ZjazEoJlZjZF9rMSwgJlZjcV9rMSwgVl9kLCB"
-"WX3EsIFZjZF9rMCwgVmNxX2swLCBWY2QsIFZjcSwgaTJkX2swLCBpMnFfazAsIGkyZF9rLCBpMnFf"
-"aywgTDEsIGgsIENmLCB3LCBkMV9MMUMpOwkgCgkgLy9pazEoJmkyZF9rMSwgJmkycV9rMSwgaTJkX"
-"2swLCBpMnFfazAsIFZjZF9rMSwgVmNxX2sxLCBoLCB3LCBSLCBkMV9MMiwgMjIwLCBlcSk7CgkKCS"
-"BpMXAoJmkxZF9rMSwgJmkxcV9rMSwgaCwgZDFfTDEsIHcsIGkxZF9rMCwgaTFxX2swLCBWX2QsIFZ"
-"fcSwgVmNkX2swLCBWY3FfazApOwoJIFZjcCgmVmNkX2sxLCAmVmNxX2sxLCBoLCBkMV9jLCB3LCBp"
-"MWRfazEsIGkxcV9rMSwgaTJkX2swLCBpMnFfazAsIFZjZF9rMCwgVmNxX2swKTsKCSBpMnAoJmkyZ"
-"F9rMSwgJmkycV9rMSwgaTJkX2swLCBpMnFfazAsIFZjZF9rMSwgVmNxX2sxLCBoLCB3LCBSLCBkMV"
-"9MMiwgVmdkX3IsIFZncV9yKTsJCgkgCiAgICBGQ19jdWFkKCZnW3hdLCBpZF9yLCAgaXFfciwgIGk"
-"yZF9rMSwgIGkycV9rMSk7CiAgICBGQ19jdWFkKCZndlt4XSwgVmNkX3IsIFZjcV9yLCAgVmNkX2sx"
-"LCAgVmNxX2sxKTsKCSBGQ19jdWFkKCZnYlt4XSwgaWRfciwgIGlxX3IsICBpMWRfazEsICBpMXFfa"
-"zEpOwoJCiAgICAvL29wdCgmZ19vcHQsICZ4X29wdCwgIDAuMzMzMyooZ1t4XStndlt4XStnYlt4XS"
-"ksICB4KTsJCQkJCQkJCQkJLy8gYWN0dWFsaXphciBjb21iaW5hY2lvbiBkZSBzd2l0Y2ggb3B0aW1"
-"hCgkgb3B0cCgmZ19vcHQsICZ4X29wdCwgMC4zMzMzKihnW3hdK2d2W3hdK2diW3hdKSwgeCwgU2Fb"
-"eF0sIFNiW3hdLCBTY1t4XSwgU2FbeF9vcHRdLCBTYlt4X29wdF0sIFNjW3hfb3B0XSk7Cn0KCmFjd"
-"CgmVmdkX2FudCwgJlZncV9hbnQsICZWZF9hbnQsICZWcV9hbnQsICZWY2RfYW50LCAmVmNxX2FudC"
-"wgJmkyZF9hbnQsICZpMnFfYW50LCBlZCwgZXEsIFZfZCwgVl9xLCBWY2QsIFZjcSwgaTJkX2ssIGk"
-"ycV9rKTsKCgoKCgo="
+        Value         base64 "YW5nbGUoJnRoZXRhLCBoLCB3LCBkcCk7CgovL1JlZiggJmlk"
+"X3IsICZWY2RfciwgUG90LCBWZ2RfciwgUik7ClJlZigmaWRfciwgJmlxX3IsICZWY2RfciwgJlZjc"
+"V9yLCBQb3QsIFZnZF9yLCBWZ3FfciwgUik7CgovKioqKioqKioqKioqIFZlY3RvciBkZSBjb3JyaW"
+"VudGUgbWVkaWRhIHNhbGlkYSBkZWwgY29udiAqKioqKioqKioqKiovCiAgCmFiY19kcSggJmkxZF9"
+"rICwgJmkxcV9rICwgdGhldGEgLCBpMWEgLCBpMWIgLCBpMWMpOwoKLyoqKioqKioqKioqKiBWZWN0"
+"b3IgZGUgY29ycmllbnRlIG1lZGlkYSBlbiBjYXJnYSAqKioqKioqKioqKiovCiAgCmFiY19kcSggJ"
+"mkyZF9rICwgJmkycV9rICwgdGhldGEgLCBpc2EgLCBpc2IgLCBpc2MpOwoKLyoqKioqKioqKioqKi"
+"BWZWN0b3IgZGUgdGVuc2lvbiBjYXBhY2l0b3JlcyAqKioqKioqKioqKiovCiAKYWJjX2RxKCAmVmN"
+"kICwgJlZjcSAsIHRoZXRhICwgVmNfYSAsIFZjX2IgLCBWY19jKTsKCi8qKioqKioqKioqKiogUHJl"
+"ZGljY2nDs24gaysxICoqKioqKioqKioqKi8KClZhYmNfZHEoJlZfZCwgJlZfcSwgdGhldGEsIFZkY"
+"ywgU2FbeF9vcHRdLCBTYlt4X29wdF0sIFNjW3hfb3B0XSk7ICAvL1RlbnNpb24gYSBsYSBzYWxpZG"
+"EgZGVsIGNvbnZlcnRpZG9yCgovL1ZjazEoJlZjZF9rMCwgJlZjcV9rMCwgVl9kLCBWX3EsIFZjZCw"
+"gVmNxLCBWY2RfYW50LCBWY3FfYW50LCBpMmRfaywgaTJxX2ssIGkyZF9hbnQsIGkycV9hbnQsIEwx"
+"LCBoLCBDZiwgdywgZDFfTDFDKTsgIC8vIHByZWRpY2Npw7NuIGRlIGxhIHRlbnNpw7NuIGVuIGNhc"
+"GFjaXRvcmVzCi8vaWsxKCZpMmRfazAsICZpMnFfazAsIGkyZF9rLCBpMnFfaywgVmNkX2swLCBWY3"
+"FfazAsIGgsIHcsIFIsIGQxX0wyLCAyMjAsIGVxKTsJCS8vIHByZWRpY2Npb24gZGUgY29ycmllbnR"
+"lIGEgbGEgc2FsaWRhIGRlbCBmaWx0cm8KCmkxcCgmaTFkX2swLCAmaTFxX2swLCBoLCBkMV9MMSwg"
+"dywgaTFkX2ssIGkxcV9rLCBWX2QsIFZfcSwgVmNkLCBWY3EpOwpWY3AoJlZjZF9rMCwgJlZjcV9rM"
+"CwgaCwgZDFfYywgdywgaTFkX2swLCBpMXFfazAsIGkyZF9rLCBpMnFfaywgVmNkLCBWY3EpOwppMn"
+"AoJmkyZF9rMCwgJmkycV9rMCwgaTJkX2ssIGkycV9rLCBWY2RfazAsIFZjcV9rMCwgaCwgdywgUiw"
+"gZDFfTDIsIFZnZF9yLCBWZ3Ffcik7CgoKLyoqKioqKioqKioqKiBMb29wIHBhcmEgZGV0ZXJtaW5h"
+"ciBjb21iaW5hY2lvbiBvcHRpbWEgKioqKioqKioqKioqLwogCmdfb3B0PTFlMjA7CmZvciAoeD0wO"
+"yB4IDw9IDEyNDsgeD14KzEpIHsKCSAKCSBWYWJjX2RxKCZWX2QsICZWX3EsIHRoZXRhLCBWZGMsIF"
+"NhW3hdLCBTYlt4XSwgU2NbeF0pOwoJIAoJIC8vVmNrMSgmVmNkX2sxLCAmVmNxX2sxLCBWX2QsIFZ"
+"fcSwgVmNkX2swLCBWY3FfazAsIFZjZCwgVmNxLCBpMmRfazAsIGkycV9rMCwgaTJkX2ssIGkycV9r"
+"LCBMMSwgaCwgQ2YsIHcsIGQxX0wxQyk7CSAKCSAvL2lrMSgmaTJkX2sxLCAmaTJxX2sxLCBpMmRfa"
+"zAsIGkycV9rMCwgVmNkX2sxLCBWY3FfazEsIGgsIHcsIFIsIGQxX0wyLCAyMjAsIGVxKTsKCQoJIG"
+"kxcCgmaTFkX2sxLCAmaTFxX2sxLCBoLCBkMV9MMSwgdywgaTFkX2swLCBpMXFfazAsIFZfZCwgVl9"
+"xLCBWY2RfazAsIFZjcV9rMCk7CgkgVmNwKCZWY2RfazEsICZWY3FfazEsIGgsIGQxX2MsIHcsIGkx"
+"ZF9rMSwgaTFxX2sxLCBpMmRfazAsIGkycV9rMCwgVmNkX2swLCBWY3FfazApOwoJIGkycCgmaTJkX"
+"2sxLCAmaTJxX2sxLCBpMmRfazAsIGkycV9rMCwgVmNkX2sxLCBWY3FfazEsIGgsIHcsIFIsIGQxX0"
+"wyLCBWZ2RfciwgVmdxX3IpOwkKCSAKICAgIEZDX2N1YWQoJmdbeF0sIGlkX3IsICBpcV9yLCAgaTJ"
+"kX2sxLCAgaTJxX2sxKTsKICAgIEZDX2N1YWQoJmd2W3hdLCBWY2RfciwgVmNxX3IsICBWY2RfazEs"
+"ICBWY3FfazEpOwoJIEZDX2N1YWQoJmdiW3hdLCBpZF9yLCAgaXFfciwgIGkxZF9rMSwgIGkxcV9rM"
+"Sk7CgkKICAgIC8vb3B0KCZnX29wdCwgJnhfb3B0LCAgMC4zMzMzKihnW3hdK2d2W3hdK2diW3hdKS"
+"wgIHgpOwkJCQkJCQkJCQkvLyBhY3R1YWxpemFyIGNvbWJpbmFjaW9uIGRlIHN3aXRjaCBvcHRpbWE"
+"KCSBvcHRwKCZnX29wdCwgJnhfb3B0LCAwLjMzMzMqKGdbeF0rZ3ZbeF0rZ2JbeF0pLCB4LCBTYVt4"
+"XSwgU2JbeF0sIFNjW3hdLCBTYVt4X29wdF0sIFNiW3hfb3B0XSwgU2NbeF9vcHRdKTsKfQoKYWN0K"
+"CZWZ2RfYW50LCAmVmdxX2FudCwgJlZkX2FudCwgJlZxX2FudCwgJlZjZF9hbnQsICZWY3FfYW50LC"
+"AmaTJkX2FudCwgJmkycV9hbnQsIGVkLCBlcSwgVl9kLCBWX3EsIFZjZCwgVmNxLCBpMmRfaywgaTJ"
+"xX2spOwoKCgoKCg=="
         Show          off
       }
       Parameter {
@@ -1189,9 +1206,9 @@ Plecs {
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAAAAZAAAAAEAAABkAAAACAAAAGQAAAAJAA"
-"AAZAAAAAYAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAJAAAAZAAAAAQAAABkAAAABQAAAGQAAAAGAAAAZAAAAAcAAABkAAAAAQAAAGQAAAACAA"
+"AAZAAAAAMAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -2852,6 +2869,11 @@ Plecs {
       Parameter {
         Variable      "DataType"
         Value         "10"
+        Show          off
+      }
+      Parameter {
+        Variable      "DataTypeOverflowMode"
+        Value         "1"
         Show          off
       }
     }
@@ -5842,6 +5864,11 @@ Plecs {
         Value         "11"
         Show          off
       }
+      Parameter {
+        Variable      "DataTypeOverflowMode"
+        Value         "1"
+        Show          off
+      }
     }
     Component {
       Type          Subsystem
@@ -7170,6 +7197,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          From
@@ -8037,6 +8069,16 @@ Plecs {
             Value         "0"
             Show          off
           }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -8185,6 +8227,16 @@ Plecs {
             Value         "0"
             Show          off
           }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          Diode
@@ -8216,6 +8268,16 @@ Plecs {
           }
           Parameter {
             Variable      "T_init"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
             Value         "0"
             Show          off
           }
@@ -8510,6 +8572,16 @@ Plecs {
           }
           Parameter {
             Variable      "T_init"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
             Value         "0"
             Show          off
           }
@@ -8901,6 +8973,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          CScript
@@ -8951,6 +9028,11 @@ Plecs {
                 Show          off
               }
               Parameter {
+                Variable      "TerminalBasedSampleTimes"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
                 Variable      "Parameters"
                 Value         "Ns,Np,Tn,Gn,V_OCn,I_SCn,Rs,Rp,a,KV,KI,k,q"
                 Show          off
@@ -8968,6 +9050,11 @@ Plecs {
               Parameter {
                 Variable      "RuntimeCheck"
                 Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
                 Show          off
               }
               Parameter {
@@ -9141,6 +9228,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Gain
@@ -9165,6 +9257,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Gain
@@ -9187,6 +9284,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -9431,6 +9533,11 @@ Plecs {
             Show          off
           }
           Parameter {
+            Variable      "TerminalBasedSampleTimes"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
             Variable      "Parameters"
             Value         "hb"
             Show          off
@@ -9448,6 +9555,11 @@ Plecs {
           Parameter {
             Variable      "RuntimeCheck"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
           Parameter {
@@ -10206,6 +10318,11 @@ Plecs {
           Parameter {
             Variable      "DataType"
             Value         "10"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
             Show          off
           }
         }
@@ -11605,6 +11722,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          From
@@ -12472,6 +12594,16 @@ Plecs {
             Value         "0"
             Show          off
           }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -12620,6 +12752,16 @@ Plecs {
             Value         "0"
             Show          off
           }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          Diode
@@ -12651,6 +12793,16 @@ Plecs {
           }
           Parameter {
             Variable      "T_init"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
             Value         "0"
             Show          off
           }
@@ -12945,6 +13097,16 @@ Plecs {
           }
           Parameter {
             Variable      "T_init"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
             Value         "0"
             Show          off
           }
@@ -13336,6 +13498,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          CScript
@@ -13386,6 +13553,11 @@ Plecs {
                 Show          off
               }
               Parameter {
+                Variable      "TerminalBasedSampleTimes"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
                 Variable      "Parameters"
                 Value         "Ns,Np,Tn,Gn,V_OCn,I_SCn,Rs,Rp,a,KV,KI,k,q"
                 Show          off
@@ -13403,6 +13575,11 @@ Plecs {
               Parameter {
                 Variable      "RuntimeCheck"
                 Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
                 Show          off
               }
               Parameter {
@@ -13576,6 +13753,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Gain
@@ -13600,6 +13782,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Gain
@@ -13622,6 +13809,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -13866,6 +14058,11 @@ Plecs {
             Show          off
           }
           Parameter {
+            Variable      "TerminalBasedSampleTimes"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
             Variable      "Parameters"
             Value         "hb"
             Show          off
@@ -13883,6 +14080,11 @@ Plecs {
           Parameter {
             Variable      "RuntimeCheck"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
           Parameter {
@@ -14545,6 +14747,11 @@ Plecs {
           Parameter {
             Variable      "DataType"
             Value         "10"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
             Show          off
           }
         }
@@ -15944,6 +16151,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          From
@@ -16178,6 +16390,16 @@ Plecs {
             Value         "0"
             Show          off
           }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -16326,6 +16548,16 @@ Plecs {
             Value         "0"
             Show          off
           }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
+            Value         "0"
+            Show          off
+          }
         }
         Component {
           Type          Diode
@@ -16357,6 +16589,16 @@ Plecs {
           }
           Parameter {
             Variable      "T_init"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
             Value         "0"
             Show          off
           }
@@ -16651,6 +16893,16 @@ Plecs {
           }
           Parameter {
             Variable      "T_init"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "SwitchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f_grid"
             Value         "0"
             Show          off
           }
@@ -17042,6 +17294,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          CScript
@@ -17092,6 +17349,11 @@ Plecs {
                 Show          off
               }
               Parameter {
+                Variable      "TerminalBasedSampleTimes"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
                 Variable      "Parameters"
                 Value         "Ns,Np,Tn,Gn,V_OCn,I_SCn,Rs,Rp,a,KV,KI,k,q"
                 Show          off
@@ -17109,6 +17371,11 @@ Plecs {
               Parameter {
                 Variable      "RuntimeCheck"
                 Value         "2"
+                Show          off
+              }
+              Parameter {
+                Variable      "HighlightLevel"
+                Value         "0"
                 Show          off
               }
               Parameter {
@@ -17282,6 +17549,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Gain
@@ -17306,6 +17578,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Gain
@@ -17328,6 +17605,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -17572,6 +17854,11 @@ Plecs {
             Show          off
           }
           Parameter {
+            Variable      "TerminalBasedSampleTimes"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
             Variable      "Parameters"
             Value         "hb"
             Show          off
@@ -17589,6 +17876,11 @@ Plecs {
           Parameter {
             Variable      "RuntimeCheck"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
           Parameter {
@@ -18253,6 +18545,11 @@ Plecs {
             Value         "10"
             Show          off
           }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
         }
         Component {
           Type          Goto
@@ -18423,6 +18720,11 @@ Plecs {
           Parameter {
             Variable      "DataType"
             Value         "10"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
             Show          off
           }
         }
@@ -21337,6 +21639,11 @@ Plecs {
                         Value         "10"
                         Show          off
                       }
+                      Parameter {
+                        Variable      "DataTypeOverflowMode"
+                        Value         "1"
+                        Show          off
+                      }
                     }
                     Component {
                       Type          Integrator
@@ -21405,6 +21712,11 @@ Plecs {
                         Value         "10"
                         Show          off
                       }
+                      Parameter {
+                        Variable      "DataTypeOverflowMode"
+                        Value         "1"
+                        Show          off
+                      }
                     }
                     Component {
                       Type          Gain
@@ -21429,6 +21741,11 @@ Plecs {
                         Value         "10"
                         Show          off
                       }
+                      Parameter {
+                        Variable      "DataTypeOverflowMode"
+                        Value         "1"
+                        Show          off
+                      }
                     }
                     Component {
                       Type          Sum
@@ -21451,6 +21768,11 @@ Plecs {
                       Parameter {
                         Variable      "DataType"
                         Value         "10"
+                        Show          off
+                      }
+                      Parameter {
+                        Variable      "DataTypeOverflowMode"
+                        Value         "1"
                         Show          off
                       }
                     }
@@ -22117,6 +22439,11 @@ Plecs {
                 Value         "10"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Voltmeter
@@ -22148,6 +22475,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "10"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -22293,7 +22625,6 @@ Plecs {
           Flipped       on
           LabelPosition east
           Frame         [-20, -50; 20, 50]
-          LabelFrame    [-23, -50; 10, 50]
           Parameter {
             Variable      "semiSymbol"
             Value         "1"
@@ -22302,6 +22633,41 @@ Plecs {
           Parameter {
             Variable      "assert"
             Value         "2"
+            Show          off
+          }
+          Parameter {
+            Variable      "switchModel"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "combineRevDiode"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "thermalIgbtDiode"
+            Value         ""
+            Show          off
+          }
+          Parameter {
+            Variable      "thermalIgbt"
+            Value         ""
+            Show          off
+          }
+          Parameter {
+            Variable      "thermalMosfetDiode"
+            Value         ""
+            Show          off
+          }
+          Parameter {
+            Variable      "thermalMosfet"
+            Value         ""
+            Show          off
+          }
+          Parameter {
+            Variable      "thermalRevDiode"
+            Value         ""
             Show          off
           }
           Parameter {
@@ -22786,6 +23152,11 @@ Plecs {
           Parameter {
             Variable      "DataType"
             Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
             Show          off
           }
         }
@@ -23276,6 +23647,11 @@ Plecs {
                 Value         "10"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Sum
@@ -23298,6 +23674,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "10"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -23341,6 +23722,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "10"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -23527,6 +23913,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Connection {
               Type          Signal
@@ -23692,6 +24083,11 @@ Plecs {
             Value         "11"
             Show          off
           }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -23817,6 +24213,11 @@ Plecs {
             Value         "11"
             Show          off
           }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -23858,6 +24259,11 @@ Plecs {
           Parameter {
             Variable      "DataType"
             Value         "10"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
             Show          off
           }
         }
@@ -24027,6 +24433,11 @@ Plecs {
             Value         "11"
             Show          off
           }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
         }
         Component {
           Type          From
@@ -24070,6 +24481,11 @@ Plecs {
             Value         "10"
             Show          off
           }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
+            Show          off
+          }
         }
         Component {
           Type          Gain
@@ -24092,6 +24508,11 @@ Plecs {
           Parameter {
             Variable      "DataType"
             Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
+            Value         "1"
             Show          off
           }
         }
@@ -26278,6 +26699,11 @@ Plecs {
             Show          off
           }
           Parameter {
+            Variable      "TerminalBasedSampleTimes"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
             Variable      "Parameters"
             Value         ""
             Show          off
@@ -26295,6 +26721,11 @@ Plecs {
           Parameter {
             Variable      "RuntimeCheck"
             Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "HighlightLevel"
+            Value         "0"
             Show          off
           }
           Parameter {
@@ -26946,6 +27377,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Voltmeter
@@ -26977,6 +27413,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -27197,6 +27638,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Port
@@ -27342,6 +27788,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Gain
@@ -27366,6 +27817,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Sum
@@ -27388,6 +27844,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -28672,6 +29133,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Sum
@@ -28694,6 +29160,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -28893,6 +29364,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Goto
@@ -28994,6 +29470,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Sum
@@ -29016,6 +29497,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -29120,6 +29606,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Goto
@@ -29192,6 +29683,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Goto
@@ -29235,6 +29731,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Product
@@ -29257,6 +29758,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -29283,6 +29789,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Product
@@ -29307,6 +29818,11 @@ Plecs {
                 Value         "11"
                 Show          off
               }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
+                Show          off
+              }
             }
             Component {
               Type          Product
@@ -29329,6 +29845,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -29496,6 +30017,11 @@ Plecs {
               Parameter {
                 Variable      "DataType"
                 Value         "11"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataTypeOverflowMode"
+                Value         "1"
                 Show          off
               }
             }
@@ -30363,7 +30889,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Control Corriente"
       SrcTerminal   2
-      Points        [1470, 530; 1470, 535]
+      Points        [1470, 525; 1470, 535]
       DstComponent  "Demux"
       DstTerminal   1
     }
