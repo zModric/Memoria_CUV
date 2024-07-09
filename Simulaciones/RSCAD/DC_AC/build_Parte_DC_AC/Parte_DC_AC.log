@@ -1,0 +1,18 @@
+MESSAGES:
+
+Compiling Parte_DC_AC for RTDS rack 1...
+Nodes and Wires...
+
+RTDSPC version = 6.4
+=======================
+
+Using configuration file: C:\Users\AC3E\Documents\RSCAD\HDWR\config_file_03.txt
+
+WARNING-1 : Warning was reported In ss_ttyp_v3 component .c file. 
+ This component requires a small timestep to run. It is suggested to use this component in a substep hierarchy box.
+If used in mainstep, simulation timestep below 10us is recommended.
+Severity = 2,  Subsystem Number = 1 
+
+End of process. Peak memory usage = 8278016 bytes
+
+Compile completed with warnings.

@@ -1,0 +1,24 @@
+
+
+RISC CONTROLS COMPONENTS(proc 0) --> NovaCor Core #1 
+numberOfModels = 3
+
+Subsystem 1, Network Solution on core 1 Statistics:
+Number of nodes: 7
+Number of passed G values: 12
+Number of switched G overlays: 0
+Number of columns dynamically decomposed: 5
+
+
+
+RISC CONTROLS COMPONENTS(proc 1) --> NovaCor Core #2 
+numberOfModels = 21
+
+
+RISC CONTROLS COMPONENTS(proc 2) --> NovaCor Core #3 
+numberOfModels = 4
+
+RISC-based CModel Component: src1p named "Vdc"
+	Initial Inductance (parallel) =   0.000000 H
+	Initial Resistance (parallel) =   0.000000 Ohm
+	Initial Resistance (series)   =   0.000001 Ohm
