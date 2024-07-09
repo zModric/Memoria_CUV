@@ -10,7 +10,7 @@
 
 void Ref(double* id_r, double* iq_r, double* Vcd_r, double* Vcq_r, double P, double Vgd_r, double Vgq_r, double R){
     *id_r = P/Vgd_r;
-    *iq_r = P/Vgq_r;
+    *iq_r = 314.16*396e-6*(*id_r);
     *Vcd_r = Vgd_r+(*id_r)*R - 314.16*396e-6*(*iq_r);
     *Vcq_r = Vgq_r+(*iq_r)*R + 314.16*396e-6*(*id_r);
 }
