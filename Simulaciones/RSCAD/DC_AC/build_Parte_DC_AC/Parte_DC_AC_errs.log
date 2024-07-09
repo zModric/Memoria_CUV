@@ -1,3 +1,0 @@
-SUBSYSTEM_INDEX=0 COMPONENT_NAME=ss_ttyp_v3 UNIQUE_ID=31 SEVERITY=2 ERROR_MESSAGE= WARNING- "Warning was reported In ss_ttyp_v3 component .c file. 
- This component requires a small timestep to run. It is suggested to use this component in a substep hierarchy box.
-If used in mainstep, simulation timestep below 10us is recommended."""
