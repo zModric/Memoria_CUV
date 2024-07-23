@@ -97,16 +97,16 @@ Plecs {
   ScriptsDialogGeometry "[2130 399 446 243]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [1, 31; 959, 1000]
-    ZoomFactor    0.389082
-    SliderPosition [19, 0]
+    Location      [0, 27; 1920, 1005]
+    ZoomFactor    0.667268
+    SliderPosition [0, 0]
     ShowBrowser   off
     BrowserWidth  100
     Component {
       Type          Resistor
       Name          "R1"
       Show          off
-      Position      [2000, 190]
+      Position      [655, 105]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -120,7 +120,7 @@ Plecs {
       Type          Resistor
       Name          "R2"
       Show          off
-      Position      [2000, 205]
+      Position      [655, 115]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -134,7 +134,7 @@ Plecs {
       Type          Resistor
       Name          "R3"
       Show          off
-      Position      [2000, 220]
+      Position      [655, 125]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -148,7 +148,7 @@ Plecs {
       Type          CScript
       Name          "Control Corriente"
       Show          on
-      Position      [1420, 525]
+      Position      [520, 335]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -377,7 +377,7 @@ Plecs {
       Type          SignalDemux
       Name          "Demux"
       Show          off
-      Position      [1495, 535]
+      Position      [575, 335]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -391,7 +391,7 @@ Plecs {
       Type          From
       Name          "From5"
       Show          off
-      Position      [1165, 485]
+      Position      [265, 290]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -410,7 +410,7 @@ Plecs {
       Type          From
       Name          "From7"
       Show          off
-      Position      [1175, 495]
+      Position      [275, 300]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -429,7 +429,7 @@ Plecs {
       Type          From
       Name          "From8"
       Show          off
-      Position      [1185, 505]
+      Position      [285, 310]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -448,7 +448,7 @@ Plecs {
       Type          SignalMux
       Name          "Mux"
       Show          off
-      Position      [1365, 530]
+      Position      [465, 335]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -481,7 +481,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold1"
       Show          off
-      Position      [1220, 485]
+      Position      [320, 290]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -495,7 +495,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold2"
       Show          off
-      Position      [1230, 495]
+      Position      [330, 300]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -509,7 +509,7 @@ Plecs {
       Type          Goto
       Name          "Goto18"
       Show          off
-      Position      [1520, 575]
+      Position      [600, 375]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -528,8 +528,8 @@ Plecs {
       Type          Reference
       SrcComponent  "Components/Control/Transformations/3ph->RRF"
       Name          "3ph->RRF"
-      Show          on
-      Position      [1100, 800]
+      Show          off
+      Position      [95, 285]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -554,7 +554,7 @@ Plecs {
       Type          SignalMux
       Name          "Mux2"
       Show          off
-      Position      [1035, 785]
+      Position      [45, 270]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -568,7 +568,7 @@ Plecs {
       Type          From
       Name          "From9"
       Show          off
-      Position      [985, 775]
+      Position      [25, 260]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -587,7 +587,7 @@ Plecs {
       Type          From
       Name          "From10"
       Show          off
-      Position      [995, 785]
+      Position      [25, 270]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -606,7 +606,7 @@ Plecs {
       Type          From
       Name          "From11"
       Show          off
-      Position      [1005, 795]
+      Position      [25, 280]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -625,7 +625,7 @@ Plecs {
       Type          From
       Name          "From12"
       Show          off
-      Position      [1020, 815]
+      Position      [60, 290]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -644,7 +644,7 @@ Plecs {
       Type          SignalDemux
       Name          "Demux1"
       Show          off
-      Position      [1145, 800]
+      Position      [130, 285]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -658,7 +658,7 @@ Plecs {
       Type          Goto
       Name          "Goto"
       Show          off
-      Position      [1170, 795]
+      Position      [155, 280]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -677,7 +677,7 @@ Plecs {
       Type          Goto
       Name          "Goto2"
       Show          off
-      Position      [1170, 805]
+      Position      [155, 290]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -696,7 +696,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold3"
       Show          off
-      Position      [1240, 505]
+      Position      [340, 310]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -710,7 +710,7 @@ Plecs {
       Type          Inductor
       Name          "L4"
       Show          off
-      Position      [1830, 190]
+      Position      [515, 105]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -729,7 +729,7 @@ Plecs {
       Type          Inductor
       Name          "L5"
       Show          off
-      Position      [1840, 205]
+      Position      [525, 115]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -748,7 +748,7 @@ Plecs {
       Type          Inductor
       Name          "L6"
       Show          off
-      Position      [1850, 220]
+      Position      [535, 125]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -767,7 +767,7 @@ Plecs {
       Type          Inductor
       Name          "L7"
       Show          off
-      Position      [1920, 190]
+      Position      [590, 105]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -786,7 +786,7 @@ Plecs {
       Type          Inductor
       Name          "L8"
       Show          off
-      Position      [1930, 205]
+      Position      [600, 115]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -805,7 +805,7 @@ Plecs {
       Type          Inductor
       Name          "L9"
       Show          off
-      Position      [1940, 220]
+      Position      [610, 125]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -824,7 +824,7 @@ Plecs {
       Type          Capacitor
       Name          "C1"
       Show          off
-      Position      [1880, 270]
+      Position      [560, 140]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -843,7 +843,7 @@ Plecs {
       Type          Capacitor
       Name          "C2"
       Show          off
-      Position      [1890, 285]
+      Position      [570, 155]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -862,7 +862,7 @@ Plecs {
       Type          Capacitor
       Name          "C3"
       Show          off
-      Position      [1900, 295]
+      Position      [580, 165]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -881,7 +881,7 @@ Plecs {
       Type          From
       Name          "From33"
       Show          off
-      Position      [1195, 515]
+      Position      [295, 320]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -900,7 +900,7 @@ Plecs {
       Type          From
       Name          "From34"
       Show          off
-      Position      [1205, 525]
+      Position      [305, 330]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -919,7 +919,7 @@ Plecs {
       Type          From
       Name          "From35"
       Show          off
-      Position      [1215, 535]
+      Position      [315, 340]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -938,7 +938,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold7"
       Show          off
-      Position      [1270, 535]
+      Position      [370, 340]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -952,7 +952,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold8"
       Show          off
-      Position      [1250, 515]
+      Position      [350, 320]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -966,7 +966,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold9"
       Show          off
-      Position      [1260, 525]
+      Position      [360, 330]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -980,7 +980,7 @@ Plecs {
       Type          PlecsProbe
       Name          "Probe2"
       Show          off
-      Position      [875, 645]
+      Position      [75, 390]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1034,7 +1034,7 @@ Plecs {
       Type          Goto
       Name          "Goto19"
       Show          off
-      Position      [955, 605]
+      Position      [155, 350]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1053,7 +1053,7 @@ Plecs {
       Type          Goto
       Name          "Goto23"
       Show          off
-      Position      [965, 615]
+      Position      [165, 360]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1072,7 +1072,7 @@ Plecs {
       Type          Goto
       Name          "Goto24"
       Show          off
-      Position      [975, 625]
+      Position      [175, 370]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1091,7 +1091,7 @@ Plecs {
       Type          SignalDemux
       Name          "Demux4"
       Show          off
-      Position      [920, 645]
+      Position      [120, 390]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -1105,7 +1105,7 @@ Plecs {
       Type          Goto
       Name          "Goto20"
       Show          off
-      Position      [1530, 585]
+      Position      [610, 385]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1124,7 +1124,7 @@ Plecs {
       Type          Goto
       Name          "Goto28"
       Show          off
-      Position      [1540, 595]
+      Position      [620, 395]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1143,7 +1143,7 @@ Plecs {
       Type          Goto
       Name          "Goto32"
       Show          off
-      Position      [1550, 605]
+      Position      [630, 405]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1162,7 +1162,7 @@ Plecs {
       Type          Goto
       Name          "Goto35"
       Show          off
-      Position      [1560, 615]
+      Position      [640, 415]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -1186,17 +1186,17 @@ Plecs {
       Flipped       off
       LabelPosition south
       CommentOut    DisabledOpenCircuit
-      Location      [0, 27; 1920, 1034]
-      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
+      Location      [0, 23; 1920, 1020]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADyvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAASQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
-"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAVWAAAA0vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAAB4AAAAPUAAAA"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMBAAAALwAAA8oAAABmAP///wAAAAMAAAVWAAAA0vw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAABsgAAAPKAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"wAAAGQAAAACAAAAZAAAAAEAAABkAAAABwAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAAAJAA"
-"AAZAAAAAgAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+"QAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAABAQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAADdAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -1555,90 +1555,6 @@ Plecs {
       }
     }
     Component {
-      Type          Goto
-      Name          "Goto4"
-      Show          off
-      Position      [1800, 255]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "Vcc_a"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          Goto
-      Name          "Goto6"
-      Show          off
-      Position      [1800, 275]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "Vcc_b"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          Goto
-      Name          "Goto7"
-      Show          off
-      Position      [1800, 295]
-      Direction     right
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Tag"
-        Value         "Vcc_c"
-        Show          off
-      }
-      Parameter {
-        Variable      "Visibility"
-        Value         "1"
-        Show          off
-      }
-    }
-    Component {
-      Type          Voltmeter
-      Name          "Vm1"
-      Show          off
-      Position      [1720, 245]
-      Direction     up
-      Flipped       off
-      LabelPosition west
-    }
-    Component {
-      Type          Voltmeter
-      Name          "Vm2"
-      Show          off
-      Position      [1740, 265]
-      Direction     up
-      Flipped       off
-      LabelPosition west
-    }
-    Component {
-      Type          Voltmeter
-      Name          "Vm3"
-      Show          off
-      Position      [1765, 280]
-      Direction     up
-      Flipped       off
-      LabelPosition west
-    }
-    Component {
       Type          From
       Name          "From55"
       Show          off
@@ -1717,7 +1633,7 @@ Plecs {
       Type          From
       Name          "From"
       Show          off
-      Position      [1475, 155]
+      Position      [290, 40]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -1736,7 +1652,7 @@ Plecs {
       Type          From
       Name          "From1"
       Show          off
-      Position      [1365, 150]
+      Position      [180, 40]
       Direction     down
       Flipped       off
       LabelPosition west
@@ -1755,7 +1671,7 @@ Plecs {
       Type          From
       Name          "From2"
       Show          off
-      Position      [1405, 150]
+      Position      [220, 40]
       Direction     down
       Flipped       off
       LabelPosition west
@@ -1774,7 +1690,7 @@ Plecs {
       Type          From
       Name          "From6"
       Show          off
-      Position      [1475, 355]
+      Position      [290, 215]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -1793,7 +1709,7 @@ Plecs {
       Type          From
       Name          "From58"
       Show          off
-      Position      [1575, 155]
+      Position      [390, 40]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -1812,7 +1728,7 @@ Plecs {
       Type          From
       Name          "From59"
       Show          off
-      Position      [1465, 215]
+      Position      [295, 75]
       Direction     down
       Flipped       off
       LabelPosition west
@@ -1831,7 +1747,7 @@ Plecs {
       Type          From
       Name          "From60"
       Show          off
-      Position      [1505, 215]
+      Position      [330, 75]
       Direction     up
       Flipped       on
       LabelPosition east
@@ -1850,7 +1766,7 @@ Plecs {
       Type          From
       Name          "From61"
       Show          off
-      Position      [1575, 355]
+      Position      [390, 215]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -1869,7 +1785,7 @@ Plecs {
       Type          From
       Name          "From62"
       Show          off
-      Position      [1675, 155]
+      Position      [500, 40]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -1888,7 +1804,7 @@ Plecs {
       Type          From
       Name          "From63"
       Show          off
-      Position      [1565, 280]
+      Position      [395, 140]
       Direction     down
       Flipped       off
       LabelPosition west
@@ -1907,7 +1823,7 @@ Plecs {
       Type          From
       Name          "From64"
       Show          off
-      Position      [1605, 280]
+      Position      [430, 140]
       Direction     up
       Flipped       on
       LabelPosition east
@@ -1926,7 +1842,7 @@ Plecs {
       Type          From
       Name          "From65"
       Show          off
-      Position      [1675, 355]
+      Position      [500, 215]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -1945,7 +1861,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD4"
       Show          off
-      Position      [1435, 155]
+      Position      [250, 40]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -1974,7 +1890,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD5"
       Show          off
-      Position      [1405, 190]
+      Position      [220, 80]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2003,7 +1919,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD6"
       Show          off
-      Position      [1365, 190]
+      Position      [180, 80]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -2032,7 +1948,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD7"
       Show          off
-      Position      [1435, 355]
+      Position      [250, 215]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -2061,7 +1977,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD8"
       Show          off
-      Position      [1535, 155]
+      Position      [350, 40]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -2090,7 +2006,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD9"
       Show          off
-      Position      [1465, 255]
+      Position      [295, 115]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -2119,7 +2035,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD10"
       Show          off
-      Position      [1505, 255]
+      Position      [330, 115]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2148,7 +2064,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD11"
       Show          off
-      Position      [1535, 355]
+      Position      [350, 215]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -2177,7 +2093,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD12"
       Show          off
-      Position      [1635, 155]
+      Position      [460, 40]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -2206,7 +2122,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD13"
       Show          off
-      Position      [1635, 355]
+      Position      [460, 215]
       Direction     down
       Flipped       on
       LabelPosition west
@@ -2235,7 +2151,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD14"
       Show          off
-      Position      [1565, 320]
+      Position      [395, 180]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -2264,7 +2180,7 @@ Plecs {
       Type          IgbtWithDiode
       Name          "IGBTD15"
       Show          off
-      Position      [1605, 320]
+      Position      [430, 180]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2293,7 +2209,7 @@ Plecs {
       Type          ManualSwitch
       Name          "S7"
       Show          off
-      Position      [2060, 190]
+      Position      [690, 105]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -2307,7 +2223,7 @@ Plecs {
       Type          ManualSwitch
       Name          "S8"
       Show          off
-      Position      [2060, 205]
+      Position      [690, 115]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -2321,7 +2237,7 @@ Plecs {
       Type          ManualSwitch
       Name          "S9"
       Show          off
-      Position      [2060, 220]
+      Position      [690, 125]
       Direction     left
       Flipped       off
       LabelPosition south
@@ -2335,7 +2251,7 @@ Plecs {
       Type          PlecsProbe
       Name          "Probe3"
       Show          off
-      Position      [865, 550]
+      Position      [65, 325]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2359,7 +2275,7 @@ Plecs {
       Type          Goto
       Name          "Goto21"
       Show          off
-      Position      [940, 540]
+      Position      [140, 315]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2378,7 +2294,7 @@ Plecs {
       Type          Goto
       Name          "Goto44"
       Show          off
-      Position      [950, 550]
+      Position      [150, 325]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2397,7 +2313,7 @@ Plecs {
       Type          Goto
       Name          "Goto45"
       Show          off
-      Position      [960, 560]
+      Position      [160, 335]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2416,7 +2332,7 @@ Plecs {
       Type          SignalDemux
       Name          "Demux5"
       Show          off
-      Position      [920, 550]
+      Position      [120, 325]
       Direction     right
       Flipped       on
       LabelPosition south
@@ -2490,7 +2406,7 @@ Plecs {
       Type          Goto
       Name          "Goto17"
       Show          off
-      Position      [1525, 455]
+      Position      [605, 255]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2509,7 +2425,7 @@ Plecs {
       Type          Goto
       Name          "Goto34"
       Show          off
-      Position      [1535, 465]
+      Position      [615, 265]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2528,7 +2444,7 @@ Plecs {
       Type          Goto
       Name          "Goto46"
       Show          off
-      Position      [1545, 475]
+      Position      [625, 275]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2544,29 +2460,10 @@ Plecs {
       }
     }
     Component {
-      Type          LogicalOperator
-      Name          "Logical\nOperator5"
-      Show          off
-      Position      [25, 965]
-      Direction     up
-      Flipped       off
-      LabelPosition south
-      Parameter {
-        Variable      "Operator"
-        Value         "6"
-        Show          off
-      }
-      Parameter {
-        Variable      "Inputs"
-        Value         "2"
-        Show          off
-      }
-    }
-    Component {
       Type          Goto
       Name          "Goto30"
       Show          off
-      Position      [985, 635]
+      Position      [185, 380]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2585,7 +2482,7 @@ Plecs {
       Type          Goto
       Name          "Goto31"
       Show          off
-      Position      [995, 645]
+      Position      [195, 390]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2604,7 +2501,7 @@ Plecs {
       Type          Goto
       Name          "Goto33"
       Show          off
-      Position      [1005, 655]
+      Position      [205, 400]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2623,7 +2520,7 @@ Plecs {
       Type          Goto
       Name          "Goto43"
       Show          off
-      Position      [1015, 665]
+      Position      [215, 410]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2642,7 +2539,7 @@ Plecs {
       Type          Goto
       Name          "Goto47"
       Show          off
-      Position      [1025, 675]
+      Position      [225, 420]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2661,7 +2558,7 @@ Plecs {
       Type          Goto
       Name          "Goto48"
       Show          off
-      Position      [1035, 685]
+      Position      [235, 430]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2680,7 +2577,7 @@ Plecs {
       Type          From
       Name          "From42"
       Show          off
-      Position      [1225, 545]
+      Position      [325, 350]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2699,7 +2596,7 @@ Plecs {
       Type          From
       Name          "From75"
       Show          off
-      Position      [1235, 555]
+      Position      [335, 360]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2718,7 +2615,7 @@ Plecs {
       Type          From
       Name          "From76"
       Show          off
-      Position      [1245, 565]
+      Position      [345, 370]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2737,7 +2634,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold10"
       Show          off
-      Position      [1295, 565]
+      Position      [395, 370]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2751,7 +2648,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold11"
       Show          off
-      Position      [1275, 545]
+      Position      [375, 350]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2765,7 +2662,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold12"
       Show          off
-      Position      [1285, 555]
+      Position      [385, 360]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2779,7 +2676,7 @@ Plecs {
       Type          Lookup1D
       Name          "Experimental data2"
       Show          off
-      Position      [1905, 425]
+      Position      [2040, 460]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2803,7 +2700,7 @@ Plecs {
       Type          Clock
       Name          "time5"
       Show          off
-      Position      [1830, 425]
+      Position      [1990, 465]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2812,7 +2709,7 @@ Plecs {
       Type          Gain
       Name          "Gain3"
       Show          off
-      Position      [1980, 425]
+      Position      [2115, 460]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2841,7 +2738,7 @@ Plecs {
       Type          Goto
       Name          "Goto49"
       Show          off
-      Position      [2040, 425]
+      Position      [2175, 460]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -2860,11 +2757,11 @@ Plecs {
       Type          Subsystem
       Name          "Switch"
       Show          on
-      Position      [1370, 800]
+      Position      [75, 210]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-20, -20; 20, 20]
+      Frame         [-35, -15; 35, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -5785,7 +5682,7 @@ Plecs {
       Type          Constant
       Name          "Constant4"
       Show          off
-      Position      [1980, 360]
+      Position      [2115, 395]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -5805,7 +5702,7 @@ Plecs {
       Type          Product
       Name          "Divide"
       Show          off
-      Position      [2060, 375]
+      Position      [2195, 410]
       Direction     up
       Flipped       off
       LabelPosition south
@@ -5834,12 +5731,11 @@ Plecs {
       Type          Subsystem
       Name          "Planta Solar"
       Show          on
-      Position      [745, 90]
+      Position      [75, 20]
       Direction     up
       Flipped       off
       LabelPosition none
-      CommentOut    DisabledOpenCircuit
-      Frame         [-70, -80; 70, 80]
+      Frame         [-35, -15; 35, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -5849,8 +5745,8 @@ Plecs {
       MaskIconRotates on
       Schematic {
         Location      [0, 27; 1370, 737]
-        ZoomFactor    0.873846
-        SliderPosition [442, 276]
+        ZoomFactor    0.763607
+        SliderPosition [309, 156]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -5861,6 +5757,7 @@ Plecs {
           Direction     down
           Flipped       on
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "V"
             Value         "800"
@@ -5875,6 +5772,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-25, -20; 25, 20]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -6527,6 +6425,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-25, -20; 25, 20]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -7967,6 +7866,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ipv"
@@ -7986,6 +7886,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "L"
             Value         "L"
@@ -8005,6 +7906,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -8049,6 +7951,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "S1b"
@@ -8068,6 +7971,7 @@ Plecs {
           Direction     down
           Flipped       on
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "C"
             Value         "C"
@@ -8087,6 +7991,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "iL"
@@ -8106,6 +8011,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -8115,6 +8021,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv"
@@ -8134,6 +8041,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s_init"
             Value         "0"
@@ -8163,6 +8071,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -8207,6 +8116,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -8251,6 +8161,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Inductor
@@ -8260,6 +8171,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "L"
             Value         "L"
@@ -8279,6 +8191,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "L"
             Value         "L"
@@ -8298,6 +8211,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "S2b"
@@ -8317,6 +8231,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s_init"
             Value         "0"
@@ -8346,6 +8261,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "S3b"
@@ -8365,6 +8281,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s_init"
             Value         "0"
@@ -8394,6 +8311,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Resistor
@@ -8403,6 +8321,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "R"
             Value         "0.001"
@@ -8417,6 +8336,7 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -8426,6 +8346,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Is"
@@ -8445,6 +8366,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -8454,6 +8376,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Ib"
@@ -8473,6 +8396,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "G1"
@@ -8492,6 +8416,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "T1"
@@ -8511,6 +8436,7 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -8555,6 +8481,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition northwest
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -25; 10, 25]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -9453,6 +9380,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "DialogGeometry"
             Value         "[472 222 423 314]"
@@ -9638,6 +9566,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "[1 1 1 1 1 1 1 1 1 2]"
@@ -9652,6 +9581,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "11"
@@ -9666,6 +9596,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ss"
@@ -9685,6 +9616,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv_ref"
@@ -9704,6 +9636,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "iL_ref"
@@ -9723,6 +9656,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "e_v"
@@ -9742,6 +9676,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ic_ref"
@@ -9761,6 +9696,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ipv_aprox"
@@ -9780,6 +9716,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ppv_aprox"
@@ -9799,6 +9736,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv_aprox"
@@ -9818,6 +9756,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ssb"
@@ -9837,6 +9776,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ssc"
@@ -9904,6 +9844,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "iL"
@@ -9923,6 +9864,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          From
@@ -9932,6 +9874,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ipv"
@@ -9951,6 +9894,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv"
@@ -9970,6 +9914,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
@@ -9990,6 +9935,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
@@ -10010,6 +9956,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Probe {
             Component     "L10"
             Path          "Planta Solar"
@@ -10034,6 +9981,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "3"
@@ -10048,6 +9996,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "tmppt"
@@ -10115,6 +10064,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -10129,6 +10079,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Vmppt"
@@ -10148,6 +10099,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s"
             Value         "1"
@@ -10162,6 +10114,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s"
             Value         "2"
@@ -10176,6 +10129,7 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "N"
@@ -10195,6 +10149,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "P"
@@ -10214,6 +10169,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "x"
             Value         "horas"
@@ -10238,6 +10194,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -10247,6 +10204,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "cl"
@@ -10266,6 +10224,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "K"
             Value         "0.001"
@@ -10295,6 +10254,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "G1"
@@ -10314,6 +10274,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "x"
             Value         "horas"
@@ -10338,6 +10299,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -10347,6 +10309,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "T1"
@@ -10366,6 +10329,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
@@ -14815,6 +14779,7 @@ Plecs {
           Direction     down
           Flipped       on
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "V"
             Value         "800"
@@ -14829,6 +14794,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-25, -20; 25, 20]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -15481,6 +15447,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-25, -20; 25, 20]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -16288,6 +16255,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ipv3"
@@ -16307,6 +16275,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "L"
             Value         "L"
@@ -16326,6 +16295,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -16370,6 +16340,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "S1b3"
@@ -16389,6 +16360,7 @@ Plecs {
           Direction     down
           Flipped       on
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "C"
             Value         "C"
@@ -16408,6 +16380,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "iL3"
@@ -16427,6 +16400,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -16436,6 +16410,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv3"
@@ -16455,6 +16430,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s_init"
             Value         "0"
@@ -16484,6 +16460,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -16528,6 +16505,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -16572,6 +16550,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Inductor
@@ -16581,6 +16560,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "L"
             Value         "L"
@@ -16600,6 +16580,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "L"
             Value         "L"
@@ -16619,6 +16600,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "S2b3"
@@ -16638,6 +16620,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s_init"
             Value         "0"
@@ -16667,6 +16650,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "S3b3"
@@ -16686,6 +16670,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s_init"
             Value         "0"
@@ -16715,6 +16700,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Resistor
@@ -16724,6 +16710,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "R"
             Value         "0.001"
@@ -16738,6 +16725,7 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -16747,6 +16735,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Is3"
@@ -16766,6 +16755,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition north
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -16775,6 +16765,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Ib3"
@@ -16794,6 +16785,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "G3"
@@ -16813,6 +16805,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "T3"
@@ -16832,6 +16825,7 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Vf"
             Value         "0"
@@ -16876,6 +16870,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition northwest
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -25; 10, 25]
           SampleTime    "-1"
           CodeGenDiscretizationMethod "2"
@@ -17774,6 +17769,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "DialogGeometry"
             Value         "[472 222 423 314]"
@@ -17959,6 +17955,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "[1 1 1 1 1 1 1 1 1 2]"
@@ -17973,6 +17970,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "11"
@@ -17987,6 +17985,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ss3"
@@ -18006,6 +18005,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv_ref3"
@@ -18025,6 +18025,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "iL_ref3"
@@ -18044,6 +18045,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "e_v3"
@@ -18063,6 +18065,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ic_ref3"
@@ -18082,6 +18085,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ipv_aprox3"
@@ -18101,6 +18105,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ppv_aprox3"
@@ -18120,6 +18125,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv_aprox3"
@@ -18139,6 +18145,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ssb3"
@@ -18158,6 +18165,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ssc3"
@@ -18177,6 +18185,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "iL3"
@@ -18196,6 +18205,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          From
@@ -18205,6 +18215,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ipv3"
@@ -18224,6 +18235,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "vpv3"
@@ -18243,6 +18255,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
@@ -18263,6 +18276,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
@@ -18283,6 +18297,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Probe {
             Component     "L16"
             Path          "Planta Solar"
@@ -18307,6 +18322,7 @@ Plecs {
           Direction     right
           Flipped       on
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "3"
@@ -18321,6 +18337,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "tmppt"
@@ -18340,6 +18357,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Width"
             Value         "2"
@@ -18354,6 +18372,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Vmppt"
@@ -18373,6 +18392,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s"
             Value         "1"
@@ -18387,6 +18407,7 @@ Plecs {
           Direction     left
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "s"
             Value         "2"
@@ -18401,6 +18422,7 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition west
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "N"
@@ -18420,6 +18442,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition east
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "P"
@@ -18439,6 +18462,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "x"
             Value         "horas"
@@ -18463,6 +18487,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -18472,6 +18497,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "cl3"
@@ -18491,6 +18517,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "K"
             Value         "0.001"
@@ -18520,6 +18547,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "G3"
@@ -18539,6 +18567,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "x"
             Value         "horas"
@@ -18563,6 +18592,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
         }
         Component {
           Type          Goto
@@ -18572,6 +18602,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "T3"
@@ -18591,6 +18622,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Frame         [-10, -10; 10, 10]
           Parameter {
             Variable      "Value"
@@ -18611,6 +18643,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ppv"
@@ -18630,6 +18663,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ppv2"
@@ -18649,6 +18683,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "ppv3"
@@ -18668,6 +18703,7 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "IconShape"
             Value         "2"
@@ -18697,6 +18733,7 @@ Plecs {
           Direction     right
           Flipped       off
           LabelPosition south
+          CommentOut    DisabledOpenCircuit
           Parameter {
             Variable      "Tag"
             Value         "Pot_pv"
@@ -18704,6 +18741,73 @@ Plecs {
           }
           Parameter {
             Variable      "Visibility"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          From
+          Name          "From96"
+          Show          off
+          Position      [1780, 1085]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "ppv2"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Goto
+          Name          "Goto1"
+          Show          off
+          Position      [1890, 1080]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Tag"
+            Value         "Pot_pv"
+            Show          off
+          }
+          Parameter {
+            Variable      "Visibility"
+            Value         "1"
+            Show          off
+          }
+        }
+        Component {
+          Type          Gain
+          Name          "Gain"
+          Show          on
+          Position      [1820, 1080]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "K"
+            Value         "3"
+            Show          off
+          }
+          Parameter {
+            Variable      "Multiplication"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "11"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataTypeOverflowMode"
             Value         "1"
             Show          off
           }
@@ -20304,6 +20408,21 @@ Plecs {
           DstComponent  "Goto"
           DstTerminal   1
         }
+        Connection {
+          Type          Signal
+          SrcComponent  "From96"
+          SrcTerminal   1
+          Points        [1790, 1085]
+          DstComponent  "Gain"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Gain"
+          SrcTerminal   2
+          DstComponent  "Goto1"
+          DstTerminal   1
+        }
         RectangleAnnotation {
           Position     [625, 575]
           Width        960
@@ -20358,7 +20477,7 @@ Plecs {
       Type          Label
       Name          "Label11"
       Show          off
-      Position      [1235, 255]
+      Position      [370, 180]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -20377,7 +20496,7 @@ Plecs {
       Type          Label
       Name          "Label12"
       Show          off
-      Position      [1745, 335]
+      Position      [475, 145]
       Direction     down
       Flipped       off
       LabelPosition west
@@ -20396,7 +20515,7 @@ Plecs {
       Type          From
       Name          "From77"
       Show          off
-      Position      [1255, 575]
+      Position      [355, 380]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -20415,7 +20534,7 @@ Plecs {
       Type          ZeroOrderHold
       Name          "Zero-Order\nHold13"
       Show          off
-      Position      [1305, 575]
+      Position      [405, 380]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -20429,7 +20548,7 @@ Plecs {
       Type          Goto
       Name          "Goto50"
       Show          off
-      Position      [2100, 375]
+      Position      [2235, 410]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -20449,7 +20568,7 @@ Plecs {
       SrcComponent  "Components/Electrical/Passive Components/R3"
       Name          "R7"
       Show          off
-      Position      [2115, 190]
+      Position      [730, 105]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -20475,7 +20594,7 @@ Plecs {
       SrcComponent  "Components/Electrical/Passive Components/R3"
       Name          "R8"
       Show          off
-      Position      [2125, 205]
+      Position      [740, 115]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -20501,7 +20620,7 @@ Plecs {
       SrcComponent  "Components/Electrical/Passive Components/R3"
       Name          "R9"
       Show          off
-      Position      [2135, 220]
+      Position      [750, 125]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -20526,7 +20645,7 @@ Plecs {
       Type          From
       Name          "From3"
       Show          off
-      Position      [2145, 260]
+      Position      [750, 160]
       Direction     up
       Flipped       off
       LabelPosition east
@@ -20545,10 +20664,11 @@ Plecs {
       Type          Scope
       Name          "Scope1"
       Show          off
-      Position      [2075, 460]
+      Position      [2210, 495]
       Direction     up
       Flipped       off
       LabelPosition south
+      CommentOut    DisabledOpenCircuit
       Location      [0, 27; 1920, 1054]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAD6PwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
@@ -20606,7 +20726,7 @@ Plecs {
       Type          Goto
       Name          "Goto22"
       Show          off
-      Position      [1555, 485]
+      Position      [635, 285]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -20625,7 +20745,7 @@ Plecs {
       Type          Goto
       Name          "Goto36"
       Show          off
-      Position      [1565, 495]
+      Position      [645, 295]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -20644,7 +20764,7 @@ Plecs {
       Type          Goto
       Name          "Goto51"
       Show          off
-      Position      [1575, 505]
+      Position      [655, 305]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -20663,7 +20783,7 @@ Plecs {
       Type          Goto
       Name          "Goto52"
       Show          off
-      Position      [1585, 515]
+      Position      [665, 315]
       Direction     right
       Flipped       off
       LabelPosition south
@@ -20792,12 +20912,11 @@ Plecs {
       Type          Subsystem
       Name          "BESS"
       Show          on
-      Position      [735, 290]
+      Position      [75, 55]
       Direction     up
       Flipped       off
       LabelPosition none
-      CommentOut    DisabledOpenCircuit
-      Frame         [-75, -85; 75, 85]
+      Frame         [-35, -15; 35, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -23032,16 +23151,16 @@ Plecs {
           Direction     down
           Flipped       off
           LabelPosition north
-          Location      [0, 27; 1920, 1034]
+          Location      [0, 23; 1920, 1020]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAA"
-"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAB4AAAAPU"
+"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAB4AAAAPK"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAGQAAAACAAAAZAAAAAEAAABkAAAABwAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAA"
+"AAAAQAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAA"
 "AJAAAAZAAAAAgAAABkAAAAvAAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC"
 "YAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
@@ -24841,7 +24960,7 @@ Plecs {
       Type          Label
       Name          "Label15"
       Show          off
-      Position      [1205, 115]
+      Position      [160, 15]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -24860,7 +24979,7 @@ Plecs {
       Type          Label
       Name          "Label16"
       Show          off
-      Position      [1200, 395]
+      Position      [155, 240]
       Direction     left
       Flipped       off
       LabelPosition north
@@ -24879,11 +24998,11 @@ Plecs {
       Type          Subsystem
       Name          base64 "U2XDsWFsZXM="
       Show          on
-      Position      [1385, 740]
+      Position      [75, 170]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-55, -25; 55, 25]
+      Frame         [-35, -15; 35, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -25917,11 +26036,11 @@ Plecs {
       Type          Subsystem
       Name          "DC-Link"
       Show          on
-      Position      [1025, 250]
+      Position      [75, 130]
       Direction     up
       Flipped       off
       LabelPosition none
-      Frame         [-40, -80; 40, 80]
+      Frame         [-35, -15; 35, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -26054,12 +26173,12 @@ Plecs {
       Type          Subsystem
       Name          "BESS-2"
       Show          on
-      Position      [730, 490]
+      Position      [75, 90]
       Direction     up
       Flipped       off
       LabelPosition none
       CommentOut    DisabledOpenCircuit
-      Frame         [-75, -85; 75, 85]
+      Frame         [-35, -15; 35, 15]
       SampleTime    "-1"
       CodeGenDiscretizationMethod "2"
       CodeGenTarget "Generic"
@@ -26069,13 +26188,13 @@ Plecs {
       MaskIconRotates on
       Terminal {
         Type          Output
-        Position      [79, -75]
+        Position      [39, -5]
         Direction     right
       }
       Schematic {
         Location      [1, 31; 1361, 688]
-        ZoomFactor    0.667277
-        SliderPosition [0, 0]
+        ZoomFactor    1
+        SliderPosition [0, -1]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -30824,6 +30943,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "Width"
         Value         "2"
@@ -30838,6 +30958,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "Tag"
         Value         "id"
@@ -30857,6 +30978,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "Tag"
         Value         "iq"
@@ -30876,6 +30998,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "Width"
         Value         "2"
@@ -30890,6 +31013,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "Tag"
         Value         "id_r"
@@ -30909,6 +31033,7 @@ Plecs {
       Direction     right
       Flipped       off
       LabelPosition south
+      CommentOut    DisabledOpenCircuit
       Parameter {
         Variable      "Tag"
         Value         "iq_r"
@@ -30928,16 +31053,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [1007, 83; 1782, 547]
+      CommentOut    DisabledOpenCircuit
+      Location      [1007, 83; 1782, 557]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAAFwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAwcAAAG1AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAwcAAAG/AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"QAAAGQAAAADAAAAZAAAAAIAAABkAAAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"QAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAJAA"
 "AAZAAAAAgAAABkAAAAZAAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAABAAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
@@ -31169,46 +31295,165 @@ Plecs {
         }
       }
     }
-    Connection {
-      Type          Wire
-      SrcComponent  "Vm2"
-      SrcTerminal   2
-      Points        [1740, 300]
-      Branch {
-        Points        [1720, 300]
-        DstComponent  "Vm1"
-        DstTerminal   2
-      }
-      Branch {
-        Points        [1745, 300]
-        Branch {
-          DstComponent  "Vm3"
-          DstTerminal   2
-        }
-        Branch {
-          DstComponent  "Label12"
-          DstTerminal   1
-        }
+    Component {
+      Type          ThreePhaseMeter
+      Name          "3ph Meter"
+      Show          off
+      Position      [475, 115]
+      Direction     up
+      Flipped       off
+      LabelPosition southSoutheast
+      Parameter {
+        Variable      "voltage"
+        Value         "1"
+        Show          off
       }
     }
-    Connection {
-      Type          Wire
-      SrcComponent  "IGBTD9"
-      SrcTerminal   1
-      Points        [1335, 255]
-      Branch {
-        DstComponent  "Label11"
-        DstTerminal   1
+    Component {
+      Type          Goto
+      Name          "Goto4"
+      Show          off
+      Position      [600, 50]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vcc_a"
+        Show          off
       }
-      Branch {
-        Points        [1335, 190]
-        DstComponent  "IGBTD6"
-        DstTerminal   1
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
       }
-      Branch {
-        Points        [1335, 320]
-        DstComponent  "IGBTD14"
-        DstTerminal   1
+    }
+    Component {
+      Type          Goto
+      Name          "Goto6"
+      Show          off
+      Position      [610, 60]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vcc_b"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto7"
+      Show          off
+      Position      [620, 70]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vcc_c"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Goto
+      Name          "Goto8"
+      Show          off
+      Position      [500, 90]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vccs"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalDemux
+      Name          "Demux2"
+      Show          off
+      Position      [580, 60]
+      Direction     right
+      Flipped       on
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "3"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From66"
+      Show          off
+      Position      [555, 60]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "Vccs"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "Label13"
+      Show          off
+      Position      [270, 115]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "Tag"
+        Value         "O"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Label
+      Name          "Label14"
+      Show          off
+      Position      [155, 80]
+      Direction     left
+      Flipped       off
+      LabelPosition north
+      Parameter {
+        Variable      "Tag"
+        Value         "O"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
       }
     }
     Connection {
@@ -31222,7 +31467,6 @@ Plecs {
       Type          Signal
       SrcComponent  "Control Corriente"
       SrcTerminal   2
-      Points        [1470, 525; 1470, 535]
       DstComponent  "Demux"
       DstTerminal   1
     }
@@ -31272,7 +31516,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux2"
       SrcTerminal   1
-      Points        [1060, 785; 1060, 795]
+      Points        [60, 270; 60, 280]
       DstComponent  "3ph->RRF"
       DstTerminal   1
     }
@@ -31301,7 +31545,6 @@ Plecs {
       Type          Signal
       SrcComponent  "From12"
       SrcTerminal   1
-      Points        [1055, 815; 1055, 805]
       DstComponent  "3ph->RRF"
       DstTerminal   3
     }
@@ -31309,7 +31552,7 @@ Plecs {
       Type          Wire
       SrcComponent  "L5"
       SrcTerminal   2
-      Points        [1890, 205]
+      Points        [570, 115]
       Branch {
         DstComponent  "L8"
         DstTerminal   1
@@ -31323,7 +31566,7 @@ Plecs {
       Type          Wire
       SrcComponent  "L6"
       SrcTerminal   2
-      Points        [1900, 220]
+      Points        [580, 125]
       Branch {
         DstComponent  "L9"
         DstTerminal   1
@@ -31337,9 +31580,9 @@ Plecs {
       Type          Wire
       SrcComponent  "C2"
       SrcTerminal   2
-      Points        [1890, 305]
+      Points        [570, 175]
       Branch {
-        Points        [1880, 305]
+        Points        [560, 175]
         DstComponent  "C1"
         DstTerminal   2
       }
@@ -31420,29 +31663,6 @@ Plecs {
     }
     Connection {
       Type          Signal
-      SrcComponent  "Vm1"
-      SrcTerminal   3
-      Points        [1760, 245; 1760, 255]
-      DstComponent  "Goto4"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Vm2"
-      SrcTerminal   3
-      Points        [1770, 265; 1770, 275]
-      DstComponent  "Goto6"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
-      SrcComponent  "Vm3"
-      SrcTerminal   3
-      DstComponent  "Goto7"
-      DstTerminal   1
-    }
-    Connection {
-      Type          Signal
       SrcComponent  "From55"
       SrcTerminal   1
       DstComponent  "Mux16"
@@ -31506,14 +31726,14 @@ Plecs {
       Type          Wire
       SrcComponent  "IGBTD11"
       SrcTerminal   2
-      Points        [1535, 395]
+      Points        [350, 240]
       Branch {
-        Points        [1635, 395]
+        Points        [460, 240]
         DstComponent  "IGBTD13"
         DstTerminal   2
       }
       Branch {
-        Points        [1435, 395]
+        Points        [250, 240]
         Branch {
           DstComponent  "IGBTD7"
           DstTerminal   2
@@ -31533,51 +31753,20 @@ Plecs {
     }
     Connection {
       Type          Wire
-      SrcComponent  "IGBTD13"
-      SrcTerminal   1
-      Points        [1635, 320]
-      Branch {
-        DstComponent  "IGBTD15"
-        DstTerminal   1
-      }
-      Branch {
-        Points        [1680, 320; 1680, 220; 1765, 220]
-        Branch {
-          DstComponent  "Vm3"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "L6"
-          DstTerminal   1
-        }
-      }
-      Branch {
-        DstComponent  "IGBTD12"
-        DstTerminal   2
-      }
-    }
-    Connection {
-      Type          Wire
       SrcComponent  "IGBTD5"
       SrcTerminal   1
-      Points        [1435, 190]
+      Points        [250, 80]
+      Branch {
+        DstComponent  "IGBTD7"
+        DstTerminal   1
+      }
       Branch {
         DstComponent  "IGBTD4"
         DstTerminal   2
       }
       Branch {
-        Points        [1720, 190]
-        Branch {
-          DstComponent  "Vm1"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "L4"
-          DstTerminal   1
-        }
-      }
-      Branch {
-        DstComponent  "IGBTD7"
+        Points        [450, 80; 450, 105]
+        DstComponent  "3ph Meter"
         DstTerminal   1
       }
     }
@@ -31641,9 +31830,9 @@ Plecs {
       Type          Wire
       SrcComponent  "IGBTD8"
       SrcTerminal   1
-      Points        [1535, 115]
+      Points        [350, 15]
       Branch {
-        Points        [1435, 115]
+        Points        [250, 15]
         Branch {
           DstComponent  "IGBTD4"
           DstTerminal   1
@@ -31654,30 +31843,23 @@ Plecs {
         }
       }
       Branch {
-        Points        [1635, 115]
+        Points        [460, 15]
         DstComponent  "IGBTD12"
         DstTerminal   1
       }
     }
     Connection {
       Type          Wire
-      SrcComponent  "IGBTD8"
-      SrcTerminal   2
-      Points        [1535, 255]
+      SrcComponent  "IGBTD10"
+      SrcTerminal   1
+      Points        [350, 115]
       Branch {
-        Points        [1670, 255; 1670, 205; 1740, 205]
-        Branch {
-          DstComponent  "Vm2"
-          DstTerminal   1
-        }
-        Branch {
-          DstComponent  "L5"
-          DstTerminal   1
-        }
+        DstComponent  "IGBTD8"
+        DstTerminal   2
       }
       Branch {
-        DstComponent  "IGBTD10"
-        DstTerminal   1
+        DstComponent  "3ph Meter"
+        DstTerminal   2
       }
       Branch {
         DstComponent  "IGBTD11"
@@ -31877,7 +32059,7 @@ Plecs {
       Type          Wire
       SrcComponent  "L7"
       SrcTerminal   1
-      Points        [1880, 190]
+      Points        [560, 105]
       Branch {
         DstComponent  "C1"
         DstTerminal   1
@@ -31926,7 +32108,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Constant4"
       SrcTerminal   1
-      Points        [2030, 360]
+      Points        [2165, 395]
       DstComponent  "Divide"
       DstTerminal   2
     }
@@ -31934,18 +32116,18 @@ Plecs {
       Type          Signal
       SrcComponent  "Gain3"
       SrcTerminal   2
-      Points        [2015, 425]
+      Points        [2150, 460]
       Branch {
         DstComponent  "Goto49"
         DstTerminal   1
       }
       Branch {
-        Points        [2015, 380]
+        Points        [2150, 415]
         DstComponent  "Divide"
         DstTerminal   3
       }
       Branch {
-        Points        [2015, 460]
+        Points        [2150, 495]
         DstComponent  "Scope1"
         DstTerminal   1
       }
@@ -32038,9 +32220,9 @@ Plecs {
       Type          Wire
       SrcComponent  "R9"
       SrcTerminal   2
-      Points        [2190, 220; 2190, 205]
+      Points        [770, 115]
       Branch {
-        Points        [2190, 190]
+        Points        [770, 105]
         DstComponent  "R7"
         DstTerminal   2
       }
@@ -32074,22 +32256,19 @@ Plecs {
       Type          Signal
       SrcComponent  "From3"
       SrcTerminal   1
-      Points        [2145, 245]
+      Points        [750, 150]
       Branch {
         DstComponent  "R9"
         DstTerminal   3
       }
       Branch {
-        Points        [2135, 245]
-        Branch {
-          DstComponent  "R8"
-          DstTerminal   3
-        }
-        Branch {
-          Points        [2125, 245]
-          DstComponent  "R7"
-          DstTerminal   3
-        }
+        DstComponent  "R8"
+        DstTerminal   3
+      }
+      Branch {
+        Points        [740, 150]
+        DstComponent  "R7"
+        DstTerminal   3
       }
     }
     Connection {
@@ -32297,6 +32476,110 @@ Plecs {
       SrcTerminal   1
       DstComponent  "Scope2"
       DstTerminal   3
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "3ph Meter"
+      SrcTerminal   4
+      DstComponent  "L4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "3ph Meter"
+      SrcTerminal   5
+      DstComponent  "L5"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "3ph Meter"
+      SrcTerminal   6
+      DstComponent  "L6"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "IGBTD12"
+      SrcTerminal   2
+      Points        [460, 125]
+      Branch {
+        DstComponent  "IGBTD13"
+        DstTerminal   1
+      }
+      Branch {
+        DstComponent  "3ph Meter"
+        DstTerminal   3
+      }
+      Branch {
+        Points        [450, 125]
+        DstComponent  "IGBTD15"
+        DstTerminal   1
+      }
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "3ph Meter"
+      SrcTerminal   9
+      DstComponent  "Label12"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux2"
+      SrcTerminal   2
+      DstComponent  "Goto4"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux2"
+      SrcTerminal   3
+      DstComponent  "Goto6"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Demux2"
+      SrcTerminal   4
+      DstComponent  "Goto7"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From66"
+      SrcTerminal   1
+      DstComponent  "Demux2"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "3ph Meter"
+      SrcTerminal   7
+      Points        [470, 90]
+      DstComponent  "Goto8"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Label11"
+      SrcTerminal   1
+      DstComponent  "IGBTD14"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Label13"
+      SrcTerminal   1
+      DstComponent  "IGBTD9"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Wire
+      SrcComponent  "Label14"
+      SrcTerminal   1
+      DstComponent  "IGBTD6"
+      DstTerminal   1
     }
   }
   Script {
