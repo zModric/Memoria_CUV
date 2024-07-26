@@ -97,7 +97,7 @@ Plecs {
   ScriptsDialogGeometry "[2130 399 446 243]"
   ScriptsDialogSplitterPos "100"
   Schematic {
-    Location      [0, 23; 1920, 1001]
+    Location      [0, 27; 1920, 1005]
     ZoomFactor    1.30956
     SliderPosition [0, 0]
     ShowBrowser   off
@@ -338,18 +338,19 @@ Plecs {
 "Y2QsIFZjcSk7CmkycCgmaTJkX2swLCAmaTJxX2swLCBpMmRfaywgaTJxX2ssIFZjZF9rMCwgVmNxX"
 "2swLCBoLCB3LCBSLCBkMV9MMiwgVmdkX3IsIFZncV9yKTsKCi8qKioqKioqKioqKiogTG9vcCBwYX"
 "JhIGRldGVybWluYXIgY29tYmluYWNpb24gb3B0aW1hICoqKioqKioqKioqKi8KIApnX29wdD0xZTI"
-"wOwpmb3IgKHg9MDsgeCA8PSAxMjQ7IHg9eCsxKSB7CgkgCgkgVmFiY19kcSgmVl9kLCAmVl9xLCB0"
-"aGV0YSwgVmRjLCBTYVt4XSwgU2JbeF0sIFNjW3hdKTsKCQoJIGkxcCgmaTFkX2sxLCAmaTFxX2sxL"
-"CBoLCBkMV9MMSwgdywgaTFkX2swLCBpMXFfazAsIFZfZCwgVl9xLCBWY2RfazAsIFZjcV9rMCk7Cg"
-"kgVmNwKCZWY2RfazEsICZWY3FfazEsIGgsIGQxX2MsIHcsIGkxZF9rMSwgaTFxX2sxLCBpMmRfazA"
-"sIGkycV9rMCwgVmNkX2swLCBWY3FfazApOwoJIGkycCgmaTJkX2sxLCAmaTJxX2sxLCBpMmRfazAs"
-"IGkycV9rMCwgVmNkX2sxLCBWY3FfazEsIGgsIHcsIFIsIGQxX0wyLCBWZ2RfciwgVmdxX3IpOwkKC"
-"SAKICAgIEZDX2N1YWQoJmdbeF0sIGlkX3IsICBpcV9yLCAgaTJkX2sxLCAgaTJxX2sxKTsKICAgIE"
-"ZDX2N1YWQoJmd2W3hdLCBWY2RfciwgVmNxX3IsICBWY2RfazEsICBWY3FfazEpOwoJIEZDX2N1YWQ"
-"oJmdiW3hdLCBpZF9yLCAgaXFfciwgIGkxZF9rMSwgIGkxcV9rMSk7CgkKCSBvcHRwKCZnX29wdCwg"
-"Jnhfb3B0LCAwLjMzMzMqKGdbeF0rZ3ZbeF0rZ2JbeF0pLCB4LCBTYVt4XSwgU2JbeF0sIFNjW3hdL"
-"CBTYVt4X29wdF0sIFNiW3hfb3B0XSwgU2NbeF9vcHRdKTsvLyBhY3R1YWxpemFyIGNvbWJpbmFjaW"
-"9uIGRlIHN3aXRjaCBvcHRpbWEKfQ=="
+"wOwpmb3IgKHg9MDsgeCA8PSAxMjQ7IHg9eCsxKSB7Ci8vZm9yICh4PTA7IHggPD0gMjY7IHg9eCsx"
+"KSB7CgkgCgkgVmFiY19kcSgmVl9kLCAmVl9xLCB0aGV0YSwgVmRjLCBTYVt4XSwgU2JbeF0sIFNjW"
+"3hdKTsKCQoJIGkxcCgmaTFkX2sxLCAmaTFxX2sxLCBoLCBkMV9MMSwgdywgaTFkX2swLCBpMXFfaz"
+"AsIFZfZCwgVl9xLCBWY2RfazAsIFZjcV9rMCk7CgkgVmNwKCZWY2RfazEsICZWY3FfazEsIGgsIGQ"
+"xX2MsIHcsIGkxZF9rMSwgaTFxX2sxLCBpMmRfazAsIGkycV9rMCwgVmNkX2swLCBWY3FfazApOwoJ"
+"IGkycCgmaTJkX2sxLCAmaTJxX2sxLCBpMmRfazAsIGkycV9rMCwgVmNkX2sxLCBWY3FfazEsIGgsI"
+"HcsIFIsIGQxX0wyLCBWZ2RfciwgVmdxX3IpOwkKCSAKICAgIEZDX2N1YWQoJmdbeF0sIGlkX3IsIC"
+"BpcV9yLCAgaTJkX2sxLCAgaTJxX2sxKTsKICAgIEZDX2N1YWQoJmd2W3hdLCBWY2RfciwgVmNxX3I"
+"sICBWY2RfazEsICBWY3FfazEpOwoJIEZDX2N1YWQoJmdiW3hdLCBpZF9yLCAgaXFfciwgIGkxZF9r"
+"MSwgIGkxcV9rMSk7CgkKCSBvcHRwKCZnX29wdCwgJnhfb3B0LCAwLjMzMzMqKGdbeF0rZ3ZbeF0rZ"
+"2JbeF0pLCB4LCBTYVt4XSwgU2JbeF0sIFNjW3hdLCBTYVt4X29wdF0sIFNiW3hfb3B0XSwgU2NbeF"
+"9vcHRdKTsvLyBhY3R1YWxpemFyIGNvbWJpbmFjaW9uIGRlIHN3aXRjaCBvcHRpbWEKCSAvL29wdCg"
+"gJmdfb3B0LCAmeF9vcHQsIDAuMzMzMyooZ1t4XStndlt4XStnYlt4XSksIHgpOwp9"
         Show          off
       }
       Parameter {
@@ -1082,17 +1083,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1920, 1068]
+      Location      [0, 27; 1920, 1044]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAAD6PwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAASQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAA+gAAABmAP///wAAAAMAAAVWAAAA0vw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAAB4AAAAP2AAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAABVYAAABQAP///wAAB4AAAAPeAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
-"wAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAAAAZAAAAAEAAABkAAAACAAAAGQAAAAJAA"
-"AAZAAAAAYAAABkAAABAQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAADdAAA"
+"AAAAGQAAAAFAAAAZAAAAAYAAABkAAAABwAAAGQAAAABAAAAZAAAAAIAAABkAAAAAwAAAGQAAAAIAA"
+"AAZAAAAAkAAABkAAABAQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAADdAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -4441,13 +4442,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "From41"
-          SrcTerminal   1
-          DstComponent  "SW A"
-          DstTerminal   5
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "From43"
           SrcTerminal   1
           DstComponent  "SW A1"
@@ -4458,6 +4452,13 @@ Plecs {
           SrcComponent  "From44"
           SrcTerminal   1
           DstComponent  "SW A2"
+          DstTerminal   5
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "From41"
+          SrcTerminal   1
+          DstComponent  "SW A"
           DstTerminal   5
         }
       }
@@ -30795,6 +30796,230 @@ Plecs {
         Show          off
       }
     }
+    Component {
+      Type          SignalMux
+      Name          "Mux13"
+      Show          off
+      Position      [1135, 335]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "3"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From49"
+      Show          off
+      Position      [1015, 325]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i2a"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From50"
+      Show          off
+      Position      [1025, 335]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i2b"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From67"
+      Show          off
+      Position      [1035, 345]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i2c"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From68"
+      Show          off
+      Position      [1045, 355]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i1a"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From72"
+      Show          off
+      Position      [1055, 365]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i1b"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          SignalMux
+      Name          "Mux17"
+      Show          off
+      Position      [1135, 365]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Width"
+        Value         "3"
+        Show          off
+      }
+    }
+    Component {
+      Type          From
+      Name          "From73"
+      Show          off
+      Position      [1065, 375]
+      Direction     right
+      Flipped       off
+      LabelPosition south
+      Parameter {
+        Variable      "Tag"
+        Value         "i1c"
+        Show          off
+      }
+      Parameter {
+        Variable      "Visibility"
+        Value         "1"
+        Show          off
+      }
+    }
+    Component {
+      Type          Scope
+      Name          "Scope"
+      Show          off
+      Position      [1200, 350]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [0, 27; 1920, 1044]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAADyvwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAAFwA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAA8oAAABmAP///wAAAAMAAAeAAAAAsfw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABQAP///wAAB4AAAAMpAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGAAAAB"
+"AAAAGQAAAAFAAAAZAAAAAYAAABkAAAABwAAAGQAAAAIAAAAZAAAAAkAAABkAAAHgAAAAAsBAAABAA"
+"AAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACHAAAAAQAAAAAAAABkAAAAAQAAAAAAAABkAAA"
+"AAQAAAAAAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAXNAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
+"AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA="
+      Axes          "2"
+      TimeRange     "0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          "Corrientes Filtradas"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Axis {
+        Name          "Corriente sin filtrar"
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
     Connection {
       Type          Signal
       SrcComponent  "Mux"
@@ -31740,6 +31965,64 @@ Plecs {
       SrcComponent  "From5"
       SrcTerminal   1
       DstComponent  "Mux"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From49"
+      SrcTerminal   1
+      DstComponent  "Mux13"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From50"
+      SrcTerminal   1
+      DstComponent  "Mux13"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From67"
+      SrcTerminal   1
+      DstComponent  "Mux13"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From68"
+      SrcTerminal   1
+      DstComponent  "Mux17"
+      DstTerminal   2
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From72"
+      SrcTerminal   1
+      DstComponent  "Mux17"
+      DstTerminal   3
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "From73"
+      SrcTerminal   1
+      DstComponent  "Mux17"
+      DstTerminal   4
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Mux13"
+      SrcTerminal   1
+      Points        [1170, 335]
+      DstComponent  "Scope"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "Mux17"
+      SrcTerminal   1
+      Points        [1170, 365]
+      DstComponent  "Scope"
       DstTerminal   2
     }
   }
