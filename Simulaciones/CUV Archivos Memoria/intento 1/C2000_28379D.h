@@ -2,7 +2,7 @@
  * Header file for: Model base/C2000_28379D
  * Generated with : PLECS 4.8.3
  *                  TI2837x 1.7.4
- * Generated on   : 20 Aug 2024 13:10:28
+ * Generated on   : 21 Aug 2024 10:00:34
  */
 #ifndef PLECS_HEADER_C2000_28379D_h_
 #define PLECS_HEADER_C2000_28379D_h_

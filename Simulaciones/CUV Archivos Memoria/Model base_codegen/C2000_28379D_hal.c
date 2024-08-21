@@ -1,7 +1,7 @@
 /*
  * Hardware configuration file for: TI2837x
  * Generated with                 : PLECS 4.8.3
- * Generated on                   : Tue Aug 20 13:10:28 2024
+ * Generated on                   : Wed Aug 21 10:53:34 2024
  */
 
 /* HAL Includes */
@@ -65,7 +65,7 @@ PIL_CONFIG_DEF(uint32_t, ExtMode_ExtModeSignals_Size,
 
 #define CODE_GUID {0x09, 0x3c, 0x97, 0x5e, 0xdb, 0x2d, 0xb8, 0x40};
 PIL_CONST_DEF(unsigned char, Guid[], CODE_GUID);
-PIL_CONST_DEF(unsigned char, CompiledDate[], "08/20/2024 01:10 PM");
+PIL_CONST_DEF(unsigned char, CompiledDate[], "08/21/2024 10:53 AM");
 PIL_CONST_DEF(unsigned char, CompiledBy[], "PLECS Coder");
 PIL_CONST_DEF(uint16_t, FrameworkVersion, PIL_FRAMEWORK_VERSION);
 PIL_CONST_DEF(char, FirmwareDescription[], "TIC2000 Project (CPU0)");

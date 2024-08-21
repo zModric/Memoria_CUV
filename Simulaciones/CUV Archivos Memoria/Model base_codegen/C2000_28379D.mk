@@ -17,7 +17,7 @@
 
 include C2000_28379D_sources.mk
 
-INSTALL_DIR=C:/Users/AC3E/Desktop/repositorio/Memoria_CUV/Simulaciones/CUV Archivos Memoria/intento 1
+INSTALL_DIR=C:/Users/AC3E/workspace_v12/Programa_placa/cg
 MAKEFILE=C2000_28379D.mk
 HFILE=C2000_28379D.h
 BASE_NAME=C2000_28379D

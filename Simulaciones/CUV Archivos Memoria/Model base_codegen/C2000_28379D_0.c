@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.3
- * Generated on     : 20 Aug 2024 13:10:28
+ * Generated on     : 21 Aug 2024 10:53:34
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -12,9 +12,6 @@ typedef float real_t;
 #include <time.h>
 #include <stdio.h>
 #include <complex.h>
-#include <src\code.c>
-#include <src\code.h>
-#include <src\variables.c>
 
 /***** Entradas ****/
 #define isa Input(0)
@@ -46,6 +43,110 @@ typedef float real_t;
 #define Out10 Output(10)
 #define Out11 Output(11)
 #define Out12 Output(12)
+
+double h=2e-4;
+double Vdc=800;
+double L1=1.422e-3;
+double L2=0.142e-3;
+double Cf=0.329e-3;
+double R=0.001;
+double rc=10;
+double w=314.1593;
+double R1=1000;
+double Vgd_r=220;
+double Vgq_r=0;
+double e=0;
+double d1_L1C=2137152;
+double d1_L2=7042.25;
+double C2=0.0001;
+double d1_C2=10000;
+double d1_L1=703.66;
+double d1_c=3038;
+
+double ik_d=0, ik_q=0, ik1_d=0, ik1_q=0;
+double V_d=0, V_q=0;
+double Vd_ant_2=0, Vd_ant=0, Vgd_ant_2=0, Vgd_ant=0;
+double Vq_ant_2=0, Vq_ant=0, Vgq_ant_2=0, Vgq_ant=0;
+double Vcdp=0, Vcqp=0;
+double Vcd_ant_2=0, Vcd_ant=0, Vcd=0, Vcd_k0=0, Vcd_k1=0;
+double Vcq_ant_2=0, Vcq_ant=0, Vcq=0, Vcq_k0=0, Vcq_k1=0;
+double i2d_k=0, i2d_k0=0, i2d_k1=0, i2d_ant=0, i2d_ant_2=0;
+double i2q_k=0, i2q_k0=0, i2q_k1=0, i2q_ant=0, i2q_ant_2=0;
+double i1d_k=0, i1d_k0=0, i1d_k1=0, i1d_ant=0, i1d_ant_2=0;
+double i1q_k=0, i1q_k0=0, i1q_k1=0, i1q_ant=0, i1q_ant_2=0;
+double Vgd_k=0, Vgd_k0=0, Vgd_k1=0;
+double Vgq_k=0, Vgq_k0=0, Vgq_k1=0;
+double id_ref=30, iq_ref=0;
+double ia_ref=0, ib_ref=0;
+double id=0, iq=0, theta=0;
+double ed=0, xd=0, vd=0, edp=0;
+double eq=0, xq=0, vq=0, eqp=0;
+double ma=0, mb=0, mc=0;
+double sat=1.15, dp=6.28318530718;
+double id_r=0, iq_r=0, Vcd_r=0, Vcq_r=0;
+double g[125], g_opt=10000000;
+double gv[125];
+double gb[125];
+double gg[125];
+double t=0, gx=0, e_ant=0;
+double ik0_d=0, ik0_q=0;
+double e1=-0.99;
+
+int Sa1=0;
+int Sa2=0;
+int Sa3=0;
+int Sb1=0;
+int Sb2=0;
+int Sb3=0;
+int Sc1=0;
+int Sc2=0;
+int Sc3=0;
+
+int cont_v=0;
+int x=0;
+int x_opt=0;
+
+double Sa[125]= {
+   -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+   -1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,
+   -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,
+   -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+   0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
+   0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+   1, 1
+};
+double Sb[125]= {
+   -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5,
+   0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5,
+   -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1,
+   -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5,
+   0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0,
+   0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5,
+   -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1,
+   1
+};
+double Sc[125]= {
+   -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
+   0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1,
+   -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
+   0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1,
+   -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
+   0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1,
+   -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
+   0.5, 1
+};
+
+double PI23=2.0943951023931954923084289221863;
+double CS=0.666666666666666666667;
+#define sq3     1.732050807568877
+#define sq3_2 0.86602540378
+#define sq3_3 0.57735026919
+#define d2_3 0.66666666666666666666666666666666666666666666666666666666666666
+#define d1_3 \
+   0.3333333333333333333333333333333333333333333333333333333333333333
+#define d1_sq3 0.57735026918962576450914878050196
+#define pi  3.1415926535897932384626433832795
 struct CScriptStruct
 {
    int numInputTerminals;
@@ -143,30 +244,58 @@ void C2000_28379D_0_cScriptOutput(const struct CScriptStruct *cScriptStruct)
 
 void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
 {
-   angle(&theta, h, w, dp);
+   /************ Forma angulo ************/
 
-   Ref(&id_r, &iq_r, &Vcd_r, &Vcq_r, Pot, Vgd_r, Vgq_r, R);
+   theta+=w*h;
+   if(theta < -dp)
+   {
+      theta+=dp;
+   }
+   if(theta > dp)
+   {
+      theta-=dp;
+   }
+
+   /************ Referencias ************/
+
+   id_r = Pot/Vgd_r;
+   iq_r = 314.16*396e-6*(id_r);
+   Vcd_r = Vgd_r+(id_r)*R - 314.16*396e-6*(iq_r);
+   Vcq_r = Vgq_r+(iq_r)*R + 314.16*396e-6*(id_r);
 
    /************ Vector de corriente medida salida del conv ************/
 
-   abc_dq( &i1d_k, &i1q_k, theta, i1a, i1b, i1c);
+   i1d_k=CS*(i1a*cos(theta)+i1b*cos(theta-PI23)+i1c*cos(theta+PI23));
+   i1q_k=-CS*(i1a*sin(theta)+i1b*sin(theta-PI23)+i1c*sin(theta+PI23));
 
    /************ Vector de corriente medida en carga ************/
 
-   abc_dq( &i2d_k, &i2q_k, theta, isa, isb, isc);
+   i2d_k=CS*(isa*cos(theta)+isb*cos(theta-PI23)+isc*cos(theta+PI23));
+   i2q_k=-CS*(isa*sin(theta)+isb*sin(theta-PI23)+isc*sin(theta+PI23));
 
    /************ Vector de tension capacitores ************/
 
-   abc_dq( &Vcd, &Vcq, theta, Vc_a, Vc_b, Vc_c);
+   Vcd=CS*(Vc_a*cos(theta)+Vc_b*cos(theta-PI23)+Vc_c*cos(theta+PI23));
+   Vcq=-CS*(Vc_a*sin(theta)+Vc_b*sin(theta-PI23)+Vc_c*sin(theta+PI23));
+
+   /************ Tension Convertidor ************/
+
+   V_d=0.5*Vdc*CS*
+        (Sa[x_opt]*cos(theta)+Sb[x_opt]*
+         cos(theta-PI23)+Sc[x_opt]*cos(theta+PI23));
+   V_q=-0.5*Vdc*CS*
+        (Sa[x_opt]*sin(theta)+Sb[x_opt]*
+         sin(theta-PI23)+Sc[x_opt]*sin(theta+PI23));
 
    /************ Predicción k+1 ************/
+   i1d_k0= (h*d1_L1)*(V_d-Vcd) + w*h*i1q_k + i1d_k;
+   i1q_k0= (h*d1_L1)*(V_q-Vcq) - w*h*i1d_k + i1q_k;
 
-   Vabc_dq(&V_d, &V_q, theta, Vdc, Sa[x_opt], Sb[x_opt], Sc[x_opt]); //Tension a la salida del convertidor
+   Vcd_k0=(h*d1_c)*(i1d_k0-i2d_k) + w*h*Vcq + Vcd;
+   Vcq_k0=(h*d1_c)*(i1q_k0-i2q_k) - w*h*Vcd + Vcq;
 
-   i1p(&i1d_k0, &i1q_k0, h, d1_L1, w, i1d_k, i1q_k, V_d, V_q, Vcd, Vcq);
-   Vcp(&Vcd_k0, &Vcq_k0, h, d1_c, w, i1d_k0, i1q_k0, i2d_k, i2q_k, Vcd, Vcq);
-   i2p(&i2d_k0, &i2q_k0, i2d_k, i2q_k, Vcd_k0, Vcq_k0, h, w, R, d1_L2, Vgd_r,
-       Vgq_r);
+   i2d_k0 = h*(Vcd_k0-Vgd_r-i2d_k*R)*d1_L2 + i2d_k + w*h*i2q_k;
+   i2q_k0 = h*(Vcq_k0-Vgq_r-i2q_k*R)*d1_L2 + i2q_k - w*h*i2d_k;
 
    /************ Loop para determinar combinacion optima ************/
 
@@ -174,21 +303,47 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
    for (x=0; x <= 124; x=x+1)
    {
 
-      Vabc_dq(&V_d, &V_q, theta, Vdc, Sa[x], Sb[x], Sc[x]);
+      V_d=0.5*Vdc*CS*
+           (Sa[x]*cos(theta)+Sb[x]*cos(theta-PI23)+Sc[x]*cos(theta+PI23));
+      V_q=-0.5*Vdc*CS*
+           (Sa[x]*sin(theta)+Sb[x]*sin(theta-PI23)+Sc[x]*sin(theta+PI23));
 
-      i1p(&i1d_k1, &i1q_k1, h, d1_L1, w, i1d_k0, i1q_k0, V_d, V_q, Vcd_k0,
-          Vcq_k0);
-      Vcp(&Vcd_k1, &Vcq_k1, h, d1_c, w, i1d_k1, i1q_k1, i2d_k0, i2q_k0,
-          Vcd_k0, Vcq_k0);
-      i2p(&i2d_k1, &i2q_k1, i2d_k0, i2q_k0, Vcd_k1, Vcq_k1, h, w, R, d1_L2,
-          Vgd_r, Vgq_r);
+      i1d_k1= (h*d1_L1)*(V_d-Vcd_k0) + w*h*i1q_k0 + i1d_k0;
+      i1q_k1= (h*d1_L1)*(V_q-Vcq_k0) - w*h*i1d_k0 + i1q_k0;
 
-      FC_cuad(&g[x], id_r,  iq_r,  i2d_k1,  i2q_k1);
-      FC_cuad(&gv[x], Vcd_r, Vcq_r,  Vcd_k1,  Vcq_k1);
-      FC_cuad(&gb[x], id_r,  iq_r,  i1d_k1,  i1q_k1);
+      Vcd_k1=(h*d1_c)*(i1d_k1-i2d_k0) + w*h*Vcq_k0 + Vcd_k0;
+      Vcq_k1=(h*d1_c)*(i1q_k1-i2q_k0) - w*h*Vcd_k0 + Vcq_k0;
 
-      optp(&g_opt, &x_opt, 0.3333*(g[x]+gv[x]+gb[x]), x, Sa[x], Sb[x], Sc[x],
-           Sa[x_opt], Sb[x_opt], Sc[x_opt]);                                                                      // actualizar combinacion de switch optima
+      i2d_k1 = h*(Vcd_k1-Vgd_r-i2d_k0*R)*d1_L2 + i2d_k0 + w*h*i2q_k0;
+      i2q_k1 = h*(Vcq_k1-Vgq_r-i2q_k0*R)*d1_L2 + i2q_k0 - w*h*i2d_k0;
+
+      g[x]=
+         sqrt((id_r -
+               i2d_k1)*
+              (id_r - i2d_k1)) + sqrt((iq_r - i2q_k1)*(iq_r - i2q_k1));
+      gv[x]=
+         sqrt((Vcd_r -
+               Vcd_k1)*
+              (Vcd_r - Vcd_k1)) + sqrt((Vcq_r - Vcq_k1)*(Vcq_r - Vcq_k1));
+      gb[x]=
+         sqrt((id_r -
+               i1d_k1)*
+              (id_r - i1d_k1)) + sqrt((iq_r - i1q_k1)*(iq_r - i1q_k1));
+
+      // actualizar combinacion de switch optima
+      if(  (Sa[x] == Sa[x_opt]+0.5 || Sa[x] == Sa[x_opt]-0.5 || Sa[x] ==
+            Sa[x_opt] ) &&
+         (Sb[x] == Sb[x_opt]+0.5 || Sb[x] == Sb[x_opt]-0.5 || Sb[x] ==
+          Sb[x_opt]) &&
+         (Sc[x] == Sc[x_opt]+0.5 || Sc[x] == Sc[x_opt]-0.5 || Sc[x] ==
+          Sc[x_opt]) )
+      {
+         if (0.3333*(g[x]+gv[x]+gb[x]) < g_opt)
+         {
+            g_opt = 0.3333*(g[x]+gv[x]+gb[x]);
+            x_opt = x;
+         }
+      }
    }
 }
 

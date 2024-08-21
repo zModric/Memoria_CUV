@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.3
- * Generated on     : 20 Aug 2024 13:10:28
+ * Generated on     : 21 Aug 2024 10:00:34
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -12,9 +12,9 @@ typedef float real_t;
 #include <time.h>
 #include <stdio.h>
 #include <complex.h>
-#include <src\code.c>
-#include <src\code.h>
-#include <src\variables.c>
+#include <code.c>
+#include <code.h>
+#include <variables.c>
 
 /***** Entradas ****/
 #define isa Input(0)
