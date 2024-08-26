@@ -2,7 +2,7 @@
  * Implementation file for: Model base/C2000_28379D
  * Generated with         : PLECS 4.8.3
  *                          TI2837x 1.7.4
- * Generated on           : 21 Aug 2024 10:53:34
+ * Generated on           : 26 Aug 2024 09:35:35
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
@@ -82,12 +82,14 @@ struct CScriptStruct
    void (*readCustomStateData)(void*, void*, int);
 };
 static struct CScriptStruct C2000_28379D_cScriptStruct[1];
-static const uint32_t C2000_28379D_subTaskPeriod[1]= {
+static const uint32_t C2000_28379D_subTaskPeriod[2]= {
    /* [0.0002, 0], [0, 0] */
-   2
+   2,
+   /* [0.5, 0], [0, 0] */
+   5000
 };
-static uint32_t C2000_28379D_subTaskTick[1];
-static char C2000_28379D_subTaskHit[1];
+static uint32_t C2000_28379D_subTaskTick[2];
+static char C2000_28379D_subTaskHit[2];
 #define C2000_28379D_UNCONNECTED 0
 static uint32_t C2000_28379D_D_uint32_t[6];
 void C2000_28379D_0_cScriptStart(const struct CScriptStruct *cScriptStruct);
@@ -104,10 +106,11 @@ const float * const C2000_28379D_ExtModeSignals[] = {
 
 };
 #endif /* defined(EXTERNAL_MODE) */
+C2000_28379D_ModelStates C2000_28379D_X _ALIGN;
 const char * C2000_28379D_errorStatus;
 const float C2000_28379D_sampleTime = 0.0001f;
 const char * const C2000_28379D_checksum =
-   "98c12f794e05558d7252bad271c19dfb2aeaa5f4";
+   "16bb142385e9b37bf70e25ad155a84d716689f12";
 /* Target declarations */
 // tag step function to allow special linking
 #pragma CODE_SECTION(C2000_28379D_step, "step")
@@ -119,7 +122,8 @@ void C2000_28379D_initialize(void)
    C2000_28379D_tickLo = 0;
    /* Initialize sub-task tick counters */
    C2000_28379D_subTaskTick[0] = 0; /* [0, 0], [0.0002, 0] */
-
+   C2000_28379D_subTaskTick[1] = 0; /* [0, 0], [0.5, 0] */
+   memset(&C2000_28379D_X, 0, sizeof(C2000_28379D_X));
 
    /* Target pre-initialization */
    C2000_28379D_initHal();
@@ -231,6 +235,9 @@ void C2000_28379D_initialize(void)
 
    /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
    C2000_28379D_D_uint32_t[5] = 0;
+
+   /* Initialization for Delay : 'C2000_28379D/Delay2' */
+   C2000_28379D_X.Delay2 = false;
 }
 
 void C2000_28379D_step(void)
@@ -241,7 +248,7 @@ void C2000_28379D_step(void)
    }
    {
       size_t i;
-      for (i = 0; i < 1; ++i)
+      for (i = 0; i < 2; ++i)
       {
          C2000_28379D_subTaskHit[i] = (C2000_28379D_subTaskTick[i] == 0);
       }
@@ -409,6 +416,17 @@ void C2000_28379D_step(void)
    PLXHAL_DIO_set(7, C2000_28379D_B.Fcn_2 == 0.f);
    /* Digital Out : 'C2000_28379D/Sc4' */
    PLXHAL_DIO_set(8, C2000_28379D_B.Fcn_2 < 0.f);
+   if (C2000_28379D_subTaskHit[1])
+   {
+      /* Delay : 'C2000_28379D/Delay2' */
+      C2000_28379D_B.Delay2 = C2000_28379D_X.Delay2;
+
+      /* Logical Operator : 'C2000_28379D/Logical\nOperator2' */
+      C2000_28379D_B.LogicalOperator2 = !C2000_28379D_B.Delay2;
+   }
+
+   /* Digital Out : 'C2000_28379D/LED Blinking' */
+   PLXHAL_DIO_set(9, C2000_28379D_B.LogicalOperator2);
    if (C2000_28379D_errorStatus)
    {
       return;
@@ -462,10 +480,16 @@ void C2000_28379D_step(void)
    {
       C2000_28379D_D_uint32_t[5] -= 2;
    }
+   if (C2000_28379D_subTaskHit[1])
+   {
+      /* Update for Delay : 'C2000_28379D/Delay2' */
+      C2000_28379D_X.Delay2 = C2000_28379D_B.LogicalOperator2;
+   }
+
    /* Increment sub-task tick counters */
    {
       size_t i;
-      for (i = 0; i < 1; ++i)
+      for (i = 0; i < 2; ++i)
       {
          C2000_28379D_subTaskTick[i]++;
          if (C2000_28379D_subTaskTick[i] >= C2000_28379D_subTaskPeriod[i])
