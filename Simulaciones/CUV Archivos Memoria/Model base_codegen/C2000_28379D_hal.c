@@ -1,7 +1,7 @@
 /*
  * Hardware configuration file for: TI2837x
  * Generated with                 : PLECS 4.8.3
- * Generated on                   : Mon Aug 26 09:35:35 2024
+ * Generated on                   : Mon Aug 26 10:04:49 2024
  */
 
 /* HAL Includes */
@@ -65,7 +65,7 @@ PIL_CONFIG_DEF(uint32_t, ExtMode_ExtModeSignals_Size,
 
 #define CODE_GUID {0x09, 0x3c, 0x97, 0x5e, 0xdb, 0x2d, 0xb8, 0x40};
 PIL_CONST_DEF(unsigned char, Guid[], CODE_GUID);
-PIL_CONST_DEF(unsigned char, CompiledDate[], "08/26/2024 09:35 AM");
+PIL_CONST_DEF(unsigned char, CompiledDate[], "08/26/2024 10:04 AM");
 PIL_CONST_DEF(unsigned char, CompiledBy[], "PLECS Coder");
 PIL_CONST_DEF(uint16_t, FrameworkVersion, PIL_FRAMEWORK_VERSION);
 PIL_CONST_DEF(char, FirmwareDescription[], "TIC2000 Project (CPU0)");
@@ -458,7 +458,7 @@ void C2000_28379D_initHal()
          0
       };
       props.enableInvert = false;
-      PLX_DIO_configureOut(DoutHandles[9], 34,  &props);
+      PLX_DIO_configureOut(DoutHandles[9], 31,  &props);
    }
    DISPR_sinit();
    DISPR_configure((uint32_t)(4750), PilHandle, &TaskObj[0],
@@ -515,8 +515,8 @@ void C2000_28379D_initHal()
       GPIO_setDirectionMode(7, GPIO_DIR_MODE_OUT);
       GPIO_setPadConfig(8, GPIO_PIN_TYPE_STD);
       GPIO_setDirectionMode(8, GPIO_DIR_MODE_OUT);
-      GPIO_setPadConfig(34, GPIO_PIN_TYPE_STD);
-      GPIO_setDirectionMode(34, GPIO_DIR_MODE_OUT);
+      GPIO_setPadConfig(31, GPIO_PIN_TYPE_STD);
+      GPIO_setDirectionMode(31, GPIO_DIR_MODE_OUT);
       GPIO_setPinConfig(GPIO_85_SCIRXDA);
       GPIO_setPinConfig(GPIO_84_SCITXDA);
    }

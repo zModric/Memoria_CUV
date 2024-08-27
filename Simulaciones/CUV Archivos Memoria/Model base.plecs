@@ -152,11 +152,11 @@ Plecs {
 "AHIAZQBxAFQAbwBsAAAAAgAxAAAAEgBzAHkAcwBDAGwAawBNAEgAegAAAAYAMQA5ADAAAAAcAGkAb"
 "gBzAHQAYQBsAGwARABpAHIAQwBwAHUAMgAAAAAAAAAUAGkAbgBzAHQAYQBsAGwARABpAHIAAABaAE"
 "MAOgBcAFUAcwBlAHIAcwBcAEEAQwAzAEUAXAB3AG8AcgBrAHMAcABhAGMAZQBfAHYAMQAyAFwAUAB"
-"yAG8AZwByAGEAbQBhAF8AcABsAGEAYwBhAFwAYwBnAAAADgBnAGUAbgBPAG4AbAB5AAAAAgAxAAAA"
+"yAG8AZwByAGEAbQBhAF8AcABsAGEAYwBhAFwAYwBnAAAADgBnAGUAbgBPAG4AbAB5AAAAAgAyAAAA"
 "HABlAHgAdABNAG8AZABlAFMAYwBpAFAAaQBuAHMAAAAQAFsAOAA1ACwAIAA4ADQAXQAAACIAZQB4A"
 "HQATQBvAGQAZQBCAHUAZgBmAGUAcgBTAGkAegBlAAAACAAxADAAMAAwAAAAEgBlAHgAdABDAGwAaw"
 "BNAEgAegAAAAQAMwAwAAAACABjAGgAaQBwAAAAAgAxAAAAFgBiAHUAaQBsAGQAQwBvAG4AZgBpAGc"
-"AAAACADIAAAAKAGIAbwBhAHIAZAAAAAIAMgAAABAAVgByAGUAZgBBAGQAYwBEAAAABgAzAC4AMAAA"
+"AAAACADEAAAAKAGIAbwBhAHIAZAAAAAIAMgAAABAAVgByAGUAZgBBAGQAYwBEAAAABgAzAC4AMAAA"
 "ABAAVgByAGUAZgBBAGQAYwBDAAAABgAzAC4AMAAAABAAVgByAGUAZgBBAGQAYwBCAAAABgAzAC4AM"
 "AAAABAAVgByAGUAZgBBAGQAYwBBAAAABgAzAC4AMAAAADQAVQBTAEUAXwBTAFQAQQBSAFQAXwBUAE"
 "kATQBFAF8ASQBOAF8ASQBOAEkAVABfAEYAQwBOAAAAAgAwAAAASgBVAFMARQBfAEQAQQBUAEEAXwB"
@@ -301,9 +301,9 @@ Plecs {
         Index         "10"
       }
       Schematic {
-        Location      [49, 88; 1412, 740]
-        ZoomFactor    0.873845
-        SliderPosition [0, 0]
+        Location      [266, 117; 1629, 769]
+        ZoomFactor    0.999999
+        SliderPosition [0, 54]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -5119,61 +5119,18 @@ Plecs {
           LabelPosition south
         }
         Component {
-          Type          Delay
-          Name          "Delay2"
-          Show          off
-          Position      [305, 630]
-          Direction     left
-          Flipped       off
-          LabelPosition north
-          Parameter {
-            Variable      "N"
-            Value         "1"
-            Show          off
-          }
-          Parameter {
-            Variable      "X0"
-            Value         "0"
-            Show          off
-          }
-          Parameter {
-            Variable      "Ts"
-            Value         "floor(0.5/h)*h"
-            Show          off
-          }
-        }
-        Component {
-          Type          LogicalOperator
-          Name          "Logical\nOperator2"
-          Show          off
-          Position      [305, 655]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Parameter {
-            Variable      "Operator"
-            Value         "6"
-            Show          off
-          }
-          Parameter {
-            Variable      "Inputs"
-            Value         "1"
-            Show          off
-          }
-        }
-        Component {
           Type          Reference
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "LED Blinking"
           Show          on
-          Position      [385, 630]
+          Position      [455, 595]
           Direction     up
           Flipped       off
           LabelPosition south
           Frame         [-25, -20; 25, 20]
           Parameter {
             Variable      "gpio"
-            Value         "34"
+            Value         "31"
             Show          on
           }
           Parameter {
@@ -5191,6 +5148,130 @@ Plecs {
             Position      [-25, 0]
             Direction     left
           }
+        }
+        Component {
+          Type          Constant
+          Name          "Constant"
+          Show          on
+          Position      [230, 600]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Frame         [-10, -10; 10, 10]
+          Parameter {
+            Variable      "Value"
+            Value         "0.5"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
+        Component {
+          Type          Scope
+          Name          "Scope"
+          Show          on
+          Position      [450, 675]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [640, 280; 990, 507]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAA"
+"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAV4AAADI"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
+"AAAAwAAAGQAAAACAAAAZAAAAAEAAABkAAAABwAAAGQAAAAGAAAAZAAAAAUAAABkAAAABAAAAGQAAA"
+"AJAAAAZAAAAAgAAABkAAAAoQAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB"
+"9AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
+"AAAAAAkAAAAAQAAAAAAAAPoAAAAACQ="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "1"
+          TimeRange     "0.0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "1"
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency / Hz"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          TriangleGenerator
+          Name          "Triangular Wave"
+          Show          on
+          Position      [225, 560]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Min"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "Max"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "f"
+            Value         "50"
+            Show          off
+          }
+          Parameter {
+            Variable      "DutyCycle"
+            Value         "0.5"
+            Show          off
+          }
+          Parameter {
+            Variable      "Delay"
+            Value         "0"
+            Show          off
+          }
+        }
+        Component {
+          Type          Comparator
+          Name          "Comparator"
+          Show          on
+          Position      [320, 585]
+          Direction     right
+          Flipped       off
+          LabelPosition south
         }
         Connection {
           Type          Signal
@@ -5498,23 +5579,33 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "Delay2"
-          SrcTerminal   2
-          Points        [270, 630; 270, 655]
-          DstComponent  "Logical\nOperator2"
+          SrcComponent  "Constant"
+          SrcTerminal   1
+          Points        [295, 600; 295, 595; 290, 595]
+          DstComponent  "Comparator"
           DstTerminal   2
         }
         Connection {
           Type          Signal
-          SrcComponent  "Logical\nOperator2"
+          SrcComponent  "Triangular Wave"
           SrcTerminal   1
-          Points        [340, 655; 340, 630]
+          Points        [270, 560; 270, 580]
+          DstComponent  "Comparator"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Comparator"
+          SrcTerminal   3
+          Points        [345, 585; 345, 600; 375, 600]
           Branch {
+            Points        [380, 600; 380, 595]
             DstComponent  "LED Blinking"
             DstTerminal   1
           }
           Branch {
-            DstComponent  "Delay2"
+            Points        [375, 675]
+            DstComponent  "Scope"
             DstTerminal   1
           }
         }
