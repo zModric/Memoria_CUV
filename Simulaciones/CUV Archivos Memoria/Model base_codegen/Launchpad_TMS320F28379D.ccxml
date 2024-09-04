@@ -19,7 +19,11 @@
                 </choice>
             </property>
             -->
-             
+                <property Type="choicelist" Value="1" id="Debug Probe Selection">
+      <choice Name="Select by serial number" value="0">
+        <property Type="stringfield" Value="LAUNCHXL-F28379D" id="-- Enter the serial number"/>
+      </choice>
+    </property> 
 
             <platform XML_version="1.2" id="platform_0">
                 <instance XML_version="1.2" desc="TMS320F28379D_0" href="devices/f28379d.xml" id="TMS320F28379D_0" xml="f28379d.xml" xmlpath="devices"/>

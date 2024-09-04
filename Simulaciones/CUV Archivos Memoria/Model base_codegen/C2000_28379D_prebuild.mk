@@ -1,4 +1,4 @@
-TOOLS_PATH=C:/Users/AC3E/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS
+TOOLS_PATH=C:/Users/user/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS
 
 CGT_EXE_PATH=$(TOOLS_PATH)/bin
 

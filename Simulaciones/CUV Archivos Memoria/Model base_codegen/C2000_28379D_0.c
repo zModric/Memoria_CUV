@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.3
- * Generated on     : 26 Aug 2024 10:04:49
+ * Generated on     : 4 Sep 2024 10:09:43
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -44,7 +44,7 @@ typedef float real_t;
 #define Out11 Output(11)
 #define Out12 Output(12)
 
-double h=2e-4;
+double h=2e-04;
 double Vdc=800;
 double L1=1.422e-3;
 double L2=0.142e-3;
@@ -240,6 +240,7 @@ void C2000_28379D_0_cScriptOutput(const struct CScriptStruct *cScriptStruct)
    Out1=Sb[x_opt];
    Out2=Sc[x_opt];
 
+   Out3=theta;
 }
 
 void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
