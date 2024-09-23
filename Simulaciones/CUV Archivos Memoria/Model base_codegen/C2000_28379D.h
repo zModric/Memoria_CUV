@@ -1,8 +1,8 @@
 /*
  * Header file for: Model base/C2000_28379D
- * Generated with : PLECS 4.8.3
+ * Generated with : PLECS 4.8.6
  *                  TI2837x 1.7.4
- * Generated on   : 4 Sep 2024 10:09:43
+ * Generated on   : 23 Sep 2024 15:42:19
  */
 #ifndef PLECS_HEADER_C2000_28379D_h_
 #define PLECS_HEADER_C2000_28379D_h_
@@ -32,15 +32,6 @@ extern const char * C2000_28379D_errorStatus;
 extern const float C2000_28379D_sampleTime;
 
 
-/*
- * Model states */
-typedef struct
-{
-   bool Delay2;                     /* C2000_28379D/Delay2 */
-} C2000_28379D_ModelStates;
-extern C2000_28379D_ModelStates C2000_28379D_X;
-
-
 /* Block outputs */
 typedef struct
 {
@@ -51,7 +42,7 @@ typedef struct
    float TriangularWave2_1;         /* C2000_28379D/SW A1/Triangular Wave2 */
    float TriangularWave1_2;         /* C2000_28379D/SW A2/Triangular Wave1 */
    float TriangularWave2_2;         /* C2000_28379D/SW A2/Triangular Wave2 */
-   bool LogicalOperator2;           /* C2000_28379D/Logical Operator2 */
+   float PulseGenerator;            /* C2000_28379D/Pulse Generator */
    float Sum1[3];                   /* C2000_28379D/Sum1 */
    float Sum2[3];                   /* C2000_28379D/Sum2 */
    float Sum3[3];                   /* C2000_28379D/Sum3 */
@@ -59,7 +50,6 @@ typedef struct
    float Fcn;                       /* C2000_28379D/SW A/Fcn */
    float Fcn_1;                     /* C2000_28379D/SW A1/Fcn */
    float Fcn_2;                     /* C2000_28379D/SW A2/Fcn */
-   bool Delay2;                     /* C2000_28379D/Delay2 */
 } C2000_28379D_BlockOutputs;
 extern C2000_28379D_BlockOutputs C2000_28379D_B;
 

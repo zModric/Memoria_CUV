@@ -2,9 +2,9 @@ local U = require('common.utils')
 local debug = require("debug")
 
 local function checkCGTVersion()
-  local cgt_install_dir = 'C:/Users/user/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS'
+  local cgt_install_dir = 'C:/Users/Estudiante USM/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS'
   local min_version = '22.6.0'
-  local cgt_version_file = 'C:/Users/user/Desktop/Repositorio_Chris/Memoria_CUV/Simulaciones/CUV Archivos Memoria/Model base - copia_codegen/TI2837xS_cpu1_cgt_version.txt'
+  local cgt_version_file = 'C:/Users/Estudiante USM/Desktop/Repositorios/Memoria_CUV/Simulaciones/CUV Archivos Memoria/Model base - copia_codegen/TI2837x_cpu1_cgt_version.txt'
 
   -- determine CGT version in file that was created by 'cl2000 -version'
   local file, e = io.open(cgt_version_file, "r") 

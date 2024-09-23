@@ -1,7 +1,7 @@
 /*
  * Hardware configuration file for: TI2837x
- * Generated with                 : PLECS 4.8.3
- * Generated on                   : Wed Sep  4 10:09:43 2024
+ * Generated with                 : PLECS 4.8.6
+ * Generated on                   : Mon Sep 23 15:42:19 2024
  */
 
 /* HAL Includes */
@@ -384,20 +384,20 @@ void C2000_28379D_initHal()
       PLX_DIO_configureOut(DoutHandles[10], 34,  &props);
    }
    DISPR_sinit();
-   DISPR_configure((uint32_t)(475), PilHandle, &TaskObj[0],
+   DISPR_configure((uint32_t)(4750), PilHandle, &TaskObj[0],
                    sizeof(TaskObj)/sizeof(DISPR_TaskObj_t));
    DISPR_registerIdleTask(&C2000_28379D_background);
    DISPR_registerSyncCallback(&C2000_28379D_syncTimers);
-   DISPR_setPowerupDelay(100);
+   DISPR_setPowerupDelay(10);
    {
       static int taskId = 0;
-      // Task 0 at 1.000000e+05 Hz
-      DISPR_registerTask(0, &Tasks, 475L, (void *)&taskId);
+      // Task 0 at 1.000000e+04 Hz
+      DISPR_registerTask(0, &Tasks, 4750L, (void *)&taskId);
    }
    {
       CpuTimer0Regs.TCR.bit.TSS = 1;   // stop timer
       CpuTimer0Regs.TPRH.all = 0;
-      CpuTimer0Regs.PRD.all = 475-1;
+      CpuTimer0Regs.PRD.all = 4750-1;
       CpuTimer0Regs.TCR.bit.TRB = 1;   // reload period
       CpuTimer0Regs.TCR.bit.TIE = 1;   // enable trigger to SOC/interrupt
 

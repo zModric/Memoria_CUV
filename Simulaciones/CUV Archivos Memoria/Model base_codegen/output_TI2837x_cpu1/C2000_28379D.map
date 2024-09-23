@@ -1,10 +1,10 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Wed Sep  4 10:09:48 2024
+>> Linked Mon Sep 23 15:42:24 2024
 
 OUTPUT FILE NAME:   <./output_TI2837x_cpu1/C2000_28379D.out>
-ENTRY POINT SYMBOL: "_c_int00"  address: 00085740
+ENTRY POINT SYMBOL: "_c_int00"  address: 0008573c
 
 
 MEMORY CONFIGURATION
@@ -15,7 +15,7 @@ PAGE 0:
   BOOT_RSVD             00000002   00000121  00000000  00000121  RWIX
   RAMM0                 00000124   000002dc  000000cf  0000020d  RWIX
   RAMM1                 00000400   00000400  00000300  00000100  RWIX
-  RAMLS                 00008000   00003f00  00001095  00002e6b  RWIX
+  RAMLS                 00008000   00003f00  00001063  00002e9d  RWIX
   RAMD1_RSVD            0000bf00   00000100  00000000  00000100  RWIX
   CPU2TOCPU1RAM         0003f800   0000037f  00000000  0000037f  RWIX
   SCOPE_FLAG_CPU2       0003fb7f   00000001  00000000  00000001  RWIX
@@ -24,7 +24,7 @@ PAGE 0:
   SCOPE_FLAG_CPU1       0003ff7f   00000001  00000000  00000001  RWIX
   CPU1TOCPU2LINK        0003ff80   00000080  00000000  00000080  RWIX
   BEGIN                 00080000   00000002  00000002  00000000  RWIX
-  FLASH                 00080002   0003fffe  00005d6b  0003a293  RWIX
+  FLASH                 00080002   0003fffe  00005d23  0003a2db  RWIX
   RESET                 003fffc0   00000002  00000000  00000002  RWIX
 
 PAGE 1:
@@ -221,29 +221,29 @@ DevCfgRegsFile
 *          1    0005d000    0000012e     UNINITIALIZED
                   0005d000    0000012e     F2837xD_GlobalVariableDefs.obj (DevCfgRegsFile)
 
-.bss       0    00008000    000008ae     UNINITIALIZED
+.bss       0    00008000    0000087c     UNINITIALIZED
                   00008000    000001f4     C2000_28379D_0.obj (.bss:g)
                   000081f4    000001f4     C2000_28379D_0.obj (.bss:gb)
                   000083e8    000001f4     C2000_28379D_0.obj (.bss:gv)
                   000085dc    00000138     C2000_28379D_hal.obj (.bss:AdcObj)
-                  00008714    0000001e     dio_2837x.obj (.bss)
-                  00008732    0000000c     C2000_28379D.obj (.bss:C2000_28379D_D_uint32_t)
-                  0000873e    00000002     C2000_28379D.obj (.bss:C2000_28379D_subTaskHit)
-                  00008740    00000072     C2000_28379D.obj (.bss)
-                  000087b2    00000058     C2000_28379D_hal.obj (.bss:DoutObj)
-                  0000880a    00000042     C2000_28379D.obj (.bss:C2000_28379D_cScriptStruct)
-                  0000884c    00000034     dispatcher.obj (.bss)
-                  00008880    00000016     C2000_28379D_hal.obj (.bss:DoutHandles)
-                  00008896    0000000a     C2000_28379D_hal.obj (.bss:TaskObj)
-                  000088a0    00000008     C2000_28379D_hal.obj (.bss:AdcHandles)
-                  000088a8    00000004     C2000_28379D.obj (.bss:C2000_28379D_subTaskTick)
-                  000088ac    00000002     ain_type4.obj (.bss)
+                  00008714    00000058     C2000_28379D_hal.obj (.bss:DoutObj)
+                  0000876c    00000042     C2000_28379D.obj (.bss:C2000_28379D_cScriptStruct)
+                  000087ae    0000000e     C2000_28379D.obj (.bss:C2000_28379D_D_uint32_t)
+                  000087bc    00000004     C2000_28379D.obj (.bss:C2000_28379D_subTaskTick)
+                  000087c0    0000003e     C2000_28379D.obj (.bss)
+                  000087fe    00000002     C2000_28379D.obj (.bss:C2000_28379D_subTaskHit)
+                  00008800    00000034     dispatcher.obj (.bss)
+                  00008834    0000000a     C2000_28379D_hal.obj (.bss:TaskObj)
+                  0000883e    00000002     ain_type4.obj (.bss)
+                  00008840    0000001e     dio_2837x.obj (.bss)
+                  0000885e    00000016     C2000_28379D_hal.obj (.bss:DoutHandles)
+                  00008874    00000008     C2000_28379D_hal.obj (.bss:AdcHandles)
 
 codestart 
 *          0    00080000    00000002     
                   00080000    00000002     F2837xD_CodeStartBranch.obj (codestart)
 
-.text      0    00080228    000055a6     
+.text      0    00080228    000055a2     
                   00080228    00000d02     C2000_28379D_0.obj (.text)
                   00080f2a    0000067c     rts2800_fpu32_eabi.lib : k_rem_pio2.c.obj (.text)
                   000815a6    0000061f     pil_c28_fpu32_eabi.lib : probes.obj (.text)
@@ -269,44 +269,44 @@ codestart
                   00084e32    000000de                            : e_sqrt.c.obj (.text)
                   00084f10    000000ce                            : s_cos.c.obj (.text)
                   00084fde    000000cb                            : s_sin.c.obj (.text)
-                  000850a9    000000be     C2000_28379D.obj (.text)
-                  00085167    000000a9     rts2800_fpu32_eabi.lib : s_scalbn.c.obj (.text)
-                  00085210    0000009c                            : fd_add28.asm.obj (.text)
-                  000852ac    0000008b                            : fd_div28.asm.obj (.text)
-                  00085337    00000088                            : fs_div28.asm.obj (.text)
-                  000853bf    00000083                            : fd_mpy28.asm.obj (.text)
-                  00085442    0000007e     dio_2837x.obj (.text)
-                  000854c0    00000064     pil_c28_fpu32_eabi.lib : ringbuf.obj (.text)
-                  00085524    00000037     C2000_28379D_hal.obj (.text:retain)
-                  0008555b    00000030     rts2800_fpu32_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
-                  0008558b    0000002b                            : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
-                  000855b6    0000002a                            : fd_cmp28.asm.obj (.text)
-                  000855e0    00000029                            : exit.c.obj (.text)
-                  00085609    00000024                            : s_copysign.c.obj (.text)
-                  0008562d    00000023                            : fd_tofsfpu32.asm.obj (.text)
-                  00085650    00000022                            : i_div28.asm.obj (.text)
-                  00085672    00000021     C2000_28379D_main.obj (.text)
-                  00085693    00000021     rts2800_fpu32_eabi.lib : fd_toi28.asm.obj (.text)
-                  000856b4    0000001f                            : fd_tol28.asm.obj (.text)
-                  000856d3    0000001d                            : memcpy.c.obj (.text)
-                  000856f0    0000001c                            : fs_tofdfpu32.asm.obj (.text)
-                  0008570c    0000001c                            : l_tofd28.asm.obj (.text)
-                  00085728    00000018                            : ll_aox28.asm.obj (.text)
-                  00085740    00000017                            : boot28.asm.obj (.text)
-                  00085757    00000013     plx_driverlib_fpu32_eabi.lib : flash.obj (.text)
-                  0008576a    0000000e     rts2800_fpu32_eabi.lib : fd_sub28.asm.obj (.text)
-                  00085778    0000000c                            : args_main.c.obj (.text)
-                  00085784    0000000a     F2837xD_DevInit.obj (.text:retain)
-                  0008578e    00000009     rts2800_fpu32_eabi.lib : _lock.c.obj (.text)
-                  00085797    00000009                            : fd_neg28.asm.obj (.text)
-                  000857a0    00000008     F2837xD_CodeStartBranch.obj (.text)
-                  000857a8    00000008     rts2800_fpu32_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none)
-                  000857b0    00000007     dispatcher_asm.obj (.text)
-                  000857b7    00000007     pil_c28_fpu32_eabi.lib : pil_f28x_dis_int.obj (.text)
-                  000857be    00000007     rts2800_fpu32_eabi.lib : memset.c.obj (.text)
-                  000857c5    00000006                            : copy_zero_init.c.obj (.text:decompress:ZI)
-                  000857cb    00000002                            : pre_init.c.obj (.text)
-                  000857cd    00000001                            : startup.c.obj (.text)
+                  000850a9    000000ba     C2000_28379D.obj (.text)
+                  00085163    000000a9     rts2800_fpu32_eabi.lib : s_scalbn.c.obj (.text)
+                  0008520c    0000009c                            : fd_add28.asm.obj (.text)
+                  000852a8    0000008b                            : fd_div28.asm.obj (.text)
+                  00085333    00000088                            : fs_div28.asm.obj (.text)
+                  000853bb    00000083                            : fd_mpy28.asm.obj (.text)
+                  0008543e    0000007e     dio_2837x.obj (.text)
+                  000854bc    00000064     pil_c28_fpu32_eabi.lib : ringbuf.obj (.text)
+                  00085520    00000037     C2000_28379D_hal.obj (.text:retain)
+                  00085557    00000030     rts2800_fpu32_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss)
+                  00085587    0000002b                            : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit)
+                  000855b2    0000002a                            : fd_cmp28.asm.obj (.text)
+                  000855dc    00000029                            : exit.c.obj (.text)
+                  00085605    00000024                            : s_copysign.c.obj (.text)
+                  00085629    00000023                            : fd_tofsfpu32.asm.obj (.text)
+                  0008564c    00000022                            : i_div28.asm.obj (.text)
+                  0008566e    00000021     C2000_28379D_main.obj (.text)
+                  0008568f    00000021     rts2800_fpu32_eabi.lib : fd_toi28.asm.obj (.text)
+                  000856b0    0000001f                            : fd_tol28.asm.obj (.text)
+                  000856cf    0000001d                            : memcpy.c.obj (.text)
+                  000856ec    0000001c                            : fs_tofdfpu32.asm.obj (.text)
+                  00085708    0000001c                            : l_tofd28.asm.obj (.text)
+                  00085724    00000018                            : ll_aox28.asm.obj (.text)
+                  0008573c    00000017                            : boot28.asm.obj (.text)
+                  00085753    00000013     plx_driverlib_fpu32_eabi.lib : flash.obj (.text)
+                  00085766    0000000e     rts2800_fpu32_eabi.lib : fd_sub28.asm.obj (.text)
+                  00085774    0000000c                            : args_main.c.obj (.text)
+                  00085780    0000000a     F2837xD_DevInit.obj (.text:retain)
+                  0008578a    00000009     rts2800_fpu32_eabi.lib : _lock.c.obj (.text)
+                  00085793    00000009                            : fd_neg28.asm.obj (.text)
+                  0008579c    00000008     F2837xD_CodeStartBranch.obj (.text)
+                  000857a4    00000008     rts2800_fpu32_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none)
+                  000857ac    00000007     dispatcher_asm.obj (.text)
+                  000857b3    00000007     pil_c28_fpu32_eabi.lib : pil_f28x_dis_int.obj (.text)
+                  000857ba    00000007     rts2800_fpu32_eabi.lib : memset.c.obj (.text)
+                  000857c1    00000006                            : copy_zero_init.c.obj (.text:decompress:ZI)
+                  000857c7    00000002                            : pre_init.c.obj (.text)
+                  000857c9    00000001                            : startup.c.obj (.text)
 
 GpioCtrlRegsFile 
 *          1    00007c00    00000180     UNINITIALIZED
@@ -324,18 +324,18 @@ PieCtrlRegsFile
 *          1    00000ce0    0000001a     UNINITIALIZED
                   00000ce0    0000001a     F2837xD_GlobalVariableDefs.obj (PieCtrlRegsFile)
 
-step       0    000857d0    00000331     
-                  000857d0    00000331     C2000_28379D.obj (step)
+step       0    000857cc    000002ed     
+                  000857cc    000002ed     C2000_28379D.obj (step)
 
-dispatch   0    00085b04    000000db     
-                  00085b04    000000db     dispatcher.obj (dispatch)
+dispatch   0    00085abc    000000db     
+                  00085abc    000000db     dispatcher.obj (dispatch)
 
-.cinit     0    00085cb0    000000c8     
-                  00085cb0    000000ae     (.cinit..data.load) [load image, compression = lzss]
-                  00085d5e    00000006     (__TI_handler_table)
-                  00085d64    00000004     (.cinit..bss.load) [load image, compression = zero_init]
-                  00085d68    00000004     (.cinit.PieVectTableFile.load) [load image, compression = zero_init]
-                  00085d6c    0000000c     (__TI_cinit_table)
+.cinit     0    00085c68    000000c8     
+                  00085c68    000000ae     (.cinit..data.load) [load image, compression = lzss]
+                  00085d16    00000006     (__TI_handler_table)
+                  00085d1c    00000004     (.cinit..bss.load) [load image, compression = zero_init]
+                  00085d20    00000004     (.cinit.PieVectTableFile.load) [load image, compression = zero_init]
+                  00085d24    0000000c     (__TI_cinit_table)
 
 .stack     0    00000400    00000300     UNINITIALIZED
                   00000400    00000300     --HOLE--
@@ -361,36 +361,36 @@ dispatch   0    00085b04    000000db
                   0008021e    00000004                            : s_cos.c.obj (.const)
                   00080222    00000004                            : s_sin.c.obj (.const)
 
-.data      0    000088ae    000007e7     UNINITIALIZED
-                  000088ae    000001f4     C2000_28379D_0.obj (.data:Sa)
-                  00008aa2    000001f4     C2000_28379D_0.obj (.data:Sb)
-                  00008c96    000001f4     C2000_28379D_0.obj (.data:Sc)
-                  00008e8a    00000014     C2000_28379D.obj (.data:inputPtrs$2)
-                  00008e9e    00000014     C2000_28379D.obj (.data:terminalSampleTimeOffsets$12)
-                  00008eb2    00000008     C2000_28379D.obj (.data:outputPtrs$5)
-                  00008eba    00000006     rts2800_fpu32_eabi.lib : exit.c.obj (.data)
-                  00008ec0    000001a8     C2000_28379D_0.obj (.data)
-                  00009068    00000014     C2000_28379D.obj (.data:terminalSampleTimePeriods$11)
-                  0000907c    00000004     C2000_28379D_hal.obj (.data)
-                  00009080    00000002     rts2800_fpu32_eabi.lib : _lock.c.obj (.data:_lock)
-                  00009082    00000002                            : _lock.c.obj (.data:_unlock)
-                  00009084    00000002     C2000_28379D.obj (.data:inputs$3)
-                  00009086    00000002     C2000_28379D.obj (.data:outputs$6)
-                  00009088    00000002     C2000_28379D.obj (.data:sampleHits$8)
-                  0000908a    00000002     C2000_28379D.obj (.data:sampleTimeOffsets$10)
-                  0000908c    00000002     C2000_28379D.obj (.data:sampleTimePeriods$9)
-                  0000908e    00000002     C2000_28379D.obj (.data:terminalSampleTimeOffsetPtrs$14)
-                  00009090    00000002     C2000_28379D.obj (.data:terminalSampleTimePeriodPtrs$13)
-                  00009092    00000001     C2000_28379D.obj (.data:numInputSignals$1)
-                  00009093    00000001     C2000_28379D.obj (.data:numOutputSignals$4)
-                  00009094    00000001     rts2800_fpu32_eabi.lib : errno.c.obj (.data)
+.data      0    0000887c    000007e7     UNINITIALIZED
+                  0000887c    000001f4     C2000_28379D_0.obj (.data:Sa)
+                  00008a70    000001f4     C2000_28379D_0.obj (.data:Sb)
+                  00008c64    000001f4     C2000_28379D_0.obj (.data:Sc)
+                  00008e58    00000014     C2000_28379D.obj (.data:inputPtrs$2)
+                  00008e6c    00000014     C2000_28379D.obj (.data:terminalSampleTimeOffsets$12)
+                  00008e80    000001a8     C2000_28379D_0.obj (.data)
+                  00009028    00000014     C2000_28379D.obj (.data:terminalSampleTimePeriods$11)
+                  0000903c    00000008     C2000_28379D.obj (.data:outputPtrs$5)
+                  00009044    00000006     rts2800_fpu32_eabi.lib : exit.c.obj (.data)
+                  0000904a    00000004     C2000_28379D_hal.obj (.data)
+                  0000904e    00000002     rts2800_fpu32_eabi.lib : _lock.c.obj (.data:_lock)
+                  00009050    00000002                            : _lock.c.obj (.data:_unlock)
+                  00009052    00000002     C2000_28379D.obj (.data:inputs$3)
+                  00009054    00000002     C2000_28379D.obj (.data:outputs$6)
+                  00009056    00000002     C2000_28379D.obj (.data:sampleHits$8)
+                  00009058    00000002     C2000_28379D.obj (.data:sampleTimeOffsets$10)
+                  0000905a    00000002     C2000_28379D.obj (.data:sampleTimePeriods$9)
+                  0000905c    00000002     C2000_28379D.obj (.data:terminalSampleTimeOffsetPtrs$14)
+                  0000905e    00000002     C2000_28379D.obj (.data:terminalSampleTimePeriodPtrs$13)
+                  00009060    00000001     C2000_28379D.obj (.data:numInputSignals$1)
+                  00009061    00000001     C2000_28379D.obj (.data:numOutputSignals$4)
+                  00009062    00000001     rts2800_fpu32_eabi.lib : errno.c.obj (.data)
 
-ramfuncs   0    00085be0    00000000     UNINITIALIZEDRUN ADDR = 00000124
+ramfuncs   0    00085b98    00000000     UNINITIALIZEDRUN ADDR = 00000124
 
 .TI.ramfunc 
-*          0    00085be0    000000cf     RUN ADDR = 00000124
-                  00085be0    000000cb     plx_driverlib_fpu32_eabi.lib : flash.obj (.TI.ramfunc)
-                  00085cab    00000004                                  : sysctl.obj (.TI.ramfunc)
+*          0    00085b98    000000cf     RUN ADDR = 00000124
+                  00085b98    000000cb     plx_driverlib_fpu32_eabi.lib : flash.obj (.TI.ramfunc)
+                  00085c63    00000004                                  : sysctl.obj (.TI.ramfunc)
 
 .reset     0    003fffc0    00000000     DSECT
 
@@ -403,7 +403,7 @@ MODULE SUMMARY
        F2837xD_GlobalVariableDefs.obj   0       0         2184   
        C2000_28379D_hal.obj             1078    22        444    
        F2837xD_DefaultISR.obj           1413    0         0      
-       C2000_28379D.obj                 1007    4         282    
+       C2000_28379D.obj                 935     4         232    
        dispatcher.obj                   553     0         52     
        ain_type4.obj                    399     0         2      
        F2837xD_DevInit.obj              245     0         0      
@@ -413,9 +413,9 @@ MODULE SUMMARY
        F2837xD_CodeStartBranch.obj      10      0         0      
        dispatcher_asm.obj               7       0         0      
     +--+--------------------------------+-------+---------+---------+
-       Total:                           8440    42        6418   
+       Total:                           8368    42        6368   
                                                                  
-    C:\Users\user\AppData\Local\Programs\PLECS C2000 TSP\cgt\ti-cgt-c2000_22.6.1.LTS\lib\rts2800_fpu32_eabi.lib
+    C:\Users\Estudiante USM\AppData\Local\Programs\PLECS C2000 TSP\cgt\ti-cgt-c2000_22.6.1.LTS\lib\rts2800_fpu32_eabi.lib
        k_rem_pio2.c.obj                 1660    212       0      
        e_rem_pio2.c.obj                 1073    100       0      
        k_sin.c.obj                      293     56        0      
@@ -456,7 +456,7 @@ MODULE SUMMARY
     +--+--------------------------------+-------+---------+---------+
        Total:                           5438    488       11     
                                                                  
-    F:\Repositorio_Chris\tsp_ti_c2000\ccs\2837x\..\pil\pil_c28_fpu32_eabi.lib
+    C:\Users\Estudiante USM\Desktop\target supp\tsp_ti_c2000\ccs\2837x\..\pil\pil_c28_fpu32_eabi.lib
        probes.obj                       1567    0         0      
        scope.obj                        1476    0         0      
        pil.obj                          1112    0         0      
@@ -470,7 +470,7 @@ MODULE SUMMARY
     +--+--------------------------------+-------+---------+---------+
        Total:                           7169    16        0      
                                                                  
-    F:\Repositorio_Chris\tsp_ti_c2000\ccs\2837x\tisrc\driverlib\plx_driverlib_fpu32_eabi.lib
+    C:\Users\Estudiante USM\Desktop\target supp\tsp_ti_c2000\ccs\2837x\tisrc\driverlib\plx_driverlib_fpu32_eabi.lib
        sysctl.obj                       1415    0         0      
        gpio.obj                         491     0         0      
        flash.obj                        425     0         0      
@@ -480,20 +480,20 @@ MODULE SUMMARY
        Stack:                           0       0         768    
        Linker Generated:                0       200       0      
     +--+--------------------------------+-------+---------+---------+
-       Grand Total:                     23378   746       7197   
+       Grand Total:                     23306   746       7147   
 
 
 LINKER GENERATED COPY TABLES
 
-__TI_cinit_table @ 00085d6c records: 3, size/record: 4, table size: 12
-	.data: load addr=00085cb0, load size=000000ae bytes, run addr=000088ae, run size=000007e7 bytes, compression=lzss
-	.bss: load addr=00085d64, load size=00000004 bytes, run addr=00008000, run size=000008ae bytes, compression=zero_init
-	PieVectTableFile: load addr=00085d68, load size=00000004 bytes, run addr=00000d00, run size=000001c0 bytes, compression=zero_init
+__TI_cinit_table @ 00085d24 records: 3, size/record: 4, table size: 12
+	.data: load addr=00085c68, load size=000000ae bytes, run addr=0000887c, run size=000007e7 bytes, compression=lzss
+	.bss: load addr=00085d1c, load size=00000004 bytes, run addr=00008000, run size=0000087c bytes, compression=zero_init
+	PieVectTableFile: load addr=00085d20, load size=00000004 bytes, run addr=00000d00, run size=000001c0 bytes, compression=zero_init
 
 
 LINKER GENERATED HANDLER TABLE
 
-__TI_handler_table @ 00085d5e records: 3, size/record: 2, table size: 6
+__TI_handler_table @ 00085d16 records: 3, size/record: 2, table size: 6
 	index: 0, handler: __TI_zero_init
 	index: 1, handler: __TI_decompress_lzss
 	index: 2, handler: __TI_decompress_none
@@ -539,154 +539,152 @@ address     data page           name
 
 000085dc     217 (000085c0)     AdcObj
 
-00008740     21d (00008740)     C2000_28379D_X
-00008746     21d (00008740)     C2000_28379D_errorStatus
+00008714     21c (00008700)     DoutObj
 
-00008780     21e (00008780)     C2000_28379D_B
-000087b2     21e (00008780)     DoutObj
+000087c4     21f (000087c0)     C2000_28379D_errorStatus
+000087ce     21f (000087c0)     C2000_28379D_B
 
-0000884c     221 (00008840)     DisprHandle
-0000884e     221 (00008840)     DisprObj
+00008800     220 (00008800)     DisprHandle
+00008802     220 (00008800)     DisprObj
+00008834     220 (00008800)     TaskObj
 
-00008880     222 (00008880)     DoutHandles
-00008896     222 (00008880)     TaskObj
-000088a0     222 (00008880)     AdcHandles
-000088ae     222 (00008880)     Sa
+0000885e     221 (00008840)     DoutHandles
+00008874     221 (00008840)     AdcHandles
+0000887c     221 (00008840)     Sa
 
-00008aa2     22a (00008a80)     Sb
+00008a70     229 (00008a40)     Sb
 
-00008c96     232 (00008c80)     Sc
+00008c64     231 (00008c40)     Sc
 
-00008eba     23a (00008e80)     __TI_enable_exit_profile_output
-00008ebc     23a (00008e80)     __TI_cleanup_ptr
-00008ebe     23a (00008e80)     __TI_dtors_ptr
+00008e80     23a (00008e80)     Sa1
+00008e81     23a (00008e80)     Sa2
+00008e82     23a (00008e80)     Sa3
+00008e83     23a (00008e80)     Sb1
+00008e84     23a (00008e80)     Sb2
+00008e85     23a (00008e80)     Sb3
+00008e86     23a (00008e80)     Sc1
+00008e87     23a (00008e80)     Sc2
+00008e88     23a (00008e80)     Sc3
+00008e89     23a (00008e80)     cont_v
+00008e8a     23a (00008e80)     x
+00008e8b     23a (00008e80)     x_opt
+00008e8c     23a (00008e80)     h
+00008e90     23a (00008e80)     Vdc
+00008e94     23a (00008e80)     L1
+00008e98     23a (00008e80)     L2
+00008e9c     23a (00008e80)     Cf
+00008ea0     23a (00008e80)     R
+00008ea4     23a (00008e80)     rc
+00008ea8     23a (00008e80)     w
+00008eac     23a (00008e80)     R1
+00008eb0     23a (00008e80)     Vgd_r
+00008eb4     23a (00008e80)     Vgq_r
+00008eb8     23a (00008e80)     e
+00008ebc     23a (00008e80)     d1_L1C
 
-00008ec0     23b (00008ec0)     Sa1
-00008ec1     23b (00008ec0)     Sa2
-00008ec2     23b (00008ec0)     Sa3
-00008ec3     23b (00008ec0)     Sb1
-00008ec4     23b (00008ec0)     Sb2
-00008ec5     23b (00008ec0)     Sb3
-00008ec6     23b (00008ec0)     Sc1
-00008ec7     23b (00008ec0)     Sc2
-00008ec8     23b (00008ec0)     Sc3
-00008ec9     23b (00008ec0)     cont_v
-00008eca     23b (00008ec0)     x
-00008ecb     23b (00008ec0)     x_opt
-00008ecc     23b (00008ec0)     h
-00008ed0     23b (00008ec0)     Vdc
-00008ed4     23b (00008ec0)     L1
-00008ed8     23b (00008ec0)     L2
-00008edc     23b (00008ec0)     Cf
-00008ee0     23b (00008ec0)     R
-00008ee4     23b (00008ec0)     rc
-00008ee8     23b (00008ec0)     w
-00008eec     23b (00008ec0)     R1
-00008ef0     23b (00008ec0)     Vgd_r
-00008ef4     23b (00008ec0)     Vgq_r
-00008ef8     23b (00008ec0)     e
-00008efc     23b (00008ec0)     d1_L1C
+00008ec0     23b (00008ec0)     d1_L2
+00008ec4     23b (00008ec0)     C2
+00008ec8     23b (00008ec0)     d1_C2
+00008ecc     23b (00008ec0)     d1_L1
+00008ed0     23b (00008ec0)     d1_c
+00008ed4     23b (00008ec0)     ik_d
+00008ed8     23b (00008ec0)     ik_q
+00008edc     23b (00008ec0)     ik1_d
+00008ee0     23b (00008ec0)     ik1_q
+00008ee4     23b (00008ec0)     V_d
+00008ee8     23b (00008ec0)     V_q
+00008eec     23b (00008ec0)     Vd_ant_2
+00008ef0     23b (00008ec0)     Vd_ant
+00008ef4     23b (00008ec0)     Vgd_ant_2
+00008ef8     23b (00008ec0)     Vgd_ant
+00008efc     23b (00008ec0)     Vq_ant_2
 
-00008f00     23c (00008f00)     d1_L2
-00008f04     23c (00008f00)     C2
-00008f08     23c (00008f00)     d1_C2
-00008f0c     23c (00008f00)     d1_L1
-00008f10     23c (00008f00)     d1_c
-00008f14     23c (00008f00)     ik_d
-00008f18     23c (00008f00)     ik_q
-00008f1c     23c (00008f00)     ik1_d
-00008f20     23c (00008f00)     ik1_q
-00008f24     23c (00008f00)     V_d
-00008f28     23c (00008f00)     V_q
-00008f2c     23c (00008f00)     Vd_ant_2
-00008f30     23c (00008f00)     Vd_ant
-00008f34     23c (00008f00)     Vgd_ant_2
-00008f38     23c (00008f00)     Vgd_ant
-00008f3c     23c (00008f00)     Vq_ant_2
+00008f00     23c (00008f00)     Vq_ant
+00008f04     23c (00008f00)     Vgq_ant_2
+00008f08     23c (00008f00)     Vgq_ant
+00008f0c     23c (00008f00)     Vcdp
+00008f10     23c (00008f00)     Vcqp
+00008f14     23c (00008f00)     Vcd_ant_2
+00008f18     23c (00008f00)     Vcd_ant
+00008f1c     23c (00008f00)     Vcd
+00008f20     23c (00008f00)     Vcd_k0
+00008f24     23c (00008f00)     Vcd_k1
+00008f28     23c (00008f00)     Vcq_ant_2
+00008f2c     23c (00008f00)     Vcq_ant
+00008f30     23c (00008f00)     Vcq
+00008f34     23c (00008f00)     Vcq_k0
+00008f38     23c (00008f00)     Vcq_k1
+00008f3c     23c (00008f00)     i2d_k
 
-00008f40     23d (00008f40)     Vq_ant
-00008f44     23d (00008f40)     Vgq_ant_2
-00008f48     23d (00008f40)     Vgq_ant
-00008f4c     23d (00008f40)     Vcdp
-00008f50     23d (00008f40)     Vcqp
-00008f54     23d (00008f40)     Vcd_ant_2
-00008f58     23d (00008f40)     Vcd_ant
-00008f5c     23d (00008f40)     Vcd
-00008f60     23d (00008f40)     Vcd_k0
-00008f64     23d (00008f40)     Vcd_k1
-00008f68     23d (00008f40)     Vcq_ant_2
-00008f6c     23d (00008f40)     Vcq_ant
-00008f70     23d (00008f40)     Vcq
-00008f74     23d (00008f40)     Vcq_k0
-00008f78     23d (00008f40)     Vcq_k1
-00008f7c     23d (00008f40)     i2d_k
+00008f40     23d (00008f40)     i2d_k0
+00008f44     23d (00008f40)     i2d_k1
+00008f48     23d (00008f40)     i2d_ant
+00008f4c     23d (00008f40)     i2d_ant_2
+00008f50     23d (00008f40)     i2q_k
+00008f54     23d (00008f40)     i2q_k0
+00008f58     23d (00008f40)     i2q_k1
+00008f5c     23d (00008f40)     i2q_ant
+00008f60     23d (00008f40)     i2q_ant_2
+00008f64     23d (00008f40)     i1d_k
+00008f68     23d (00008f40)     i1d_k0
+00008f6c     23d (00008f40)     i1d_k1
+00008f70     23d (00008f40)     i1d_ant
+00008f74     23d (00008f40)     i1d_ant_2
+00008f78     23d (00008f40)     i1q_k
+00008f7c     23d (00008f40)     i1q_k0
 
-00008f80     23e (00008f80)     i2d_k0
-00008f84     23e (00008f80)     i2d_k1
-00008f88     23e (00008f80)     i2d_ant
-00008f8c     23e (00008f80)     i2d_ant_2
-00008f90     23e (00008f80)     i2q_k
-00008f94     23e (00008f80)     i2q_k0
-00008f98     23e (00008f80)     i2q_k1
-00008f9c     23e (00008f80)     i2q_ant
-00008fa0     23e (00008f80)     i2q_ant_2
-00008fa4     23e (00008f80)     i1d_k
-00008fa8     23e (00008f80)     i1d_k0
-00008fac     23e (00008f80)     i1d_k1
-00008fb0     23e (00008f80)     i1d_ant
-00008fb4     23e (00008f80)     i1d_ant_2
-00008fb8     23e (00008f80)     i1q_k
-00008fbc     23e (00008f80)     i1q_k0
+00008f80     23e (00008f80)     i1q_k1
+00008f84     23e (00008f80)     i1q_ant
+00008f88     23e (00008f80)     i1q_ant_2
+00008f8c     23e (00008f80)     Vgd_k
+00008f90     23e (00008f80)     Vgd_k0
+00008f94     23e (00008f80)     Vgd_k1
+00008f98     23e (00008f80)     Vgq_k
+00008f9c     23e (00008f80)     Vgq_k0
+00008fa0     23e (00008f80)     Vgq_k1
+00008fa4     23e (00008f80)     id_ref
+00008fa8     23e (00008f80)     iq_ref
+00008fac     23e (00008f80)     ia_ref
+00008fb0     23e (00008f80)     ib_ref
+00008fb4     23e (00008f80)     id
+00008fb8     23e (00008f80)     iq
+00008fbc     23e (00008f80)     theta
 
-00008fc0     23f (00008fc0)     i1q_k1
-00008fc4     23f (00008fc0)     i1q_ant
-00008fc8     23f (00008fc0)     i1q_ant_2
-00008fcc     23f (00008fc0)     Vgd_k
-00008fd0     23f (00008fc0)     Vgd_k0
-00008fd4     23f (00008fc0)     Vgd_k1
-00008fd8     23f (00008fc0)     Vgq_k
-00008fdc     23f (00008fc0)     Vgq_k0
-00008fe0     23f (00008fc0)     Vgq_k1
-00008fe4     23f (00008fc0)     id_ref
-00008fe8     23f (00008fc0)     iq_ref
-00008fec     23f (00008fc0)     ia_ref
-00008ff0     23f (00008fc0)     ib_ref
-00008ff4     23f (00008fc0)     id
-00008ff8     23f (00008fc0)     iq
-00008ffc     23f (00008fc0)     theta
+00008fc0     23f (00008fc0)     ed
+00008fc4     23f (00008fc0)     xd
+00008fc8     23f (00008fc0)     vd
+00008fcc     23f (00008fc0)     edp
+00008fd0     23f (00008fc0)     eq
+00008fd4     23f (00008fc0)     xq
+00008fd8     23f (00008fc0)     vq
+00008fdc     23f (00008fc0)     eqp
+00008fe0     23f (00008fc0)     ma
+00008fe4     23f (00008fc0)     mb
+00008fe8     23f (00008fc0)     mc
+00008fec     23f (00008fc0)     sat
+00008ff0     23f (00008fc0)     dp
+00008ff4     23f (00008fc0)     id_r
+00008ff8     23f (00008fc0)     iq_r
+00008ffc     23f (00008fc0)     Vcd_r
 
-00009000     240 (00009000)     ed
-00009004     240 (00009000)     xd
-00009008     240 (00009000)     vd
-0000900c     240 (00009000)     edp
-00009010     240 (00009000)     eq
-00009014     240 (00009000)     xq
-00009018     240 (00009000)     vq
-0000901c     240 (00009000)     eqp
-00009020     240 (00009000)     ma
-00009024     240 (00009000)     mb
-00009028     240 (00009000)     mc
-0000902c     240 (00009000)     sat
-00009030     240 (00009000)     dp
-00009034     240 (00009000)     id_r
-00009038     240 (00009000)     iq_r
-0000903c     240 (00009000)     Vcd_r
+00009000     240 (00009000)     Vcq_r
+00009004     240 (00009000)     g_opt
+00009008     240 (00009000)     t
+0000900c     240 (00009000)     gx
+00009010     240 (00009000)     e_ant
+00009014     240 (00009000)     ik0_d
+00009018     240 (00009000)     ik0_q
+0000901c     240 (00009000)     e1
+00009020     240 (00009000)     PI23
+00009024     240 (00009000)     CS
 
-00009040     241 (00009040)     Vcq_r
-00009044     241 (00009040)     g_opt
-00009048     241 (00009040)     t
-0000904c     241 (00009040)     gx
-00009050     241 (00009040)     e_ant
-00009054     241 (00009040)     ik0_d
-00009058     241 (00009040)     ik0_q
-0000905c     241 (00009040)     e1
-00009060     241 (00009040)     PI23
-00009064     241 (00009040)     CS
-0000907e     241 (00009040)     PilHandle
-
-00009080     242 (00009080)     _lock
-00009082     242 (00009080)     _unlock
-00009094     242 (00009080)     errno
+00009044     241 (00009040)     __TI_enable_exit_profile_output
+00009046     241 (00009040)     __TI_cleanup_ptr
+00009048     241 (00009040)     __TI_dtors_ptr
+0000904c     241 (00009040)     PilHandle
+0000904e     241 (00009040)     _lock
+00009050     241 (00009040)     _unlock
+00009062     241 (00009040)     errno
 
 0005d000    1740 (0005d000)     DevCfgRegs
 
@@ -726,7 +724,7 @@ page  address   name
 0     00082650  ADCD4_ISR                         
 0     00082646  ADCD_EVT_ISR                      
 0     0008263c  AUX_PLL_SLIP_ISR                  
-0     000088a0  AdcHandles                        
+0     00008874  AdcHandles                        
 0     000085dc  AdcObj                            
 0     00084ba8  AdcSetMode                        
 1     00007400  AdcaRegs                          
@@ -738,22 +736,21 @@ page  address   name
 1     00007580  AdcdRegs                          
 1     00000b60  AdcdResultRegs                    
 1     0005d180  AnalogSubsysRegs                  
-0     000855e0  C$$EXIT                           
-0     00008f04  C2                                
+0     000855dc  C$$EXIT                           
+0     00008ec4  C2                                
 0     00080f29  C2000_28379D_0_cScriptDerivative  
 0     00080ee8  C2000_28379D_0_cScriptOutput      
 0     00080ee7  C2000_28379D_0_cScriptStart       
 0     00080ee6  C2000_28379D_0_cScriptTerminate   
 0     00080228  C2000_28379D_0_cScriptUpdate      
-0     00008780  C2000_28379D_B                    
-0     00008740  C2000_28379D_X                    
+0     000087ce  C2000_28379D_B                    
 0     00083564  C2000_28379D_background           
-0     00085524  C2000_28379D_baseTaskInterrupt    
+0     00085520  C2000_28379D_baseTaskInterrupt    
 0     00083516  C2000_28379D_enableTasksInterrupt 
-0     00008746  C2000_28379D_errorStatus          
+0     000087c4  C2000_28379D_errorStatus          
 0     00083565  C2000_28379D_initHal              
 0     000850b7  C2000_28379D_initialize           
-0     000857d0  C2000_28379D_step                 
+0     000857cc  C2000_28379D_step                 
 0     0008355f  C2000_28379D_syncTimers           
 0     000850a9  C2000_28379D_terminate            
 0     00082632  CANA0_ISR                         
@@ -770,9 +767,9 @@ page  address   name
 0     000825c4  CLA1_8_ISR                        
 0     000825ba  CLA_OVERFLOW_ISR                  
 0     000825b0  CLA_UNDERFLOW_ISR                 
-0     00009064  CS                                
+0     00009024  CS                                
 0     00084b70  CalAdcINL                         
-0     00008edc  Cf                                
+0     00008e9c  Cf                                
 1     0005d200  ClkCfgRegs                        
 1     0005d300  CpuSysRegs                        
 1     00000c00  CpuTimer0Regs                     
@@ -781,14 +778,14 @@ page  address   name
 0     000825a6  DATALOG_ISR                       
 0     000847fd  DISPR_background                  
 0     00084916  DISPR_configure                   
-0     000857b0  DISPR_disableInt                  
-0     00085b04  DISPR_dispatch                    
+0     000857ac  DISPR_disableInt                  
+0     00085abc  DISPR_dispatch                    
 0     00084910  DISPR_registerIdleTask            
 0     0008490a  DISPR_registerPanicCallback       
 0     00084904  DISPR_registerSyncCallback        
 0     000848be  DISPR_registerTask                
 0     000847ea  DISPR_reset                       
-0     000857b4  DISPR_restoreInt                  
+0     000857b0  DISPR_restoreInt                  
 0     000848b8  DISPR_setPowerupDelay             
 0     000848aa  DISPR_sinit                       
 0     00084871  DISPR_start                       
@@ -800,10 +797,10 @@ page  address   name
 0     0008256a  DMA_CH6_ISR                       
 1     0005d000  DevCfgRegs                        
 0     00084d0e  DevInit                           
-0     0000884c  DisprHandle                       
-0     0000884e  DisprObj                          
-0     00008880  DoutHandles                       
-0     000087b2  DoutObj                           
+0     00008800  DisprHandle                       
+0     00008802  DisprObj                          
+0     0000885e  DoutHandles                       
+0     00008714  DoutObj                           
 0     00082560  ECAP1_ISR                         
 0     00082556  ECAP2_ISR                         
 0     0008254c  ECAP3_ISR                         
@@ -868,10 +865,10 @@ page  address   name
 0     0008239b  IPC1_ISR                          
 0     00082391  IPC2_ISR                          
 0     00082387  IPC3_ISR                          
-0     00085784  ISR_ILLEGAL                       
+0     00085780  ISR_ILLEGAL                       
 0     00084c69  InitFlashHz                       
-0     00008ed4  L1                                
-0     00008ed8  L2                                
+0     00008e94  L1                                
+0     00008e98  L2                                
 0     0008237d  MCBSPA_RX_ISR                     
 0     00082373  MCBSPA_TX_ISR                     
 0     00082369  MCBSPB_RX_ISR                     
@@ -880,7 +877,7 @@ page  address   name
 0     00084c5f  MemCopy                           
 0     00082355  NMI_ISR                           
 0     0008234b  NOTUSED_ISR                       
-0     00009060  PI23                              
+0     00009020  PI23                              
 0     00082341  PIE_RESERVED_ISR                  
 0     00083edf  PIL_BSRVS_init                    
 0     00083f64  PIL_BSRVS_messageHandler          
@@ -890,7 +887,7 @@ page  address   name
 0     00083c38  PIL_DCLINK_init                   
 0     00083ecc  PIL_DCLINK_poll                   
 0     00083c81  PIL_DCLINK_setBuffer              
-0     000857b7  PIL_DisableInt                    
+0     000857b3  PIL_DisableInt                    
 0     00084684  PIL_PBRIDGE_configure             
 0     00084678  PIL_PBRIDGE_init                  
 0     000847d5  PIL_PBRIDGE_poll                  
@@ -916,11 +913,11 @@ page  address   name
 0     000841f8  PIL_RA_setChecksum                
 0     000841e0  PIL_RA_setGuid                    
 0     00084210  PIL_RA_setNodeAddress             
-0     000854cb  PIL_RBUF_isEmpty                  
-0     00085503  PIL_RBUF_pop                      
-0     000854d9  PIL_RBUF_push                     
-0     000854c0  PIL_RBUF_reset                    
-0     000857bb  PIL_RestoreInt                    
+0     000854c7  PIL_RBUF_isEmpty                  
+0     000854ff  PIL_RBUF_pop                      
+0     000854d5  PIL_RBUF_push                     
+0     000854bc  PIL_RBUF_reset                    
+0     000857b7  PIL_RestoreInt                    
 0     00081bf9  PIL_SCOPE_init                    
 0     00081f3d  PIL_SCOPE_messageHandler          
 0     00082caa  PIL_SCOPE_sample                  
@@ -964,23 +961,23 @@ page  address   name
 0     0008456e  PLX_AIN_setDefaultChannelParams   
 0     000844ed  PLX_AIN_setupChannel              
 0     000844e9  PLX_AIN_sinit                     
-0     000854a2  PLX_DIO_configureIn               
-0     0008547d  PLX_DIO_configureOut              
-0     00085476  PLX_DIO_init                      
-0     0008546e  PLX_DIO_obtainDummyRead           
-0     0008546b  PLX_DIO_obtainDummyWrite          
-0     00085442  PLX_DIO_sinit                     
+0     0008549e  PLX_DIO_configureIn               
+0     00085479  PLX_DIO_configureOut              
+0     00085472  PLX_DIO_init                      
+0     0008546a  PLX_DIO_obtainDummyRead           
+0     00085467  PLX_DIO_obtainDummyWrite          
+0     0008543e  PLX_DIO_sinit                     
 1     00000ce0  PieCtrlRegs                       
 1     00000d00  PieVectTable                      
-0     0000907e  PilHandle                         
-0     00008ee0  R                                 
-0     00008eec  R1                                
+0     0000904c  PilHandle                         
+0     00008ea0  R                                 
+0     00008eac  R1                                
 0     00082337  RAM_ACCESS_VIOLATION_ISR          
 0     0008232d  RAM_CORRECTABLE_ERROR_ISR         
 0     00082323  RTOS_ISR                          
-abs   00085caf  RamfuncsLoadEnd                   
+abs   00085c67  RamfuncsLoadEnd                   
 abs   000000cf  RamfuncsLoadSize                  
-abs   00085be0  RamfuncsLoadStart                 
+abs   00085b98  RamfuncsLoadStart                 
 abs   000001f3  RamfuncsRunEnd                    
 abs   000000cf  RamfuncsRunSize                   
 abs   00000124  RamfuncsRunStart                  
@@ -1001,18 +998,18 @@ abs   00000124  RamfuncsRunStart
 0     0008228d  SPIC_RX_ISR                       
 0     00082283  SPIC_TX_ISR                       
 0     00082279  SYS_PLL_SLIP_ISR                  
-0     000088ae  Sa                                
-0     00008ec0  Sa1                               
-0     00008ec1  Sa2                               
-0     00008ec2  Sa3                               
-0     00008aa2  Sb                                
-0     00008ec3  Sb1                               
-0     00008ec4  Sb2                               
-0     00008ec5  Sb3                               
-0     00008c96  Sc                                
-0     00008ec6  Sc1                               
-0     00008ec7  Sc2                               
-0     00008ec8  Sc3                               
+0     0000887c  Sa                                
+0     00008e80  Sa1                               
+0     00008e81  Sa2                               
+0     00008e82  Sa3                               
+0     00008a70  Sb                                
+0     00008e83  Sb1                               
+0     00008e84  Sb2                               
+0     00008e85  Sb3                               
+0     00008c64  Sc                                
+0     00008e86  Sc1                               
+0     00008e87  Sc2                               
+0     00008e88  Sc3                               
 0     000001ef  SysCtl_delay                      
 0     000827f4  SysCtl_getAuxClock                
 0     000827a3  SysCtl_getClock                   
@@ -1026,7 +1023,7 @@ abs   00000124  RamfuncsRunStart
 0     0008226f  TIMER0_ISR                        
 0     00082265  TIMER1_ISR                        
 0     0008225b  TIMER2_ISR                        
-0     00008896  TaskObj                           
+0     00008834  TaskObj                           
 0     00082251  UPPA_ISR                          
 0     00082247  USBA_ISR                          
 0     0008223d  USER10_ISR                        
@@ -1042,183 +1039,183 @@ abs   00000124  RamfuncsRunStart
 0     000821d9  USER8_ISR                         
 0     000821cf  USER9_ISR                         
 0     000821c5  VCU_ISR                           
-0     00008f24  V_d                               
-0     00008f28  V_q                               
-0     00008f5c  Vcd                               
-0     00008f58  Vcd_ant                           
-0     00008f54  Vcd_ant_2                         
-0     00008f60  Vcd_k0                            
-0     00008f64  Vcd_k1                            
-0     0000903c  Vcd_r                             
-0     00008f4c  Vcdp                              
-0     00008f70  Vcq                               
-0     00008f6c  Vcq_ant                           
-0     00008f68  Vcq_ant_2                         
-0     00008f74  Vcq_k0                            
-0     00008f78  Vcq_k1                            
-0     00009040  Vcq_r                             
-0     00008f50  Vcqp                              
-0     00008f30  Vd_ant                            
-0     00008f2c  Vd_ant_2                          
-0     00008ed0  Vdc                               
-0     00008f38  Vgd_ant                           
-0     00008f34  Vgd_ant_2                         
-0     00008fcc  Vgd_k                             
-0     00008fd0  Vgd_k0                            
-0     00008fd4  Vgd_k1                            
-0     00008ef0  Vgd_r                             
-0     00008f48  Vgq_ant                           
-0     00008f44  Vgq_ant_2                         
-0     00008fd8  Vgq_k                             
-0     00008fdc  Vgq_k0                            
-0     00008fe0  Vgq_k1                            
-0     00008ef4  Vgq_r                             
-0     00008f40  Vq_ant                            
-0     00008f3c  Vq_ant_2                          
+0     00008ee4  V_d                               
+0     00008ee8  V_q                               
+0     00008f1c  Vcd                               
+0     00008f18  Vcd_ant                           
+0     00008f14  Vcd_ant_2                         
+0     00008f20  Vcd_k0                            
+0     00008f24  Vcd_k1                            
+0     00008ffc  Vcd_r                             
+0     00008f0c  Vcdp                              
+0     00008f30  Vcq                               
+0     00008f2c  Vcq_ant                           
+0     00008f28  Vcq_ant_2                         
+0     00008f34  Vcq_k0                            
+0     00008f38  Vcq_k1                            
+0     00009000  Vcq_r                             
+0     00008f10  Vcqp                              
+0     00008ef0  Vd_ant                            
+0     00008eec  Vd_ant_2                          
+0     00008e90  Vdc                               
+0     00008ef8  Vgd_ant                           
+0     00008ef4  Vgd_ant_2                         
+0     00008f8c  Vgd_k                             
+0     00008f90  Vgd_k0                            
+0     00008f94  Vgd_k1                            
+0     00008eb0  Vgd_r                             
+0     00008f08  Vgq_ant                           
+0     00008f04  Vgq_ant_2                         
+0     00008f98  Vgq_k                             
+0     00008f9c  Vgq_k0                            
+0     00008fa0  Vgq_k1                            
+0     00008eb4  Vgq_r                             
+0     00008f00  Vq_ant                            
+0     00008efc  Vq_ant_2                          
 0     000821bb  WAKE_ISR                          
 0     000821b1  XINT1_ISR                         
 0     000821a7  XINT2_ISR                         
 0     0008219d  XINT3_ISR                         
 0     00082193  XINT4_ISR                         
 0     00082189  XINT5_ISR                         
-0     00085d6c  __TI_CINIT_Base                   
-0     00085d78  __TI_CINIT_Limit                  
-0     00085d78  __TI_CINIT_Warm                   
-0     00085d5e  __TI_Handler_Table_Base           
-0     00085d64  __TI_Handler_Table_Limit          
+0     00085d24  __TI_CINIT_Base                   
+0     00085d30  __TI_CINIT_Limit                  
+0     00085d30  __TI_CINIT_Warm                   
+0     00085d16  __TI_Handler_Table_Base           
+0     00085d1c  __TI_Handler_Table_Limit          
 0     00000700  __TI_STACK_END                    
 abs   00000300  __TI_STACK_SIZE                   
-0     0008558b  __TI_auto_init_nobinit_nopinit    
-0     00008ebc  __TI_cleanup_ptr                  
-0     0008555b  __TI_decompress_lzss              
-0     000857a8  __TI_decompress_none              
-0     00008ebe  __TI_dtors_ptr                    
-0     00008eba  __TI_enable_exit_profile_output   
+0     00085587  __TI_auto_init_nobinit_nopinit    
+0     00009046  __TI_cleanup_ptr                  
+0     00085557  __TI_decompress_lzss              
+0     000857a4  __TI_decompress_none              
+0     00009048  __TI_dtors_ptr                    
+0     00009044  __TI_enable_exit_profile_output   
 abs   ffffffff  __TI_pprof_out_hndl               
 abs   ffffffff  __TI_prof_data_size               
 abs   ffffffff  __TI_prof_data_start              
-0     000857c5  __TI_zero_init                    
-0     00085210  __c28xabi_addd                    
-0     00085728  __c28xabi_andll                   
-0     000855b6  __c28xabi_cmpd                    
-0     000852ac  __c28xabi_divd                    
-0     00085337  __c28xabi_divf                    
-0     00085650  __c28xabi_divi                    
-0     0008562d  __c28xabi_dtof                    
-0     00085693  __c28xabi_dtoi                    
-0     000856b4  __c28xabi_dtol                    
-0     000856f0  __c28xabi_ftod                    
-0     0008570c  __c28xabi_ltod                    
-0     00085661  __c28xabi_modi                    
-0     000853bf  __c28xabi_mpyd                    
-0     00085797  __c28xabi_negd                    
-0     00085730  __c28xabi_orll                    
-0     0008576a  __c28xabi_subd                    
-0     00085738  __c28xabi_xorll                   
+0     000857c1  __TI_zero_init                    
+0     0008520c  __c28xabi_addd                    
+0     00085724  __c28xabi_andll                   
+0     000855b2  __c28xabi_cmpd                    
+0     000852a8  __c28xabi_divd                    
+0     00085333  __c28xabi_divf                    
+0     0008564c  __c28xabi_divi                    
+0     00085629  __c28xabi_dtof                    
+0     0008568f  __c28xabi_dtoi                    
+0     000856b0  __c28xabi_dtol                    
+0     000856ec  __c28xabi_ftod                    
+0     00085708  __c28xabi_ltod                    
+0     0008565d  __c28xabi_modi                    
+0     000853bb  __c28xabi_mpyd                    
+0     00085793  __c28xabi_negd                    
+0     0008572c  __c28xabi_orll                    
+0     00085766  __c28xabi_subd                    
+0     00085734  __c28xabi_xorll                   
 n/a   UNDEFED   __c_args__                        
 0     00084a5d  __kernel_cos                      
 0     00080f2a  __kernel_rem_pio2                 
 0     00084938  __kernel_sin                      
 0     000830e5  __rem_pio2                        
 0     00000400  __stack                           
-0     00085778  _args_main                        
-0     00085740  _c_int00                          
-0     00009080  _lock                             
-0     00085796  _nop                              
-0     00085792  _register_lock                    
-0     0008578e  _register_unlock                  
-0     000857cd  _system_post_cinit                
-0     000857cb  _system_pre_init                  
-0     00009082  _unlock                           
-0     000855e0  abort                             
+0     00085774  _args_main                        
+0     0008573c  _c_int00                          
+0     0000904e  _lock                             
+0     00085792  _nop                              
+0     0008578e  _register_lock                    
+0     0008578a  _register_unlock                  
+0     000857c9  _system_post_cinit                
+0     000857c7  _system_pre_init                  
+0     00009050  _unlock                           
+0     000855dc  abort                             
 0     00080000  code_start                        
-0     00008ec9  cont_v                            
-0     00085609  copysign                          
-0     00085609  copysignl                         
+0     00008e89  cont_v                            
+0     00085605  copysign                          
+0     00085605  copysignl                         
 0     00084f10  cos                               
 0     00084f10  cosl                              
-0     00008f08  d1_C2                             
-0     00008f0c  d1_L1                             
-0     00008efc  d1_L1C                            
-0     00008f00  d1_L2                             
-0     00008f10  d1_c                              
-0     00009030  dp                                
-0     00008ef8  e                                 
-0     0000905c  e1                                
-0     00009050  e_ant                             
-0     00009000  ed                                
-0     0000900c  edp                               
-0     00009010  eq                                
-0     0000901c  eqp                               
-0     00009094  errno                             
-0     000855e2  exit                              
+0     00008ec8  d1_C2                             
+0     00008ecc  d1_L1                             
+0     00008ebc  d1_L1C                            
+0     00008ec0  d1_L2                             
+0     00008ed0  d1_c                              
+0     00008ff0  dp                                
+0     00008eb8  e                                 
+0     0000901c  e1                                
+0     00009010  e_ant                             
+0     00008fc0  ed                                
+0     00008fcc  edp                               
+0     00008fd0  eq                                
+0     00008fdc  eqp                               
+0     00009062  errno                             
+0     000855de  exit                              
 0     00084d4a  floor                             
 0     00084d4a  floorl                            
 0     00008000  g                                 
-0     00009044  g_opt                             
+0     00009004  g_opt                             
 0     000081f4  gb                                
 0     000083e8  gv                                
-0     0000904c  gx                                
-0     00008ecc  h                                 
-0     00008fb0  i1d_ant                           
-0     00008fb4  i1d_ant_2                         
-0     00008fa4  i1d_k                             
-0     00008fa8  i1d_k0                            
-0     00008fac  i1d_k1                            
-0     00008fc4  i1q_ant                           
-0     00008fc8  i1q_ant_2                         
-0     00008fb8  i1q_k                             
-0     00008fbc  i1q_k0                            
-0     00008fc0  i1q_k1                            
-0     00008f88  i2d_ant                           
-0     00008f8c  i2d_ant_2                         
-0     00008f7c  i2d_k                             
-0     00008f80  i2d_k0                            
-0     00008f84  i2d_k1                            
-0     00008f9c  i2q_ant                           
-0     00008fa0  i2q_ant_2                         
-0     00008f90  i2q_k                             
-0     00008f94  i2q_k0                            
-0     00008f98  i2q_k1                            
-0     00008fec  ia_ref                            
-0     00008ff0  ib_ref                            
-0     00008ff4  id                                
-0     00009034  id_r                              
-0     00008fe4  id_ref                            
-0     00009054  ik0_d                             
-0     00009058  ik0_q                             
-0     00008f1c  ik1_d                             
-0     00008f20  ik1_q                             
-0     00008f14  ik_d                              
-0     00008f18  ik_q                              
-0     00008ff8  iq                                
-0     00009038  iq_r                              
-0     00008fe8  iq_ref                            
-0     00085167  ldexp                             
-0     00085167  ldexpl                            
-0     00009020  ma                                
-0     00085672  main                              
-0     00009024  mb                                
-0     00009028  mc                                
-0     000856d3  memcpy                            
-0     000857be  memset                            
-0     00008ee4  rc                                
-0     0000902c  sat                               
-0     00085167  scalbn                            
-0     00085167  scalbnl                           
+0     0000900c  gx                                
+0     00008e8c  h                                 
+0     00008f70  i1d_ant                           
+0     00008f74  i1d_ant_2                         
+0     00008f64  i1d_k                             
+0     00008f68  i1d_k0                            
+0     00008f6c  i1d_k1                            
+0     00008f84  i1q_ant                           
+0     00008f88  i1q_ant_2                         
+0     00008f78  i1q_k                             
+0     00008f7c  i1q_k0                            
+0     00008f80  i1q_k1                            
+0     00008f48  i2d_ant                           
+0     00008f4c  i2d_ant_2                         
+0     00008f3c  i2d_k                             
+0     00008f40  i2d_k0                            
+0     00008f44  i2d_k1                            
+0     00008f5c  i2q_ant                           
+0     00008f60  i2q_ant_2                         
+0     00008f50  i2q_k                             
+0     00008f54  i2q_k0                            
+0     00008f58  i2q_k1                            
+0     00008fac  ia_ref                            
+0     00008fb0  ib_ref                            
+0     00008fb4  id                                
+0     00008ff4  id_r                              
+0     00008fa4  id_ref                            
+0     00009014  ik0_d                             
+0     00009018  ik0_q                             
+0     00008edc  ik1_d                             
+0     00008ee0  ik1_q                             
+0     00008ed4  ik_d                              
+0     00008ed8  ik_q                              
+0     00008fb8  iq                                
+0     00008ff8  iq_r                              
+0     00008fa8  iq_ref                            
+0     00085163  ldexp                             
+0     00085163  ldexpl                            
+0     00008fe0  ma                                
+0     0008566e  main                              
+0     00008fe4  mb                                
+0     00008fe8  mc                                
+0     000856cf  memcpy                            
+0     000857ba  memset                            
+0     00008ea4  rc                                
+0     00008fec  sat                               
+0     00085163  scalbn                            
+0     00085163  scalbnl                           
 0     00084fde  sin                               
 0     00084fde  sinl                              
 0     00084e32  sqrt                              
 0     00084e32  sqrtl                             
-0     00009048  t                                 
-0     00008ffc  theta                             
-0     00009008  vd                                
-0     00009018  vq                                
-0     00008ee8  w                                 
-0     00008eca  x                                 
-0     00008ecb  x_opt                             
-0     00009004  xd                                
-0     00009014  xq                                
+0     00009008  t                                 
+0     00008fbc  theta                             
+0     00008fc8  vd                                
+0     00008fd8  vq                                
+0     00008ea8  w                                 
+0     00008e8a  x                                 
+0     00008e8b  x_opt                             
+0     00008fc4  xd                                
+0     00008fd4  xq                                
 
 
 GLOBAL SYMBOLS: SORTED BY Symbol Address 
@@ -1235,140 +1232,139 @@ page  address   name
 0     000081f4  gb                                
 0     000083e8  gv                                
 0     000085dc  AdcObj                            
-0     00008740  C2000_28379D_X                    
-0     00008746  C2000_28379D_errorStatus          
-0     00008780  C2000_28379D_B                    
-0     000087b2  DoutObj                           
-0     0000884c  DisprHandle                       
-0     0000884e  DisprObj                          
-0     00008880  DoutHandles                       
-0     00008896  TaskObj                           
-0     000088a0  AdcHandles                        
-0     000088ae  Sa                                
-0     00008aa2  Sb                                
-0     00008c96  Sc                                
-0     00008eba  __TI_enable_exit_profile_output   
-0     00008ebc  __TI_cleanup_ptr                  
-0     00008ebe  __TI_dtors_ptr                    
-0     00008ec0  Sa1                               
-0     00008ec1  Sa2                               
-0     00008ec2  Sa3                               
-0     00008ec3  Sb1                               
-0     00008ec4  Sb2                               
-0     00008ec5  Sb3                               
-0     00008ec6  Sc1                               
-0     00008ec7  Sc2                               
-0     00008ec8  Sc3                               
-0     00008ec9  cont_v                            
-0     00008eca  x                                 
-0     00008ecb  x_opt                             
-0     00008ecc  h                                 
-0     00008ed0  Vdc                               
-0     00008ed4  L1                                
-0     00008ed8  L2                                
-0     00008edc  Cf                                
-0     00008ee0  R                                 
-0     00008ee4  rc                                
-0     00008ee8  w                                 
-0     00008eec  R1                                
-0     00008ef0  Vgd_r                             
-0     00008ef4  Vgq_r                             
-0     00008ef8  e                                 
-0     00008efc  d1_L1C                            
-0     00008f00  d1_L2                             
-0     00008f04  C2                                
-0     00008f08  d1_C2                             
-0     00008f0c  d1_L1                             
-0     00008f10  d1_c                              
-0     00008f14  ik_d                              
-0     00008f18  ik_q                              
-0     00008f1c  ik1_d                             
-0     00008f20  ik1_q                             
-0     00008f24  V_d                               
-0     00008f28  V_q                               
-0     00008f2c  Vd_ant_2                          
-0     00008f30  Vd_ant                            
-0     00008f34  Vgd_ant_2                         
-0     00008f38  Vgd_ant                           
-0     00008f3c  Vq_ant_2                          
-0     00008f40  Vq_ant                            
-0     00008f44  Vgq_ant_2                         
-0     00008f48  Vgq_ant                           
-0     00008f4c  Vcdp                              
-0     00008f50  Vcqp                              
-0     00008f54  Vcd_ant_2                         
-0     00008f58  Vcd_ant                           
-0     00008f5c  Vcd                               
-0     00008f60  Vcd_k0                            
-0     00008f64  Vcd_k1                            
-0     00008f68  Vcq_ant_2                         
-0     00008f6c  Vcq_ant                           
-0     00008f70  Vcq                               
-0     00008f74  Vcq_k0                            
-0     00008f78  Vcq_k1                            
-0     00008f7c  i2d_k                             
-0     00008f80  i2d_k0                            
-0     00008f84  i2d_k1                            
-0     00008f88  i2d_ant                           
-0     00008f8c  i2d_ant_2                         
-0     00008f90  i2q_k                             
-0     00008f94  i2q_k0                            
-0     00008f98  i2q_k1                            
-0     00008f9c  i2q_ant                           
-0     00008fa0  i2q_ant_2                         
-0     00008fa4  i1d_k                             
-0     00008fa8  i1d_k0                            
-0     00008fac  i1d_k1                            
-0     00008fb0  i1d_ant                           
-0     00008fb4  i1d_ant_2                         
-0     00008fb8  i1q_k                             
-0     00008fbc  i1q_k0                            
-0     00008fc0  i1q_k1                            
-0     00008fc4  i1q_ant                           
-0     00008fc8  i1q_ant_2                         
-0     00008fcc  Vgd_k                             
-0     00008fd0  Vgd_k0                            
-0     00008fd4  Vgd_k1                            
-0     00008fd8  Vgq_k                             
-0     00008fdc  Vgq_k0                            
-0     00008fe0  Vgq_k1                            
-0     00008fe4  id_ref                            
-0     00008fe8  iq_ref                            
-0     00008fec  ia_ref                            
-0     00008ff0  ib_ref                            
-0     00008ff4  id                                
-0     00008ff8  iq                                
-0     00008ffc  theta                             
-0     00009000  ed                                
-0     00009004  xd                                
-0     00009008  vd                                
-0     0000900c  edp                               
-0     00009010  eq                                
-0     00009014  xq                                
-0     00009018  vq                                
-0     0000901c  eqp                               
-0     00009020  ma                                
-0     00009024  mb                                
-0     00009028  mc                                
-0     0000902c  sat                               
-0     00009030  dp                                
-0     00009034  id_r                              
-0     00009038  iq_r                              
-0     0000903c  Vcd_r                             
-0     00009040  Vcq_r                             
-0     00009044  g_opt                             
-0     00009048  t                                 
-0     0000904c  gx                                
-0     00009050  e_ant                             
-0     00009054  ik0_d                             
-0     00009058  ik0_q                             
-0     0000905c  e1                                
-0     00009060  PI23                              
-0     00009064  CS                                
-0     0000907e  PilHandle                         
-0     00009080  _lock                             
-0     00009082  _unlock                           
-0     00009094  errno                             
+0     00008714  DoutObj                           
+0     000087c4  C2000_28379D_errorStatus          
+0     000087ce  C2000_28379D_B                    
+0     00008800  DisprHandle                       
+0     00008802  DisprObj                          
+0     00008834  TaskObj                           
+0     0000885e  DoutHandles                       
+0     00008874  AdcHandles                        
+0     0000887c  Sa                                
+0     00008a70  Sb                                
+0     00008c64  Sc                                
+0     00008e80  Sa1                               
+0     00008e81  Sa2                               
+0     00008e82  Sa3                               
+0     00008e83  Sb1                               
+0     00008e84  Sb2                               
+0     00008e85  Sb3                               
+0     00008e86  Sc1                               
+0     00008e87  Sc2                               
+0     00008e88  Sc3                               
+0     00008e89  cont_v                            
+0     00008e8a  x                                 
+0     00008e8b  x_opt                             
+0     00008e8c  h                                 
+0     00008e90  Vdc                               
+0     00008e94  L1                                
+0     00008e98  L2                                
+0     00008e9c  Cf                                
+0     00008ea0  R                                 
+0     00008ea4  rc                                
+0     00008ea8  w                                 
+0     00008eac  R1                                
+0     00008eb0  Vgd_r                             
+0     00008eb4  Vgq_r                             
+0     00008eb8  e                                 
+0     00008ebc  d1_L1C                            
+0     00008ec0  d1_L2                             
+0     00008ec4  C2                                
+0     00008ec8  d1_C2                             
+0     00008ecc  d1_L1                             
+0     00008ed0  d1_c                              
+0     00008ed4  ik_d                              
+0     00008ed8  ik_q                              
+0     00008edc  ik1_d                             
+0     00008ee0  ik1_q                             
+0     00008ee4  V_d                               
+0     00008ee8  V_q                               
+0     00008eec  Vd_ant_2                          
+0     00008ef0  Vd_ant                            
+0     00008ef4  Vgd_ant_2                         
+0     00008ef8  Vgd_ant                           
+0     00008efc  Vq_ant_2                          
+0     00008f00  Vq_ant                            
+0     00008f04  Vgq_ant_2                         
+0     00008f08  Vgq_ant                           
+0     00008f0c  Vcdp                              
+0     00008f10  Vcqp                              
+0     00008f14  Vcd_ant_2                         
+0     00008f18  Vcd_ant                           
+0     00008f1c  Vcd                               
+0     00008f20  Vcd_k0                            
+0     00008f24  Vcd_k1                            
+0     00008f28  Vcq_ant_2                         
+0     00008f2c  Vcq_ant                           
+0     00008f30  Vcq                               
+0     00008f34  Vcq_k0                            
+0     00008f38  Vcq_k1                            
+0     00008f3c  i2d_k                             
+0     00008f40  i2d_k0                            
+0     00008f44  i2d_k1                            
+0     00008f48  i2d_ant                           
+0     00008f4c  i2d_ant_2                         
+0     00008f50  i2q_k                             
+0     00008f54  i2q_k0                            
+0     00008f58  i2q_k1                            
+0     00008f5c  i2q_ant                           
+0     00008f60  i2q_ant_2                         
+0     00008f64  i1d_k                             
+0     00008f68  i1d_k0                            
+0     00008f6c  i1d_k1                            
+0     00008f70  i1d_ant                           
+0     00008f74  i1d_ant_2                         
+0     00008f78  i1q_k                             
+0     00008f7c  i1q_k0                            
+0     00008f80  i1q_k1                            
+0     00008f84  i1q_ant                           
+0     00008f88  i1q_ant_2                         
+0     00008f8c  Vgd_k                             
+0     00008f90  Vgd_k0                            
+0     00008f94  Vgd_k1                            
+0     00008f98  Vgq_k                             
+0     00008f9c  Vgq_k0                            
+0     00008fa0  Vgq_k1                            
+0     00008fa4  id_ref                            
+0     00008fa8  iq_ref                            
+0     00008fac  ia_ref                            
+0     00008fb0  ib_ref                            
+0     00008fb4  id                                
+0     00008fb8  iq                                
+0     00008fbc  theta                             
+0     00008fc0  ed                                
+0     00008fc4  xd                                
+0     00008fc8  vd                                
+0     00008fcc  edp                               
+0     00008fd0  eq                                
+0     00008fd4  xq                                
+0     00008fd8  vq                                
+0     00008fdc  eqp                               
+0     00008fe0  ma                                
+0     00008fe4  mb                                
+0     00008fe8  mc                                
+0     00008fec  sat                               
+0     00008ff0  dp                                
+0     00008ff4  id_r                              
+0     00008ff8  iq_r                              
+0     00008ffc  Vcd_r                             
+0     00009000  Vcq_r                             
+0     00009004  g_opt                             
+0     00009008  t                                 
+0     0000900c  gx                                
+0     00009010  e_ant                             
+0     00009014  ik0_d                             
+0     00009018  ik0_q                             
+0     0000901c  e1                                
+0     00009020  PI23                              
+0     00009024  CS                                
+0     00009044  __TI_enable_exit_profile_output   
+0     00009046  __TI_cleanup_ptr                  
+0     00009048  __TI_dtors_ptr                    
+0     0000904c  PilHandle                         
+0     0000904e  _lock                             
+0     00009050  _unlock                           
+0     00009062  errno                             
 0     00080000  code_start                        
 0     000801f2  PIL_SLINK_crc16Lookup             
 0     00080228  C2000_28379D_0_cScriptUpdate      
@@ -1645,69 +1641,69 @@ page  address   name
 0     00084fde  sinl                              
 0     000850a9  C2000_28379D_terminate            
 0     000850b7  C2000_28379D_initialize           
-0     00085167  ldexp                             
-0     00085167  ldexpl                            
-0     00085167  scalbn                            
-0     00085167  scalbnl                           
-0     00085210  __c28xabi_addd                    
-0     000852ac  __c28xabi_divd                    
-0     00085337  __c28xabi_divf                    
-0     000853bf  __c28xabi_mpyd                    
-0     00085442  PLX_DIO_sinit                     
-0     0008546b  PLX_DIO_obtainDummyWrite          
-0     0008546e  PLX_DIO_obtainDummyRead           
-0     00085476  PLX_DIO_init                      
-0     0008547d  PLX_DIO_configureOut              
-0     000854a2  PLX_DIO_configureIn               
-0     000854c0  PIL_RBUF_reset                    
-0     000854cb  PIL_RBUF_isEmpty                  
-0     000854d9  PIL_RBUF_push                     
-0     00085503  PIL_RBUF_pop                      
-0     00085524  C2000_28379D_baseTaskInterrupt    
-0     0008555b  __TI_decompress_lzss              
-0     0008558b  __TI_auto_init_nobinit_nopinit    
-0     000855b6  __c28xabi_cmpd                    
-0     000855e0  C$$EXIT                           
-0     000855e0  abort                             
-0     000855e2  exit                              
-0     00085609  copysign                          
-0     00085609  copysignl                         
-0     0008562d  __c28xabi_dtof                    
-0     00085650  __c28xabi_divi                    
-0     00085661  __c28xabi_modi                    
-0     00085672  main                              
-0     00085693  __c28xabi_dtoi                    
-0     000856b4  __c28xabi_dtol                    
-0     000856d3  memcpy                            
-0     000856f0  __c28xabi_ftod                    
-0     0008570c  __c28xabi_ltod                    
-0     00085728  __c28xabi_andll                   
-0     00085730  __c28xabi_orll                    
-0     00085738  __c28xabi_xorll                   
-0     00085740  _c_int00                          
-0     0008576a  __c28xabi_subd                    
-0     00085778  _args_main                        
-0     00085784  ISR_ILLEGAL                       
-0     0008578e  _register_unlock                  
-0     00085792  _register_lock                    
-0     00085796  _nop                              
-0     00085797  __c28xabi_negd                    
-0     000857a8  __TI_decompress_none              
-0     000857b0  DISPR_disableInt                  
-0     000857b4  DISPR_restoreInt                  
-0     000857b7  PIL_DisableInt                    
-0     000857bb  PIL_RestoreInt                    
-0     000857be  memset                            
-0     000857c5  __TI_zero_init                    
-0     000857cb  _system_pre_init                  
-0     000857cd  _system_post_cinit                
-0     000857d0  C2000_28379D_step                 
-0     00085b04  DISPR_dispatch                    
-0     00085d5e  __TI_Handler_Table_Base           
-0     00085d64  __TI_Handler_Table_Limit          
-0     00085d6c  __TI_CINIT_Base                   
-0     00085d78  __TI_CINIT_Limit                  
-0     00085d78  __TI_CINIT_Warm                   
+0     00085163  ldexp                             
+0     00085163  ldexpl                            
+0     00085163  scalbn                            
+0     00085163  scalbnl                           
+0     0008520c  __c28xabi_addd                    
+0     000852a8  __c28xabi_divd                    
+0     00085333  __c28xabi_divf                    
+0     000853bb  __c28xabi_mpyd                    
+0     0008543e  PLX_DIO_sinit                     
+0     00085467  PLX_DIO_obtainDummyWrite          
+0     0008546a  PLX_DIO_obtainDummyRead           
+0     00085472  PLX_DIO_init                      
+0     00085479  PLX_DIO_configureOut              
+0     0008549e  PLX_DIO_configureIn               
+0     000854bc  PIL_RBUF_reset                    
+0     000854c7  PIL_RBUF_isEmpty                  
+0     000854d5  PIL_RBUF_push                     
+0     000854ff  PIL_RBUF_pop                      
+0     00085520  C2000_28379D_baseTaskInterrupt    
+0     00085557  __TI_decompress_lzss              
+0     00085587  __TI_auto_init_nobinit_nopinit    
+0     000855b2  __c28xabi_cmpd                    
+0     000855dc  C$$EXIT                           
+0     000855dc  abort                             
+0     000855de  exit                              
+0     00085605  copysign                          
+0     00085605  copysignl                         
+0     00085629  __c28xabi_dtof                    
+0     0008564c  __c28xabi_divi                    
+0     0008565d  __c28xabi_modi                    
+0     0008566e  main                              
+0     0008568f  __c28xabi_dtoi                    
+0     000856b0  __c28xabi_dtol                    
+0     000856cf  memcpy                            
+0     000856ec  __c28xabi_ftod                    
+0     00085708  __c28xabi_ltod                    
+0     00085724  __c28xabi_andll                   
+0     0008572c  __c28xabi_orll                    
+0     00085734  __c28xabi_xorll                   
+0     0008573c  _c_int00                          
+0     00085766  __c28xabi_subd                    
+0     00085774  _args_main                        
+0     00085780  ISR_ILLEGAL                       
+0     0008578a  _register_unlock                  
+0     0008578e  _register_lock                    
+0     00085792  _nop                              
+0     00085793  __c28xabi_negd                    
+0     000857a4  __TI_decompress_none              
+0     000857ac  DISPR_disableInt                  
+0     000857b0  DISPR_restoreInt                  
+0     000857b3  PIL_DisableInt                    
+0     000857b7  PIL_RestoreInt                    
+0     000857ba  memset                            
+0     000857c1  __TI_zero_init                    
+0     000857c7  _system_pre_init                  
+0     000857c9  _system_post_cinit                
+0     000857cc  C2000_28379D_step                 
+0     00085abc  DISPR_dispatch                    
+0     00085d16  __TI_Handler_Table_Base           
+0     00085d1c  __TI_Handler_Table_Limit          
+0     00085d24  __TI_CINIT_Base                   
+0     00085d30  __TI_CINIT_Limit                  
+0     00085d30  __TI_CINIT_Warm                   
 1     00000b00  AdcaResultRegs                    
 1     00000b20  AdcbResultRegs                    
 1     00000b40  AdccResultRegs                    
@@ -1733,11 +1729,11 @@ abs   000000cf  RamfuncsRunSize
 abs   00000124  RamfuncsRunStart                  
 abs   000001f3  RamfuncsRunEnd                    
 abs   00000300  __TI_STACK_SIZE                   
-abs   00085be0  RamfuncsLoadStart                 
-abs   00085caf  RamfuncsLoadEnd                   
+abs   00085b98  RamfuncsLoadStart                 
+abs   00085c67  RamfuncsLoadEnd                   
 abs   ffffffff  __TI_pprof_out_hndl               
 abs   ffffffff  __TI_prof_data_size               
 abs   ffffffff  __TI_prof_data_start              
 n/a   UNDEFED   __c_args__                        
 
-[514 symbols]
+[513 symbols]

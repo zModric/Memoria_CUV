@@ -1,7 +1,7 @@
 /*
- * Hardware configuration file for: TI2837xS
- * Generated with                 : PLECS 4.8.3
- * Generated on                   : Wed Aug 28 17:18:42 2024
+ * Hardware configuration file for: TI2837x
+ * Generated with                 : PLECS 4.8.6
+ * Generated on                   : Mon Sep 23 19:11:17 2024
  */
 
 /* HAL Includes */
@@ -9,7 +9,6 @@
 #include "plx_hal.h"
 #include "plx_dispatcher.h"
 #include "pil.h"
-#include "plx_sci.h"
 #include "pin_map.h"
 #include "gpio.h"
 #include "xbar.h"
@@ -17,6 +16,7 @@
 #include "sysctl.h"
 #include "plx_ain.h"
 #include "plx_dio.h"
+#include "plx_dac.h"
 
 /* HAL Declarations */
 void DevInit(uint32_t aDeviceClkConf);
@@ -38,89 +38,23 @@ void DSP28x_usDelay(long LoopCount);
 
 PIL_Obj_t PilObj;
 PIL_Handle_t PilHandle = 0;
-PLX_SCI_Obj_t SciObj;
-PLX_SCI_Handle_t SciHandle;
-// external mode helper symbols
-PIL_CONFIG_DEF(uint32_t, ExtMode_targetFloat_Size,
-               sizeof(C2000_28379D_FloatType));
-PIL_CONFIG_DEF(uint32_t, ExtMode_targetPointer_Size,
-               sizeof(C2000_28379D_FloatType*));
-PIL_CONFIG_DEF(uint32_t, ExtMode_sampleTime_Ptr,
-               (uint32_t)&C2000_28379D_sampleTime);
-PIL_CONFIG_DEF(uint32_t, ExtMode_checksum_Ptr,
-               (uint32_t)&C2000_28379D_checksum);
-#if defined(C2000_28379D_NumTunableParameters) && \
-   (C2000_28379D_NumTunableParameters > 0)
-PIL_CONFIG_DEF(uint32_t, ExtMode_P_Ptr, (uint32_t)&C2000_28379D_P);
-PIL_CONFIG_DEF(uint32_t, ExtMode_P_Size,
-               (uint32_t)C2000_28379D_NumTunableParameters);
-#endif
-#if defined(C2000_28379D_NumExtModeSignals) && \
-   (C2000_28379D_NumExtModeSignals > 0)
-PIL_CONFIG_DEF(uint32_t, ExtMode_ExtModeSignals_Ptr,
-               (uint32_t)&C2000_28379D_ExtModeSignals[0]);
-PIL_CONFIG_DEF(uint32_t, ExtMode_ExtModeSignals_Size,
-               (uint32_t)C2000_28379D_NumExtModeSignals);
-#endif
-
-#define CODE_GUID {0x09, 0x3c, 0x97, 0x5e, 0xdb, 0x2d, 0xb8, 0x40};
-PIL_CONST_DEF(unsigned char, Guid[], CODE_GUID);
-PIL_CONST_DEF(unsigned char, CompiledDate[], "08/28/2024 05:18 PM");
-PIL_CONST_DEF(unsigned char, CompiledBy[], "PLECS Coder");
-PIL_CONST_DEF(uint16_t, FrameworkVersion, PIL_FRAMEWORK_VERSION);
-PIL_CONST_DEF(char, FirmwareDescription[], "TIC2000 Project (CPU0)");
-PIL_CONST_DEF(uint16_t, StationAddress, 0);
-PIL_CONST_DEF(uint32_t, BaudRate, 115200);
-static void SciPoll(PIL_Handle_t aHandle)
-{
-   if(PLX_SCI_breakOccurred(SciHandle))
-   {
-      PLX_SCI_reset(SciHandle);
-   }
-   while(PLX_SCI_rxReady(SciHandle))
-   {
-      // assuming that there will be a "break" when FIFO is empty
-      PIL_SERIAL_IN(aHandle, (int16)PLX_SCI_getChar(SciHandle));
-   }
-   int16_t ch;
-   if(!PLX_SCI_txIsBusy(SciHandle))
-   {
-      if(PIL_SERIAL_OUT(aHandle, &ch))
-      {
-         PLX_SCI_putChar(SciHandle, ch);
-      }
-   }
-}
-
-#pragma DATA_SECTION(ScopeBuffer, "scope")
-uint16_t ScopeBuffer[1004] /*__attribute__((aligned(16)))*/;
-extern void PIL_setAndConfigScopeBuffer(PIL_Handle_t aPilHandle,
-                                        uint16_t* aBufPtr, uint16_t aBufSize,
-                                        uint16_t aMaxTraceWidthInWords);
-extern const char * const C2000_28379D_checksum;
-
-uint16_t ScopeFlagCpuRemote;
-#pragma DATA_SECTION(ScopeFlagCpuRemote, "scopeflag_remote")
-#pragma RETAIN(ScopeFlagCpuRemote)
-uint16_t ScopeFlagCpuThis;
-#pragma DATA_SECTION(ScopeFlagCpuThis, "scopeflag_local")
-#pragma RETAIN(ScopeFlagCpuThis)
-PIL_SYMBOL_DEF(ScopeFlagCpuRemote, 0, 1.0, "");
-PIL_SYMBOL_DEF(ScopeFlagCpuThis, 0, 1.0, "");
-extern void PIL_setAndConfigureScopeIndicator(PIL_Handle_t aPilHandle,
-                                              uint16_t* aIndicatorPtr);
-
 PLX_AIN_Handle_t AdcHandles[4];
 PLX_AIN_Obj_t AdcObj[4];
 float PLXHAL_ADC_getIn(uint16_t aHandle, uint16_t aChannel)
 {
    return PLX_AIN_getInF(AdcHandles[aHandle], aChannel);
 }
-PLX_DIO_Handle_t DoutHandles[11];
-PLX_DIO_Obj_t DoutObj[11];
+PLX_DIO_Handle_t DoutHandles[9];
+PLX_DIO_Obj_t DoutObj[9];
 void PLXHAL_DIO_set(uint16_t aHandle, bool aVal)
 {
    PLX_DIO_set(DoutHandles[aHandle], aVal);
+}
+PLX_DAC_Handle_t DacHandles[1];
+PLX_DAC_Obj_t DacObj[1];
+void PLXHAL_DAC_set(uint16_t aHandle, float aValue)
+{
+   PLX_DAC_setValF(DacHandles[aHandle], aValue);
 }
 extern PIL_Handle_t PilHandle;
 DISPR_TaskObj_t TaskObj[1];
@@ -199,17 +133,6 @@ void C2000_28379D_initHal()
    ClkCfgRegs.PERCLKDIVSEL.bit.EPWMCLKDIV = 1;
    EDIS;
 
-   SciHandle = PLX_SCI_init(&SciObj, sizeof(SciObj));
-   PLX_SCI_configure(SciHandle, PLX_SCI_SCI_A, 47500000);
-   (void)PLX_SCI_setupPort(SciHandle, 115200);
-   PilHandle = PIL_init(&PilObj, sizeof(PilObj));
-   PIL_setGuid(PilHandle, PIL_GUID_PTR);
-   PIL_setChecksum(PilHandle, C2000_28379D_checksum);
-   PIL_setAndConfigScopeBuffer(PilHandle, (uint16_t *)&ScopeBuffer, 1004, 2);
-   PIL_setAndConfigureScopeIndicator(PilHandle, &ScopeFlagCpuThis);
-   PIL_setNodeAddress(PilHandle, PIL_D_StationAddress);
-
-   PIL_setSerialComCallback(PilHandle, (PIL_CommCallbackPtr_t)SciPoll);
    {
       // early system configuration
       PLX_DIO_sinit();
@@ -235,8 +158,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.000000000e+03f;
-      params.offset = -3.000000000e+02f;
+      params.scale =  2.000000000e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -248,8 +171,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.000000000e+03f;
-      params.offset = -3.000000000e+02f;
+      params.scale =  2.000000000e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -261,8 +184,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.000000000e+03f;
-      params.offset = -3.000000000e+02f;
+      params.scale =  2.000000000e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -281,8 +204,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.666000000e+03f;
-      params.offset = -5.000000000e+02f;
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -294,8 +217,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.666000000e+03f;
-      params.offset = -5.000000000e+02f;
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -307,8 +230,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.666000000e+03f;
-      params.offset = -5.000000000e+02f;
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -327,7 +250,7 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.666660000e+05f;
+      params.scale =  3.333333333e+04f;
       params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
@@ -347,8 +270,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.666000000e+03f;
-      params.offset = -5.000000000e+02f;
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -360,8 +283,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.666000000e+03f;
-      params.offset = -5.000000000e+02f;
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -373,8 +296,8 @@ void C2000_28379D_initHal()
 
       PLX_AIN_ChannelParams_t params;
       PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  1.666000000e+03f;
-      params.offset = -5.000000000e+02f;
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
       // set SOC trigger to CPU 1 Timer0
       params.ADCSOCxCTL.bit.TRIGSEL = 1;
       params.ADCSOCxCTL.bit.ACQPS = 14;
@@ -384,7 +307,7 @@ void C2000_28379D_initHal()
    {
       PLX_DIO_sinit();
       int i;
-      for(i=0; i < 11; i++)
+      for(i=0; i < 9; i++)
       {
          DoutHandles[i] = PLX_DIO_init(&DoutObj[i], sizeof(DoutObj[i]));
       }
@@ -454,19 +377,24 @@ void C2000_28379D_initHal()
       PLX_DIO_configureOut(DoutHandles[8], 8,  &props);
    }
    {
-      PLX_DIO_OutputProperties_t props = {
-         0
-      };
-      props.enableInvert = false;
-      PLX_DIO_configureOut(DoutHandles[9], 31,  &props);
+      PLX_DAC_sinit();
+      int i;
+      for(i=0; i < 1; i++)
+      {
+         DacHandles[i] = PLX_DAC_init(&DacObj[i], sizeof(DacObj[i]));
+      }
    }
+
+   // configure DACA
+
    {
-      PLX_DIO_OutputProperties_t props = {
-         0
-      };
-      props.enableInvert = false;
-      PLX_DIO_configureOut(DoutHandles[10], 34,  &props);
+
+      PLX_DAC_configure(DacHandles[0], PLX_DAC_A, 1, 3.000000000e+00f);
+      PLX_DAC_configureScaling(DacHandles[0], 3.333333333e-01f,
+                               0.000000000e+00f, 0.000000000e+00f,
+                               3.300000000e+00f);
    }
+
    DISPR_sinit();
    DISPR_configure((uint32_t)(4750), PilHandle, &TaskObj[0],
                    sizeof(TaskObj)/sizeof(DISPR_TaskObj_t));
@@ -522,11 +450,5 @@ void C2000_28379D_initHal()
       GPIO_setDirectionMode(7, GPIO_DIR_MODE_OUT);
       GPIO_setPadConfig(8, GPIO_PIN_TYPE_STD);
       GPIO_setDirectionMode(8, GPIO_DIR_MODE_OUT);
-      GPIO_setPadConfig(31, GPIO_PIN_TYPE_STD);
-      GPIO_setDirectionMode(31, GPIO_DIR_MODE_OUT);
-      GPIO_setPadConfig(34, GPIO_PIN_TYPE_STD);
-      GPIO_setDirectionMode(34, GPIO_DIR_MODE_OUT);
-      GPIO_setPinConfig(GPIO_43_SCIRXDA);
-      GPIO_setPinConfig(GPIO_42_SCITXDA);
    }
 }

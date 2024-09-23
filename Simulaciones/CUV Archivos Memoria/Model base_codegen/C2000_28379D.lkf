@@ -22,15 +22,15 @@
 --stack_size=0x300
 --rom_model
 --warn_sections
--i "C:/Users/user/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS/lib"
--i "F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/../pil"
--i "F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/../shrd"
--i "F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/tisrc/driverlib"
+-i "C:/Users/Estudiante USM/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS/lib"
+-i "C:/Users/Estudiante USM/Desktop/target supp/tsp_ti_c2000/ccs/2837x/../pil"
+-i "C:/Users/Estudiante USM/Desktop/target supp/tsp_ti_c2000/ccs/2837x/../shrd"
+-i "C:/Users/Estudiante USM/Desktop/target supp/tsp_ti_c2000/ccs/2837x/tisrc/driverlib"
 -l libc.a
 -l pil_c28.a
 -l plx_driverlib.a
 
 --reread_libs
-"F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/app_cpu1/F2837xD_Headers_nonBIOS_cpu1.cmd"
-"F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/app_cpu1/f2837xD_FLASH_lnk_cpu1.cmd"
+"C:/Users/Estudiante USM/Desktop/target supp/tsp_ti_c2000/ccs/2837x/app_cpu1/F2837xD_Headers_nonBIOS_cpu1.cmd"
+"C:/Users/Estudiante USM/Desktop/target supp/tsp_ti_c2000/ccs/2837x/app_cpu1/f2837xD_FLASH_lnk_cpu1.cmd"
 -o ./output_TI2837x_cpu1/C2000_28379D.out

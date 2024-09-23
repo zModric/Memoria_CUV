@@ -112,9 +112,9 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 27; 1920, 1045]
+    Location      [0, 23; 1366, 681]
     ZoomFactor    1.71498
-    SliderPosition [312, 1505]
+    SliderPosition [40, 1601]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -347,10 +347,16 @@ Plecs {
         Direction     right
         Index         "10"
       }
+      Terminal {
+        Type          Output
+        Position      [69, -60]
+        Direction     right
+        Index         "11"
+      }
       Schematic {
-        Location      [0, 27; 1920, 1005]
+        Location      [0, 27; 1366, 685]
         ZoomFactor    1.14436
-        SliderPosition [0, 0]
+        SliderPosition [154, 66]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -5378,6 +5384,76 @@ Plecs {
             Show          off
           }
         }
+        Component {
+          Type          Reference
+          SrcComponent  "TIC2000_Lib/Digital Out"
+          Name          "LED Blinking2"
+          Show          on
+          Position      [595, 560]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Frame         [-25, -20; 25, 20]
+          Parameter {
+            Variable      "gpio"
+            Value         "34"
+            Show          on
+          }
+          Parameter {
+            Variable      "OutputType"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "TargetPortIndices"
+            Value         "15"
+            Show          off
+          }
+          Terminal {
+            Type          Input
+            Position      [-25, 0]
+            Direction     left
+          }
+        }
+        Component {
+          Type          PulseGenerator
+          Name          "Pulse\nGenerator"
+          Show          on
+          Position      [500, 560]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+          Parameter {
+            Variable      "Hi"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "Lo"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "f"
+            Value         "1"
+            Show          off
+          }
+          Parameter {
+            Variable      "DutyCycle"
+            Value         "0.5"
+            Show          off
+          }
+          Parameter {
+            Variable      "Delay"
+            Value         "0"
+            Show          off
+          }
+          Parameter {
+            Variable      "DataType"
+            Value         "10"
+            Show          off
+          }
+        }
         Connection {
           Type          Signal
           SrcComponent  "Mux"
@@ -5751,6 +5827,13 @@ Plecs {
           SrcComponent  "From"
           SrcTerminal   1
           DstComponent  "Sa1"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "Pulse\nGenerator"
+          SrcTerminal   1
+          DstComponent  "LED Blinking2"
           DstTerminal   1
         }
       }
@@ -6848,20 +6931,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 23; 1920, 1060]
+      Location      [0, 23; 1366, 700]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAANQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAeAAAAAivw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAAB4AAAAPyAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAABVYAAAKKAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"AAAAGQAAAAJAAAAZAAAAAYAAABkAAAABwAAAGQAAAAEAAAAZAAAAAUAAABkAAAAAgAAAGQAAAADAA"
-"AAZAAAAAEAAABkAAAHbwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"gAAAGQAAAABAAAAZAAAAAkAAABkAAAACAAAAGQAAAAHAAAAZAAAAAYAAABkAAAABQAAAGQAAAAEAA"
+"AAZAAAAAMAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"Aa6AAAAAQAAAAAAAAPoAAAAACQ="
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -37592,6 +37675,67 @@ Plecs {
         Show          off
       }
     }
+    Component {
+      Type          Scope
+      Name          "Scope6"
+      Show          on
+      Position      [735, 1125]
+      Direction     up
+      Flipped       off
+      LabelPosition south
+      Location      [363, 120; 713, 357]
+      State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
+"G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
+"///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAAAV4AAADSAAAA"
+"BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
+"AAAAA=="
+      SavedViews    "AAAAAgAAAAA="
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"gAAAGQAAAABAAAAZAAAAAkAAABkAAAACAAAAGQAAAAHAAAAZAAAAAYAAABkAAAABQAAAGQAAAAEAA"
+"AAZAAAAAMAAABkAAAAqgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACGAAA"
+"AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
+"AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
+"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+      PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+      Axes          "1"
+      TimeRange     "0.0"
+      ScrollingMode "1"
+      SingleTimeAxis "1"
+      Open          "0"
+      Ts            "-1"
+      SampleLimit   "0"
+      XAxisLabel    "Time / s"
+      ShowLegend    "1"
+      Axis {
+        Name          ""
+        AutoScale     1
+        MinValue      0
+        MaxValue      1
+        Signals       {}
+        SignalTypes   [ ]
+        Untangle      0
+        KeepBaseline  off
+        BaselineValue 0
+      }
+      Fourier {
+        SingleXAxis       on
+        AxisLabel         "Frequency / Hz"
+        Scaling           0
+        PhaseDisplay      0
+        ShowFourierLegend off
+        Axis {
+          Name          ""
+          AutoScale     1
+          MinValue      0
+          MaxValue      1
+          Signals       {}
+          Untangle      0
+          KeepBaseline  off
+          BaselineValue 0
+        }
+      }
+    }
     Connection {
       Type          Wire
       SrcComponent  "Vm2"
@@ -38955,6 +39099,14 @@ Plecs {
       SrcTerminal   9
       Points        [610, 1210; 610, 1220]
       DstComponent  "Goto40"
+      DstTerminal   1
+    }
+    Connection {
+      Type          Signal
+      SrcComponent  "C2000_28379D"
+      SrcTerminal   15
+      Points        [630, 1120; 630, 1125]
+      DstComponent  "Scope6"
       DstTerminal   1
     }
   }

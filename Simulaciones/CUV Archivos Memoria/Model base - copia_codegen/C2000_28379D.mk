@@ -18,16 +18,16 @@
 include C2000_28379D_sources.mk
 
 TSP_VERSION=1.7.4
-TARGET_ROOT=F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x
-TOOLS_PATH=C:/Users/user/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS
-BIN_DIR=./output_TI2837xS_cpu1
+TARGET_ROOT=C:/Users/Estudiante USM/Desktop/target supp/tsp_ti_c2000/ccs/2837x
+TOOLS_PATH=C:/Users/Estudiante USM/AppData/Local/Programs/PLECS C2000 TSP/cgt/ti-cgt-c2000_22.6.1.LTS
+BIN_DIR=./output_TI2837x_cpu1
 OUT_NAME=C2000_28379D
 MAKEFILE=C2000_28379D.mk
 LINKFILE=C2000_28379D.lkf
 INSTALL_DIR=./
 BASE_NAME=C2000_28379D
 CPU_POSTFIX=
-CCXML_FILE=C:/Users/user/Desktop/Repositorio_Chris/Memoria_CUV/Simulaciones/CUV Archivos Memoria\Model base - copia_codegen/Launchpad_TMS320F28379D.ccxml
+CCXML_FILE=C:/Users/Estudiante USM/Desktop/Repositorios/Memoria_CUV/Simulaciones/CUV Archivos Memoria\Model base - copia_codegen/Launchpad_TMS320F28379D.ccxml
 FLASH_EXE=C:/ti/uniflash_8.5.0/dslite.bat
 CORE_POST_FIX=_cpu1
 CPU_NUM=1
