@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.6
- * Generated on     : 24 Sep 2024 10:40:21
+ * Generated on     : 24 Sep 2024 11:48:29
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -34,33 +34,18 @@ typedef float real_t;
 #define Out2 Output(2)
 
 #define Out3 Output(3)
-#define Out4 Output(4)
-#define Out5 Output(5)
-#define Out6 Output(6)
-#define Out7 Output(7)
-#define Out8 Output(8)
-#define Out9 Output(9)
-#define Out10 Output(10)
-#define Out11 Output(11)
-#define Out12 Output(12)
 
-float Vgd_r=220;
-float Vgq_r=0;
-
+const float Vgd_r=220;
+const float Vgq_r=0;
 float V_d=0, V_q=0;
-
 float Vcd=0, Vcd_k0=0, Vcd_k1=0;
 float Vcq=0, Vcq_k0=0, Vcq_k1=0;
-
 float i2d_k=0, i2d_k0=0, i2d_k1=0;
 float i2q_k=0, i2q_k0=0, i2q_k1=0;
-
 float i1d_k=0, i1d_k0=0, i1d_k1=0;
 float i1q_k=0, i1q_k0=0, i1q_k1=0;
-
 float id=0, iq=0, theta=0;
-
-float dp=6.28318530718;
+const float dp=6.28318530718;
 float id_r=0, iq_r=0, Vcd_r=0, Vcq_r=0;
 float g[125], g_opt=10000000;
 float gv[125];
@@ -116,18 +101,22 @@ float cosme2pi3=0;
 float sinma2pi3=0;
 float sinme2pi3=0;
 
+float fa_cosa=0;
+float fa_cosb=0;
+float fa_cosc=0;
+float fa_sinoa=0;
+float fa_sinob=0;
+float fa_sinoc=0;
+
 float vari1d=0;
 float vari1q=0;
 float varvcd=0;
 float varvcq=0;
 float vari2d=0;
 float vari2q=0;
-float var2i2d=0;
-float var2i2q=0;
 float wh=0.06283;
 
-float PI23=2.0943951023;
-float CS=0.66666666667;
+const float CS=0.66666666667;
 struct CScriptStruct
 {
    int numInputTerminals;
@@ -317,23 +306,17 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
       //gb[x]=sqrt((id_r - i1d_k1)*(id_r - i1d_k1)) + sqrt((iq_r - i1q_k1)*(iq_r - i1q_k1));
 
       // actualizar combinacion de switch optima
-      if(  (Sa[x] == Sa[x_opt]+0.5 || Sa[x] == Sa[x_opt]-0.5 || Sa[x] ==
-            Sa[x_opt] ) &&
-         (Sb[x] == Sb[x_opt]+0.5 || Sb[x] == Sb[x_opt]-0.5 || Sb[x] ==
-          Sb[x_opt]) &&
-         (Sc[x] == Sc[x_opt]+0.5 || Sc[x] == Sc[x_opt]-0.5 || Sc[x] ==
-          Sc[x_opt]) )
+      //if(  (Sa[x] == Sa[x_opt]+0.5 || Sa[x] == Sa[x_opt]-0.5 || Sa[x] == Sa[x_opt] ) && (Sb[x] == Sb[x_opt]+0.5 || Sb[x] == Sb[x_opt]-0.5 || Sb[x] == Sb[x_opt]) && (Sc[x] == Sc[x_opt]+0.5 || Sc[x] == Sc[x_opt]-0.5 || Sc[x] == Sc[x_opt]) ){
+      //if (0.3333*(g[x]+gv[x]+gb[x]) < g_opt) {
+      //if (0.5*(g[x]+gv[x]) < g_opt) {
+      if (g[x] < g_opt)
       {
-         //if (0.3333*(g[x]+gv[x]+gb[x]) < g_opt) {
-         //if (0.5*(g[x]+gv[x]) < g_opt) {
-         if (g[x] < g_opt)
-         {
-            //g_opt = 0.3333*(g[x]+gv[x]+gb[x]);
-            //g_opt = 0.5*(g[x]+gv[x]);
-            g_opt = g[x];
-            x_opt = x;
-         }
+         //g_opt = 0.3333*(g[x]+gv[x]+gb[x]);
+         //g_opt = 0.5*(g[x]+gv[x]);
+         g_opt = g[x];
+         x_opt = x;
       }
+      //}
    }
 }
 

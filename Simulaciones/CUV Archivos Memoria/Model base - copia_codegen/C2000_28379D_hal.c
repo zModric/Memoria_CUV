@@ -1,7 +1,7 @@
 /*
  * Hardware configuration file for: TI2837x
  * Generated with                 : PLECS 4.8.6
- * Generated on                   : Tue Sep 24 10:40:21 2024
+ * Generated on                   : Tue Sep 24 11:48:29 2024
  */
 
 /* HAL Includes */
@@ -14,8 +14,8 @@
 #include "xbar.h"
 #include "asysctl.h"
 #include "sysctl.h"
-#include "plx_ain.h"
 #include "plx_dio.h"
+#include "plx_ain.h"
 #include "plx_dac.h"
 
 /* HAL Declarations */
@@ -38,17 +38,17 @@ void DSP28x_usDelay(long LoopCount);
 
 PIL_Obj_t PilObj;
 PIL_Handle_t PilHandle = 0;
-PLX_AIN_Handle_t AdcHandles[4];
-PLX_AIN_Obj_t AdcObj[4];
-float PLXHAL_ADC_getIn(uint16_t aHandle, uint16_t aChannel)
-{
-   return PLX_AIN_getInF(AdcHandles[aHandle], aChannel);
-}
 PLX_DIO_Handle_t DoutHandles[9];
 PLX_DIO_Obj_t DoutObj[9];
 void PLXHAL_DIO_set(uint16_t aHandle, bool aVal)
 {
    PLX_DIO_set(DoutHandles[aHandle], aVal);
+}
+PLX_AIN_Handle_t AdcHandles[4];
+PLX_AIN_Obj_t AdcObj[4];
+float PLXHAL_ADC_getIn(uint16_t aHandle, uint16_t aChannel)
+{
+   return PLX_AIN_getInF(AdcHandles[aHandle], aChannel);
 }
 PLX_DAC_Handle_t DacHandles[1];
 PLX_DAC_Obj_t DacObj[1];
@@ -138,173 +138,6 @@ void C2000_28379D_initHal()
       PLX_DIO_sinit();
    }
    {
-      PLX_AIN_sinit(190000000);
-      int i;
-      for(i=0; i < 4; i++)
-      {
-         AdcHandles[i] = PLX_AIN_init(&AdcObj[i], sizeof(AdcObj[i]));
-      }
-   }
-
-   // configure ADC B
-
-   {
-      PLX_AIN_AdcParams_t params;
-      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
-      PLX_AIN_configure(AdcHandles[1], (PLX_AIN_Unit_t)1, &params);
-   }
-   // configure SOC1 of ADC-B to measure ADCIN2
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  2.000000000e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[1], 0, 2, &params);
-   }
-
-   // configure SOC2 of ADC-B to measure ADCIN3
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  2.000000000e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[1], 1, 3, &params);
-   }
-
-   // configure SOC3 of ADC-B to measure ADCIN4
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  2.000000000e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[1], 2, 4, &params);
-   }
-
-   // configure ADC C
-
-   {
-      PLX_AIN_AdcParams_t params;
-      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
-      PLX_AIN_configure(AdcHandles[2], (PLX_AIN_Unit_t)2, &params);
-   }
-   // configure SOC1 of ADC-C to measure ADCIN2
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  3.333333333e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[2], 0, 2, &params);
-   }
-
-   // configure SOC2 of ADC-C to measure ADCIN3
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  3.333333333e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[2], 1, 3, &params);
-   }
-
-   // configure SOC3 of ADC-C to measure ADCIN4
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  3.333333333e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[2], 2, 4, &params);
-   }
-
-   // configure ADC D
-
-   {
-      PLX_AIN_AdcParams_t params;
-      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
-      PLX_AIN_configure(AdcHandles[3], (PLX_AIN_Unit_t)3, &params);
-   }
-   // configure SOC1 of ADC-D to measure ADCIN14
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  3.333333333e+04f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[3], 0, 14, &params);
-   }
-
-   // configure ADC A
-
-   {
-      PLX_AIN_AdcParams_t params;
-      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
-      PLX_AIN_configure(AdcHandles[0], (PLX_AIN_Unit_t)0, &params);
-   }
-   // configure SOC1 of ADC-A to measure ADCIN2
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  3.333333333e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[0], 0, 2, &params);
-   }
-
-   // configure SOC2 of ADC-A to measure ADCIN3
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  3.333333333e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[0], 1, 3, &params);
-   }
-
-   // configure SOC3 of ADC-A to measure ADCIN4
-   {
-
-      PLX_AIN_ChannelParams_t params;
-      PLX_AIN_setDefaultChannelParams(&params);
-      params.scale =  3.333333333e+02f;
-      params.offset = 0.000000000e+00f;
-      // set SOC trigger to CPU 1 Timer0
-      params.ADCSOCxCTL.bit.TRIGSEL = 1;
-      params.ADCSOCxCTL.bit.ACQPS = 14;
-      PLX_AIN_setupChannel(AdcHandles[0], 2, 4, &params);
-   }
-
-   {
       PLX_DIO_sinit();
       int i;
       for(i=0; i < 9; i++)
@@ -376,6 +209,173 @@ void C2000_28379D_initHal()
       props.enableInvert = false;
       PLX_DIO_configureOut(DoutHandles[8], 8,  &props);
    }
+   {
+      PLX_AIN_sinit(190000000);
+      int i;
+      for(i=0; i < 4; i++)
+      {
+         AdcHandles[i] = PLX_AIN_init(&AdcObj[i], sizeof(AdcObj[i]));
+      }
+   }
+
+   // configure ADC B
+
+   {
+      PLX_AIN_AdcParams_t params;
+      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
+      PLX_AIN_configure(AdcHandles[2], (PLX_AIN_Unit_t)1, &params);
+   }
+   // configure SOC1 of ADC-B to measure ADCIN2
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  2.000000000e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[2], 0, 2, &params);
+   }
+
+   // configure SOC2 of ADC-B to measure ADCIN3
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  2.000000000e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[2], 1, 3, &params);
+   }
+
+   // configure SOC3 of ADC-B to measure ADCIN4
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  2.000000000e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[2], 2, 4, &params);
+   }
+
+   // configure ADC C
+
+   {
+      PLX_AIN_AdcParams_t params;
+      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
+      PLX_AIN_configure(AdcHandles[0], (PLX_AIN_Unit_t)2, &params);
+   }
+   // configure SOC1 of ADC-C to measure ADCIN2
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[0], 0, 2, &params);
+   }
+
+   // configure SOC2 of ADC-C to measure ADCIN3
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[0], 1, 3, &params);
+   }
+
+   // configure SOC3 of ADC-C to measure ADCIN4
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[0], 2, 4, &params);
+   }
+
+   // configure ADC D
+
+   {
+      PLX_AIN_AdcParams_t params;
+      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
+      PLX_AIN_configure(AdcHandles[3], (PLX_AIN_Unit_t)3, &params);
+   }
+   // configure SOC1 of ADC-D to measure ADCIN14
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  3.333333333e+04f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[3], 0, 14, &params);
+   }
+
+   // configure ADC A
+
+   {
+      PLX_AIN_AdcParams_t params;
+      PLX_AIN_setDefaultAdcParams(&params, 1, 3.000000, 0);
+      PLX_AIN_configure(AdcHandles[1], (PLX_AIN_Unit_t)0, &params);
+   }
+   // configure SOC1 of ADC-A to measure ADCIN2
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[1], 0, 2, &params);
+   }
+
+   // configure SOC2 of ADC-A to measure ADCIN3
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[1], 1, 3, &params);
+   }
+
+   // configure SOC3 of ADC-A to measure ADCIN4
+   {
+
+      PLX_AIN_ChannelParams_t params;
+      PLX_AIN_setDefaultChannelParams(&params);
+      params.scale =  3.333333333e+02f;
+      params.offset = 0.000000000e+00f;
+      // set SOC trigger to CPU 1 Timer0
+      params.ADCSOCxCTL.bit.TRIGSEL = 1;
+      params.ADCSOCxCTL.bit.ACQPS = 14;
+      PLX_AIN_setupChannel(AdcHandles[1], 2, 4, &params);
+   }
+
    {
       PLX_DAC_sinit();
       int i;

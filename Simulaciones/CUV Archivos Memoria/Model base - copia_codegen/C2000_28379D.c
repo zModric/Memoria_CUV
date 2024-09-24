@@ -2,7 +2,7 @@
  * Implementation file for: Model base - copia/C2000_28379D
  * Generated with         : PLECS 4.8.6
  *                          TI2837x 1.7.4
- * Generated on           : 24 Sep 2024 10:40:21
+ * Generated on           : 24 Sep 2024 11:48:29
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
@@ -83,7 +83,7 @@ struct CScriptStruct
 };
 static struct CScriptStruct C2000_28379D_cScriptStruct[1];
 static const uint32_t C2000_28379D_subTaskPeriod[1]= {
-   /* [0.0002, 0], [0, 0] */
+   /* [0.0002, 0], Base task */
    2
 };
 static uint32_t C2000_28379D_subTaskTick[1];
@@ -102,7 +102,7 @@ C2000_28379D_BlockOutputs C2000_28379D_B;
 const char * C2000_28379D_errorStatus;
 const float C2000_28379D_sampleTime = 0.0001f;
 const char * const C2000_28379D_checksum =
-   "e99e3543ded44991a5efeadc1fa2cc4c954fc4a7";
+   "7e51288f0be02d1013b8813ef840e897da336bd2";
 /* Target declarations */
 // tag step function to allow special linking
 #pragma CODE_SECTION(C2000_28379D_step, "step")
@@ -113,7 +113,7 @@ void C2000_28379D_initialize(void)
    C2000_28379D_tickHi = 0;
    C2000_28379D_tickLo = 0;
    /* Initialize sub-task tick counters */
-   C2000_28379D_subTaskTick[0] = 0; /* [0, 0], [0.0002, 0] */
+   C2000_28379D_subTaskTick[0] = 0; /* Base task, [0.0002, 0] */
 
 
    /* Target pre-initialization */
@@ -242,36 +242,6 @@ void C2000_28379D_step(void)
          C2000_28379D_subTaskHit[i] = (C2000_28379D_subTaskTick[i] == 0);
       }
    }
-
-   /* Sum : 'C2000_28379D/Sum1'
-    * incorporates
-    *  ADC : 'C2000_28379D/i2'
-    *  Constant : 'C2000_28379D/Constant1'
-    */
-   C2000_28379D_B.Sum1[0] = (PLXHAL_ADC_getIn(0, 0)) + (-500.f);
-   C2000_28379D_B.Sum1[1] = (PLXHAL_ADC_getIn(0, 1)) + (-500.f);
-   C2000_28379D_B.Sum1[2] = (PLXHAL_ADC_getIn(0, 2)) + (-500.f);
-
-   /* Sum : 'C2000_28379D/Sum2'
-    * incorporates
-    *  ADC : 'C2000_28379D/Vc'
-    *  Constant : 'C2000_28379D/Constant2'
-    */
-   C2000_28379D_B.Sum2[0] = (PLXHAL_ADC_getIn(1, 0)) + (-300.f);
-   C2000_28379D_B.Sum2[1] = (PLXHAL_ADC_getIn(1, 1)) + (-300.f);
-   C2000_28379D_B.Sum2[2] = (PLXHAL_ADC_getIn(1, 2)) + (-300.f);
-
-   /* Sum : 'C2000_28379D/Sum3'
-    * incorporates
-    *  ADC : 'C2000_28379D/i1'
-    *  Constant : 'C2000_28379D/Constant3'
-    */
-   C2000_28379D_B.Sum3[0] = (PLXHAL_ADC_getIn(2, 0)) + (-500.f);
-   C2000_28379D_B.Sum3[1] = (PLXHAL_ADC_getIn(2, 1)) + (-500.f);
-   C2000_28379D_B.Sum3[2] = (PLXHAL_ADC_getIn(2, 2)) + (-500.f);
-
-   /* ADC : 'C2000_28379D/Pot' */
-   C2000_28379D_B.Pot = PLXHAL_ADC_getIn(3, 0);
    if (C2000_28379D_subTaskHit[0])
    {
       /* C-Script : 'C2000_28379D/Control' */
@@ -417,8 +387,38 @@ void C2000_28379D_step(void)
    PLXHAL_DIO_set(7, C2000_28379D_B.Fcn_2 == 0.f);
    /* Digital Out : 'C2000_28379D/Sc4' */
    PLXHAL_DIO_set(8, C2000_28379D_B.Fcn_2 < 0.f);
+
+   /* ADC : 'C2000_28379D/Pot' */
+   C2000_28379D_B.Pot = PLXHAL_ADC_getIn(3, 0);
    /* DAC : 'C2000_28379D/DAC' */
    PLXHAL_DAC_set(0, C2000_28379D_B.Control[3]);
+
+   /* Sum : 'C2000_28379D/Sum1'
+    * incorporates
+    *  ADC : 'C2000_28379D/i2'
+    *  Constant : 'C2000_28379D/Constant1'
+    */
+   C2000_28379D_B.Sum1[0] = (PLXHAL_ADC_getIn(1, 0)) + (-500.f);
+   C2000_28379D_B.Sum1[1] = (PLXHAL_ADC_getIn(1, 1)) + (-500.f);
+   C2000_28379D_B.Sum1[2] = (PLXHAL_ADC_getIn(1, 2)) + (-500.f);
+
+   /* Sum : 'C2000_28379D/Sum2'
+    * incorporates
+    *  ADC : 'C2000_28379D/Vc'
+    *  Constant : 'C2000_28379D/Constant2'
+    */
+   C2000_28379D_B.Sum2[0] = (PLXHAL_ADC_getIn(2, 0)) + (-300.f);
+   C2000_28379D_B.Sum2[1] = (PLXHAL_ADC_getIn(2, 1)) + (-300.f);
+   C2000_28379D_B.Sum2[2] = (PLXHAL_ADC_getIn(2, 2)) + (-300.f);
+
+   /* Sum : 'C2000_28379D/Sum3'
+    * incorporates
+    *  ADC : 'C2000_28379D/i1'
+    *  Constant : 'C2000_28379D/Constant3'
+    */
+   C2000_28379D_B.Sum3[0] = (PLXHAL_ADC_getIn(0, 0)) + (-500.f);
+   C2000_28379D_B.Sum3[1] = (PLXHAL_ADC_getIn(0, 1)) + (-500.f);
+   C2000_28379D_B.Sum3[2] = (PLXHAL_ADC_getIn(0, 2)) + (-500.f);
    if (C2000_28379D_errorStatus)
    {
       return;

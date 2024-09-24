@@ -2,7 +2,7 @@
  * Header file for: Model base - copia/C2000_28379D
  * Generated with : PLECS 4.8.6
  *                  TI2837x 1.7.4
- * Generated on   : 24 Sep 2024 10:40:21
+ * Generated on   : 24 Sep 2024 11:48:29
  */
 #ifndef PLECS_HEADER_C2000_28379D_h_
 #define PLECS_HEADER_C2000_28379D_h_
@@ -42,13 +42,13 @@ typedef struct
    float TriangularWave2_1;         /* C2000_28379D/SW A4/Triangular Wave2 */
    float TriangularWave1_2;         /* C2000_28379D/SW A5/Triangular Wave1 */
    float TriangularWave2_2;         /* C2000_28379D/SW A5/Triangular Wave2 */
-   float Sum1[3];                   /* C2000_28379D/Sum1 */
-   float Sum2[3];                   /* C2000_28379D/Sum2 */
-   float Sum3[3];                   /* C2000_28379D/Sum3 */
-   float Pot;                       /* C2000_28379D/Pot */
    float Fcn;                       /* C2000_28379D/SW A2/Fcn */
    float Fcn_1;                     /* C2000_28379D/SW A4/Fcn */
    float Fcn_2;                     /* C2000_28379D/SW A5/Fcn */
+   float Pot;                       /* C2000_28379D/Pot */
+   float Sum1[3];                   /* C2000_28379D/Sum1 */
+   float Sum2[3];                   /* C2000_28379D/Sum2 */
+   float Sum3[3];                   /* C2000_28379D/Sum3 */
 } C2000_28379D_BlockOutputs;
 extern C2000_28379D_BlockOutputs C2000_28379D_B;
 
