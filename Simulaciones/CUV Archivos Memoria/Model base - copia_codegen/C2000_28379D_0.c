@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.6
- * Generated on     : 24 Sep 2024 11:48:29
+ * Generated on     : 24 Sep 2024 14:57:37
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -37,6 +37,7 @@ typedef float real_t;
 
 const float Vgd_r=220;
 const float Vgq_r=0;
+const float dp=6.28318530718;
 float V_d=0, V_q=0;
 float Vcd=0, Vcd_k0=0, Vcd_k1=0;
 float Vcq=0, Vcq_k0=0, Vcq_k1=0;
@@ -45,7 +46,6 @@ float i2q_k=0, i2q_k0=0, i2q_k1=0;
 float i1d_k=0, i1d_k0=0, i1d_k1=0;
 float i1q_k=0, i1q_k0=0, i1q_k1=0;
 float id=0, iq=0, theta=0;
-const float dp=6.28318530718;
 float id_r=0, iq_r=0, Vcd_r=0, Vcq_r=0;
 float g[125], g_opt=10000000;
 float gv[125];
@@ -59,7 +59,7 @@ float gg[125];
 int x=0;
 int x_opt=0;
 
-float Sa[125]= {
+const float Sa[125]= {
    -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
    -1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,
    -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,
@@ -69,7 +69,7 @@ float Sa[125]= {
    0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
    1, 1
 };
-float Sb[125]= {
+const float Sb[125]= {
    -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5,
    0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5,
    -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1,
@@ -79,7 +79,7 @@ float Sb[125]= {
    -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1,
    1
 };
-float Sc[125]= {
+const float Sc[125]= {
    -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
    0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1,
    -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
@@ -114,8 +114,8 @@ float varvcd=0;
 float varvcq=0;
 float vari2d=0;
 float vari2q=0;
-float wh=0.06283;
 
+const float wh=0.06283;
 const float CS=0.66666666667;
 struct CScriptStruct
 {
@@ -274,11 +274,13 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
    /*** Calculo preliminar para minimizar calculos en loop ****/
 
    vari1d=wh*i1q_k0 + i1d_k0 - Vcd_k0*0.1407;
-   vari1q=wh*i1d_k0 + i1q_k0 + Vcq_k0*0.1407;
+   vari1q=wh*i1d_k0 - i1q_k0 + Vcq_k0*0.1407;
+
    varvcd=wh*Vcq_k0 + Vcd_k0 - i2d_k0*0.6076;
-   varvcq=wh*Vcd_k0 + Vcq_k0 + i2q_k0*0.6076;
-   vari2d=i2d_k0 + wh*i2q_k0 - (Vgd_r-i2d_k0*0.00140845);
-   vari2q=i2q_k0 - wh*i2d_k0 - (Vgq_r-i2q_k0*0.00140845);
+   varvcq=-i2q_k0*0.6076 -wh*Vcd_k0 + Vcq_k0;
+
+   vari2d=i2d_k0 + wh*i2q_k0 - (1.40845)*(Vgd_r+i2d_k0*0.001);
+   vari2q=i2q_k0 - wh*i2d_k0 - (1.40845)*(Vgq_r+i2q_k0*0.001);
 
    /************ Loop para determinar combinacion optima ************/
 
@@ -299,21 +301,19 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
       i2q_k1 = (1.40845)*(Vcq_k1) + vari2q;
 
       g[x]=
-         sqrt((id_r -
-               i2d_k1)*
-              (id_r - i2d_k1)) + sqrt((iq_r - i2q_k1)*(iq_r - i2q_k1));
-      //gv[x]=sqrt((Vcd_r - Vcd_k1)*(Vcd_r - Vcd_k1)) + sqrt((Vcq_r - Vcq_k1)*(Vcq_r - Vcq_k1));
-      //gb[x]=sqrt((id_r - i1d_k1)*(id_r - i1d_k1)) + sqrt((iq_r - i1q_k1)*(iq_r - i1q_k1));
+         sqrtf((id_r -
+                i2d_k1)*
+               (id_r - i2d_k1)) + sqrtf((iq_r - i2q_k1)*(iq_r - i2q_k1));
+      //gv[x]=sqrtf((Vcd_r - Vcd_k1)*(Vcd_r - Vcd_k1)) + sqrtf((Vcq_r - Vcq_k1)*(Vcq_r - Vcq_k1));
+      //gb[x]=sqrtf((id_r - i1d_k1)*(id_r - i1d_k1)) + sqrtf((iq_r - i1q_k1)*(iq_r - i1q_k1));
 
       // actualizar combinacion de switch optima
       //if(  (Sa[x] == Sa[x_opt]+0.5 || Sa[x] == Sa[x_opt]-0.5 || Sa[x] == Sa[x_opt] ) && (Sb[x] == Sb[x_opt]+0.5 || Sb[x] == Sb[x_opt]-0.5 || Sb[x] == Sb[x_opt]) && (Sc[x] == Sc[x_opt]+0.5 || Sc[x] == Sc[x_opt]-0.5 || Sc[x] == Sc[x_opt]) ){
-      //if (0.3333*(g[x]+gv[x]+gb[x]) < g_opt) {
       //if (0.5*(g[x]+gv[x]) < g_opt) {
       if (g[x] < g_opt)
       {
-         //g_opt = 0.3333*(g[x]+gv[x]+gb[x]);
-         //g_opt = 0.5*(g[x]+gv[x]);
          g_opt = g[x];
+         //	g_opt = 0.5*(g[x]+gv[x]);
          x_opt = x;
       }
       //}
