@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.6
- * Generated on     : 23 Sep 2024 19:11:17
+ * Generated on     : 24 Sep 2024 10:40:21
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -66,6 +66,10 @@ float g[125], g_opt=10000000;
 float gv[125];
 float gb[125];
 float gg[125];
+//float g[27], g_opt=10000000;
+//float gv[27];
+//float gb[27];
+//float gg[27];
 
 int x=0;
 int x_opt=0;
@@ -100,6 +104,10 @@ float Sc[125]= {
    -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
    0.5, 1
 };
+
+//float Sa[27]= {-1,-1,-1,-1,-1,-1,-1,-1,-1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1};
+//float Sb[27]= {-1,-1,-1,0,0,0,1,1,1,-1,-1,-1,0,0,0,1,1,1,-1,-1,-1,0,0,0,1,1,1};
+//float Sc[27]= {-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1};
 
 float coseno=0;
 float seno=0;
@@ -288,7 +296,7 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
    g_opt=1e20;
    for (x=0; x <= 124; x=x+1)
    {
-
+      //for (x=0; x <= 26; x=x+1) {
       V_d=266.666666*(Sa[x]*coseno+Sb[x]*cosme2pi3+Sc[x]*cosma2pi3);
       V_q=-266.666666*(Sa[x]*seno+Sb[x]*sinme2pi3+Sc[x]*sinma2pi3);
 
@@ -317,9 +325,11 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
           Sc[x_opt]) )
       {
          //if (0.3333*(g[x]+gv[x]+gb[x]) < g_opt) {
+         //if (0.5*(g[x]+gv[x]) < g_opt) {
          if (g[x] < g_opt)
          {
             //g_opt = 0.3333*(g[x]+gv[x]+gb[x]);
+            //g_opt = 0.5*(g[x]+gv[x]);
             g_opt = g[x];
             x_opt = x;
          }

@@ -2,7 +2,7 @@
  * Implementation file for: Model base - copia/C2000_28379D
  * Generated with         : PLECS 4.8.6
  *                          TI2837x 1.7.4
- * Generated on           : 23 Sep 2024 19:11:17
+ * Generated on           : 24 Sep 2024 10:40:21
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
@@ -102,7 +102,7 @@ C2000_28379D_BlockOutputs C2000_28379D_B;
 const char * C2000_28379D_errorStatus;
 const float C2000_28379D_sampleTime = 0.0001f;
 const char * const C2000_28379D_checksum =
-   "2bd60b20f101f056d50b1c272a2d9e1cbdfd8714";
+   "e99e3543ded44991a5efeadc1fa2cc4c954fc4a7";
 /* Target declarations */
 // tag step function to allow special linking
 #pragma CODE_SECTION(C2000_28379D_step, "step")
@@ -210,22 +210,22 @@ void C2000_28379D_initialize(void)
             *C2000_28379D_cScriptStruct[0].errorStatus;
    }
 
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A/Triangular Wave1' */
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
    C2000_28379D_D_uint32_t[0] = 0;
 
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A/Triangular Wave2' */
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
    C2000_28379D_D_uint32_t[1] = 0;
 
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A1/Triangular Wave1' */
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
    C2000_28379D_D_uint32_t[2] = 0;
 
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A1/Triangular Wave2' */
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
    C2000_28379D_D_uint32_t[3] = 0;
 
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
    C2000_28379D_D_uint32_t[4] = 0;
 
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
    C2000_28379D_D_uint32_t[5] = 0;
 }
 
@@ -280,7 +280,7 @@ void C2000_28379D_step(void)
          C2000_28379D_errorStatus =
             *C2000_28379D_cScriptStruct[0].errorStatus;
    }
-   /* Triangular Wave Generator : 'C2000_28379D/SW A/Triangular Wave1' */
+   /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
    {
       float frac;
       if (C2000_28379D_D_uint32_t[0] < 1)
@@ -294,7 +294,7 @@ void C2000_28379D_step(void)
       C2000_28379D_B.TriangularWave1 = 1e-05f+0.99999f*frac;
    }
 
-   /* Triangular Wave Generator : 'C2000_28379D/SW A/Triangular Wave2' */
+   /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
    {
       float frac;
       if (C2000_28379D_D_uint32_t[1] < 1)
@@ -308,10 +308,10 @@ void C2000_28379D_step(void)
       C2000_28379D_B.TriangularWave2 = -1.f+0.999999f*frac;
    }
 
-   /* Function : 'C2000_28379D/SW A/Fcn'
+   /* Function : 'C2000_28379D/SW A2/Fcn'
     * incorporates
-    *  Relational Operator : 'C2000_28379D/SW A/Relational\nOperator5'
-    *  Relational Operator : 'C2000_28379D/SW A/Relational\nOperator6'
+    *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator5'
+    *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator6'
     */
    C2000_28379D_B.Fcn =
       ((1.f) *
@@ -326,7 +326,7 @@ void C2000_28379D_step(void)
    /* Digital Out : 'C2000_28379D/Sa4' */
    PLXHAL_DIO_set(2, C2000_28379D_B.Fcn < 0.f);
 
-   /* Triangular Wave Generator : 'C2000_28379D/SW A1/Triangular Wave1' */
+   /* Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
    {
       float frac;
       if (C2000_28379D_D_uint32_t[2] < 1)
@@ -340,7 +340,7 @@ void C2000_28379D_step(void)
       C2000_28379D_B.TriangularWave1_1 = 1e-05f+0.99999f*frac;
    }
 
-   /* Triangular Wave Generator : 'C2000_28379D/SW A1/Triangular Wave2' */
+   /* Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
    {
       float frac;
       if (C2000_28379D_D_uint32_t[3] < 1)
@@ -354,10 +354,10 @@ void C2000_28379D_step(void)
       C2000_28379D_B.TriangularWave2_1 = -1.f+0.999999f*frac;
    }
 
-   /* Function : 'C2000_28379D/SW A1/Fcn'
+   /* Function : 'C2000_28379D/SW A4/Fcn'
     * incorporates
-    *  Relational Operator : 'C2000_28379D/SW A1/Relational\nOperator5'
-    *  Relational Operator : 'C2000_28379D/SW A1/Relational\nOperator6'
+    *  Relational Operator : 'C2000_28379D/SW A4/Relational\nOperator5'
+    *  Relational Operator : 'C2000_28379D/SW A4/Relational\nOperator6'
     */
    C2000_28379D_B.Fcn_1 =
       ((1.f) *
@@ -372,7 +372,7 @@ void C2000_28379D_step(void)
    /* Digital Out : 'C2000_28379D/Sb4' */
    PLXHAL_DIO_set(5, C2000_28379D_B.Fcn_1 < 0.f);
 
-   /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
+   /* Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
    {
       float frac;
       if (C2000_28379D_D_uint32_t[4] < 1)
@@ -386,7 +386,7 @@ void C2000_28379D_step(void)
       C2000_28379D_B.TriangularWave1_2 = 1e-05f+0.99999f*frac;
    }
 
-   /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
+   /* Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
    {
       float frac;
       if (C2000_28379D_D_uint32_t[5] < 1)
@@ -400,10 +400,10 @@ void C2000_28379D_step(void)
       C2000_28379D_B.TriangularWave2_2 = -1.f+0.999999f*frac;
    }
 
-   /* Function : 'C2000_28379D/SW A2/Fcn'
+   /* Function : 'C2000_28379D/SW A5/Fcn'
     * incorporates
-    *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator5'
-    *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator6'
+    *  Relational Operator : 'C2000_28379D/SW A5/Relational\nOperator5'
+    *  Relational Operator : 'C2000_28379D/SW A5/Relational\nOperator6'
     */
    C2000_28379D_B.Fcn_2 =
       ((1.f) *
@@ -431,42 +431,42 @@ void C2000_28379D_step(void)
          C2000_28379D_errorStatus =
             *C2000_28379D_cScriptStruct[0].errorStatus;
    }
-   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A/Triangular Wave1' */
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
    C2000_28379D_D_uint32_t[0] += 1;
    if (C2000_28379D_D_uint32_t[0] > 1)
    {
       C2000_28379D_D_uint32_t[0] -= 2;
    }
 
-   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A/Triangular Wave2' */
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
    C2000_28379D_D_uint32_t[1] += 1;
    if (C2000_28379D_D_uint32_t[1] > 1)
    {
       C2000_28379D_D_uint32_t[1] -= 2;
    }
 
-   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A1/Triangular Wave1' */
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
    C2000_28379D_D_uint32_t[2] += 1;
    if (C2000_28379D_D_uint32_t[2] > 1)
    {
       C2000_28379D_D_uint32_t[2] -= 2;
    }
 
-   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A1/Triangular Wave2' */
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
    C2000_28379D_D_uint32_t[3] += 1;
    if (C2000_28379D_D_uint32_t[3] > 1)
    {
       C2000_28379D_D_uint32_t[3] -= 2;
    }
 
-   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
    C2000_28379D_D_uint32_t[4] += 1;
    if (C2000_28379D_D_uint32_t[4] > 1)
    {
       C2000_28379D_D_uint32_t[4] -= 2;
    }
 
-   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
    C2000_28379D_D_uint32_t[5] += 1;
    if (C2000_28379D_D_uint32_t[5] > 1)
    {
