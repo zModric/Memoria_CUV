@@ -1,5 +1,5 @@
 Plecs {
-  Name          "Model base - copia"
+  Name          "Model base - copiaV2"
   Version       "4.8"
   CircuitModel  "ContStateSpace"
   StartTime     "0.0"
@@ -112,7 +112,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 27; 1366, 685]
+    Location      [-1362, -276; -1, 685]
     ZoomFactor    0.763605
     SliderPosition [0, 458]
     ShowBrowser   off
@@ -128,10 +128,10 @@ Plecs {
       Frame         [-65, -105; 65, 105]
       TreatAsAtomicUnit on
       SampleTime    "-1"
-      TaskingMode "1"
+      TaskingMode "2"
       TaskConfigurations "AAAACQAAAAABAAAACAAAAAAGAAAADgBUAGgAZQByAG0AYQBsAAAA"
 "AQABAAAAFABTAGEAbQBwAGwAZQBUAGkAbQBlAAAACgAAAAACADAAAAAIAE4AYQBtAGUAAAAKAAAAA"
-"BIAQgBhAHMAZQAgAHQAYQBzAGsAAAAOAEQAZQBmAGEAdQBsAHQAAAABAAEAAAAGAEMAcAB1AAAAAg"
+"BIAQgBhAHMAZQAgAHQAYQBzAGsAAAAOAEQAZQBmAGEAdQBsAHQAAAABAAAAAAAGAEMAcAB1AAAAAg"
 "AAAAAAAAAACABDAG8AcgBlAAAAAgAAAAAA"
       CodeGenEnable on
       CodeGenSampleTime "1e-4"
@@ -349,22 +349,22 @@ Plecs {
         Index         "10"
       }
       Schematic {
-        Location      [0, 27; 958, 737]
-        ZoomFactor    0.999995
-        SliderPosition [151, 0]
+        Location      [-1362, -276; -1, 685]
+        ZoomFactor    0.763603
+        SliderPosition [0, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
           Type          CScript
           Name          "Control"
           Show          on
-          Position      [695, 320]
+          Position      [950, 375]
           Direction     up
           Flipped       off
           LabelPosition south
           Parameter {
             Variable      "DialogGeometry"
-            Value         "[0 22 1366 697]"
+            Value         "[-1362 -276 1361 1000]"
             Show          off
           }
           Parameter {
@@ -517,6 +517,10 @@ Plecs {
 ",1};\n"
 "//float Sc[27]= {-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0"
 ",1};\n"
+"float Sav[27]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};\n"
+"float Sbv[27]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};\n"
+"float Scv[27]={0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};\n"
+"float comb=0;\n"
 "\n"
 "float coseno=0;\n"
 "float seno=0;\n"
@@ -593,29 +597,293 @@ Plecs {
 "owLjE0MDc7Cgp2YXJ2Y2Q9d2gqVmNxX2swICsgVmNkX2swIC0gaTJkX2swKjAuNjA3NjsKdmFydmN"
 "xPS1pMnFfazAqMC42MDc2IC13aCpWY2RfazAgKyBWY3FfazA7Cgp2YXJpMmQ9aTJkX2swICsgd2gq"
 "aTJxX2swIC0gKDEuNDA4NDUpKihWZ2RfcitpMmRfazAqMC4wMDEpOwp2YXJpMnE9aTJxX2swIC0gd"
-"2gqaTJkX2swIC0gKDEuNDA4NDUpKihWZ3FfcitpMnFfazAqMC4wMDEpOwoKLyoqKioqKioqKioqKi"
-"BMb29wIHBhcmEgZGV0ZXJtaW5hciBjb21iaW5hY2lvbiBvcHRpbWEgKioqKioqKioqKioqLwogCmd"
-"fb3B0PTFlMjA7CmZvciAoeD0wOyB4IDw9IDEyNDsgeD14KzEpIHsKLy9mb3IgKHg9MDsgeCA8PSAy"
-"NjsgeD14KzEpIHsJIAoJIFZfZD0yNjYuNjY2NjY2KihTYVt4XSpjb3Nlbm8rU2JbeF0qY29zbWUyc"
-"GkzK1NjW3hdKmNvc21hMnBpMyk7CgkgVl9xPS0yNjYuNjY2NjY2KihTYVt4XSpzZW5vK1NiW3hdKn"
-"Npbm1lMnBpMytTY1t4XSpzaW5tYTJwaTMpOwoKCSBpMWRfazE9ICgwLjE0MDcpKihWX2QpICsgdmF"
-"yaTFkOwoJIGkxcV9rMT0gKDAuMTQwNykqKFZfcSkgLSB2YXJpMXE7IAoJIAoJIFZjZF9rMT0oMC42"
-"MDc2KSooaTFkX2sxKSArIHZhcnZjZDsKCSBWY3FfazE9KDAuNjA3NikqKGkxcV9rMSkgLSB2YXJ2Y"
-"3E7CgkgCgkgaTJkX2sxID0gKDEuNDA4NDUpKihWY2RfazEpICsgdmFyaTJkOwoJIGkycV9rMSA9IC"
-"gxLjQwODQ1KSooVmNxX2sxKSArIHZhcmkycTsKCiAgICBnW3hdPXNxcnRmKChpZF9yIC0gaTJkX2s"
-"xKSooaWRfciAtIGkyZF9rMSkpICsgc3FydGYoKGlxX3IgLSBpMnFfazEpKihpcV9yIC0gaTJxX2sx"
-"KSk7CgkgLy9ndlt4XT1zcXJ0ZigoVmNkX3IgLSBWY2RfazEpKihWY2RfciAtIFZjZF9rMSkpICsgc"
-"3FydGYoKFZjcV9yIC0gVmNxX2sxKSooVmNxX3IgLSBWY3FfazEpKTsgCgkgLy9nYlt4XT1zcXJ0Zi"
-"goaWRfciAtIGkxZF9rMSkqKGlkX3IgLSBpMWRfazEpKSArIHNxcnRmKChpcV9yIC0gaTFxX2sxKSo"
-"oaXFfciAtIGkxcV9rMSkpOwoJIAoJLy8gYWN0dWFsaXphciBjb21iaW5hY2lvbiBkZSBzd2l0Y2gg"
-"b3B0aW1hCgkvL2lmKCAgKFNhW3hdID09IFNhW3hfb3B0XSswLjUgfHwgU2FbeF0gPT0gU2FbeF9vc"
-"HRdLTAuNSB8fCBTYVt4XSA9PSBTYVt4X29wdF0gKSAmJiAoU2JbeF0gPT0gU2JbeF9vcHRdKzAuNS"
-"B8fCBTYlt4XSA9PSBTYlt4X29wdF0tMC41IHx8IFNiW3hdID09IFNiW3hfb3B0XSkgJiYgKFNjW3h"
-"dID09IFNjW3hfb3B0XSswLjUgfHwgU2NbeF0gPT0gU2NbeF9vcHRdLTAuNSB8fCBTY1t4XSA9PSBT"
-"Y1t4X29wdF0pICl7CiAgICAgICAgLy9pZiAoMC41KihnW3hdK2d2W3hdKSA8IGdfb3B0KSB7CiAgI"
-"CAgICAgaWYgKGdbeF0gPCBnX29wdCkgewogICAgICAgIAlnX29wdCA9IGdbeF07CiAgICAgICAgLy"
-"8JZ19vcHQgPSAwLjUqKGdbeF0rZ3ZbeF0pOwogICAgICAgIAl4X29wdCA9IHg7CiAgICAgICAgfQo"
-"gICAgLy99Cn0="
+"2gqaTJkX2swIC0gKDEuNDA4NDUpKihWZ3FfcitpMnFfazAqMC4wMDEpOwoKLyoqKiBSZWR1Y2Npb2"
+"4gZGUgY29tYmluYWNpb25lcyBwcmUgTG9vcCAqKiovCi8vIFNhID0gLTEKaWYoU2FbeF9vcHRdPT0"
+"gLTEgJiYgU2JbeF9vcHRdPT0gLTEgJiYgU2NbeF9vcHRdPT0gLTEgKXsKCVNhdlswXT0tMSwgU2F2"
+"WzFdPS0xLCBTYXZbMl09LTEsIFNhdlszXT0tMSwgU2F2WzRdPS0wLjUsIFNhdls1XT0tMC41LCBTY"
+"XZbNl09LTAuNSwgU2F2WzddPS0wLjU7CglTYnZbMF09LTEsIFNidlsxXT0tMSwgU2J2WzJdPS0wLj"
+"UsIFNidlszXT0tMC41LCBTYnZbNF09LTEsIFNidls1XT0tMSwgU2J2WzZdPS0wLjUsIFNidls3XT0"
+"tMC41OwoJU2N2WzBdPS0xLCBTY3ZbMV09LTAuNSwgU2N2WzJdPS0xLCBTY3ZbM109LTAuNSwgU2N2"
+"WzRdPS0xLCBTY3ZbNV09LTAuNSwgU2N2WzZdPS0xLCBTY3ZbN109LTAuNTsKCWNvbWI9Nzt9CgkKa"
+"WYoU2FbeF9vcHRdPT0gLTEgJiYgU2JbeF9vcHRdPT0gLTEgJiYgU2NbeF9vcHRdPT0gLTAuNSApew"
+"oJU2F2WzBdPS0xLCBTYXZbMV09LTAuNSwgU2F2WzJdPS0xLCBTYXZbM109LTAuNSwgU2F2WzRdPS0"
+"xLCBTYXZbNV09LTAuNSwgU2F2WzZdPS0xLCBTYXZbN109LTAuNSwgU2F2WzhdPS0xLCBTYXZbOV09"
+"LTAuNSwgU2F2WzEwXT0tMSwgU2F2WzExXT0tMC41OwoJU2J2WzBdPS0xLCBTYnZbMV09LTEsIFNid"
+"lsyXT0tMC41LCBTYnZbM109LTAuNSwgU2J2WzRdPS0xLCBTYnZbNV09LTEsIFNidls2XT0tMC41LC"
+"BTYnZbN109LTAuNSwgU2J2WzhdPS0xLCBTYnZbOV09LTEsIFNidlsxMF09LTAuNSwgU2J2WzExXT0"
+"tMC41OwoJU2N2WzBdPS0xLCBTY3ZbMV09LTEsIFNjdlsyXT0tMSwgU2N2WzNdPS0xLCBTY3ZbNF09"
+"LTAuNSwgU2N2WzVdPS0wLjUsIFNjdls2XT0tMC41LCBTY3ZbN109LTAuNSwgU2N2WzhdPTAsIFNjd"
+"ls5XT0wLCBTY3ZbMTBdPTAsIFNjdlsxMV09MDsKCWNvbWI9MTE7fQoKaWYoU2FbeF9vcHRdPT0gLT"
+"EgJiYgU2JbeF9vcHRdPT0gLTEgJiYgU2NbeF9vcHRdPT0gMCApewoJU2F2WzBdPS0xLCBTYXZbMV0"
+"9LTAuNSwgU2F2WzJdPS0xLCBTYXZbM109LTAuNSwgU2F2WzRdPS0xLCBTYXZbNV09LTAuNSwgU2F2"
+"WzZdPS0xLCBTYXZbN109LTAuNSwgU2F2WzhdPS0xLCBTYXZbOV09LTAuNSwgU2F2WzEwXT0tMSwgU"
+"2F2WzExXT0tMC41OwoJU2J2WzBdPS0xLCBTYnZbMV09LTEsIFNidlsyXT0tMC41LCBTYnZbM109LT"
+"AuNSwgU2J2WzRdPS0xLCBTYnZbNV09LTEsIFNidls2XT0tMC41LCBTYnZbN109LTAuNSwgU2J2Wzh"
+"dPS0xLCBTYnZbOV09LTEsIFNidlsxMF09LTAuNSwgU2J2WzExXT0tMC41OwoJU2N2WzBdPS0wLjUs"
+"IFNjdlsxXT0tMC41LCBTY3ZbMl09LTAuNSwgU2N2WzNdPS0wLjUsIFNjdls0XT0wLCBTY3ZbNV09M"
+"CwgU2N2WzZdPTAsIFNjdls3XT0wLCBTY3ZbOF09MC41LCBTY3ZbOV09MC41LCBTY3ZbMTBdPTAuNS"
+"wgU2N2WzExXT0wLjU7Cgljb21iPTExO30KCmlmKFNhW3hfb3B0XT09IC0xICYmIFNiW3hfb3B0XT0"
+"9IC0xICYmIFNjW3hfb3B0XT09IDAuNSApewoJU2F2WzBdPS0xLCBTYXZbMV09LTAuNSwgU2F2WzJd"
+"PS0xLCBTYXZbM109LTAuNSwgU2F2WzRdPS0xLCBTYXZbNV09LTAuNSwgU2F2WzZdPS0xLCBTYXZbN"
+"109LTAuNSwgU2F2WzhdPS0xLCBTYXZbOV09LTAuNSwgU2F2WzEwXT0tMSwgU2F2WzExXT0tMC41Ow"
+"oJU2J2WzBdPS0xLCBTYnZbMV09LTEsIFNidlsyXT0tMC41LCBTYnZbM109LTAuNSwgU2J2WzRdPS0"
+"xLCBTYnZbNV09LTEsIFNidls2XT0tMC41LCBTYnZbN109LTAuNSwgU2J2WzhdPS0xLCBTYnZbOV09"
+"LTEsIFNidlsxMF09LTAuNSwgU2J2WzExXT0tMC41OwoJU2N2WzBdPTAsIFNjdlsxXT0wLCBTY3ZbM"
+"l09MCwgU2N2WzNdPTAsIFNjdls0XT0wLjUsIFNjdls1XT0wLjUsIFNjdls2XT0wLjUsIFNjdls3XT"
+"0wLjUsIFNjdls4XT0xLCBTY3ZbOV09MSwgU2N2WzEwXT0xLCBTY3ZbMTFdPTE7Cgljb21iPTExO30"
+"KCmlmKFNhW3hfb3B0XT09IC0xICYmIFNiW3hfb3B0XT09IC0xICYmIFNjW3hfb3B0XT09IDEgKXsK"
+"CVNhdlswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFNhdls0XT0tM"
+"SwgU2F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS0wLjU7CglTYnZbMF09LTEsIFNidlsxXT"
+"0tMSwgU2J2WzJdPS0wLjUsIFNidlszXT0tMC41LCBTYnZbNF09LTEsIFNidls1XT0tMSwgU2J2WzZ"
+"dPS0wLjUsIFNidls3XT0tMC41OwoJU2N2WzBdPTAuNSwgU2N2WzFdPTAuNSwgU2N2WzJdPTAuNSwg"
+"U2N2WzNdPTAuNSwgU2N2WzRdPTEsIFNjdls1XT0xLCBTY3ZbNl09MSwgU2N2WzddPTE7Cgljb21iP"
+"Tc7fQoJCmlmKFNhW3hfb3B0XT09IC0xICYmIFNiW3hfb3B0XT09IC0wLjUgJiYgU2NbeF9vcHRdPT"
+"0gLTEgKXsKCVNhdlswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFN"
+"hdls0XT0tMSwgU2F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS0wLjUsIFNhdls4XT0tMSwg"
+"U2F2WzldPS0wLjUsIFNhdlsxMF09LTEsIFNhdlsxMV09LTAuNTsKCVNidlswXT0tMSwgU2J2WzFdP"
+"S0xLCBTYnZbMl09LTAuNSwgU2J2WzNdPS0wLjUsIFNidls0XT0wLCBTYnZbNV09MCwgU2J2WzZdPS"
+"0xLCBTYnZbN109LTEsIFNidls4XT0tMC41LCBTYnZbOV09LTAuNSwgU2J2WzEwXT0wLCBTYnZbMTF"
+"dPTA7CglTY3ZbMF09LTAuNSwgU2N2WzFdPS0wLjUsIFNjdlsyXT0tMC41LCBTY3ZbM109LTAuNSwg"
+"U2N2WzRdPS0wLjUsIFNjdls1XT0tMC41LCBTY3ZbNl09LTEsIFNjdls3XT0tMSwgU2N2WzhdPS0xL"
+"CBTY3ZbOV09LTEsIFNjdlsxMF09LTEsIFNjdlsxMV09LTE7Cgljb21iPTExO30KCmlmKFNhW3hfb3"
+"B0XT09IC0xICYmIFNiW3hfb3B0XT09IC0wLjUgJiYgU2NbeF9vcHRdPT0gLTAuNSApewoJU2F2WzB"
+"dPS0xLCBTYXZbMV09LTAuNSwgU2F2WzJdPS0xLCBTYXZbM109LTAuNSwgU2F2WzRdPS0xLCBTYXZb"
+"NV09LTAuNSwgU2F2WzZdPS0xLCBTYXZbN109LTAuNSwgU2F2WzhdPS0xLCBTYXZbOV09LTAuNSwgU"
+"2F2WzEwXT0tMSwgU2F2WzExXT0tMC41LCBTYXZbMTJdPS0xLCBTYXZbMTNdPS0wLjUsIFNhdlsxNF"
+"09LTEsIFNhdlsxNV09LTAuNSwgU2F2WzE2XT0tMSwgU2F2WzE3XT0tMC41OwoJU2J2WzBdPS0xLCB"
+"TYnZbMV09LTEsIFNidlsyXT0tMC41LCBTYnZbM109LTAuNSwgU2J2WzRdPTAsIFNidls1XT0wLCBT"
+"YnZbNl09LTEsIFNidls3XT0tMSwgU2J2WzhdPS0wLjUsIFNidls5XT0tMC41LCBTYnZbMTBdPTAsI"
+"FNidlsxMV09MCwgU2J2WzEyXT0tMSwgU2J2WzEzXT0tMSwgU2J2WzE0XT0tMC41LCBTYnZbMTVdPS"
+"0wLjUsIFNidlsxNl09MCwgU2J2WzE3XT0wOwoJU2N2WzBdPS0xLCBTY3ZbMV09LTEsIFNjdlsyXT0"
+"tMSwgU2N2WzNdPS0xLCBTY3ZbNF09LTEsIFNjdls1XT0tMSwgU2N2WzZdPS0wLjUsIFNjdls3XT0t"
+"MC41LCBTY3ZbOF09LTAuNSwgU2N2WzldPS0wLjUsIFNjdlsxMF09LTAuNSwgU2N2WzExXT0tMC41L"
+"CBTY3ZbMTJdPTAsIFNjdlsxM109MCwgU2N2WzE0XT0wLCBTY3ZbMTVdPTAsIFNjdlsxNl09MCwgU2"
+"N2WzE3XT0wOwoJY29tYj0xNzt9CgppZihTYVt4X29wdF09PSAtMSAmJiBTYlt4X29wdF09PSAtMC4"
+"1ICYmIFNjW3hfb3B0XT09IDAgKXsKCVNhdlswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tMSwg"
+"U2F2WzNdPS0wLjUsIFNhdls0XT0tMSwgU2F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS0wL"
+"jUsIFNhdls4XT0tMSwgU2F2WzldPS0wLjUsIFNhdlsxMF09LTEsIFNhdlsxMV09LTAuNSwgU2F2Wz"
+"EyXT0tMSwgU2F2WzEzXT0tMC41LCBTYXZbMTRdPS0xLCBTYXZbMTVdPS0wLjUsIFNhdlsxNl09LTE"
+"sIFNhdlsxN109LTAuNTsKCVNidlswXT0tMSwgU2J2WzFdPS0xLCBTYnZbMl09LTAuNSwgU2J2WzNd"
+"PS0wLjUsIFNidls0XT0wLCBTYnZbNV09MCwgU2J2WzZdPS0xLCBTYnZbN109LTEsIFNidls4XT0tM"
+"C41LCBTYnZbOV09LTAuNSwgU2J2WzEwXT0wLCBTYnZbMTFdPTAsIFNidlsxMl09LTEsIFNidlsxM1"
+"09LTEsIFNidlsxNF09LTAuNSwgU2J2WzE1XT0tMC41LCBTYnZbMTZdPTAsIFNidlsxN109MDsKCVN"
+"jdlswXT0tMC41LCBTY3ZbMV09LTAuNSwgU2N2WzJdPS0wLjUsIFNjdlszXT0tMC41LCBTY3ZbNF09"
+"LTAuNSwgU2N2WzVdPS0wLjUsIFNjdls2XT0wLCBTY3ZbN109MCwgU2N2WzhdPTAsIFNjdls5XT0wL"
+"CBTY3ZbMTBdPTAsIFNjdlsxMV09MCwgU2N2WzEyXT0wLjUsIFNjdlsxM109MC41LCBTY3ZbMTRdPT"
+"AuNSwgU2N2WzE1XT0wLjUsIFNjdlsxNl09MC41LCBTY3ZbMTddPTAuNTsKCWNvbWI9MTc7fQoKaWY"
+"oU2FbeF9vcHRdPT0gLTEgJiYgU2JbeF9vcHRdPT0gLTAuNSAmJiBTY1t4X29wdF09PSAwLjUgKXsK"
+"CVNhdlswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFNhdls0XT0tM"
+"SwgU2F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS0wLjUsIFNhdls4XT0tMSwgU2F2WzldPS"
+"0wLjUsIFNhdlsxMF09LTEsIFNhdlsxMV09LTAuNSwgU2F2WzEyXT0tMSwgU2F2WzEzXT0tMC41LCB"
+"TYXZbMTRdPS0xLCBTYXZbMTVdPS0wLjUsIFNhdlsxNl09LTEsIFNhdlsxN109LTAuNTsKCVNidlsw"
+"XT0tMSwgU2J2WzFdPS0xLCBTYnZbMl09LTAuNSwgU2J2WzNdPS0wLjUsIFNidls0XT0wLCBTYnZbN"
+"V09MCwgU2J2WzZdPS0xLCBTYnZbN109LTEsIFNidls4XT0tMC41LCBTYnZbOV09LTAuNSwgU2J2Wz"
+"EwXT0wLCBTYnZbMTFdPTAsIFNidlsxMl09LTEsIFNidlsxM109LTEsIFNidlsxNF09LTAuNSwgU2J"
+"2WzE1XT0tMC41LCBTYnZbMTZdPTAsIFNidlsxN109MDsKCVNjdlswXT0wLCBTY3ZbMV09MCwgU2N2"
+"WzJdPTAsIFNjdlszXT0wLCBTY3ZbNF09MCwgU2N2WzVdPTAsIFNjdls2XT0wLjUsIFNjdls3XT0wL"
+"jUsIFNjdls4XT0wLjUsIFNjdls5XT0wLjUsIFNjdlsxMF09MC41LCBTY3ZbMTFdPTAuNSwgU2N2Wz"
+"EyXT0xLCBTY3ZbMTNdPTEsIFNjdlsxNF09MSwgU2N2WzE1XT0xLCBTY3ZbMTZdPTEsIFNjdlsxN10"
+"9MTsKCWNvbWI9MTc7fQoKaWYoU2FbeF9vcHRdPT0gLTEgJiYgU2JbeF9vcHRdPT0gLTAuNSAmJiBT"
+"Y1t4X29wdF09PSAxICl7CglTYXZbMF09LTEsIFNhdlsxXT0tMC41LCBTYXZbMl09LTEsIFNhdlszX"
+"T0tMC41LCBTYXZbNF09LTEsIFNhdls1XT0tMC41LCBTYXZbNl09LTEsIFNhdls3XT0tMC41LCBTYX"
+"ZbOF09LTEsIFNhdls5XT0tMC41LCBTYXZbMTBdPS0xLCBTYXZbMTFdPS0wLjU7CglTYnZbMF09LTE"
+"sIFNidlsxXT0tMSwgU2J2WzJdPS0wLjUsIFNidlszXT0tMC41LCBTYnZbNF09MCwgU2J2WzVdPTAs"
+"IFNidls2XT0tMSwgU2J2WzddPS0xLCBTYnZbOF09LTAuNSwgU2J2WzldPS0wLjUsIFNidlsxMF09M"
+"CwgU2J2WzExXT0wOwoJU2N2WzBdPTAuNSwgU2N2WzFdPTAuNSwgU2N2WzJdPTAuNSwgU2N2WzNdPT"
+"AuNSwgU2N2WzRdPTAuNSwgU2N2WzVdPTAuNSwgU2N2WzZdPTEsIFNjdls3XT0xLCBTY3ZbOF09MSw"
+"gU2N2WzldPTEsIFNjdlsxMF09MSwgU2N2WzExXT0xOwoJY29tYj0xMTt9CgppZihTYVt4X29wdF09"
+"PSAtMSAmJiBTYlt4X29wdF09PSAwICYmIFNjW3hfb3B0XT09IC0xICl7CglTYXZbMF09LTEsIFNhd"
+"lsxXT0tMC41LCBTYXZbMl09LTEsIFNhdlszXT0tMC41LCBTYXZbNF09LTEsIFNhdls1XT0tMC41LC"
+"BTYXZbNl09LTEsIFNhdls3XT0tMC41LCBTYXZbOF09LTEsIFNhdls5XT0tMC41LCBTYXZbMTBdPS0"
+"xLCBTYXZbMTFdPS0wLjU7CglTYnZbMF09LTAuNSwgU2J2WzFdPS0wLjUsIFNidlsyXT0wLCBTYnZb"
+"M109MCwgU2J2WzRdPTAuNSwgU2J2WzVdPTAuNSwgU2J2WzZdPS0wLjUsIFNidls3XT0tMC41LCBTY"
+"nZbOF09MCwgU2J2WzldPTAsIFNidlsxMF09MC41LCBTYnZbMTFdPTAuNTsKCVNjdlswXT0tMSwgU2"
+"N2WzFdPS0xLCBTY3ZbMl09LTEsIFNjdlszXT0tMSwgU2N2WzRdPS0xLCBTY3ZbNV09LTEsIFNjdls"
+"2XT0tMC41LCBTY3ZbN109LTAuNSwgU2N2WzhdPS0wLjUsIFNjdls5XT0tMC41LCBTY3ZbMTBdPS0w"
+"LjUsIFNjdlsxMV09LTAuNTsKCWNvbWI9MTE7fQoKaWYoU2FbeF9vcHRdPT0gLTEgJiYgU2JbeF9vc"
+"HRdPT0gMCAmJiBTY1t4X29wdF09PSAtMC41ICl7CglTYXZbMF09LTEsIFNhdlsxXT0tMC41LCBTYX"
+"ZbMl09LTEsIFNhdlszXT0tMC41LCBTYXZbNF09LTEsIFNhdls1XT0tMC41LCBTYXZbNl09LTEsIFN"
+"hdls3XT0tMC41LCBTYXZbOF09LTEsIFNhdls5XT0tMC41LCBTYXZbMTBdPS0xLCBTYXZbMTFdPS0w"
+"LjUsIFNhdlsxMl09LTEsIFNhdlsxM109LTAuNSwgU2F2WzE0XT0tMSwgU2F2WzE1XT0tMC41LCBTY"
+"XZbMTZdPS0xLCBTYXZbMTddPS0wLjU7CglTYnZbMF09LTAuNSwgU2J2WzFdPS0wLjUsIFNidlsyXT"
+"0wLCBTYnZbM109MCwgU2J2WzRdPTAuNSwgU2J2WzVdPTAuNSwgU2J2WzZdPS0wLjUsIFNidls3XT0"
+"tMC41LCBTYnZbOF09MCwgU2J2WzldPTAsIFNidlsxMF09MC41LCBTYnZbMTFdPTAuNSwgU2J2WzEy"
+"XT0tMC41LCBTYnZbMTNdPS0wLjUsIFNidlsxNF09MCwgU2J2WzE1XT0wLCBTYnZbMTZdPTAuNSwgU"
+"2J2WzE3XT0wLjU7CglTY3ZbMF09LTEsIFNjdlsxXT0tMSwgU2N2WzJdPS0xLCBTY3ZbM109LTEsIF"
+"Njdls0XT0tMSwgU2N2WzVdPS0xLCBTY3ZbNl09LTAuNSwgU2N2WzddPS0wLjUsIFNjdls4XT0tMC4"
+"1LCBTY3ZbOV09LTAuNSwgU2N2WzEwXT0tMC41LCBTY3ZbMTFdPS0wLjUsIFNjdlsxMl09MCwgU2N2"
+"WzEzXT0wLCBTY3ZbMTRdPTAsIFNjdlsxNV09MCwgU2N2WzE2XT0wLCBTY3ZbMTddPTA7Cgljb21iP"
+"TE3O30KCQppZihTYVt4X29wdF09PSAtMSAmJiBTYlt4X29wdF09PSAwICYmIFNjW3hfb3B0XT09ID"
+"AgKXsKCVNhdlswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFNhdls"
+"0XT0tMSwgU2F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS0wLjUsIFNhdls4XT0tMSwgU2F2"
+"WzldPS0wLjUsIFNhdlsxMF09LTEsIFNhdlsxMV09LTAuNSwgU2F2WzEyXT0tMSwgU2F2WzEzXT0tM"
+"C41LCBTYXZbMTRdPS0xLCBTYXZbMTVdPS0wLjUsIFNhdlsxNl09LTEsIFNhdlsxN109LTAuNTsKCV"
+"NidlswXT0tMC41LCBTYnZbMV09LTAuNSwgU2J2WzJdPTAsIFNidlszXT0wLCBTYnZbNF09MC41LCB"
+"TYnZbNV09MC41LCBTYnZbNl09LTAuNSwgU2J2WzddPS0wLjUsIFNidls4XT0wLCBTYnZbOV09MCwg"
+"U2J2WzEwXT0wLjUsIFNidlsxMV09MC41LCBTYnZbMTJdPS0wLjUsIFNidlsxM109LTAuNSwgU2J2W"
+"zE0XT0wLCBTYnZbMTVdPTAsIFNidlsxNl09MC41LCBTYnZbMTddPTAuNTsKCVNjdlswXT0tMC41LC"
+"BTY3ZbMV09LTAuNSwgU2N2WzJdPS0wLjUsIFNjdlszXT0tMC41LCBTY3ZbNF09LTAuNSwgU2N2WzV"
+"dPS0wLjUsIFNjdls2XT0wLCBTY3ZbN109MCwgU2N2WzhdPTAsIFNjdls5XT0wLCBTY3ZbMTBdPTAs"
+"IFNjdlsxMV09MCwgU2N2WzEyXT0wLjUsIFNjdlsxM109MC41LCBTY3ZbMTRdPTAuNSwgU2N2WzE1X"
+"T0wLjUsIFNjdlsxNl09MC41LCBTY3ZbMTddPTAuNTsKCWNvbWI9MTc7fQoKaWYoU2FbeF9vcHRdPT"
+"0gLTEgJiYgU2JbeF9vcHRdPT0gMCAmJiBTY1t4X29wdF09PSAwLjUgKXsKCVNhdlswXT0tMSwgU2F"
+"2WzFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFNhdls0XT0tMSwgU2F2WzVdPS0wLjUs"
+"IFNhdls2XT0tMSwgU2F2WzddPS0wLjUsIFNhdls4XT0tMSwgU2F2WzldPS0wLjUsIFNhdlsxMF09L"
+"TEsIFNhdlsxMV09LTAuNSwgU2F2WzEyXT0tMSwgU2F2WzEzXT0tMC41LCBTYXZbMTRdPS0xLCBTYX"
+"ZbMTVdPS0wLjUsIFNhdlsxNl09LTEsIFNhdlsxN109LTAuNTsKCVNidlswXT0tMC41LCBTYnZbMV0"
+"9LTAuNSwgU2J2WzJdPTAsIFNidlszXT0wLCBTYnZbNF09MC41LCBTYnZbNV09MC41LCBTYnZbNl09"
+"LTAuNSwgU2J2WzddPS0wLjUsIFNidls4XT0wLCBTYnZbOV09MCwgU2J2WzEwXT0wLjUsIFNidlsxM"
+"V09MC41LCBTYnZbMTJdPS0wLjUsIFNidlsxM109LTAuNSwgU2J2WzE0XT0wLCBTYnZbMTVdPTAsIF"
+"NidlsxNl09MC41LCBTYnZbMTddPTAuNTsKCVNjdlswXT0wLCBTY3ZbMV09MCwgU2N2WzJdPTAsIFN"
+"jdlszXT0wLCBTY3ZbNF09MCwgU2N2WzVdPTAsIFNjdls2XT0wLjUsIFNjdls3XT0wLjUsIFNjdls4"
+"XT0wLjUsIFNjdls5XT0wLjUsIFNjdlsxMF09MC41LCBTY3ZbMTFdPTAuNSwgU2N2WzEyXT0xLCBTY"
+"3ZbMTNdPTEsIFNjdlsxNF09MSwgU2N2WzE1XT0xLCBTY3ZbMTZdPTEsIFNjdlsxN109MTsKCWNvbW"
+"I9MTc7fQoKaWYoU2FbeF9vcHRdPT0gLTEgJiYgU2JbeF9vcHRdPT0gMCAmJiBTY1t4X29wdF09PSA"
+"xICl7CglTYXZbMF09LTEsIFNhdlsxXT0tMC41LCBTYXZbMl09LTEsIFNhdlszXT0tMC41LCBTYXZb"
+"NF09LTEsIFNhdls1XT0tMC41LCBTYXZbNl09LTEsIFNhdls3XT0tMC41LCBTYXZbOF09LTEsIFNhd"
+"ls5XT0tMC41LCBTYXZbMTBdPS0xLCBTYXZbMTFdPS0wLjU7CglTYnZbMF09LTAuNSwgU2J2WzFdPS"
+"0wLjUsIFNidlsyXT0wLCBTYnZbM109MCwgU2J2WzRdPTAuNSwgU2J2WzVdPTAuNSwgU2J2WzZdPS0"
+"wLjUsIFNidls3XT0tMC41LCBTYnZbOF09MCwgU2J2WzldPTAsIFNidlsxMF09MC41LCBTYnZbMTFd"
+"PTAuNTsKCVNjdlswXT0wLjUsIFNjdlsxXT0wLjUsIFNjdlsyXT0wLjUsIFNjdlszXT0wLjUsIFNjd"
+"ls0XT0wLjUsIFNjdls1XT0wLjUsIFNjdls2XT0xLCBTY3ZbN109MSwgU2N2WzhdPTEsIFNjdls5XT"
+"0xLCBTY3ZbMTBdPTEsIFNjdlsxMV09MTsKCWNvbWI9MTE7fQoJCmlmKFNhW3hfb3B0XT09IC0xICY"
+"mIFNiW3hfb3B0XT09IDAuNSAmJiBTY1t4X29wdF09PSAtMSApewoJU2F2WzBdPS0xLCBTYXZbMV09"
+"LTAuNSwgU2F2WzJdPS0xLCBTYXZbM109LTAuNSwgU2F2WzRdPS0xLCBTYXZbNV09LTAuNSwgU2F2W"
+"zZdPS0xLCBTYXZbN109LTAuNSwgU2F2WzhdPS0xLCBTYXZbOV09LTAuNSwgU2F2WzEwXT0tMSwgU2"
+"F2WzExXT0tMC41OwoJU2J2WzBdPTAsIFNidlsxXT0wLCBTYnZbMl09MC41LCBTYnZbM109MC41LCB"
+"TYnZbNF09MSwgU2J2WzVdPTEsIFNidls2XT0wLCBTYnZbN109MCwgU2J2WzhdPTAuNSwgU2J2Wzld"
+"PTAuNSwgU2J2WzEwXT0xLCBTYnZbMTFdPTE7CglTY3ZbMF09LTEsIFNjdlsxXT0tMSwgU2N2WzJdP"
+"S0xLCBTY3ZbM109LTEsIFNjdls0XT0tMSwgU2N2WzVdPS0xLCBTY3ZbNl09LTAuNSwgU2N2WzddPS"
+"0wLjUsIFNjdls4XT0tMC41LCBTY3ZbOV09LTAuNSwgU2N2WzEwXT0tMC41LCBTY3ZbMTFdPS0wLjU"
+"7Cgljb21iPTExO30KCmlmKFNhW3hfb3B0XT09IC0xICYmIFNiW3hfb3B0XT09IDAuNSAmJiBTY1t4"
+"X29wdF09PSAtMC41ICl7CglTYXZbMF09LTEsIFNhdlsxXT0tMC41LCBTYXZbMl09LTEsIFNhdlszX"
+"T0tMC41LCBTYXZbNF09LTEsIFNhdls1XT0tMC41LCBTYXZbNl09LTEsIFNhdls3XT0tMC41LCBTYX"
+"ZbOF09LTEsIFNhdls5XT0tMC41LCBTYXZbMTBdPS0xLCBTYXZbMTFdPS0wLjUsIFNhdlsxMl09LTE"
+"sIFNhdlsxM109LTAuNSwgU2F2WzE0XT0tMSwgU2F2WzE1XT0tMC41LCBTYXZbMTZdPS0xLCBTYXZb"
+"MTddPS0wLjU7CglTYnZbMF09MCwgU2J2WzFdPTAsIFNidlsyXT0wLjUsIFNidlszXT0wLjUsIFNid"
+"ls0XT0xLCBTYnZbNV09MSwgU2J2WzZdPTAsIFNidls3XT0wLCBTYnZbOF09MC41LCBTYnZbOV09MC"
+"41LCBTYnZbMTBdPTEsIFNidlsxMV09MSwgU2J2WzEyXT0wLCBTYnZbMTNdPTAsIFNidlsxNF09MC4"
+"1LCBTYnZbMTVdPTAuNSwgU2J2WzE2XT0xLCBTYnZbMTddPTE7CglTY3ZbMF09LTEsIFNjdlsxXT0t"
+"MSwgU2N2WzJdPS0xLCBTY3ZbM109LTEsIFNjdls0XT0tMSwgU2N2WzVdPS0xLCBTY3ZbNl09LTAuN"
+"SwgU2N2WzddPS0wLjUsIFNjdls4XT0tMC41LCBTY3ZbOV09LTAuNSwgU2N2WzEwXT0tMC41LCBTY3"
+"ZbMTFdPS0wLjUsIFNjdlsxMl09MCwgU2N2WzEzXT0wLCBTY3ZbMTRdPTAsIFNjdlsxNV09MCwgU2N"
+"2WzE2XT0wLCBTY3ZbMTddPTA7Cgljb21iPTE3O30KCmlmKFNhW3hfb3B0XT09IC0xICYmIFNiW3hf"
+"b3B0XT09IDAuNSAmJiBTY1t4X29wdF09PSAwICl7CglTYXZbMF09LTEsIFNhdlsxXT0tMC41LCBTY"
+"XZbMl09LTEsIFNhdlszXT0tMC41LCBTYXZbNF09LTEsIFNhdls1XT0tMC41LCBTYXZbNl09LTEsIF"
+"Nhdls3XT0tMC41LCBTYXZbOF09LTEsIFNhdls5XT0tMC41LCBTYXZbMTBdPS0xLCBTYXZbMTFdPS0"
+"wLjUsIFNhdlsxMl09LTEsIFNhdlsxM109LTAuNSwgU2F2WzE0XT0tMSwgU2F2WzE1XT0tMC41LCBT"
+"YXZbMTZdPS0xLCBTYXZbMTddPS0wLjU7CglTYnZbMF09MCwgU2J2WzFdPTAsIFNidlsyXT0wLjUsI"
+"FNidlszXT0wLjUsIFNidls0XT0xLCBTYnZbNV09MSwgU2J2WzZdPTAsIFNidls3XT0wLCBTYnZbOF"
+"09MC41LCBTYnZbOV09MC41LCBTYnZbMTBdPTEsIFNidlsxMV09MSwgU2J2WzEyXT0wLCBTYnZbMTN"
+"dPTAsIFNidlsxNF09MC41LCBTYnZbMTVdPTAuNSwgU2J2WzE2XT0xLCBTYnZbMTddPTE7CglTY3Zb"
+"MF09LTAuNSwgU2N2WzFdPS0wLjUsIFNjdlsyXT0tMC41LCBTY3ZbM109LTAuNSwgU2N2WzRdPS0wL"
+"jUsIFNjdls1XT0tMC41LCBTY3ZbNl09MCwgU2N2WzddPTAsIFNjdls4XT0wLCBTY3ZbOV09MCwgU2"
+"N2WzEwXT0wLCBTY3ZbMTFdPTAsIFNjdlsxMl09MC41LCBTY3ZbMTNdPTAuNSwgU2N2WzE0XT0wLjU"
+"sIFNjdlsxNV09MC41LCBTY3ZbMTZdPTAuNSwgU2N2WzE3XT0wLjU7Cgljb21iPTE3O30KCmlmKFNh"
+"W3hfb3B0XT09IC0xICYmIFNiW3hfb3B0XT09IDAuNSAmJiBTY1t4X29wdF09PSAwLjUgKXsKCVNhd"
+"lswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFNhdls0XT0tMSwgU2"
+"F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS0wLjUsIFNhdls4XT0tMSwgU2F2WzldPS0wLjU"
+"sIFNhdlsxMF09LTEsIFNhdlsxMV09LTAuNSwgU2F2WzEyXT0tMSwgU2F2WzEzXT0tMC41LCBTYXZb"
+"MTRdPS0xLCBTYXZbMTVdPS0wLjUsIFNhdlsxNl09LTEsIFNhdlsxN109LTAuNTsKCVNidlswXT0wL"
+"CBTYnZbMV09MCwgU2J2WzJdPTAuNSwgU2J2WzNdPTAuNSwgU2J2WzRdPTEsIFNidls1XT0xLCBTYn"
+"ZbNl09MCwgU2J2WzddPTAsIFNidls4XT0wLjUsIFNidls5XT0wLjUsIFNidlsxMF09MSwgU2J2WzE"
+"xXT0xLCBTYnZbMTJdPTAsIFNidlsxM109MCwgU2J2WzE0XT0wLjUsIFNidlsxNV09MC41LCBTYnZb"
+"MTZdPTEsIFNidlsxN109MTsKCVNjdlswXT0wLCBTY3ZbMV09MCwgU2N2WzJdPTAsIFNjdlszXT0wL"
+"CBTY3ZbNF09MCwgU2N2WzVdPTAsIFNjdls2XT0wLjUsIFNjdls3XT0wLjUsIFNjdls4XT0wLjUsIF"
+"Njdls5XT0wLjUsIFNjdlsxMF09MC41LCBTY3ZbMTFdPTAuNSwgU2N2WzEyXT0xLCBTY3ZbMTNdPTE"
+"sIFNjdlsxNF09MSwgU2N2WzE1XT0xLCBTY3ZbMTZdPTEsIFNjdlsxN109MTsKCWNvbWI9MTc7fQoK"
+"aWYoU2FbeF9vcHRdPT0gLTEgJiYgU2JbeF9vcHRdPT0gMC41ICYmIFNjW3hfb3B0XT09IDEgKXsKC"
+"VNhdlswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFNhdls0XT0tMS"
+"wgU2F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS0wLjUsIFNhdls4XT0tMSwgU2F2WzldPS0"
+"wLjUsIFNhdlsxMF09LTEsIFNhdlsxMV09LTAuNTsKCVNidlswXT0wLCBTYnZbMV09MCwgU2J2WzJd"
+"PTAuNSwgU2J2WzNdPTAuNSwgU2J2WzRdPTEsIFNidls1XT0xLCBTYnZbNl09MCwgU2J2WzddPTAsI"
+"FNidls4XT0wLjUsIFNidls5XT0wLjUsIFNidlsxMF09MSwgU2J2WzExXT0xOwoJU2N2WzBdPTAuNS"
+"wgU2N2WzFdPTAuNSwgU2N2WzJdPTAuNSwgU2N2WzNdPTAuNSwgU2N2WzRdPTAuNSwgU2N2WzVdPTA"
+"uNSwgU2N2WzZdPTEsIFNjdls3XT0xLCBTY3ZbOF09MSwgU2N2WzldPTEsIFNjdlsxMF09MSwgU2N2"
+"WzExXT0xOwoJY29tYj0xMTt9CgppZihTYVt4X29wdF09PSAtMSAmJiBTYlt4X29wdF09PSAxICYmI"
+"FNjW3hfb3B0XT09IC0xICl7CglTYXZbMF09LTEsIFNhdlsxXT0tMSwgU2F2WzJdPS0xLCBTYXZbM1"
+"09LTEsIFNhdls0XT0tMC41LCBTYXZbNV09LTAuNSwgU2F2WzZdPS0wLjUsIFNhdls3XT0tMC41Owo"
+"JU2J2WzBdPTAuNSwgU2J2WzFdPTAuNSwgU2J2WzJdPTEsIFNidlszXT0xLCBTYnZbNF09MC41LCBT"
+"YnZbNV09MC41LCBTYnZbNl09MSwgU2J2WzddPTE7CglTY3ZbMF09LTEsIFNjdlsxXT0tMC41LCBTY"
+"3ZbMl09LTEsIFNjdlszXT0tMC41LCBTY3ZbNF09LTEsIFNjdls1XT0tMC41LCBTY3ZbNl09LTEsIF"
+"Njdls3XT0tMC41OwoJY29tYj03O30KCmlmKFNhW3hfb3B0XT09IC0xICYmIFNiW3hfb3B0XT09IDE"
+"gJiYgU2NbeF9vcHRdPT0gLTAuNSApewoJU2F2WzBdPS0xLCBTYXZbMV09LTAuNSwgU2F2WzJdPS0x"
+"LCBTYXZbM109LTAuNSwgU2F2WzRdPS0xLCBTYXZbNV09LTAuNSwgU2F2WzZdPS0xLCBTYXZbN109L"
+"TAuNSwgU2F2WzhdPS0xLCBTYXZbOV09LTAuNSwgU2F2WzEwXT0tMSwgU2F2WzExXT0tMC41OwoJU2"
+"J2WzBdPTAuNSwgU2J2WzFdPTAuNSwgU2J2WzJdPTEsIFNidlszXT0xLCBTYnZbNF09MC41LCBTYnZ"
+"bNV09MC41LCBTYnZbNl09MSwgU2J2WzddPTEsIFNidls4XT0wLjUsIFNidls5XT0wLjUsIFNidlsx"
+"MF09MSwgU2J2WzExXT0xOwoJU2N2WzBdPS0xLCBTY3ZbMV09LTEsIFNjdlsyXT0tMSwgU2N2WzNdP"
+"S0xLCBTY3ZbNF09LTAuNSwgU2N2WzVdPS0wLjUsIFNjdls2XT0tMC41LCBTY3ZbN109LTAuNSwgU2"
+"N2WzhdPTAsIFNjdls5XT0wLCBTY3ZbMTBdPTAsIFNjdlsxMV09MDsKCWNvbWI9MTE7fQoKaWYoU2F"
+"beF9vcHRdPT0gLTEgJiYgU2JbeF9vcHRdPT0gMSAmJiBTY1t4X29wdF09PSAwICl7CglTYXZbMF09"
+"LTEsIFNhdlsxXT0tMC41LCBTYXZbMl09LTEsIFNhdlszXT0tMC41LCBTYXZbNF09LTEsIFNhdls1X"
+"T0tMC41LCBTYXZbNl09LTEsIFNhdls3XT0tMC41LCBTYXZbOF09LTEsIFNhdls5XT0tMC41LCBTYX"
+"ZbMTBdPS0xLCBTYXZbMTFdPS0wLjU7CglTYnZbMF09MC41LCBTYnZbMV09MC41LCBTYnZbMl09MSw"
+"gU2J2WzNdPTEsIFNidls0XT0wLjUsIFNidls1XT0wLjUsIFNidls2XT0xLCBTYnZbN109MSwgU2J2"
+"WzhdPTAuNSwgU2J2WzldPTAuNSwgU2J2WzEwXT0xLCBTYnZbMTFdPTE7CglTY3ZbMF09LTAuNSwgU"
+"2N2WzFdPS0wLjUsIFNjdlsyXT0tMC41LCBTY3ZbM109LTAuNSwgU2N2WzRdPTAsIFNjdls1XT0wLC"
+"BTY3ZbNl09MCwgU2N2WzddPTAsIFNjdls4XT0wLjUsIFNjdls5XT0wLjUsIFNjdlsxMF09MC41LCB"
+"TY3ZbMTFdPTAuNTsKCWNvbWI9MTE7fQoKaWYoU2FbeF9vcHRdPT0gLTEgJiYgU2JbeF9vcHRdPT0g"
+"MSAmJiBTY1t4X29wdF09PSAwLjUgKXsKCVNhdlswXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0tM"
+"SwgU2F2WzNdPS0wLjUsIFNhdls0XT0tMSwgU2F2WzVdPS0wLjUsIFNhdls2XT0tMSwgU2F2WzddPS"
+"0wLjUsIFNhdls4XT0tMSwgU2F2WzldPS0wLjUsIFNhdlsxMF09LTEsIFNhdlsxMV09LTAuNTsKCVN"
+"idlswXT0wLjUsIFNidlsxXT0wLjUsIFNidlsyXT0xLCBTYnZbM109MSwgU2J2WzRdPTAuNSwgU2J2"
+"WzVdPTAuNSwgU2J2WzZdPTEsIFNidls3XT0xLCBTYnZbOF09MC41LCBTYnZbOV09MC41LCBTYnZbM"
+"TBdPTEsIFNidlsxMV09MTsKCVNjdlswXT0wLCBTY3ZbMV09MCwgU2N2WzJdPTAsIFNjdlszXT0wLC"
+"BTY3ZbNF09MC41LCBTY3ZbNV09MC41LCBTY3ZbNl09MC41LCBTY3ZbN109MC41LCBTY3ZbOF09MSw"
+"gU2N2WzldPTEsIFNjdlsxMF09MSwgU2N2WzExXT0xOwoJY29tYj0xMTt9CgppZihTYVt4X29wdF09"
+"PSAtMSAmJiBTYlt4X29wdF09PSAxICYmIFNjW3hfb3B0XT09IDEgKXsKCVNhdlswXT0tMSwgU2F2W"
+"zFdPS0wLjUsIFNhdlsyXT0tMSwgU2F2WzNdPS0wLjUsIFNhdls0XT0tMSwgU2F2WzVdPS0wLjUsIF"
+"Nhdls2XT0tMSwgU2F2WzddPS0wLjU7CglTYnZbMF09MC41LCBTYnZbMV09MC41LCBTYnZbMl09MSw"
+"gU2J2WzNdPTEsIFNidls0XT0wLjUsIFNidls1XT0wLjUsIFNidls2XT0xLCBTYnZbN109MTsKCVNj"
+"dlswXT0wLjUsIFNjdlsxXT0wLjUsIFNjdlsyXT0wLjUsIFNjdlszXT0wLjUsIFNjdls0XT0xLCBTY"
+"3ZbNV09MSwgU2N2WzZdPTEsIFNjdls3XT0xOwoJY29tYj03O30KLy8gU2EgPSAtMC41CmlmKFNhW3"
+"hfb3B0XT09IC0wLjUgJiYgU2JbeF9vcHRdPT0gLTEgJiYgU2NbeF9vcHRdPT0gLTEgKXsKCVNhdls"
+"wXT0tMSwgU2F2WzFdPS0wLjUsIFNhdlsyXT0wLCBTYXZbM109LTEsIFNhdls0XT0tMC41LCBTYXZb"
+"NV09MCwgU2F2WzZdPS0xLCBTYXZbN109LTAuNSwgU2F2WzhdPTAsIFNhdls5XT0tMSwgU2F2WzEwX"
+"T0tMC41LCBTYXZbMTFdPTA7IAoJU2J2WzBdPS0xLCBTYnZbMV09LTEsIFNidlsyXT0tMSwgU2J2Wz"
+"NdPS0wLjUsIFNidls0XT0tMC41LCBTYnZbNV09LTAuNSwgU2J2WzZdPS0xLCBTYnZbN109LTEsIFN"
+"idls4XT0tMSwgU2J2WzldPS0wLjUsIFNidlsxMF09LTAuNSwgU2J2WzExXT0tMC41OwoJU2N2WzBd"
+"PS0xLCBTY3ZbMV09LTEsIFNjdlsyXT0tMSwgU2N2WzNdPS0xLCBTY3ZbNF09LTEsIFNjdls1XT0tM"
+"SwgU2N2WzZdPS0wLjUsIFNjdls3XT0tMC41LCBTY3ZbOF09LTAuNSwgU2N2WzldPS0wLjUsIFNjdl"
+"sxMF09LTAuNSwgU2N2WzExXT0tMC41OwoJY29tYj0xMTt9CgppZihTYVt4X29wdF09PSAtMC41ICY"
+"mIFNiW3hfb3B0XT09IC0xICYmIFNjW3hfb3B0XT09IC0wLjUgKXsKCVNhdlswXT0tMSwgU2F2WzFd"
+"PS0wLjUsIFNhdlsyXT0wLCBTYXZbM109LTEsIFNhdls0XT0tMC41LCBTYXZbNV09MCwgU2F2WzZdP"
+"S0xLCBTYXZbN109LTAuNSwgU2F2WzhdPTAsIFNhdls5XT0tMSwgU2F2WzEwXT0tMC41LCBTYXZbMT"
+"FdPTAsIFNhdlsxMl09LTEsIFNhdlsxM109LTAuNSwgU2F2WzE0XT0wLCBTYXZbMTVdPS0xLCBTYXZ"
+"bMTZdPS0wLjUsIFNhdlsxN109MDsgCglTYnZbMF09LTEsIFNidlsxXT0tMSwgU2J2WzJdPS0xLCBT"
+"YnZbM109LTAuNSwgU2J2WzRdPS0wLjUsIFNidls1XT0tMC41LCBTYnZbNl09LTEsIFNidls3XT0tM"
+"SwgU2J2WzhdPS0xLCBTYnZbOV09LTAuNSwgU2J2WzEwXT0tMC41LCBTYnZbMTFdPS0wLjUsIFNidl"
+"sxMl09LTEsIFNidlsxM109LTEsIFNidlsxNF09LTEsIFNidlsxNV09LTAuNSwgU2J2WzE2XT0tMC4"
+"1LCBTYnZbMTddPS0wLjU7CglTY3ZbMF09LTEsIFNjdlsxXT0tMSwgU2N2WzJdPS0xLCBTY3ZbM109"
+"LTEsIFNjdls0XT0tMSwgU2N2WzVdPS0xLCBTY3ZbNl09LTAuNSwgU2N2WzddPS0wLjUsIFNjdls4X"
+"T0tMC41LCBTY3ZbOV09LTAuNSwgU2N2WzEwXT0tMC41LCBTY3ZbMTFdPS0wLjUsIFNidlsxMl09MC"
+"wgU2J2WzEzXT0wLCBTYnZbMTRdPTAsIFNidlsxNV09MCwgU2J2WzE2XT0wLCBTYnZbMTddPTA7Cgl"
+"jb21iPTExO30KCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCi8vIG9qbyBjb24gZWwgZ3VhcmRhZG8g"
+"ZGUgbGEgY29tYmluYWNpb24gb3B0aW1hLiBxdWl6YSBTYV9vcHQgU2Jfb3B0IFNjX29wdCBjb21vI"
+"HZhbG9yZXMgZmlqb3MgZW4gbHVnYXIgZGUgdW4gdmVjdG9yCgovKioqKioqKioqKioqIExvb3AgcG"
+"FyYSBkZXRlcm1pbmFyIGNvbWJpbmFjaW9uIG9wdGltYSAqKioqKioqKioqKiovCiAKZ19vcHQ9MWU"
+"yMDsKZm9yICh4PTA7IHggPD0gY29tYjsgeD14KzEpIHsKLy9mb3IgKHg9MDsgeCA8PSAxMjQ7IHg9"
+"eCsxKSB7Ci8vZm9yICh4PTA7IHggPD0gMjY7IHg9eCsxKSB7CSAKCSBWX2Q9MjY2LjY2NjY2NiooU"
+"2FbeF0qY29zZW5vK1NiW3hdKmNvc21lMnBpMytTY1t4XSpjb3NtYTJwaTMpOwoJIFZfcT0tMjY2Lj"
+"Y2NjY2NiooU2FbeF0qc2VubytTYlt4XSpzaW5tZTJwaTMrU2NbeF0qc2lubWEycGkzKTsKCgkgaTF"
+"kX2sxPSAoMC4xNDA3KSooVl9kKSArIHZhcmkxZDsKCSBpMXFfazE9ICgwLjE0MDcpKihWX3EpIC0g"
+"dmFyaTFxOyAKCSAKCSBWY2RfazE9KDAuNjA3NikqKGkxZF9rMSkgKyB2YXJ2Y2Q7CgkgVmNxX2sxP"
+"SgwLjYwNzYpKihpMXFfazEpIC0gdmFydmNxOwoJIAoJIGkyZF9rMSA9ICgxLjQwODQ1KSooVmNkX2"
+"sxKSArIHZhcmkyZDsKCSBpMnFfazEgPSAoMS40MDg0NSkqKFZjcV9rMSkgKyB2YXJpMnE7CgogICA"
+"gZ1t4XT1zcXJ0ZigoaWRfciAtIGkyZF9rMSkqKGlkX3IgLSBpMmRfazEpKSArIHNxcnRmKChpcV9y"
+"IC0gaTJxX2sxKSooaXFfciAtIGkycV9rMSkpOwoJIC8vZ3ZbeF09c3FydGYoKFZjZF9yIC0gVmNkX"
+"2sxKSooVmNkX3IgLSBWY2RfazEpKSArIHNxcnRmKChWY3FfciAtIFZjcV9rMSkqKFZjcV9yIC0gVm"
+"NxX2sxKSk7IAoJIC8vZ2JbeF09c3FydGYoKGlkX3IgLSBpMWRfazEpKihpZF9yIC0gaTFkX2sxKSk"
+"gKyBzcXJ0ZigoaXFfciAtIGkxcV9rMSkqKGlxX3IgLSBpMXFfazEpKTsKCSAKCS8vIGFjdHVhbGl6"
+"YXIgY29tYmluYWNpb24gZGUgc3dpdGNoIG9wdGltYQoJLy9pZiggIChTYVt4XSA9PSBTYVt4X29wd"
+"F0rMC41IHx8IFNhW3hdID09IFNhW3hfb3B0XS0wLjUgfHwgU2FbeF0gPT0gU2FbeF9vcHRdICkgJi"
+"YgKFNiW3hdID09IFNiW3hfb3B0XSswLjUgfHwgU2JbeF0gPT0gU2JbeF9vcHRdLTAuNSB8fCBTYlt"
+"4XSA9PSBTYlt4X29wdF0pICYmIChTY1t4XSA9PSBTY1t4X29wdF0rMC41IHx8IFNjW3hdID09IFNj"
+"W3hfb3B0XS0wLjUgfHwgU2NbeF0gPT0gU2NbeF9vcHRdKSApewogICAgICAgIC8vaWYgKDAuNSooZ"
+"1t4XStndlt4XSkgPCBnX29wdCkgewogICAgICAgIGlmIChnW3hdIDwgZ19vcHQpIHsKICAgICAgIC"
+"AJZ19vcHQgPSBnW3hdOwogICAgICAgIC8vCWdfb3B0ID0gMC41KihnW3hdK2d2W3hdKTsKICAgICA"
+"gICAJeF9vcHQgPSB4OwogICAgICAgIH0KICAgIC8vfQp9"
             Show          off
           }
           Parameter {
@@ -643,7 +911,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux"
           Show          off
-          Position      [745, 320]
+          Position      [1020, 380]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -657,7 +925,7 @@ Plecs {
           Type          SignalMux
           Name          "Mux"
           Show          off
-          Position      [640, 320]
+          Position      [880, 375]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -671,7 +939,7 @@ Plecs {
           Type          Goto
           Name          "Goto17"
           Show          off
-          Position      [770, 305]
+          Position      [1045, 365]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -690,7 +958,7 @@ Plecs {
           Type          Goto
           Name          "Goto34"
           Show          off
-          Position      [780, 315]
+          Position      [1055, 375]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -709,7 +977,7 @@ Plecs {
           Type          Goto
           Name          "Goto46"
           Show          off
-          Position      [790, 325]
+          Position      [1065, 385]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -729,7 +997,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sa1"
           Show          on
-          Position      [1065, 305]
+          Position      [1565, 480]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -760,7 +1028,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sa2"
           Show          on
-          Position      [1075, 375]
+          Position      [1575, 550]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -791,7 +1059,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sa4"
           Show          on
-          Position      [1075, 435]
+          Position      [1575, 610]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -821,7 +1089,7 @@ Plecs {
           Type          From
           Name          "From"
           Show          off
-          Position      [1005, 305]
+          Position      [1505, 480]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -840,7 +1108,7 @@ Plecs {
           Type          From
           Name          "From1"
           Show          off
-          Position      [1030, 375]
+          Position      [1530, 550]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -859,7 +1127,7 @@ Plecs {
           Type          From
           Name          "From3"
           Show          off
-          Position      [1030, 435]
+          Position      [1530, 610]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -879,7 +1147,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sb1"
           Show          on
-          Position      [1180, 315]
+          Position      [1680, 490]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -910,7 +1178,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sb2"
           Show          on
-          Position      [1180, 375]
+          Position      [1680, 550]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -941,7 +1209,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sb4"
           Show          on
-          Position      [1180, 435]
+          Position      [1680, 610]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -972,7 +1240,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sc1"
           Show          on
-          Position      [1285, 315]
+          Position      [1785, 490]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1003,7 +1271,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sc2"
           Show          on
-          Position      [1285, 375]
+          Position      [1785, 550]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1034,7 +1302,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sc4"
           Show          on
-          Position      [1285, 435]
+          Position      [1785, 610]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1064,7 +1332,7 @@ Plecs {
           Type          From
           Name          "From2"
           Show          off
-          Position      [1135, 315]
+          Position      [1635, 490]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1083,7 +1351,7 @@ Plecs {
           Type          From
           Name          "From4"
           Show          off
-          Position      [1135, 375]
+          Position      [1635, 550]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1102,7 +1370,7 @@ Plecs {
           Type          From
           Name          "From6"
           Show          off
-          Position      [1135, 435]
+          Position      [1635, 610]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1121,7 +1389,7 @@ Plecs {
           Type          From
           Name          "From9"
           Show          off
-          Position      [1240, 315]
+          Position      [1740, 490]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1140,7 +1408,7 @@ Plecs {
           Type          From
           Name          "From10"
           Show          off
-          Position      [1240, 375]
+          Position      [1740, 550]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1159,7 +1427,7 @@ Plecs {
           Type          From
           Name          "From11"
           Show          off
-          Position      [1240, 435]
+          Position      [1740, 610]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1179,7 +1447,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/ADC"
           Name          "i1"
           Show          on
-          Position      [200, 380]
+          Position      [440, 435]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1255,7 +1523,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/ADC"
           Name          "i2"
           Show          on
-          Position      [200, 245]
+          Position      [440, 300]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1331,7 +1599,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/ADC"
           Name          "Vc"
           Show          on
-          Position      [200, 315]
+          Position      [440, 370]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1407,7 +1675,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/ADC"
           Name          "Pot"
           Show          on
-          Position      [200, 450]
+          Position      [440, 505]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1482,7 +1750,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux1"
           Show          off
-          Position      [475, 250]
+          Position      [715, 305]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -1496,7 +1764,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux2"
           Show          off
-          Position      [585, 315]
+          Position      [825, 370]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -1510,7 +1778,7 @@ Plecs {
           Type          SignalDemux
           Name          "Demux3"
           Show          off
-          Position      [585, 345]
+          Position      [825, 400]
           Direction     right
           Flipped       on
           LabelPosition south
@@ -1521,20 +1789,10 @@ Plecs {
           }
         }
         Component {
-          Type          Reference
-          SrcComponent  "TIC2000_Lib/Control Task\\nTrigger"
-          Name          "Control Task\nTrigger1"
-          Show          off
-          Position      [275, 220]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-        }
-        Component {
           Type          Sum
           Name          "Sum1"
           Show          off
-          Position      [305, 245]
+          Position      [545, 300]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1563,7 +1821,7 @@ Plecs {
           Type          Constant
           Name          "Constant1"
           Show          off
-          Position      [275, 270]
+          Position      [515, 325]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1583,7 +1841,7 @@ Plecs {
           Type          Sum
           Name          "Sum2"
           Show          off
-          Position      [385, 290]
+          Position      [625, 345]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1612,7 +1870,7 @@ Plecs {
           Type          Constant
           Name          "Constant2"
           Show          off
-          Position      [330, 315]
+          Position      [570, 370]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1632,7 +1890,7 @@ Plecs {
           Type          Sum
           Name          "Sum3"
           Show          off
-          Position      [415, 345]
+          Position      [655, 400]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1661,7 +1919,7 @@ Plecs {
           Type          Constant
           Name          "Constant3"
           Show          off
-          Position      [365, 380]
+          Position      [605, 435]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1682,7 +1940,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/DAC"
           Name          "DAC"
           Show          on
-          Position      [865, 355]
+          Position      [1140, 415]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1727,7 +1985,7 @@ Plecs {
           Type          Subsystem
           Name          "SW A2"
           Show          off
-          Position      [865, 55]
+          Position      [1440, 240]
           Direction     up
           Flipped       off
           LabelPosition north
@@ -2213,7 +2471,7 @@ Plecs {
           Type          From
           Name          "From42"
           Show          off
-          Position      [825, 55]
+          Position      [1400, 240]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2232,7 +2490,7 @@ Plecs {
           Type          From
           Name          "From45"
           Show          off
-          Position      [830, 125]
+          Position      [1405, 310]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2251,7 +2509,7 @@ Plecs {
           Type          From
           Name          "From46"
           Show          off
-          Position      [830, 205]
+          Position      [1405, 390]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2270,7 +2528,7 @@ Plecs {
           Type          Goto
           Name          "Goto2"
           Show          off
-          Position      [910, 35]
+          Position      [1485, 220]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2289,7 +2547,7 @@ Plecs {
           Type          Goto
           Name          "Goto4"
           Show          off
-          Position      [910, 50]
+          Position      [1485, 235]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2308,7 +2566,7 @@ Plecs {
           Type          Goto
           Name          "Goto12"
           Show          off
-          Position      [910, 65]
+          Position      [1485, 250]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2327,7 +2585,7 @@ Plecs {
           Type          Goto
           Name          "Goto14"
           Show          off
-          Position      [910, 80]
+          Position      [1485, 265]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2346,7 +2604,7 @@ Plecs {
           Type          Goto
           Name          "Goto15"
           Show          off
-          Position      [915, 105]
+          Position      [1490, 290]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2365,7 +2623,7 @@ Plecs {
           Type          Goto
           Name          "Goto16"
           Show          off
-          Position      [915, 120]
+          Position      [1490, 305]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2384,7 +2642,7 @@ Plecs {
           Type          Goto
           Name          "Goto23"
           Show          off
-          Position      [915, 135]
+          Position      [1490, 320]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2403,7 +2661,7 @@ Plecs {
           Type          Goto
           Name          "Goto26"
           Show          off
-          Position      [915, 150]
+          Position      [1490, 335]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2422,7 +2680,7 @@ Plecs {
           Type          Goto
           Name          "Goto40"
           Show          off
-          Position      [915, 185]
+          Position      [1490, 370]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2441,7 +2699,7 @@ Plecs {
           Type          Goto
           Name          "Goto41"
           Show          off
-          Position      [915, 200]
+          Position      [1490, 385]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2460,7 +2718,7 @@ Plecs {
           Type          Goto
           Name          "Goto42"
           Show          off
-          Position      [915, 215]
+          Position      [1490, 400]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2479,7 +2737,7 @@ Plecs {
           Type          Goto
           Name          "Goto43"
           Show          off
-          Position      [915, 230]
+          Position      [1490, 415]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2498,7 +2756,7 @@ Plecs {
           Type          Subsystem
           Name          "SW A4"
           Show          off
-          Position      [870, 125]
+          Position      [1445, 310]
           Direction     up
           Flipped       off
           LabelPosition north
@@ -2984,7 +3242,7 @@ Plecs {
           Type          Subsystem
           Name          "SW A5"
           Show          off
-          Position      [870, 205]
+          Position      [1445, 390]
           Direction     up
           Flipped       off
           LabelPosition north
@@ -3470,24 +3728,23 @@ Plecs {
           Type          Scope
           Name          "Scope"
           Show          on
-          Position      [860, 460]
+          Position      [1135, 520]
           Direction     up
           Flipped       off
           LabelPosition south
           Location      [0, 23; 1366, 700]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAA"
-"AAPwBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAAKK"
+"AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAA"
+"AY/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAIj"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAgAAAGQAAAABAAAAZAAAAAkAAABkAAAACAAAAGQAAAAHAAAAZAAAAAYAAABkAAAABQAAAGQAAA"
-"AEAAAAZAAAAAMAAABkAAAAlAAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB"
-"wAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAAAkAAAAAQAAAAAAAAPoAAAAACQ="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGA"
+"AAABQAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAAJAAAAZAAAAAgAAABkAAAFVgAAAAsBAA"
+"ABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAABwAAAAAQAAAAAAAABkAAAAAQAAAAAAAAB"
+"kAAAAAQAAAAAAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAO6AAAAAQAAAAAAAAPoAAAAACQ="
           PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
           Axes          "1"
           TimeRange     "0.0"
@@ -3527,6 +3784,16 @@ Plecs {
             }
           }
         }
+        Component {
+          Type          Reference
+          SrcComponent  "TIC2000_Lib/Control Task\\nTrigger"
+          Name          "Control Task\nTrigger"
+          Show          on
+          Position      [545, 230]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+        }
         Connection {
           Type          Signal
           SrcComponent  "Mux"
@@ -3538,6 +3805,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Control"
           SrcTerminal   2
+          Points        [995, 375; 995, 380]
           DstComponent  "Demux"
           DstTerminal   1
         }
@@ -3601,7 +3869,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux1"
           SrcTerminal   3
-          Points        [555, 250; 555, 285]
+          Points        [795, 305; 795, 340]
           DstComponent  "Mux"
           DstTerminal   3
         }
@@ -3609,7 +3877,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux1"
           SrcTerminal   4
-          Points        [550, 260; 550, 295]
+          Points        [790, 315; 790, 350]
           DstComponent  "Mux"
           DstTerminal   4
         }
@@ -3673,7 +3941,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Vc"
           SrcTerminal   1
-          Points        [295, 315; 295, 290]
+          Points        [535, 370; 535, 345]
           DstComponent  "Sum2"
           DstTerminal   2
         }
@@ -3681,7 +3949,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Sum2"
           SrcTerminal   1
-          Points        [485, 290; 485, 315]
+          Points        [725, 345; 725, 370]
           DstComponent  "Demux2"
           DstTerminal   1
         }
@@ -3696,7 +3964,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Constant3"
           SrcTerminal   1
-          Points        [415, 380]
+          Points        [655, 435]
           DstComponent  "Sum3"
           DstTerminal   3
         }
@@ -3704,7 +3972,7 @@ Plecs {
           Type          Signal
           SrcComponent  "i1"
           SrcTerminal   1
-          Points        [310, 380; 310, 345]
+          Points        [550, 435; 550, 400]
           DstComponent  "Sum3"
           DstTerminal   2
         }
@@ -3733,17 +4001,9 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux1"
           SrcTerminal   2
-          Points        [560, 240; 560, 275]
+          Points        [800, 295; 800, 330]
           DstComponent  "Mux"
           DstTerminal   2
-        }
-        Connection {
-          Type          Event
-          SrcComponent  "i2"
-          SrcTerminal   2
-          Points        [245, 260]
-          DstComponent  "Control Task\nTrigger1"
-          DstTerminal   1
         }
         Connection {
           Type          Signal
@@ -3756,7 +4016,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Pot"
           SrcTerminal   1
-          Points        [310, 450; 310, 430; 625, 430]
+          Points        [550, 505; 550, 485; 865, 485]
           DstComponent  "Mux"
           DstTerminal   11
         }
@@ -3876,7 +4136,7 @@ Plecs {
           Type          Signal
           SrcComponent  "Sum1"
           SrcTerminal   1
-          Points        [455, 245]
+          Points        [695, 300]
           DstComponent  "Demux1"
           DstTerminal   1
         }
@@ -3884,16 +4144,24 @@ Plecs {
           Type          Signal
           SrcComponent  "Demux"
           SrcTerminal   5
-          Points        [790, 335; 790, 355]
+          Points        [1065, 395; 1065, 415]
           Branch {
             DstComponent  "DAC"
             DstTerminal   1
           }
           Branch {
-            Points        [790, 460]
+            Points        [1065, 520]
             DstComponent  "Scope"
             DstTerminal   1
           }
+        }
+        Connection {
+          Type          Event
+          SrcComponent  "i2"
+          SrcTerminal   2
+          Points        [495, 315; 495, 230]
+          DstComponent  "Control Task\nTrigger"
+          DstTerminal   1
         }
       }
     }
@@ -4416,21 +4684,21 @@ Plecs {
       Type          Scope
       Name          "Scope5"
       Show          on
-      Position      [1385, 1020]
+      Position      [1380, 1025]
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 734]
+      Location      [0, 27; 1366, 714]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAANQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAeAAAAAivw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAABVYAAAKoAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAABVYAAAKUAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"QAAAGQAAAAIAAAAZAAAAAcAAABkAAAABgAAAGQAAAAFAAAAZAAAAAQAAABkAAAAAwAAAGQAAAACAA"
-"AAZAAAAAEAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAB"
+"QAAAGQAAAAEAAAAZAAAAAcAAABkAAAABgAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAJAA"
+"AAZAAAAAgAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -30862,6 +31130,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux16"
       SrcTerminal   1
+      Points        [1320, 1020; 1320, 1025]
       DstComponent  "Scope5"
       DstTerminal   3
     }
@@ -30869,7 +31138,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux11"
       SrcTerminal   1
-      Points        [1330, 990; 1330, 1010]
+      Points        [1330, 990; 1330, 1015]
       DstComponent  "Scope5"
       DstTerminal   2
     }
@@ -30877,7 +31146,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux12"
       SrcTerminal   1
-      Points        [1340, 960; 1340, 1000]
+      Points        [1340, 960; 1340, 1005]
       DstComponent  "Scope5"
       DstTerminal   1
     }
@@ -31461,7 +31730,7 @@ Plecs {
       Type          Signal
       SrcComponent  "Mux15"
       SrcTerminal   1
-      Points        [1345, 1065; 1345, 1030]
+      Points        [1345, 1065; 1345, 1035]
       DstComponent  "Scope5"
       DstTerminal   4
     }
@@ -31469,7 +31738,7 @@ Plecs {
       Type          Signal
       SrcComponent  "From54"
       SrcTerminal   1
-      Points        [1350, 1105; 1350, 1040]
+      Points        [1350, 1105]
       DstComponent  "Scope5"
       DstTerminal   5
     }
