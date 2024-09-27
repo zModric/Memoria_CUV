@@ -1,7 +1,7 @@
 /*
  * Hardware configuration file for: TI2837x
  * Generated with                 : PLECS 4.8.6
- * Generated on                   : Wed Sep 25 14:22:18 2024
+ * Generated on                   : Fri Sep 27 17:23:47 2024
  */
 
 /* HAL Includes */
@@ -44,15 +44,6 @@ void PLXHAL_DIO_set(uint16_t aHandle, bool aVal)
 {
    PLX_DIO_set(DoutHandles[aHandle], aVal);
 }
-interrupt void C2000_28379D_baseTaskInterrupt(void)
-{
-   CpuTimer0Regs.TCR.bit.TIF = 1;
-   PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
-   IER |= M_INT1;
-   DISPR_dispatch();
-}
-
-
 PLX_AIN_Handle_t AdcHandles[4];
 PLX_AIN_Obj_t AdcObj[4];
 float PLXHAL_ADC_getIn(uint16_t aHandle, uint16_t aChannel)
@@ -66,8 +57,8 @@ void PLXHAL_DAC_set(uint16_t aHandle, float aValue)
    PLX_DAC_setValF(DacHandles[aHandle], aValue);
 }
 extern PIL_Handle_t PilHandle;
-DISPR_TaskObj_t TaskObj[2];
-extern void C2000_28379D_step(int task_id);
+DISPR_TaskObj_t TaskObj[1];
+extern void C2000_28379D_step();
 extern void C2000_28379D_enableTasksInterrupt();
 extern void C2000_28379D_syncTimers();
 static void Tasks(bool aInit, void * const aParam)
@@ -78,10 +69,19 @@ static void Tasks(bool aInit, void * const aParam)
    }
    else
    {
-      C2000_28379D_step(*(int *)aParam);
+      C2000_28379D_step();
    }
 }
 
+
+interrupt void C2000_28379D_baseTaskInterrupt(void)
+{
+   AdcaRegs.ADCINTFLGCLR.bit.ADCINT1 = 1;              // clear ADCINT1 flag reinitialize for next SOC
+   PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;  // acknowledge interrupt to PIE (All ADCS in group 1)
+   IER |= M_INT1;
+
+   DISPR_dispatch();
+}
 
 
 /* Interrupt Enable Code */
@@ -208,20 +208,6 @@ void C2000_28379D_initHal()
       };
       props.enableInvert = false;
       PLX_DIO_configureOut(DoutHandles[8], 8,  &props);
-   }
-   {
-      CpuTimer0Regs.TCR.bit.TSS = 1;   // stop timer
-      CpuTimer0Regs.TPRH.all = 0;
-      CpuTimer0Regs.PRD.all = 4750-1;
-      CpuTimer0Regs.TCR.bit.TRB = 1;   // reload period
-      CpuTimer0Regs.TCR.bit.TIE = 1;   // enable trigger to SOC/interrupt
-      PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
-      EALLOW;
-      PieVectTable.TIMER0_INT = &C2000_28379D_baseTaskInterrupt;
-      EDIS;
-      PieCtrlRegs.PIEIER1.bit.INTx7 = 1;
-      PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;           // acknowledge interrupt to PIE
-
    }
    {
       PLX_AIN_sinit(190000000);
@@ -421,10 +407,26 @@ void C2000_28379D_initHal()
       DISPR_registerTask(0, &Tasks, 4750L, (void *)&taskId);
    }
    {
-      static int taskId = 1;
-      // Task 1 at 5.000000e+03 Hz
-      DISPR_registerTask(1, &Tasks, 9500L, (void *)&taskId);
+      CpuTimer0Regs.TCR.bit.TSS = 1;   // stop timer
+      CpuTimer0Regs.TPRH.all = 0;
+      CpuTimer0Regs.PRD.all = 4750-1;
+      CpuTimer0Regs.TCR.bit.TRB = 1;   // reload period
+      CpuTimer0Regs.TCR.bit.TIE = 1;   // enable trigger to SOC/interrupt
+
    }
+   EALLOW;
+   AdcaRegs.ADCINTSEL1N2.bit.INT1CONT = 0;  // disable ADCINT1 Continuous mode
+   AdcaRegs.ADCINTSEL1N2.bit.INT1SEL = 2;  // setup EOC2 to trigger ADCINT1
+   AdcaRegs.ADCINTSEL1N2.bit.INT1E = 1;  // enable ADCINT1
+   AdcaRegs.ADCCTL1.bit.INTPULSEPOS = 1;  // ADCINT1 trips after AdcResults latch
+   EDIS;
+   EALLOW;
+   *(PINT *)((uint32_t)(&PieVectTable.ADCA1_INT) + ((uint32_t)0)*
+             sizeof(PINT *)) = &C2000_28379D_baseTaskInterrupt;
+   PieCtrlRegs.PIEIER1.all |= 1;
+   PieCtrlRegs.PIEACK.all = PIEACK_GROUP1;
+   EDIS;
+
 
    // Post init code (for modules that depend on other modules)
 

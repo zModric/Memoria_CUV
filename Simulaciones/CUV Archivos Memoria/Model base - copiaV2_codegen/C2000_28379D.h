@@ -2,7 +2,7 @@
  * Header file for: Model base - copiaV2/C2000_28379D
  * Generated with : PLECS 4.8.6
  *                  TI2837x 1.7.4
- * Generated on   : 25 Sep 2024 14:22:18
+ * Generated on   : 27 Sep 2024 17:23:47
  */
 #ifndef PLECS_HEADER_C2000_28379D_h_
 #define PLECS_HEADER_C2000_28379D_h_
@@ -29,20 +29,19 @@ extern const char * C2000_28379D_errorStatus;
 
 
 /* Model sample time */
-extern const float C2000_28379D_sampleTime[2][2];
+extern const float C2000_28379D_sampleTime;
 
 
 /* Block outputs */
 typedef struct
 {
-   float C2000_28379D[3];           /* C2000_28379D */
+   float Control[4];                /* C2000_28379D/Control */
    float TriangularWave1;           /* C2000_28379D/SW A2/Triangular Wave1 */
    float TriangularWave2;           /* C2000_28379D/SW A2/Triangular Wave2 */
    float TriangularWave1_1;         /* C2000_28379D/SW A4/Triangular Wave1 */
    float TriangularWave2_1;         /* C2000_28379D/SW A4/Triangular Wave2 */
    float TriangularWave1_2;         /* C2000_28379D/SW A5/Triangular Wave1 */
    float TriangularWave2_2;         /* C2000_28379D/SW A5/Triangular Wave2 */
-   float Control[4];                /* C2000_28379D/Control */
    float Fcn;                       /* C2000_28379D/SW A2/Fcn */
    float Fcn_1;                     /* C2000_28379D/SW A4/Fcn */
    float Fcn_2;                     /* C2000_28379D/SW A5/Fcn */
@@ -55,7 +54,7 @@ extern C2000_28379D_BlockOutputs C2000_28379D_B;
 
 /* Entry point functions */
 void C2000_28379D_initialize(void);
-void C2000_28379D_step(int task_id);
+void C2000_28379D_step(void);
 void C2000_28379D_terminate(void);
 
 #endif /* PLECS_HEADER_C2000_28379D_h_ */

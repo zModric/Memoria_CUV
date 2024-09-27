@@ -2,7 +2,7 @@
  * Implementation file for: Model base - copiaV2/C2000_28379D
  * Generated with         : PLECS 4.8.6
  *                          TI2837x 1.7.4
- * Generated on           : 25 Sep 2024 14:22:18
+ * Generated on           : 27 Sep 2024 17:23:47
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
@@ -82,7 +82,6 @@ struct CScriptStruct
    void (*readCustomStateData)(void*, void*, int);
 };
 static struct CScriptStruct C2000_28379D_cScriptStruct[1];
-static char C2000_28379D_isMajorStep = '\001';
 static const uint32_t C2000_28379D_subTaskPeriod[1]= {
    /* [0.0002, 0], Base task */
    2
@@ -90,7 +89,6 @@ static const uint32_t C2000_28379D_subTaskPeriod[1]= {
 static uint32_t C2000_28379D_subTaskTick[1];
 static char C2000_28379D_subTaskHit[1];
 #define C2000_28379D_UNCONNECTED 0
-static float C2000_28379D_D_float[3];
 static uint32_t C2000_28379D_D_uint32_t[6];
 void C2000_28379D_0_cScriptStart(const struct CScriptStruct *cScriptStruct);
 void C2000_28379D_0_cScriptOutput(const struct CScriptStruct *cScriptStruct);
@@ -98,18 +96,13 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct);
 void C2000_28379D_0_cScriptDerivative(
                                       const struct CScriptStruct *cScriptStruct);
 void C2000_28379D_0_cScriptTerminate(const struct CScriptStruct *cScriptStruct);
-static uint32_t C2000_28379D_tickLo[2];
-static int32_t C2000_28379D_tickHi[2];
+static uint32_t C2000_28379D_tickLo;
+static int32_t C2000_28379D_tickHi;
 C2000_28379D_BlockOutputs C2000_28379D_B;
 const char * C2000_28379D_errorStatus;
-const float C2000_28379D_sampleTime[2][2] = {
-   /* Task "Base task" */
-   {0.0001f, 0.f},
-   /* Task "5Khz" */
-   {0.0002f, 0.f}
-};
+const float C2000_28379D_sampleTime = 0.0001f;
 const char * const C2000_28379D_checksum =
-   "652e8ace5f6f480a8c98d8362c3cf68ea2aff6c7";
+   "f67a00bbecfbd8887cc73ebb9715cee95bfa4752";
 /* Target declarations */
 // tag step function to allow special linking
 #pragma CODE_SECTION(C2000_28379D_step, "step")
@@ -117,10 +110,8 @@ extern void C2000_28379D_initHal();
 
 void C2000_28379D_initialize(void)
 {
-   C2000_28379D_tickHi[0] = 0;
-   C2000_28379D_tickLo[0] = 0;
-   C2000_28379D_tickHi[1] = 0;
-   C2000_28379D_tickLo[1] = 0;
+   C2000_28379D_tickHi = 0;
+   C2000_28379D_tickLo = 0;
    /* Initialize sub-task tick counters */
    C2000_28379D_subTaskTick[0] = 0; /* Base task, [0.0002, 0] */
 
@@ -128,29 +119,6 @@ void C2000_28379D_initialize(void)
    /* Target pre-initialization */
    C2000_28379D_initHal();
 
-
-   /* Initialization for Subsystem : 'C2000_28379D' */
-   C2000_28379D_D_float[0] = 0;
-   C2000_28379D_D_float[1] = 0;
-   C2000_28379D_D_float[2] = 0;
-
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
-   C2000_28379D_D_uint32_t[0] = 0;
-
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
-   C2000_28379D_D_uint32_t[1] = 0;
-
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
-   C2000_28379D_D_uint32_t[2] = 0;
-
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
-   C2000_28379D_D_uint32_t[3] = 0;
-
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
-   C2000_28379D_D_uint32_t[4] = 0;
-
-   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
-   C2000_28379D_D_uint32_t[5] = 0;
 
    /* Initialization for C-Script : 'C2000_28379D/Control' */
    {
@@ -179,7 +147,7 @@ void C2000_28379D_initialize(void)
       };
       static float nextSampleHit;
       static const char * sampleHits[] = {
-         &C2000_28379D_isMajorStep
+         &C2000_28379D_subTaskHit[0]
       };
       static float sampleTimePeriods[] = {
          0.0002
@@ -188,11 +156,10 @@ void C2000_28379D_initialize(void)
          0
       };
       static float terminalSampleTimePeriods[] = {
-         0.0002f, 0.0002f, 0.0002f, 0.0002f, 0.0002f, 0.0002f, 0.0002f,
-         0.0002f, 0.0002f, 0.0002f
+         0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f
       };
       static float terminalSampleTimeOffsets[] = {
-         0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f, 0.f
+         -1.f, -1.f, -1.f, -1.f, -1.f, -1.f, -1.f, -1.f, -1.f, -1.f
       };
       static const float* terminalSampleTimePeriodPtrs[] = {
          &terminalSampleTimePeriods[0]
@@ -242,289 +209,280 @@ void C2000_28379D_initialize(void)
          C2000_28379D_errorStatus =
             *C2000_28379D_cScriptStruct[0].errorStatus;
    }
+
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
+   C2000_28379D_D_uint32_t[0] = 0;
+
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
+   C2000_28379D_D_uint32_t[1] = 0;
+
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
+   C2000_28379D_D_uint32_t[2] = 0;
+
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
+   C2000_28379D_D_uint32_t[3] = 0;
+
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
+   C2000_28379D_D_uint32_t[4] = 0;
+
+   /* Initialization for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
+   C2000_28379D_D_uint32_t[5] = 0;
 }
 
-void C2000_28379D_step(int task_id)
+void C2000_28379D_step(void)
 {
    if (C2000_28379D_errorStatus)
    {
       return;
    }
-   switch(task_id)
    {
-   case 0: /* Task "Base task" */
-   {
+      size_t i;
+      for (i = 0; i < 1; ++i)
       {
-         size_t i;
-         for (i = 0; i < 1; ++i)
-         {
-            C2000_28379D_subTaskHit[i] = (C2000_28379D_subTaskTick[i] == 0);
-         }
+         C2000_28379D_subTaskHit[i] = (C2000_28379D_subTaskTick[i] == 0);
       }
-      if (C2000_28379D_subTaskHit[0])
-      {
-         /* Subsystem : 'C2000_28379D' */
-         C2000_28379D_B.C2000_28379D[0] = C2000_28379D_D_float[0];
-         C2000_28379D_B.C2000_28379D[1] = C2000_28379D_D_float[1];
-         C2000_28379D_B.C2000_28379D[2] = C2000_28379D_D_float[2];
-      }
-      /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
-      {
-         float frac;
-         if (C2000_28379D_D_uint32_t[0] < 1)
-         {
-            frac = C2000_28379D_D_uint32_t[0]*((float)1/1);
-         }
-         else
-         {
-            frac = 1-(C2000_28379D_D_uint32_t[0]-1)*((float)1/1);
-         }
-         C2000_28379D_B.TriangularWave1 = 1e-05f+0.99999f*frac;
-      }
-
-      /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
-      {
-         float frac;
-         if (C2000_28379D_D_uint32_t[1] < 1)
-         {
-            frac = C2000_28379D_D_uint32_t[1]*((float)1/1);
-         }
-         else
-         {
-            frac = 1-(C2000_28379D_D_uint32_t[1]-1)*((float)1/1);
-         }
-         C2000_28379D_B.TriangularWave2 = -1.f+0.999999f*frac;
-      }
-
-      /* Function : 'C2000_28379D/SW A2/Fcn'
-       * incorporates
-       *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator5'
-       *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator6'
-       */
-      C2000_28379D_B.Fcn =
-         ((1.f) *
-          ((float)(C2000_28379D_B.C2000_28379D[0] >=
-                   C2000_28379D_B.TriangularWave1)))-
-         ((1.f) *
-          ((float)(C2000_28379D_B.C2000_28379D[0] <=
-                   C2000_28379D_B.TriangularWave2)));
-      /* Digital Out : 'C2000_28379D/Sa1' */
-      PLXHAL_DIO_set(0, C2000_28379D_B.Fcn > 0.f);
-      /* Digital Out : 'C2000_28379D/Sa2' */
-      PLXHAL_DIO_set(1, C2000_28379D_B.Fcn == 0.f);
-      /* Digital Out : 'C2000_28379D/Sa4' */
-      PLXHAL_DIO_set(2, C2000_28379D_B.Fcn < 0.f);
-
-      /* Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
-      {
-         float frac;
-         if (C2000_28379D_D_uint32_t[2] < 1)
-         {
-            frac = C2000_28379D_D_uint32_t[2]*((float)1/1);
-         }
-         else
-         {
-            frac = 1-(C2000_28379D_D_uint32_t[2]-1)*((float)1/1);
-         }
-         C2000_28379D_B.TriangularWave1_1 = 1e-05f+0.99999f*frac;
-      }
-
-      /* Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
-      {
-         float frac;
-         if (C2000_28379D_D_uint32_t[3] < 1)
-         {
-            frac = C2000_28379D_D_uint32_t[3]*((float)1/1);
-         }
-         else
-         {
-            frac = 1-(C2000_28379D_D_uint32_t[3]-1)*((float)1/1);
-         }
-         C2000_28379D_B.TriangularWave2_1 = -1.f+0.999999f*frac;
-      }
-
-      /* Function : 'C2000_28379D/SW A4/Fcn'
-       * incorporates
-       *  Relational Operator : 'C2000_28379D/SW A4/Relational\nOperator5'
-       *  Relational Operator : 'C2000_28379D/SW A4/Relational\nOperator6'
-       */
-      C2000_28379D_B.Fcn_1 =
-         ((1.f) *
-          ((float)(C2000_28379D_B.C2000_28379D[1] >=
-                   C2000_28379D_B.TriangularWave1_1)))-
-         ((1.f) *
-          ((float)(C2000_28379D_B.C2000_28379D[1] <=
-                   C2000_28379D_B.TriangularWave2_1)));
-      /* Digital Out : 'C2000_28379D/Sb1' */
-      PLXHAL_DIO_set(3, C2000_28379D_B.Fcn_1 > 0.f);
-      /* Digital Out : 'C2000_28379D/Sb2' */
-      PLXHAL_DIO_set(4, C2000_28379D_B.Fcn_1 == 0.f);
-      /* Digital Out : 'C2000_28379D/Sb4' */
-      PLXHAL_DIO_set(5, C2000_28379D_B.Fcn_1 < 0.f);
-
-      /* Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
-      {
-         float frac;
-         if (C2000_28379D_D_uint32_t[4] < 1)
-         {
-            frac = C2000_28379D_D_uint32_t[4]*((float)1/1);
-         }
-         else
-         {
-            frac = 1-(C2000_28379D_D_uint32_t[4]-1)*((float)1/1);
-         }
-         C2000_28379D_B.TriangularWave1_2 = 1e-05f+0.99999f*frac;
-      }
-
-      /* Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
-      {
-         float frac;
-         if (C2000_28379D_D_uint32_t[5] < 1)
-         {
-            frac = C2000_28379D_D_uint32_t[5]*((float)1/1);
-         }
-         else
-         {
-            frac = 1-(C2000_28379D_D_uint32_t[5]-1)*((float)1/1);
-         }
-         C2000_28379D_B.TriangularWave2_2 = -1.f+0.999999f*frac;
-      }
-
-      /* Function : 'C2000_28379D/SW A5/Fcn'
-       * incorporates
-       *  Relational Operator : 'C2000_28379D/SW A5/Relational\nOperator5'
-       *  Relational Operator : 'C2000_28379D/SW A5/Relational\nOperator6'
-       */
-      C2000_28379D_B.Fcn_2 =
-         ((1.f) *
-          ((float)(C2000_28379D_B.C2000_28379D[2] >=
-                   C2000_28379D_B.TriangularWave1_2)))-
-         ((1.f) *
-          ((float)(C2000_28379D_B.C2000_28379D[2] <=
-                   C2000_28379D_B.TriangularWave2_2)));
-      /* Digital Out : 'C2000_28379D/Sc1' */
-      PLXHAL_DIO_set(6, C2000_28379D_B.Fcn_2 > 0.f);
-      /* Digital Out : 'C2000_28379D/Sc2' */
-      PLXHAL_DIO_set(7, C2000_28379D_B.Fcn_2 == 0.f);
-      /* Digital Out : 'C2000_28379D/Sc4' */
-      PLXHAL_DIO_set(8, C2000_28379D_B.Fcn_2 < 0.f);
-      if (C2000_28379D_errorStatus)
-      {
-         return;
-      }
-
-      /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
-      C2000_28379D_D_uint32_t[0] += 1;
-      if (C2000_28379D_D_uint32_t[0] > 1)
-      {
-         C2000_28379D_D_uint32_t[0] -= 2;
-      }
-
-      /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
-      C2000_28379D_D_uint32_t[1] += 1;
-      if (C2000_28379D_D_uint32_t[1] > 1)
-      {
-         C2000_28379D_D_uint32_t[1] -= 2;
-      }
-
-      /* Update for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
-      C2000_28379D_D_uint32_t[2] += 1;
-      if (C2000_28379D_D_uint32_t[2] > 1)
-      {
-         C2000_28379D_D_uint32_t[2] -= 2;
-      }
-
-      /* Update for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
-      C2000_28379D_D_uint32_t[3] += 1;
-      if (C2000_28379D_D_uint32_t[3] > 1)
-      {
-         C2000_28379D_D_uint32_t[3] -= 2;
-      }
-
-      /* Update for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
-      C2000_28379D_D_uint32_t[4] += 1;
-      if (C2000_28379D_D_uint32_t[4] > 1)
-      {
-         C2000_28379D_D_uint32_t[4] -= 2;
-      }
-
-      /* Update for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
-      C2000_28379D_D_uint32_t[5] += 1;
-      if (C2000_28379D_D_uint32_t[5] > 1)
-      {
-         C2000_28379D_D_uint32_t[5] -= 2;
-      }
-      /* Increment sub-task tick counters */
-      {
-         size_t i;
-         for (i = 0; i < 1; ++i)
-         {
-            C2000_28379D_subTaskTick[i]++;
-            if (C2000_28379D_subTaskTick[i] >= C2000_28379D_subTaskPeriod[i])
-            {
-               C2000_28379D_subTaskTick[i] = 0;
-            }
-         }
-      }
-      break;
    }
-
-   case 1:                                                                                                                                                                                  /* Task "5Khz" */
+   if (C2000_28379D_subTaskHit[0])
    {
-
       /* C-Script : 'C2000_28379D/Control' */
       C2000_28379D_0_cScriptOutput(&C2000_28379D_cScriptStruct[0]);
       if (*C2000_28379D_cScriptStruct[0].errorStatus)
          C2000_28379D_errorStatus =
             *C2000_28379D_cScriptStruct[0].errorStatus;
-
-      /* ADC : 'C2000_28379D/Pot' */
-      C2000_28379D_B.Pot = PLXHAL_ADC_getIn(3, 0);
-      /* DAC : 'C2000_28379D/DAC' */
-      PLXHAL_DAC_set(0, C2000_28379D_B.Control[3]);
-
-      /* Sum : 'C2000_28379D/Sum1'
-       * incorporates
-       *  ADC : 'C2000_28379D/i2'
-       *  Constant : 'C2000_28379D/Constant1'
-       */
-      C2000_28379D_B.Sum1[0] = (PLXHAL_ADC_getIn(1, 0)) + (-500.f);
-      C2000_28379D_B.Sum1[1] = (PLXHAL_ADC_getIn(1, 1)) + (-500.f);
-      C2000_28379D_B.Sum1[2] = (PLXHAL_ADC_getIn(1, 2)) + (-500.f);
-
-      /* Sum : 'C2000_28379D/Sum2'
-       * incorporates
-       *  ADC : 'C2000_28379D/Vc'
-       *  Constant : 'C2000_28379D/Constant2'
-       */
-      C2000_28379D_B.Sum2[0] = (PLXHAL_ADC_getIn(2, 0)) + (-300.f);
-      C2000_28379D_B.Sum2[1] = (PLXHAL_ADC_getIn(2, 1)) + (-300.f);
-      C2000_28379D_B.Sum2[2] = (PLXHAL_ADC_getIn(2, 2)) + (-300.f);
-
-      /* Sum : 'C2000_28379D/Sum3'
-       * incorporates
-       *  ADC : 'C2000_28379D/i1'
-       *  Constant : 'C2000_28379D/Constant3'
-       */
-      C2000_28379D_B.Sum3[0] = (PLXHAL_ADC_getIn(0, 0)) + (-500.f);
-      C2000_28379D_B.Sum3[1] = (PLXHAL_ADC_getIn(0, 1)) + (-500.f);
-      C2000_28379D_B.Sum3[2] = (PLXHAL_ADC_getIn(0, 2)) + (-500.f);
-      /* Task transfer to 'Base task' (Unit Delay) */
-      C2000_28379D_D_float[0] = C2000_28379D_B.Control[0];
-      C2000_28379D_D_float[1] = C2000_28379D_B.Control[1];
-      C2000_28379D_D_float[2] = C2000_28379D_B.Control[2];
-      if (C2000_28379D_errorStatus)
+   }
+   /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
+   {
+      float frac;
+      if (C2000_28379D_D_uint32_t[0] < 1)
       {
-         return;
+         frac = C2000_28379D_D_uint32_t[0]*((float)1/1);
       }
+      else
+      {
+         frac = 1-(C2000_28379D_D_uint32_t[0]-1)*((float)1/1);
+      }
+      C2000_28379D_B.TriangularWave1 = 1e-05f+0.99999f*frac;
+   }
 
+   /* Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
+   {
+      float frac;
+      if (C2000_28379D_D_uint32_t[1] < 1)
+      {
+         frac = C2000_28379D_D_uint32_t[1]*((float)1/1);
+      }
+      else
+      {
+         frac = 1-(C2000_28379D_D_uint32_t[1]-1)*((float)1/1);
+      }
+      C2000_28379D_B.TriangularWave2 = -1.f+0.999999f*frac;
+   }
+
+   /* Function : 'C2000_28379D/SW A2/Fcn'
+    * incorporates
+    *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator5'
+    *  Relational Operator : 'C2000_28379D/SW A2/Relational\nOperator6'
+    */
+   C2000_28379D_B.Fcn =
+      ((1.f) *
+    ((float)(C2000_28379D_B.Control[0] >=
+             C2000_28379D_B.TriangularWave1)))-
+      ((1.f) *
+    ((float)(C2000_28379D_B.Control[0] <= C2000_28379D_B.TriangularWave2)));
+   /* Digital Out : 'C2000_28379D/Sa1' */
+   PLXHAL_DIO_set(0, C2000_28379D_B.Fcn > 0.f);
+   /* Digital Out : 'C2000_28379D/Sa2' */
+   PLXHAL_DIO_set(1, C2000_28379D_B.Fcn == 0.f);
+   /* Digital Out : 'C2000_28379D/Sa4' */
+   PLXHAL_DIO_set(2, C2000_28379D_B.Fcn < 0.f);
+
+   /* Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
+   {
+      float frac;
+      if (C2000_28379D_D_uint32_t[2] < 1)
+      {
+         frac = C2000_28379D_D_uint32_t[2]*((float)1/1);
+      }
+      else
+      {
+         frac = 1-(C2000_28379D_D_uint32_t[2]-1)*((float)1/1);
+      }
+      C2000_28379D_B.TriangularWave1_1 = 1e-05f+0.99999f*frac;
+   }
+
+   /* Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
+   {
+      float frac;
+      if (C2000_28379D_D_uint32_t[3] < 1)
+      {
+         frac = C2000_28379D_D_uint32_t[3]*((float)1/1);
+      }
+      else
+      {
+         frac = 1-(C2000_28379D_D_uint32_t[3]-1)*((float)1/1);
+      }
+      C2000_28379D_B.TriangularWave2_1 = -1.f+0.999999f*frac;
+   }
+
+   /* Function : 'C2000_28379D/SW A4/Fcn'
+    * incorporates
+    *  Relational Operator : 'C2000_28379D/SW A4/Relational\nOperator5'
+    *  Relational Operator : 'C2000_28379D/SW A4/Relational\nOperator6'
+    */
+   C2000_28379D_B.Fcn_1 =
+      ((1.f) *
+    ((float)(C2000_28379D_B.Control[1] >=
+             C2000_28379D_B.TriangularWave1_1)))-
+      ((1.f) *
+    ((float)(C2000_28379D_B.Control[1] <= C2000_28379D_B.TriangularWave2_1)));
+   /* Digital Out : 'C2000_28379D/Sb1' */
+   PLXHAL_DIO_set(3, C2000_28379D_B.Fcn_1 > 0.f);
+   /* Digital Out : 'C2000_28379D/Sb2' */
+   PLXHAL_DIO_set(4, C2000_28379D_B.Fcn_1 == 0.f);
+   /* Digital Out : 'C2000_28379D/Sb4' */
+   PLXHAL_DIO_set(5, C2000_28379D_B.Fcn_1 < 0.f);
+
+   /* Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
+   {
+      float frac;
+      if (C2000_28379D_D_uint32_t[4] < 1)
+      {
+         frac = C2000_28379D_D_uint32_t[4]*((float)1/1);
+      }
+      else
+      {
+         frac = 1-(C2000_28379D_D_uint32_t[4]-1)*((float)1/1);
+      }
+      C2000_28379D_B.TriangularWave1_2 = 1e-05f+0.99999f*frac;
+   }
+
+   /* Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
+   {
+      float frac;
+      if (C2000_28379D_D_uint32_t[5] < 1)
+      {
+         frac = C2000_28379D_D_uint32_t[5]*((float)1/1);
+      }
+      else
+      {
+         frac = 1-(C2000_28379D_D_uint32_t[5]-1)*((float)1/1);
+      }
+      C2000_28379D_B.TriangularWave2_2 = -1.f+0.999999f*frac;
+   }
+
+   /* Function : 'C2000_28379D/SW A5/Fcn'
+    * incorporates
+    *  Relational Operator : 'C2000_28379D/SW A5/Relational\nOperator5'
+    *  Relational Operator : 'C2000_28379D/SW A5/Relational\nOperator6'
+    */
+   C2000_28379D_B.Fcn_2 =
+      ((1.f) *
+    ((float)(C2000_28379D_B.Control[2] >=
+             C2000_28379D_B.TriangularWave1_2)))-
+      ((1.f) *
+    ((float)(C2000_28379D_B.Control[2] <= C2000_28379D_B.TriangularWave2_2)));
+   /* Digital Out : 'C2000_28379D/Sc1' */
+   PLXHAL_DIO_set(6, C2000_28379D_B.Fcn_2 > 0.f);
+   /* Digital Out : 'C2000_28379D/Sc2' */
+   PLXHAL_DIO_set(7, C2000_28379D_B.Fcn_2 == 0.f);
+   /* Digital Out : 'C2000_28379D/Sc4' */
+   PLXHAL_DIO_set(8, C2000_28379D_B.Fcn_2 < 0.f);
+
+   /* ADC : 'C2000_28379D/Pot' */
+   C2000_28379D_B.Pot = PLXHAL_ADC_getIn(3, 0);
+   /* DAC : 'C2000_28379D/DAC' */
+   PLXHAL_DAC_set(0, C2000_28379D_B.Control[3]);
+
+   /* Sum : 'C2000_28379D/Sum1'
+    * incorporates
+    *  ADC : 'C2000_28379D/i2'
+    *  Constant : 'C2000_28379D/Constant1'
+    */
+   C2000_28379D_B.Sum1[0] = (PLXHAL_ADC_getIn(1, 0)) + (-500.f);
+   C2000_28379D_B.Sum1[1] = (PLXHAL_ADC_getIn(1, 1)) + (-500.f);
+   C2000_28379D_B.Sum1[2] = (PLXHAL_ADC_getIn(1, 2)) + (-500.f);
+
+   /* Sum : 'C2000_28379D/Sum2'
+    * incorporates
+    *  ADC : 'C2000_28379D/Vc'
+    *  Constant : 'C2000_28379D/Constant2'
+    */
+   C2000_28379D_B.Sum2[0] = (PLXHAL_ADC_getIn(2, 0)) + (-300.f);
+   C2000_28379D_B.Sum2[1] = (PLXHAL_ADC_getIn(2, 1)) + (-300.f);
+   C2000_28379D_B.Sum2[2] = (PLXHAL_ADC_getIn(2, 2)) + (-300.f);
+
+   /* Sum : 'C2000_28379D/Sum3'
+    * incorporates
+    *  ADC : 'C2000_28379D/i1'
+    *  Constant : 'C2000_28379D/Constant3'
+    */
+   C2000_28379D_B.Sum3[0] = (PLXHAL_ADC_getIn(0, 0)) + (-500.f);
+   C2000_28379D_B.Sum3[1] = (PLXHAL_ADC_getIn(0, 1)) + (-500.f);
+   C2000_28379D_B.Sum3[2] = (PLXHAL_ADC_getIn(0, 2)) + (-500.f);
+   if (C2000_28379D_errorStatus)
+   {
+      return;
+   }
+   if (C2000_28379D_subTaskHit[0])
+   {
       /* Update for C-Script : 'C2000_28379D/Control' */
       C2000_28379D_0_cScriptUpdate(&C2000_28379D_cScriptStruct[0]);
       if (*C2000_28379D_cScriptStruct[0].errorStatus)
          C2000_28379D_errorStatus =
             *C2000_28379D_cScriptStruct[0].errorStatus;
-      break;
    }
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave1' */
+   C2000_28379D_D_uint32_t[0] += 1;
+   if (C2000_28379D_D_uint32_t[0] > 1)
+   {
+      C2000_28379D_D_uint32_t[0] -= 2;
+   }
+
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A2/Triangular Wave2' */
+   C2000_28379D_D_uint32_t[1] += 1;
+   if (C2000_28379D_D_uint32_t[1] > 1)
+   {
+      C2000_28379D_D_uint32_t[1] -= 2;
+   }
+
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave1' */
+   C2000_28379D_D_uint32_t[2] += 1;
+   if (C2000_28379D_D_uint32_t[2] > 1)
+   {
+      C2000_28379D_D_uint32_t[2] -= 2;
+   }
+
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A4/Triangular Wave2' */
+   C2000_28379D_D_uint32_t[3] += 1;
+   if (C2000_28379D_D_uint32_t[3] > 1)
+   {
+      C2000_28379D_D_uint32_t[3] -= 2;
+   }
+
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave1' */
+   C2000_28379D_D_uint32_t[4] += 1;
+   if (C2000_28379D_D_uint32_t[4] > 1)
+   {
+      C2000_28379D_D_uint32_t[4] -= 2;
+   }
+
+   /* Update for Triangular Wave Generator : 'C2000_28379D/SW A5/Triangular Wave2' */
+   C2000_28379D_D_uint32_t[5] += 1;
+   if (C2000_28379D_D_uint32_t[5] > 1)
+   {
+      C2000_28379D_D_uint32_t[5] -= 2;
+   }
+   /* Increment sub-task tick counters */
+   {
+      size_t i;
+      for (i = 0; i < 1; ++i)
+      {
+         C2000_28379D_subTaskTick[i]++;
+         if (C2000_28379D_subTaskTick[i] >= C2000_28379D_subTaskPeriod[i])
+         {
+            C2000_28379D_subTaskTick[i] = 0;
+         }
+      }
    }
 }
 
