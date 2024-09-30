@@ -112,7 +112,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 23; 1366, 681]
+    Location      [0, 23; 1920, 1001]
     ZoomFactor    0.763605
     SliderPosition [0, 458]
     ShowBrowser   off
@@ -349,7 +349,7 @@ Plecs {
         Index         "10"
       }
       Schematic {
-        Location      [1, 31; 682, 680]
+        Location      [1, 31; 1366, 680]
         ZoomFactor    0.763603
         SliderPosition [359, 0]
         ShowBrowser   off
@@ -837,7 +837,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sa1"
           Show          on
-          Position      [1565, 480]
+          Position      [1395, 400]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -868,7 +868,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sa2"
           Show          on
-          Position      [1575, 550]
+          Position      [1405, 470]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -899,7 +899,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sa4"
           Show          on
-          Position      [1575, 610]
+          Position      [1405, 530]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -929,7 +929,7 @@ Plecs {
           Type          From
           Name          "From"
           Show          off
-          Position      [1505, 480]
+          Position      [1335, 400]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -948,7 +948,7 @@ Plecs {
           Type          From
           Name          "From1"
           Show          off
-          Position      [1530, 550]
+          Position      [1360, 470]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -967,7 +967,7 @@ Plecs {
           Type          From
           Name          "From3"
           Show          off
-          Position      [1530, 610]
+          Position      [1360, 530]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -987,7 +987,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sb1"
           Show          on
-          Position      [1680, 490]
+          Position      [1510, 410]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1018,7 +1018,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sb2"
           Show          on
-          Position      [1680, 550]
+          Position      [1510, 470]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1049,7 +1049,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sb4"
           Show          on
-          Position      [1680, 610]
+          Position      [1510, 530]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1080,7 +1080,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sc1"
           Show          on
-          Position      [1785, 490]
+          Position      [1615, 410]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1111,7 +1111,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sc2"
           Show          on
-          Position      [1785, 550]
+          Position      [1615, 470]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1142,7 +1142,7 @@ Plecs {
           SrcComponent  "TIC2000_Lib/Digital Out"
           Name          "Sc4"
           Show          on
-          Position      [1785, 610]
+          Position      [1615, 530]
           Direction     up
           Flipped       off
           LabelPosition south
@@ -1172,7 +1172,7 @@ Plecs {
           Type          From
           Name          "From2"
           Show          off
-          Position      [1635, 490]
+          Position      [1465, 410]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1191,7 +1191,7 @@ Plecs {
           Type          From
           Name          "From4"
           Show          off
-          Position      [1635, 550]
+          Position      [1465, 470]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1210,7 +1210,7 @@ Plecs {
           Type          From
           Name          "From6"
           Show          off
-          Position      [1635, 610]
+          Position      [1465, 530]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1229,7 +1229,7 @@ Plecs {
           Type          From
           Name          "From9"
           Show          off
-          Position      [1740, 490]
+          Position      [1570, 410]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1248,7 +1248,7 @@ Plecs {
           Type          From
           Name          "From10"
           Show          off
-          Position      [1740, 550]
+          Position      [1570, 470]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1267,7 +1267,7 @@ Plecs {
           Type          From
           Name          "From11"
           Show          off
-          Position      [1740, 610]
+          Position      [1570, 530]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -1825,7 +1825,7 @@ Plecs {
           Type          Subsystem
           Name          "SW A2"
           Show          off
-          Position      [1440, 240]
+          Position      [1270, 160]
           Direction     up
           Flipped       off
           LabelPosition north
@@ -2311,7 +2311,7 @@ Plecs {
           Type          From
           Name          "From42"
           Show          off
-          Position      [1400, 240]
+          Position      [1230, 160]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2330,7 +2330,7 @@ Plecs {
           Type          From
           Name          "From45"
           Show          off
-          Position      [1405, 310]
+          Position      [1235, 230]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2349,7 +2349,7 @@ Plecs {
           Type          From
           Name          "From46"
           Show          off
-          Position      [1405, 390]
+          Position      [1235, 310]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2368,7 +2368,7 @@ Plecs {
           Type          Goto
           Name          "Goto2"
           Show          off
-          Position      [1485, 220]
+          Position      [1315, 140]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2387,7 +2387,7 @@ Plecs {
           Type          Goto
           Name          "Goto4"
           Show          off
-          Position      [1485, 235]
+          Position      [1315, 155]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2406,7 +2406,7 @@ Plecs {
           Type          Goto
           Name          "Goto12"
           Show          off
-          Position      [1485, 250]
+          Position      [1315, 170]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2425,7 +2425,7 @@ Plecs {
           Type          Goto
           Name          "Goto14"
           Show          off
-          Position      [1485, 265]
+          Position      [1315, 185]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2444,7 +2444,7 @@ Plecs {
           Type          Goto
           Name          "Goto15"
           Show          off
-          Position      [1490, 290]
+          Position      [1320, 210]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2463,7 +2463,7 @@ Plecs {
           Type          Goto
           Name          "Goto16"
           Show          off
-          Position      [1490, 305]
+          Position      [1320, 225]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2482,7 +2482,7 @@ Plecs {
           Type          Goto
           Name          "Goto23"
           Show          off
-          Position      [1490, 320]
+          Position      [1320, 240]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2501,7 +2501,7 @@ Plecs {
           Type          Goto
           Name          "Goto26"
           Show          off
-          Position      [1490, 335]
+          Position      [1320, 255]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2520,7 +2520,7 @@ Plecs {
           Type          Goto
           Name          "Goto40"
           Show          off
-          Position      [1490, 370]
+          Position      [1320, 290]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2539,7 +2539,7 @@ Plecs {
           Type          Goto
           Name          "Goto41"
           Show          off
-          Position      [1490, 385]
+          Position      [1320, 305]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2558,7 +2558,7 @@ Plecs {
           Type          Goto
           Name          "Goto42"
           Show          off
-          Position      [1490, 400]
+          Position      [1320, 320]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2577,7 +2577,7 @@ Plecs {
           Type          Goto
           Name          "Goto43"
           Show          off
-          Position      [1490, 415]
+          Position      [1320, 335]
           Direction     right
           Flipped       off
           LabelPosition south
@@ -2596,7 +2596,7 @@ Plecs {
           Type          Subsystem
           Name          "SW A4"
           Show          off
-          Position      [1445, 310]
+          Position      [1275, 230]
           Direction     up
           Flipped       off
           LabelPosition north
@@ -3082,7 +3082,7 @@ Plecs {
           Type          Subsystem
           Name          "SW A5"
           Show          off
-          Position      [1445, 390]
+          Position      [1275, 310]
           Direction     up
           Flipped       off
           LabelPosition north
@@ -4529,17 +4529,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 714]
+      Location      [99, 72; 1465, 769]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAANQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAeAAAAAivw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAABVYAAAKUAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAABVYAAAKeAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"AAAAGQAAAABAAAAZAAAAAMAAABkAAAAAgAAAGQAAAAFAAAAZAAAAAQAAABkAAAABwAAAGQAAAAGAA"
-"AAZAAAAAkAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"gAAAGQAAAABAAAAZAAAAAkAAABkAAAACAAAAGQAAAAHAAAAZAAAAAYAAABkAAAABQAAAGQAAAAEAA"
+"AAZAAAAAMAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
