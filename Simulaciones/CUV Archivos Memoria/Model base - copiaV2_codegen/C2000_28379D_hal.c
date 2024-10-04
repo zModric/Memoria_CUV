@@ -1,7 +1,7 @@
 /*
  * Hardware configuration file for: TI2837x
- * Generated with                 : PLECS 4.8.6
- * Generated on                   : Fri Sep 27 17:23:47 2024
+ * Generated with                 : PLECS 4.8.3
+ * Generated on                   : Mon Sep 30 15:53:10 2024
  */
 
 /* HAL Includes */

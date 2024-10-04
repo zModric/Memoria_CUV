@@ -1,7 +1,7 @@
 ******************************************************************************
              TMS320C2000 Linker PC v22.6.1                     
 ******************************************************************************
->> Linked Fri Sep 27 17:23:52 2024
+>> Linked Mon Sep 30 15:53:54 2024
 
 OUTPUT FILE NAME:   <./output_TI2837x_cpu1/C2000_28379D.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 0008423f
@@ -403,7 +403,7 @@ MODULE SUMMARY
     +--+--------------------------------+-------+---------+---------+
        Total:                           6865    1448      3060   
                                                                  
-    C:\Users\Estudiante USM\AppData\Local\Programs\PLECS C2000 TSP\cgt\ti-cgt-c2000_22.6.1.LTS\lib\rts2800_fpu32_eabi.lib
+    C:\Users\user\AppData\Local\Programs\PLECS C2000 TSP\cgt\ti-cgt-c2000_22.6.1.LTS\lib\rts2800_fpu32_eabi.lib
        fs_div28.asm.obj                 136     0         0      
        fd_mpy28.asm.obj                 131     0         0      
        copy_decompress_lzss.c.obj       48      0         0      
@@ -423,7 +423,7 @@ MODULE SUMMARY
     +--+--------------------------------+-------+---------+---------+
        Total:                           566     0         10     
                                                                  
-    C:\Users\Estudiante USM\Desktop\target supp\tsp_ti_c2000\ccs\2837x\..\pil\pil_c28_fpu32_eabi.lib
+    F:\Repositorio_Chris\tsp_ti_c2000\ccs\2837x\..\pil\pil_c28_fpu32_eabi.lib
        probes.obj                       1567    0         0      
        scope.obj                        1476    0         0      
        pil.obj                          1112    0         0      
@@ -437,7 +437,7 @@ MODULE SUMMARY
     +--+--------------------------------+-------+---------+---------+
        Total:                           7169    16        0      
                                                                  
-    C:\Users\Estudiante USM\Desktop\target supp\tsp_ti_c2000\ccs\2837x\tisrc\driverlib\plx_driverlib_fpu32_eabi.lib
+    F:\Repositorio_Chris\tsp_ti_c2000\ccs\2837x\tisrc\driverlib\plx_driverlib_fpu32_eabi.lib
        sysctl.obj                       1415    0         0      
        gpio.obj                         491     0         0      
        flash.obj                        425     0         0      

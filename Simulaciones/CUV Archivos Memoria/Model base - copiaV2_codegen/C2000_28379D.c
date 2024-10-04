@@ -1,8 +1,8 @@
 /*
  * Implementation file for: Model base - copiaV2/C2000_28379D
- * Generated with         : PLECS 4.8.6
+ * Generated with         : PLECS 4.8.3
  *                          TI2837x 1.7.4
- * Generated on           : 27 Sep 2024 17:23:47
+ * Generated on           : 30 Sep 2024 15:53:09
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
