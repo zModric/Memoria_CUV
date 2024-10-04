@@ -112,7 +112,7 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [684, 31; 1365, 680]
+    Location      [0, 23; 1920, 1001]
     ZoomFactor    0.763605
     SliderPosition [506, 186]
     ShowBrowser   off
@@ -128,13 +128,13 @@ Plecs {
       Frame         [-65, -105; 65, 105]
       TreatAsAtomicUnit on
       SampleTime    "-1"
-      TaskingMode "2"
+      TaskingMode "1"
       TaskConfigurations "AAAACQAAAAABAAAACAAAAAAGAAAADgBUAGgAZQByAG0AYQBsAAAA"
 "AQABAAAAFABTAGEAbQBwAGwAZQBUAGkAbQBlAAAACgAAAAACADAAAAAIAE4AYQBtAGUAAAAKAAAAA"
 "BIAQgBhAHMAZQAgAHQAYQBzAGsAAAAOAEQAZQBmAGEAdQBsAHQAAAABAAAAAAAGAEMAcAB1AAAAAg"
 "AAAAAAAAAACABDAG8AcgBlAAAAAgAAAAAA"
       CodeGenEnable on
-      CodeGenSampleTime "1e-4"
+      CodeGenSampleTime "5e-5"
       CodeGenDiscretizationMethod "1"
       CodeGenTarget "TI2837x"
       CodeGenTargetSettings "AAAAfwAAAAAlUU1hcDxRU3RyaW5nLFFNYXA8UVN0cmluZyxRU"
@@ -349,7 +349,7 @@ Plecs {
         Index         "10"
       }
       Schematic {
-        Location      [684, 31; 1365, 680]
+        Location      [0, 23; 1920, 1001]
         ZoomFactor    0.763603
         SliderPosition [359, 0]
         ShowBrowser   off
@@ -2167,7 +2167,7 @@ Plecs {
               }
               Parameter {
                 Variable      "f"
-                Value         "5000"
+                Value         "10000"
                 Show          off
               }
               Parameter {
@@ -2215,7 +2215,7 @@ Plecs {
               }
               Parameter {
                 Variable      "f"
-                Value         "5000"
+                Value         "10000"
                 Show          off
               }
               Parameter {
@@ -2938,7 +2938,7 @@ Plecs {
               }
               Parameter {
                 Variable      "f"
-                Value         "5000"
+                Value         "10000"
                 Show          off
               }
               Parameter {
@@ -2986,7 +2986,7 @@ Plecs {
               }
               Parameter {
                 Variable      "f"
-                Value         "5000"
+                Value         "10000"
                 Show          off
               }
               Parameter {
@@ -3424,7 +3424,7 @@ Plecs {
               }
               Parameter {
                 Variable      "f"
-                Value         "5000"
+                Value         "10000"
                 Show          off
               }
               Parameter {
@@ -3472,7 +3472,7 @@ Plecs {
               }
               Parameter {
                 Variable      "f"
-                Value         "5000"
+                Value         "10000"
                 Show          off
               }
               Parameter {
@@ -3677,17 +3677,17 @@ Plecs {
           Direction     up
           Flipped       off
           LabelPosition south
-          Location      [0, 27; 1366, 744]
+          Location      [0, 27; 1366, 754]
           State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
 "wBvAG0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
 "AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAA"
-"AY/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJL"
+"AY/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJV"
 "AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
 "AAAAAAAAA=="
           SavedViews    "AAAAAgAAAAA="
           HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAwAAAGQAAAACAAAAZAAAAAEAAABkAAAACQAAAGQAAAAIAAAAZAAAAAcAAABkAAAABgAAAGQAAA"
-"AFAAAAZAAAAAQAAABkAAAFVgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB"
+"AAAAQAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAAFAAAAZAAAAAgAAABkAAAACQAAAGQAAA"
+"ACAAAAZAAAAAMAAABkAAAFVgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB"
 "wAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
 "AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
 "AAAAATmAAAAAQAAAAAAAAPoAAAAACQ="
@@ -4634,17 +4634,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [684, 31; 1365, 729]
+      Location      [0, 27; 1920, 1034]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAANQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAeAAAAAivw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAAAqkAAAKfAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAAB4AAAAPUAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"wAAAGQAAAACAAAAZAAAAAEAAABkAAAACQAAAGQAAAAIAAAAZAAAAAcAAABkAAAABgAAAGQAAAAFAA"
-"AAZAAAAAQAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+"QAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAAFAAAAZAAAAAgAAABkAAAACQAAAGQAAAACAA"
+"AAZAAAAAMAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="
@@ -30781,17 +30781,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 23; 1366, 700]
+      Location      [0, 27; 1366, 714]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAAKKAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAAKUAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"QAAAGQAAAAIAAAAZAAAAAUAAABkAAAABAAAAGQAAAAHAAAAZAAAAAYAAABkAAAAAQAAAGQAAAADAA"
-"AAZAAAAAIAAABkAAAAqgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACGAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
+"QAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAAFAAAAZAAAAAgAAABkAAAACQAAAGQAAAACAA"
+"AAZAAAAAMAAABkAAAAqgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACGAAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="

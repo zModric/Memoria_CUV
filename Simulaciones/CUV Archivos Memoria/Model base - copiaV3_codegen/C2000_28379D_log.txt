@@ -1,0 +1,354 @@
+Triggering algorithm for CPU 0
+- No (perfectly) suitable triggering block found. Attempt creating implicit timer.
+- 21 (timer): CPUTIMER0 implicitly created.
+- 21 (timer): Offered trigger generator at 20000.000000 Hz
+- Retaining new implicit timer (Ferror=0.000000e+00).
+- 20 (tasktrigger): Task trigger sample time for tasktrigger (20) propagated to: 0.000050.
+- 03 (extmode): External mode disabled.
+
+Block coding complete.
+
+Blocks in model: {
+  [1] = {
+  },
+  [2] = {
+  },
+  [3] = {
+    ["cpuPostfix"] = "",
+  },
+  [4] = {
+  },
+  [5] = {
+  },
+  [6] = {
+    ["gpio"] = {
+      [0] = 0.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [7] = {
+    ["gpio"] = {
+      [1] = 1.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [8] = {
+    ["gpio"] = {
+      [2] = 2.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [9] = {
+    ["gpio"] = {
+      [3] = 3.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [10] = {
+    ["gpio"] = {
+      [4] = 4.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [11] = {
+    ["gpio"] = {
+      [5] = 5.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [12] = {
+    ["gpio"] = {
+      [6] = 6.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [13] = {
+    ["gpio"] = {
+      [7] = 7.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [14] = {
+    ["gpio"] = {
+      [8] = 8.0,
+    },
+    ["out_type"] = "pp",
+  },
+  [15] = {
+    ["maxACQPS"] = 14,
+    ["trigsel"] = 1,
+    ["totalConversionTimeInAcqps"] = 42,
+    ["trig_base_task_exp"] = "{adctrig = {bid = 21}}",
+    ["is_cla_trigger"] = "false",
+    ["num_channels"] = 3,
+    ["is_mod_trigger"] = "false",
+    ["ts"] = 5e-05,
+    ["downstreamConnectionsPropagated"] = "true",
+    ["trig_exp"] = "{adctrig = {bid = 21}}",
+    ["trig"] = {
+      ["adctrig"] = {
+        [1] = <cyclic reference>,
+        [2] = {
+          ["maxACQPS"] = 14,
+          ["is_cla_trigger"] = "false",
+          ["trigsel"] = 1,
+          ["totalConversionTimeInAcqps"] = 42,
+          ["trig_base_task_exp"] = "{adctrig = {bid = 21}}",
+          ["ts"] = 5e-05,
+          ["num_channels"] = 3,
+          ["is_mod_trigger"] = "true",
+          ["downstreamConnectionsPropagated"] = "true",
+          ["modtrig"] = {
+            [1] = {
+              ["trig_base_task_exp"] = "{modtrig = {bid = 21}}",
+              ["trig_exp"] = "{modtrig={bid=16}}",
+              ["ts"] = 5e-05,
+            },
+          },
+          ["trig_exp"] = "{adctrig = {bid = 21}}",
+          ["trig"] = <cyclic reference>,
+          ["sigmodeDifferential"] = "false",
+          ["channels"] = {
+            [1] = {
+              ["input"] = 2.0,
+              ["offset"] = 0.0,
+              ["ACQPS"] = 14,
+              ["scale"] = 333.33333333333,
+            },
+            [2] = {
+              ["input"] = 3.0,
+              ["offset"] = 0.0,
+              ["ACQPS"] = 14,
+              ["scale"] = 333.33333333333,
+            },
+            [3] = {
+              ["input"] = 4.0,
+              ["offset"] = 0.0,
+              ["ACQPS"] = 14,
+              ["scale"] = 333.33333333333,
+            },
+          },
+          ["adc"] = 0.0,
+          ["adcLetter"] = "A",
+        },
+        [3] = {
+          ["maxACQPS"] = 14,
+          ["trigsel"] = 1,
+          ["totalConversionTimeInAcqps"] = 42,
+          ["trig_base_task_exp"] = "{adctrig = {bid = 21}}",
+          ["is_cla_trigger"] = "false",
+          ["num_channels"] = 3,
+          ["is_mod_trigger"] = "false",
+          ["ts"] = 5e-05,
+          ["downstreamConnectionsPropagated"] = "true",
+          ["trig_exp"] = "{adctrig = {bid = 21}}",
+          ["trig"] = <cyclic reference>,
+          ["sigmodeDifferential"] = "false",
+          ["channels"] = {
+            [1] = {
+              ["input"] = 2.0,
+              ["offset"] = 0.0,
+              ["ACQPS"] = 14,
+              ["scale"] = 200.0,
+            },
+            [2] = {
+              ["input"] = 3.0,
+              ["offset"] = 0.0,
+              ["ACQPS"] = 14,
+              ["scale"] = 200.0,
+            },
+            [3] = {
+              ["input"] = 4.0,
+              ["offset"] = 0.0,
+              ["ACQPS"] = 14,
+              ["scale"] = 200.0,
+            },
+          },
+          ["adc"] = 1.0,
+          ["adcLetter"] = "B",
+        },
+        [4] = {
+          ["maxACQPS"] = 14,
+          ["trigsel"] = 1,
+          ["totalConversionTimeInAcqps"] = 14,
+          ["trig_base_task_exp"] = "{adctrig = {bid = 21}}",
+          ["is_cla_trigger"] = "false",
+          ["num_channels"] = 1,
+          ["is_mod_trigger"] = "false",
+          ["ts"] = 5e-05,
+          ["downstreamConnectionsPropagated"] = "true",
+          ["trig_exp"] = "{adctrig = {bid = 21}}",
+          ["trig"] = <cyclic reference>,
+          ["sigmodeDifferential"] = "false",
+          ["channels"] = {
+            [1] = {
+              ["input"] = 14.0,
+              ["offset"] = 0.0,
+              ["ACQPS"] = 14,
+              ["scale"] = 33333.333333333,
+            },
+          },
+          ["adc"] = 3.0,
+          ["adcLetter"] = "D",
+        },
+      },
+      ["frequency"] = 20000.0,
+      ["unit"] = 0,
+      ["period"] = 2375,
+    },
+    ["sigmodeDifferential"] = "false",
+    ["channels"] = {
+      [1] = {
+        ["input"] = 2.0,
+        ["offset"] = 0.0,
+        ["ACQPS"] = 14,
+        ["scale"] = 333.33333333333,
+      },
+      [2] = {
+        ["input"] = 3.0,
+        ["offset"] = 0.0,
+        ["ACQPS"] = 14,
+        ["scale"] = 333.33333333333,
+      },
+      [3] = {
+        ["input"] = 4.0,
+        ["offset"] = 0.0,
+        ["ACQPS"] = 14,
+        ["scale"] = 333.33333333333,
+      },
+    },
+    ["adc"] = 2.0,
+    ["adcLetter"] = "C",
+  },
+  [16] = <cyclic reference>,
+  [17] = <cyclic reference>,
+  [18] = <cyclic reference>,
+  [19] = {
+    ["targmin"] = 0.0,
+    ["dac"] = 0.0,
+    ["max"] = 3.3,
+    ["offset"] = 0.0,
+    ["min"] = 0.0,
+    ["targmax"] = 3.3,
+    ["scale"] = 0.33333333333333,
+  },
+  [20] = <cyclic reference>,
+  [21] = <cyclic reference>,
+  [22] = {
+    ["isrExp"] = "          interrupt void C2000_28379D_baseTaskInterrupt(void)
+          {
+                AdcaRegs.ADCINTFLGCLR.bit.ADCINT1 = 1; // clear ADCINT1 flag reinitialize for next SOC
+    PieCtrlRegs.PIEACK.all = PIEACK_GROUP1; // acknowledge interrupt to PIE (All ADCS in group 1)
+    IER |= M_INT1;
+  
+            DISPR_dispatch();
+          }
+          ",
+    ["isrSourceBlockBid"] = 16,
+    ["isrEnableCode"] = "IER |= M_INT1;",
+  },
+}
+
+
+Target settings: {
+  ["Pwm9AGpio"] = "16",
+  ["AnTrip3AdcChannel"] = "0",
+  ["Tz3Enable"] = 0.0,
+  ["Pwm7AGpio"] = "12",
+  ["HOST_OS"] = "win",
+  ["Pwm1AGpio"] = "0",
+  ["Pwm10GpioEn"] = 0.0,
+  ["Pwm11AGpio"] = "20",
+  ["Tz2Gpio"] = "0",
+  ["Pwm1GpioEn"] = 0.0,
+  ["AnTrip3Signal"] = "1",
+  ["AnTrip1AdcUnit"] = "1",
+  ["extModeBufferSize"] = "1000",
+  ["Pwm6GpioEn"] = 0.0,
+  ["AnTrip4ThresholdHigh"] = "0",
+  ["AnTrip4AdcChannel"] = "0",
+  ["AnTrip3AdcUnit"] = "1",
+  ["Tz2Enable"] = 0.0,
+  ["AnTrip4AdcUnit"] = "1",
+  ["Pwm12AGpio"] = "22",
+  ["Pwm12BGpio"] = "23",
+  ["AnTrip2ThresholdLow"] = "0",
+  ["SerialNumberSpecified"] = 1.0,
+  ["board"] = 2.0,
+  ["Pwm4BGpio"] = "7",
+  ["USE_START_TIME_IN_INIT_FCN"] = 0.0,
+  ["AnTrip1Signal"] = "1",
+  ["SampleTimeRelTol"] = "10",
+  ["Pwm9GpioEn"] = 0.0,
+  ["Pwm7BGpio"] = "13",
+  ["Pwm6BGpio"] = "11",
+  ["AnTrip1Enable"] = 0.0,
+  ["Pwm11GpioEn"] = 0.0,
+  ["Pwm4GpioEn"] = 0.0,
+  ["installDirCpu2"] = "C:/Users/user/Desktop/Repositorio_Chris/Memoria_CUV/Simulaciones/CUV Archivos Memoria\",
+  ["taskFreqTol"] = 1.0,
+  ["Pwm11BGpio"] = "21",
+  ["HOST_ARCH"] = "64",
+  ["Pwm5GpioEn"] = 0.0,
+  ["Pwm10AGpio"] = "18",
+  ["FLOAT_TYPE"] = "float",
+  ["Pwm12GpioEn"] = 0.0,
+  ["BUILD_ROOT"] = "C:/Users/user/Desktop/Repositorio_Chris/Memoria_CUV/Simulaciones/CUV Archivos Memoria\Model base - copiaV3_codegen",
+  ["chip"] = 1.0,
+  ["Pwm8AGpio"] = "14",
+  ["AnTrip4Enable"] = 0.0,
+  ["uniflashFile"] = "C:/Users/user/Desktop/Repositorio_Chris/Memoria_CUV/Simulaciones/CUV Archivos Memoria\",
+  ["Pwm5BGpio"] = "9",
+  ["USE_DATA_TYPES_FOR_TUNABLE_PARAMETERS"] = 1.0,
+  ["SerialNumber"] = "LAUNCHXL-F28379D",
+  ["Pwm4AGpio"] = "6",
+  ["Pwm2BGpio"] = "3",
+  ["Pwm2AGpio"] = "2",
+  ["AnTrip2AdcChannel"] = "0",
+  ["TARGET_DEVICE"] = "0|COM4|0|0",
+  ["VrefAdcA"] = 3.0,
+  ["Pwm9BGpio"] = "17",
+  ["Tz1Enable"] = 0.0,
+  ["SAMPLE_TIME"] = 5e-05,
+  ["Pwm8GpioEn"] = 0.0,
+  ["Pwm3BGpio"] = "5",
+  ["NUM_CPUS"] = 1.0,
+  ["genOnly"] = 2.0,
+  ["AnTrip2Enable"] = 0.0,
+  ["Pwm10BGpio"] = "19",
+  ["installDir"] = "C:\Users\Estudiante USM\workspace_v12\Pruebas_placa\cg",
+  ["Pwm1BGpio"] = "1",
+  ["Pwm3AGpio"] = "4",
+  ["useIntOsc"] = 1.0,
+  ["Pwm3GpioEn"] = 0.0,
+  ["AnTrip2AdcUnit"] = "1",
+  ["Tz1Gpio"] = "0",
+  ["AnTrip3Enable"] = 0.0,
+  ["VrefAdcC"] = 3.0,
+  ["Pwm2GpioEn"] = 0.0,
+  ["AnTrip3ThresholdHigh"] = "0",
+  ["Pwm5AGpio"] = "8",
+  ["AnTrip1ThresholdHigh"] = "0",
+  ["PLECS_VERSION"] = "4.8.3",
+  ["Pwm8BGpio"] = "15",
+  ["AnTrip1AdcChannel"] = "0",
+  ["VrefAdcB"] = 3.0,
+  ["Pwm7GpioEn"] = 0.0,
+  ["Tz3Gpio"] = "0",
+  ["extModeSciPins"] = "[85, 84]",
+  ["extClkMHz"] = "30",
+  ["AnTrip2ThresholdHigh"] = "0",
+  ["AnTrip1ThresholdLow"] = "0",
+  ["AnTrip2Signal"] = "1",
+  ["EXTERNAL_MODE"] = 0.0,
+  ["LinkerCommandFile"] = "C:/Users/user/Desktop/Repositorio_Chris/Memoria_CUV/Simulaciones/CUV Archivos Memoria\",
+  ["AnTrip4Signal"] = "1",
+  ["AnTrip3ThresholdLow"] = "0",
+  ["sysClkMHz"] = 190.0,
+  ["buildConfig"] = 1.0,
+  ["BASE_NAME"] = "C2000_28379D",
+  ["VrefAdcD"] = 3.0,
+  ["TARGET_ROOT"] = "F:/Repositorio_Chris/tsp_ti_c2000",
+  ["AnTrip4ThresholdLow"] = "0",
+  ["Pwm6AGpio"] = "10",
+}
