@@ -2,7 +2,7 @@
  * Implementation file for: Model base - copiaV2/C2000_28379D
  * Generated with         : PLECS 4.8.3
  *                          TI2837x 1.7.4
- * Generated on           : 30 Sep 2024 15:53:09
+ * Generated on           : 9 Oct 2024 18:04:10
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
@@ -99,10 +99,15 @@ void C2000_28379D_0_cScriptTerminate(const struct CScriptStruct *cScriptStruct);
 static uint32_t C2000_28379D_tickLo;
 static int32_t C2000_28379D_tickHi;
 C2000_28379D_BlockOutputs C2000_28379D_B;
+#if defined(EXTERNAL_MODE) && EXTERNAL_MODE
+const float * const C2000_28379D_ExtModeSignals[] = {
+   &C2000_28379D_B.Control[3]
+};
+#endif /* defined(EXTERNAL_MODE) */
 const char * C2000_28379D_errorStatus;
 const float C2000_28379D_sampleTime = 0.0001f;
 const char * const C2000_28379D_checksum =
-   "f67a00bbecfbd8887cc73ebb9715cee95bfa4752";
+   "26839ba1eb6a0f37f1753a46e6e0a18cfe25ca86";
 /* Target declarations */
 // tag step function to allow special linking
 #pragma CODE_SECTION(C2000_28379D_step, "step")

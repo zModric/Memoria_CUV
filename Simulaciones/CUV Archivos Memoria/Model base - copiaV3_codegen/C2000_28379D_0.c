@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.3
- * Generated on     : 4 Oct 2024 13:56:51
+ * Generated on     : 9 Oct 2024 18:16:58
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -442,9 +442,9 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
    /************ Referencias ************/
 
    id_r = Pot/Vgd_r;
-   iq_r = 0.124407*(id_r);
-   Vcd_r = Vgd_r+(id_r)*0.001 - 0.124407*(iq_r);
-   Vcq_r = Vgq_r+(iq_r)*0.001 + 0.124407*(id_r);
+   iq_r = 0.314151*(id_r);  // w*L2*id_r
+   Vcd_r = Vgd_r+(id_r)*0.001 - 0.314151*(iq_r);
+   Vcq_r = Vgq_r+(iq_r)*0.001 + 0.314151*(id_r);
 
    /************ Vector de corriente medida salida del conv ************/
 
@@ -480,25 +480,25 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
          sinma2pi3[muestra]);
 
    /************ Predicción k+1 ************/
-   i1d_k0= (0.070366)*(V_d-Vcd) + wh*i1q_k + i1d_k; // h*d1_L1 d1_L1=703.66;
-   i1q_k0= (0.070366)*(V_q-Vcq) - wh*i1d_k + i1q_k;
+   i1d_k0= (0.05)*(V_d-Vcd) + wh*i1q_k + i1d_k; // h*d1_L1 d1_L1=500;
+   i1q_k0= (0.05)*(V_q-Vcq) - wh*i1d_k + i1q_k;
 
-   Vcd_k0=(0.3038)*(i1d_k0-i2d_k) + wh*Vcq + Vcd; // h*d1_c  d1_c=3038;
-   Vcq_k0=(0.3038)*(i1q_k0-i2q_k) - wh*Vcd + Vcq;
+   Vcd_k0=(0.1)*(i1d_k0-i2d_k) + wh*Vcq + Vcd;  // h*d1_c  d1_c=1000;
+   Vcq_k0=(0.1)*(i1q_k0-i2q_k) - wh*Vcd + Vcq;
 
-   i2d_k0 = (0.704225)*(Vcd_k0-Vgd_r-i2d_k*0.001) + i2d_k + wh*i2q_k;   // h*d1_L2  d1_L2=7042.25;
-   i2q_k0 = (0.704225)*(Vcq_k0-Vgq_r-i2q_k*0.001) + i2q_k - wh*i2d_k;
+   i2d_k0 = (0.1)*(Vcd_k0-Vgd_r-i2d_k*0.001) + i2d_k + wh*i2q_k; // h*d1_L2  d1_L2=1000;
+   i2q_k0 = (0.1)*(Vcq_k0-Vgq_r-i2q_k*0.001) + i2q_k - wh*i2d_k;
 
    /*** Calculo preliminar para minimizar calculos en loop ****/
 
-   vari1d=wh*i1q_k0 + i1d_k0 - Vcd_k0*0.070366;
-   vari1q=wh*i1d_k0 - i1q_k0 + Vcq_k0*0.070366;
+   vari1d=wh*i1q_k0 + i1d_k0 - Vcd_k0*0.05;
+   vari1q=wh*i1d_k0 - i1q_k0 + Vcq_k0*0.05;
 
-   varvcd=wh*Vcq_k0 + Vcd_k0 - i2d_k0*0.3038;
-   varvcq=-i2q_k0*0.3038 -wh*Vcd_k0 + Vcq_k0;
+   varvcd=wh*Vcq_k0 + Vcd_k0 - i2d_k0*0.1;
+   varvcq=-i2q_k0*0.1 -wh*Vcd_k0 + Vcq_k0;
 
-   vari2d=i2d_k0 + wh*i2q_k0 - (0.704225)*(Vgd_r+i2d_k0*0.001);
-   vari2q=i2q_k0 - wh*i2d_k0 - (0.704225)*(Vgq_r+i2q_k0*0.001);
+   vari2d=i2d_k0 + wh*i2q_k0 - (0.1)*(Vgd_r+i2d_k0*0.001);
+   vari2q=i2q_k0 - wh*i2d_k0 - (0.1)*(Vgq_r+i2q_k0*0.001);
 
    /**** Reducir combinaciones posibles de Loop ***/
 
@@ -575,14 +575,14 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
                  (Sav[i]*senos[muestra]+Sbv[j]*sinme2pi3[muestra]+Scv[k]*
                   sinma2pi3[muestra]);
 
-            i1d_k1= (0.070366)*(V_d) + vari1d;
-            i1q_k1= (0.070366)*(V_q) - vari1q;
+            i1d_k1= (0.05)*(V_d) + vari1d;
+            i1q_k1= (0.05)*(V_q) - vari1q;
 
-            Vcd_k1=(0.3038)*(i1d_k1) + varvcd;
-            Vcq_k1=(0.3038)*(i1q_k1) - varvcq;
+            Vcd_k1=(0.1)*(i1d_k1) + varvcd;
+            Vcq_k1=(0.1)*(i1q_k1) - varvcq;
 
-            i2d_k1 = (0.704225)*(Vcd_k1) + vari2d;
-            i2q_k1 = (0.704225)*(Vcq_k1) + vari2q;
+            i2d_k1 = (0.1)*(Vcd_k1) + vari2d;
+            i2q_k1 = (0.1)*(Vcq_k1) + vari2q;
 
             error=
                sqrtf((id_r -

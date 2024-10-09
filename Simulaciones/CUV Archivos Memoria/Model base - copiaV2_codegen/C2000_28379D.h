@@ -2,7 +2,7 @@
  * Header file for: Model base - copiaV2/C2000_28379D
  * Generated with : PLECS 4.8.3
  *                  TI2837x 1.7.4
- * Generated on   : 30 Sep 2024 15:53:09
+ * Generated on   : 9 Oct 2024 18:04:10
  */
 #ifndef PLECS_HEADER_C2000_28379D_h_
 #define PLECS_HEADER_C2000_28379D_h_
@@ -51,6 +51,15 @@ typedef struct
    float Sum3[3];                   /* C2000_28379D/Sum3 */
 } C2000_28379D_BlockOutputs;
 extern C2000_28379D_BlockOutputs C2000_28379D_B;
+
+#if defined(EXTERNAL_MODE) && EXTERNAL_MODE
+/* External mode signals */
+#define C2000_28379D_NumExtModeSignals 1
+extern const float * const C2000_28379D_ExtModeSignals[];
+/* Tunable parameters */
+#define C2000_28379D_NumTunableParameters 0
+#endif /* defined(EXTERNAL_MODE) */
+
 
 /* Entry point functions */
 void C2000_28379D_initialize(void);

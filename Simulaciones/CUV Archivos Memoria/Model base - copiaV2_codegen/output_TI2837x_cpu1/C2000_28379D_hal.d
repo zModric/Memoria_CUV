@@ -57,6 +57,8 @@
 ./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:\Repositorio_Chris\tsp_ti_c2000\ccs\2837x\tiinc\F2837xD_can.h
 ./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/tiinc/F2837xD_Pie_defines.h
 ./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/../shrd/plx_dispatcher_impl.h
+./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/../inc/plx_sci.h
+./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/inc_impl/plx_sci_impl.h
 ./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/tiinc/driverlib/pin_map.h
 ./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:/Repositorio_Chris/tsp_ti_c2000/ccs/2837x/tiinc/driverlib/gpio.h
 ./output_TI2837x_cpu1/C2000_28379D_hal.obj: F:\Repositorio_Chris\tsp_ti_c2000\ccs\2837x\tiinc\driverlib\inc/hw_gpio.h
