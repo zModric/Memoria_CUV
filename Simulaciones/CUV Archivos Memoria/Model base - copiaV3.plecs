@@ -30,7 +30,7 @@ Plecs {
   FixedPointDatatypeOverride "1"
   InitializationCommands base64 "SXJyYWRpYW5jaWFfcjsKVHNhPTFlLTQ7Cmg9MmUtMDQ7C"
 "lZkYz04MDA7CiVMMT0xLjQyMmUtMzsKJUwyPTAuMTQyZS0zOwolQ2Y9MC4zMjllLTM7CkwxPTJlLT"
-"M7CkwyPTFlLTM7CkNmPTFlLTM7ClI9MC4wMDE7CnJjPTEwOwolUmc9Mi45OyAlVmFsb3IgZGUgbWl"
+"M7CkwyPTFlLTM7CkNmPTJlLTM7ClI9MC4wMDE7CnJjPTEwOwolUmc9Mi45OyAlVmFsb3IgZGUgbWl"
 "uaW1hIHBvdGVuY2lhCiVSZz0wLjQ4OyAldmFsb3IgZGUgbcOheGltYSBwb3RlbmNpYQolUmc9MS41"
 "OyAlIHVuIHZhbG9yIG1lZGlvCnc9MzE0LjE1OTM7ClIxPTEvUjsKVmdkX3I9MjIwOwpWZ3Ffcj0wO"
 "wolaWRfcj1WZ2Rfci9SZzsKJWlxX3I9MDsKJVZjZF9yPVZnZF9yK2lkX3IqUjsKJVZjcV9yPTA7Cm"
@@ -112,9 +112,9 @@ Plecs {
   ScriptsDialogGeometry ""
   ScriptsDialogSplitterPos "0"
   Schematic {
-    Location      [0, 27; 1920, 1005]
+    Location      [1, 31; 959, 959]
     ZoomFactor    0.763605
-    SliderPosition [0, 186]
+    SliderPosition [214, 138]
     ShowBrowser   off
     BrowserWidth  100
     Component {
@@ -210,7 +210,7 @@ Plecs {
 "IAUwAAAAIAMQAAAA4AVAB6ADMARwBwAGkAbwAAAAIAMAAAABIAVAB6ADMARQBuAGEAYgBsAGUAAAA"
 "CADAAAAAOAFQAegAyAEcAcABpAG8AAAACADAAAAASAFQAegAyAEUAbgBhAGIAbABlAAAAAgAwAAAA"
 "DgBUAHoAMQBHAHAAaQBvAAAAAgAwAAAAEgBUAHoAMQBFAG4AYQBiAGwAZQAAAAIAMAAAABoAVABBA"
-"FIARwBFAFQAXwBEAEUAVgBJAEMARQAAABQAMAB8AEMATwBNADQAfAAwAHwAMAAAACoAUwBlAHIAaQ"
+"FIARwBFAFQAXwBEAEUAVgBJAEMARQAAABQAMAB8AEMATwBNADYAfAAwAHwAMAAAACoAUwBlAHIAaQ"
 "BhAGwATgB1AG0AYgBlAHIAUwBwAGUAYwBpAGYAaQBlAGQAAAACADEAAAAYAFMAZQByAGkAYQBsAE4"
 "AdQBtAGIAZQByAAAAIABMAEEAVQBOAEMASABYAEwALQBGADIAOAAzADcAOQBEAAAAIABTAGEAbQBw"
 "AGwAZQBUAGkAbQBlAFIAZQBsAFQAbwBsAAAABAAxADAAAAAUAFAAdwBtADkARwBwAGkAbwBFAG4AA"
@@ -350,8 +350,8 @@ Plecs {
       }
       Schematic {
         Location      [961, 31; 1919, 959]
-        ZoomFactor    0.763603
-        SliderPosition [0, 0]
+        ZoomFactor    0.999995
+        SliderPosition [657, 0]
         ShowBrowser   off
         BrowserWidth  100
         Component {
@@ -364,7 +364,7 @@ Plecs {
           LabelPosition south
           Parameter {
             Variable      "DialogGeometry"
-            Value         "[1107 148 811 688]"
+            Value         "[1 31 958 967]"
             Show          off
           }
           Parameter {
@@ -474,49 +474,12 @@ Plecs {
 "float i1q_k=0, i1q_k0=0, i1q_k1=0;\n"
 "float id=0, iq=0, theta=0; \n"
 "float id_r=0, iq_r=0, Vcd_r=0, Vcq_r=0;\n"
-"float g[125], g_opt=10000000;\n"
-"float gv[125];\n"
-"float gb[125];\n"
-"float gg[125];\n"
-"//float g[27], g_opt=10000000;\n"
-"//float gv[27];\n"
-"//float gb[27];\n"
-"//float gg[27];\n"
+"float g_opt=10000000;\n"
 "\n"
 "int x=0;\n"
 "int x_opt=0;\n"
 "\n"
-"//const float Sa[125]= {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -"
-"1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, "
-"-0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,"
-" -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0"
-", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0"
-".5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5"
-", 0.5, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,"
-" 1, 1, 1};\n"
-"//const float Sb[125]= {-1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, "
-"0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5,"
-" -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, "
-"1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5,"
-" 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0"
-".5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1"
-", -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1,"
-" 1, 1, 1};\n"
-"//const float Sc[125]= {-1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0"
-", 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, "
-"-0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, "
-"1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0"
-", 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, "
-"-0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, "
-"1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0"
-", 0.5, 1};\n"
 "\n"
-"//float Sa[27]= {-1,-1,-1,-1,-1,-1,-1,-1,-1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1"
-",1};\n"
-"//float Sb[27]= {-1,-1,-1,0,0,0,1,1,1,-1,-1,-1,0,0,0,1,1,1,-1,-1,-1,0,0,0,1,1"
-",1};\n"
-"//float Sc[27]= {-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0"
-",1};\n"
 "float comb=0;\n"
 "\n"
 "float vari1d=0;\n"
@@ -528,6 +491,7 @@ Plecs {
 "\n"
 "const float wh= 0.031415;\n"
 "const float CS=0.66666666667;\n"
+"\n"
 "\n"
 "float Sav[3]={0,0,0};\n"
 "float Sbv[3]={0,0,0};\n"
@@ -742,14 +706,6 @@ Plecs {
 "9117, 0.999944, 0.999784, 0.998637, 0.996505, 0.99339, 0.989294, 0.984222, 0."
 "978179, 0.97117, 0.963204, 0.954286, 0.944427, 0.933636, 0.921923, 0.909301, "
 "0.895782, 0.881378, 0.866105}; \n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
-"\n"
             Show          off
           }
           Parameter {
@@ -788,46 +744,46 @@ Plecs {
 "KioqIFRlbnNpb24gQ29udmVydGlkb3IgKioqKioqKioqKioqLwoKVl9kPTI2Ni42NjY2NjYqKFNhb"
 "3B0KmNvc2Vub3NbbXVlc3RyYV0rU2JvcHQqY29zbWUycGkzW211ZXN0cmFdK1Njb3B0KmNvc21hMn"
 "BpM1ttdWVzdHJhXSk7ClZfcT0tMjY2LjY2NjY2NiooU2FvcHQqc2Vub3NbbXVlc3RyYV0rU2JvcHQ"
-"qc2lubWUycGkzW211ZXN0cmFdK1Njb3B0KnNpbm1hMnBpM1ttdWVzdHJhXSk7CgovKioqKioqKioq"
-"KioqIFByZWRpY2Npw7NuIGsrMSAqKioqKioqKioqKiovCmkxZF9rMD0gKDAuMDUpKihWX2QtVmNkK"
-"SArIHdoKmkxcV9rICsgaTFkX2s7IC8vIGgqZDFfTDEgZDFfTDE9NTAwOwppMXFfazA9ICgwLjA1KS"
-"ooVl9xLVZjcSkgLSB3aCppMWRfayArIGkxcV9rOwoKVmNkX2swPSgwLjEpKihpMWRfazAtaTJkX2s"
-"pICsgd2gqVmNxICsgVmNkOwkvLyBoKmQxX2MgIGQxX2M9MTAwMDsKVmNxX2swPSgwLjEpKihpMXFf"
-"azAtaTJxX2spIC0gd2gqVmNkICsgVmNxOwoKaTJkX2swID0gKDAuMSkqKFZjZF9rMC1WZ2Rfci1pM"
-"mRfayowLjAwMSkgKyBpMmRfayArIHdoKmkycV9rOwkvLyBoKmQxX0wyICBkMV9MMj0xMDAwOwppMn"
-"FfazAgPSAoMC4xKSooVmNxX2swLVZncV9yLWkycV9rKjAuMDAxKSArIGkycV9rIC0gd2gqaTJkX2s"
-"7CgovKioqIENhbGN1bG8gcHJlbGltaW5hciBwYXJhIG1pbmltaXphciBjYWxjdWxvcyBlbiBsb29w"
-"ICoqKiovCgp2YXJpMWQ9d2gqaTFxX2swICsgaTFkX2swIC0gVmNkX2swKjAuMDU7CnZhcmkxcT13a"
-"CppMWRfazAgLSBpMXFfazAgKyBWY3FfazAqMC4wNTsKCnZhcnZjZD13aCpWY3FfazAgKyBWY2Rfaz"
-"AgLSBpMmRfazAqMC4xOwp2YXJ2Y3E9LWkycV9rMCowLjEgLXdoKlZjZF9rMCArIFZjcV9rMDsKCnZ"
-"hcmkyZD1pMmRfazAgKyB3aCppMnFfazAgLSAoMC4xKSooVmdkX3IraTJkX2swKjAuMDAxKTsKdmFy"
-"aTJxPWkycV9rMCAtIHdoKmkyZF9rMCAtICgwLjEpKihWZ3FfcitpMnFfazAqMC4wMDEpOwoKLyoqK"
-"iogUmVkdWNpciBjb21iaW5hY2lvbmVzIHBvc2libGVzIGRlIExvb3AgKioqLwoKaWYoU2FvcHQ+LT"
-"EgJiYgU2FvcHQ8MSl7U2F2WzBdPVNhb3B0LTAuNTsgU2F2WzFdPVNhb3B0OyBTYXZbMl09U2FvcHQ"
-"rMC41OyBhPTI7fQppZihTYW9wdD09LTEpe1NhdlswXT0tMTsgU2F2WzFdPS0wLjU7IGE9MTt9Cmlm"
-"KFNhb3B0PT0xKXtTYXZbMF09MC41OyBTYXZbMV09MTthPTE7fQoKaWYoU2JvcHQ+LTEgJiYgU2Jvc"
-"HQ8MSl7U2J2WzBdPVNib3B0LTAuNTsgU2J2WzFdPVNib3B0OyBTYnZbMl09U2JvcHQrMC41OyBiPT"
-"I7fQppZihTYm9wdD09LTEpe1NidlswXT0tMTsgU2J2WzFdPS0wLjU7IGI9MTt9CmlmKFNib3B0PT0"
-"xKXtTYnZbMF09MC41OyBTYnZbMV09MTtiPTE7fQoKaWYoU2NvcHQ+LTEgJiYgU2NvcHQ8MSl7U2N2"
-"WzBdPVNjb3B0LTAuNTsgU2N2WzFdPVNjb3B0OyBTY3ZbMl09U2NvcHQrMC41OyBjPTI7fQppZihTY"
-"29wdD09LTEpe1NjdlswXT0tMTsgU2N2WzFdPS0wLjU7IGM9MTt9CmlmKFNjb3B0PT0xKXtTY3ZbMF"
-"09MC41OyBTY3ZbMV09MTtjPTE7fQpnX29wdD0xZTIwOwpmb3IoaT0wOyBpPD1hOyBpKz0xKXsKCWZ"
-"vcihqPTA7IGo8PWI7IGorPTEpewoJCWZvcihrPTA7IGs8PWM7IGsrPTEpewoJCQlWX2Q9MjY2LjY2"
-"NjY2NiooU2F2W2ldKmNvc2Vub3NbbXVlc3RyYV0rU2J2W2pdKmNvc21lMnBpM1ttdWVzdHJhXStTY"
-"3Zba10qY29zbWEycGkzW211ZXN0cmFdKTsgCgkgCQlWX3E9LTI2Ni42NjY2NjYqKFNhdltpXSpzZW"
-"5vc1ttdWVzdHJhXStTYnZbal0qc2lubWUycGkzW211ZXN0cmFdK1NjdltrXSpzaW5tYTJwaTNbbXV"
-"lc3RyYV0pOyAKCgkgCQlpMWRfazE9ICgwLjA1KSooVl9kKSArIHZhcmkxZDsKCSAJCWkxcV9rMT0g"
-"KDAuMDUpKihWX3EpIC0gdmFyaTFxOwoJIAkJCgkgCQlWY2RfazE9KDAuMSkqKGkxZF9rMSkgKyB2Y"
-"XJ2Y2Q7CgkgCQlWY3FfazE9KDAuMSkqKGkxcV9rMSkgLSB2YXJ2Y3E7CgkgCgkgCQlpMmRfazEgPS"
-"AoMC4xKSooVmNkX2sxKSArIHZhcmkyZDsKCSAJCWkycV9rMSA9ICgwLjEpKihWY3FfazEpICsgdmF"
-"yaTJxOwoJIAkJCgkgCQllcnJvcj1zcXJ0ZigoaWRfciAtIGkxZF9rMSkqKChpZF9yKSAtIGkxZF9r"
-"MSkpICsgc3FydGYoKGlxX3IgLSBpMXFfazEpKihpcV9yIC0gaTFxX2sxKSk7CgkgCQllcnJvcjI9c"
-"3FydGYoKGlkX3IgLSBpMmRfazEpKihpZF9yIC0gaTJkX2sxKSkgKyBzcXJ0ZigoaXFfciAtIGkycV"
-"9rMSkqKGlxX3IgLSBpMnFfazEpKTsKCSAJCWVycm9yMz1zcXJ0ZigoVmNkX3IgLSBWY2RfazEpKih"
-"WY2RfciAtIFZjZF9rMSkpICsgc3FydGYoKFZjcV9yIC0gVmNxX2sxKSooVmNxX3IgLSBWY3FfazEp"
-"KTsgCgkgCQlpZiAoMC4zMzMzKihlcnJvcitlcnJvcjIrZXJyb3IzKSA8IGdfb3B0KSB7CgkgCQkJZ"
-"19vcHQgPSAwLjMzMzMqKGVycm9yK2Vycm9yMitlcnJvcjMpOwoJCQkJU2FvcHQ9U2F2W2ldOwoJCQ"
-"kJU2JvcHQ9U2J2W2pdOwoJCQkJU2NvcHQ9U2N2W2tdOwoJIAkJfTsKCQl9Cgl9Cn0="
+"qc2lubWUycGkzW211ZXN0cmFdK1Njb3B0KnNpbm1hMnBpM1ttdWVzdHJhXSk7CgoKLyoqKioqKioq"
+"KioqKiBQcmVkaWNjacOzbiBrKzEgKioqKioqKioqKioqLwppMWRfazA9ICgwLjA1KSooVl9kLVZjZ"
+"CkgKyB3aCppMXFfayArIGkxZF9rOyAvLyBoKmQxX0wxIGQxX0wxPTUwMDsKaTFxX2swPSAoMC4wNS"
+"kqKFZfcS1WY3EpIC0gd2gqaTFkX2sgKyBpMXFfazsKClZjZF9rMD0oMC4xKSooaTFkX2swLWkyZF9"
+"rKSArIHdoKlZjcSArIFZjZDsJLy8gaCpkMV9jICBkMV9jPTEwMDA7ClZjcV9rMD0oMC4xKSooaTFx"
+"X2swLWkycV9rKSAtIHdoKlZjZCArIFZjcTsKCmkyZF9rMCA9ICgwLjEpKihWY2RfazAtVmdkX3Ita"
+"TJkX2sqMC4wMDEpICsgaTJkX2sgKyB3aCppMnFfazsJLy8gaCpkMV9MMiAgZDFfTDI9MTAwMDsKaT"
+"JxX2swID0gKDAuMSkqKFZjcV9rMC1WZ3Ffci1pMnFfayowLjAwMSkgKyBpMnFfayAtIHdoKmkyZF9"
+"rOwoKLyoqKiBDYWxjdWxvIHByZWxpbWluYXIgcGFyYSBtaW5pbWl6YXIgY2FsY3Vsb3MgZW4gbG9v"
+"cCAqKioqLwoKdmFyaTFkPXdoKmkxcV9rMCArIGkxZF9rMCAtIFZjZF9rMCowLjA1Owp2YXJpMXE9d"
+"2gqaTFkX2swIC0gaTFxX2swICsgVmNxX2swKjAuMDU7Cgp2YXJ2Y2Q9d2gqVmNxX2swICsgVmNkX2"
+"swIC0gaTJkX2swKjAuMTsKdmFydmNxPS1pMnFfazAqMC4xIC13aCpWY2RfazAgKyBWY3FfazA7Cgp"
+"2YXJpMmQ9aTJkX2swICsgd2gqaTJxX2swIC0gKDAuMSkqKFZnZF9yK2kyZF9rMCowLjAwMSk7CnZh"
+"cmkycT1pMnFfazAgLSB3aCppMmRfazAgLSAoMC4xKSooVmdxX3IraTJxX2swKjAuMDAxKTsKCi8qK"
+"ioqIFJlZHVjaXIgY29tYmluYWNpb25lcyBwb3NpYmxlcyBkZSBMb29wICoqKi8KCmlmKFNhb3B0Pi"
+"0xICYmIFNhb3B0PDEpe1NhdlswXT1TYW9wdC0wLjU7IFNhdlsxXT1TYW9wdDsgU2F2WzJdPVNhb3B"
+"0KzAuNTsgYT0yO30KaWYoU2FvcHQ9PS0xKXtTYXZbMF09LTE7IFNhdlsxXT0tMC41OyBhPTE7fQpp"
+"ZihTYW9wdD09MSl7U2F2WzBdPTAuNTsgU2F2WzFdPTE7YT0xO30KCmlmKFNib3B0Pi0xICYmIFNib"
+"3B0PDEpe1NidlswXT1TYm9wdC0wLjU7IFNidlsxXT1TYm9wdDsgU2J2WzJdPVNib3B0KzAuNTsgYj"
+"0yO30KaWYoU2JvcHQ9PS0xKXtTYnZbMF09LTE7IFNidlsxXT0tMC41OyBiPTE7fQppZihTYm9wdD0"
+"9MSl7U2J2WzBdPTAuNTsgU2J2WzFdPTE7Yj0xO30KCmlmKFNjb3B0Pi0xICYmIFNjb3B0PDEpe1Nj"
+"dlswXT1TY29wdC0wLjU7IFNjdlsxXT1TY29wdDsgU2N2WzJdPVNjb3B0KzAuNTsgYz0yO30KaWYoU"
+"2NvcHQ9PS0xKXtTY3ZbMF09LTE7IFNjdlsxXT0tMC41OyBjPTE7fQppZihTY29wdD09MSl7U2N2Wz"
+"BdPTAuNTsgU2N2WzFdPTE7Yz0xO30KZ19vcHQ9MWUyMDsKZm9yKGk9MDsgaTw9YTsgaSs9MSl7Cgl"
+"mb3Ioaj0wOyBqPD1iOyBqKz0xKXsKCQlmb3Ioaz0wOyBrPD1jOyBrKz0xKXsKCQkJVl9kPTI2Ni42"
+"NjY2NjYqKFNhdltpXSpjb3Nlbm9zW211ZXN0cmFdK1NidltqXSpjb3NtZTJwaTNbbXVlc3RyYV0rU"
+"2N2W2tdKmNvc21hMnBpM1ttdWVzdHJhXSk7IAoJIAkJVl9xPS0yNjYuNjY2NjY2KihTYXZbaV0qc2"
+"Vub3NbbXVlc3RyYV0rU2J2W2pdKnNpbm1lMnBpM1ttdWVzdHJhXStTY3Zba10qc2lubWEycGkzW21"
+"1ZXN0cmFdKTsgCgoJIAkJaTFkX2sxPSAoMC4wNSkqKFZfZCkgKyB2YXJpMWQ7CgkgCQlpMXFfazE9"
+"ICgwLjA1KSooVl9xKSAtIHZhcmkxcTsKCSAJCQoJIAkJVmNkX2sxPSgwLjEpKihpMWRfazEpICsgd"
+"mFydmNkOwoJIAkJVmNxX2sxPSgwLjEpKihpMXFfazEpIC0gdmFydmNxOwoJIAoJIAkJaTJkX2sxID"
+"0gKDAuMSkqKFZjZF9rMSkgKyB2YXJpMmQ7CgkgCQlpMnFfazEgPSAoMC4xKSooVmNxX2sxKSArIHZ"
+"hcmkycTsKCSAJCQoJIAkJZXJyb3I9c3FydGYoKGlkX3IgLSBpMWRfazEpKigoaWRfcikgLSBpMWRf"
+"azEpKSArIHNxcnRmKChpcV9yIC0gaTFxX2sxKSooaXFfciAtIGkxcV9rMSkpOwoJIAkJZXJyb3IyP"
+"XNxcnRmKChpZF9yIC0gaTJkX2sxKSooaWRfciAtIGkyZF9rMSkpICsgc3FydGYoKGlxX3IgLSBpMn"
+"FfazEpKihpcV9yIC0gaTJxX2sxKSk7CgkgCQllcnJvcjM9c3FydGYoKFZjZF9yIC0gVmNkX2sxKSo"
+"oVmNkX3IgLSBWY2RfazEpKSArIHNxcnRmKChWY3FfciAtIFZjcV9rMSkqKFZjcV9yIC0gVmNxX2sx"
+"KSk7IAoJIAkJaWYgKDAuMzMzMyooZXJyb3IrZXJyb3IyK2Vycm9yMykgPCBnX29wdCkgewoJIAkJC"
+"Wdfb3B0ID0gMC4zMzMzKihlcnJvcitlcnJvcjIrZXJyb3IzKTsKCQkJCVNhb3B0PVNhdltpXTsKCQ"
+"kJCVNib3B0PVNidltqXTsKCQkJCVNjb3B0PVNjdltrXTsKCSAJCX07CgkJfQoJfQp9"
             Show          off
           }
           Parameter {
@@ -2697,6 +2653,563 @@ Plecs {
           }
         }
         Component {
+          Type          Scope
+          Name          "Scope"
+          Show          on
+          Position      [1130, 520]
+          Direction     up
+          Flipped       off
+          LabelPosition south
+          Location      [0, 27; 1366, 814]
+          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
+"wBvAG0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
+"AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAA"
+"AY/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAKR"
+"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
+"AAAAAAAAA=="
+          SavedViews    "AAAAAgAAAAA="
+          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL8AMAAAAGA"
+"AAABQAAAGQAAAAGAAAAZAAAAAcAAABkAAAACAAAAGQAAAAJAAAAZAAAAAQAAABkAAAFVgAAAAsBAA"
+"ABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAABwAAAAAQAAAAAAAABkAAAAAQAAAAAAAAB"
+"kAAAAAQAAAAAAAABkAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
+"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAO6AAAAAQAAAAAAAAPoAAAAACQ="
+          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+          Axes          "1"
+          TimeRange     "0.0"
+          ScrollingMode "1"
+          SingleTimeAxis "1"
+          Open          "0"
+          Ts            "-1"
+          SampleLimit   "0"
+          XAxisLabel    "Time / s"
+          ShowLegend    "1"
+          Axis {
+            Name          ""
+            AutoScale     1
+            MinValue      0
+            MaxValue      1
+            Signals       {}
+            SignalTypes   [ ]
+            Untangle      0
+            KeepBaseline  off
+            BaselineValue 0
+          }
+          Fourier {
+            SingleXAxis       on
+            AxisLabel         "Frequency / Hz"
+            Scaling           0
+            PhaseDisplay      0
+            ShowFourierLegend off
+            Axis {
+              Name          ""
+              AutoScale     1
+              MinValue      0
+              MaxValue      1
+              Signals       {}
+              Untangle      0
+              KeepBaseline  off
+              BaselineValue 0
+            }
+          }
+        }
+        Component {
+          Type          Reference
+          SrcComponent  "TIC2000_Lib/Control Task\\nTrigger"
+          Name          "Control Task\nTrigger"
+          Show          on
+          Position      [545, 230]
+          Direction     right
+          Flipped       off
+          LabelPosition south
+        }
+        Component {
+          Type          Subsystem
+          Name          "SW A3"
+          Show          off
+          Position      [1115, 180]
+          Direction     up
+          Flipped       off
+          LabelPosition north
+          CommentOut    DisabledOpenCircuit
+          Frame         [-20, -30; 20, 30]
+          SampleTime    "-1"
+          CodeGenDiscretizationMethod "2"
+          CodeGenTarget "Generic"
+          MaskType      "3-Level Modulator for NPC Active Switches"
+          MaskDescription "This block generates the 3-level switching signals "
+"for the four active switches in any one individual phase leg of the NPC inver"
+"ter."
+          MaskIconFrame on
+          MaskIconOpaque off
+          MaskIconRotates on
+          Terminal {
+            Type          Output
+            Position      [24, -20]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [24, -5]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [24, 10]
+            Direction     right
+          }
+          Terminal {
+            Type          Output
+            Position      [24, 25]
+            Direction     right
+          }
+          Terminal {
+            Type          Input
+            Position      [-20, 0]
+            Direction     left
+          }
+          Schematic {
+            Location      [0, 69; 523, 622]
+            ZoomFactor    1
+            SliderPosition [0, 0]
+            ShowBrowser   off
+            BrowserWidth  100
+            Component {
+              Type          RelationalOperator
+              Name          "Relational\nOperator"
+              Show          off
+              Position      [410, 85]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "6"
+                Show          off
+              }
+            }
+            Component {
+              Type          RelationalOperator
+              Name          "Relational\nOperator1"
+              Show          off
+              Position      [410, 125]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          RelationalOperator
+              Name          "Relational\nOperator2"
+              Show          off
+              Position      [410, 165]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "1"
+                Show          off
+              }
+            }
+            Component {
+              Type          RelationalOperator
+              Name          "Relational\nOperator3"
+              Show          off
+              Position      [410, 205]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "3"
+                Show          off
+              }
+            }
+            Component {
+              Type          Constant
+              Name          "Constant"
+              Show          off
+              Position      [325, 210]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Frame         [-10, -10; 10, 10]
+              Parameter {
+                Variable      "Value"
+                Value         "0"
+                Show          off
+              }
+              Parameter {
+                Variable      "DataType"
+                Value         "10"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "1"
+              Show          on
+              Position      [470, 85]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "1"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "2"
+              Show          on
+              Position      [470, 125]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "2"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "3"
+              Show          on
+              Position      [470, 165]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "3"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Output
+              Name          "4"
+              Show          on
+              Position      [470, 205]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "4"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          Input
+              Name          "m"
+              Show          on
+              Position      [90, 35]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Index"
+                Value         "5"
+                Show          on
+              }
+              Parameter {
+                Variable      "Width"
+                Value         "-1"
+                Show          off
+              }
+            }
+            Component {
+              Type          TriangleGenerator
+              Name          "Triangular Wave1"
+              Show          off
+              Position      [130, 75]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Min"
+                Value         "0.00001"
+                Show          off
+              }
+              Parameter {
+                Variable      "Max"
+                Value         "1"
+                Show          off
+              }
+              Parameter {
+                Variable      "f"
+                Value         "5000"
+                Show          off
+              }
+              Parameter {
+                Variable      "DutyCycle"
+                Value         "0.5"
+                Show          off
+              }
+              Parameter {
+                Variable      "Delay"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          RelationalOperator
+              Name          "Relational\nOperator5"
+              Show          off
+              Position      [215, 70]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "5"
+                Show          off
+              }
+            }
+            Component {
+              Type          TriangleGenerator
+              Name          "Triangular Wave2"
+              Show          off
+              Position      [130, 110]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Min"
+                Value         "-1"
+                Show          off
+              }
+              Parameter {
+                Variable      "Max"
+                Value         "-0.000001"
+                Show          off
+              }
+              Parameter {
+                Variable      "f"
+                Value         "5000"
+                Show          off
+              }
+              Parameter {
+                Variable      "DutyCycle"
+                Value         "0.5"
+                Show          off
+              }
+              Parameter {
+                Variable      "Delay"
+                Value         "0"
+                Show          off
+              }
+            }
+            Component {
+              Type          RelationalOperator
+              Name          "Relational\nOperator6"
+              Show          off
+              Position      [215, 105]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Operator"
+                Value         "4"
+                Show          off
+              }
+            }
+            Component {
+              Type          Function
+              Name          "Fcn"
+              Show          on
+              Position      [315, 85]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Frame         [-20, -10; 20, 10]
+              Parameter {
+                Variable      "f(u)"
+                Value         "1*u[1]-1*u[2]"
+                Show          off
+              }
+            }
+            Component {
+              Type          SignalMux
+              Name          "Mux"
+              Show          off
+              Position      [250, 85]
+              Direction     right
+              Flipped       off
+              LabelPosition south
+              Parameter {
+                Variable      "Width"
+                Value         "2"
+                Show          off
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Constant"
+              SrcTerminal   1
+              Points        [370, 210]
+              Branch {
+                DstComponent  "Relational\nOperator3"
+                DstTerminal   2
+              }
+              Branch {
+                Points        [370, 170]
+                Branch {
+                  Points        [370, 130]
+                  Branch {
+                    Points        [370, 90]
+                    DstComponent  "Relational\nOperator"
+                    DstTerminal   2
+                  }
+                  Branch {
+                    DstComponent  "Relational\nOperator1"
+                    DstTerminal   2
+                  }
+                }
+                Branch {
+                  DstComponent  "Relational\nOperator2"
+                  DstTerminal   2
+                }
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Triangular Wave1"
+              SrcTerminal   1
+              DstComponent  "Relational\nOperator5"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Triangular Wave2"
+              SrcTerminal   1
+              DstComponent  "Relational\nOperator6"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Relational\nOperator5"
+              SrcTerminal   3
+              DstComponent  "Mux"
+              DstTerminal   2
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Relational\nOperator6"
+              SrcTerminal   3
+              DstComponent  "Mux"
+              DstTerminal   3
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Fcn"
+              SrcTerminal   2
+              Points        [355, 85]
+              Branch {
+                Points        [355, 80]
+                DstComponent  "Relational\nOperator"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [355, 120]
+                Branch {
+                  Points        [355, 160]
+                  Branch {
+                    Points        [355, 200]
+                    DstComponent  "Relational\nOperator3"
+                    DstTerminal   1
+                  }
+                  Branch {
+                    DstComponent  "Relational\nOperator2"
+                    DstTerminal   1
+                  }
+                }
+                Branch {
+                  DstComponent  "Relational\nOperator1"
+                  DstTerminal   1
+                }
+              }
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Mux"
+              SrcTerminal   1
+              DstComponent  "Fcn"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Relational\nOperator"
+              SrcTerminal   3
+              DstComponent  "1"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Relational\nOperator1"
+              SrcTerminal   3
+              DstComponent  "2"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Relational\nOperator2"
+              SrcTerminal   3
+              DstComponent  "3"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "Relational\nOperator3"
+              SrcTerminal   3
+              DstComponent  "4"
+              DstTerminal   1
+            }
+            Connection {
+              Type          Signal
+              SrcComponent  "m"
+              SrcTerminal   1
+              Points        [170, 35; 170, 55]
+              Branch {
+                Points        [180, 55; 180, 65]
+                DstComponent  "Relational\nOperator5"
+                DstTerminal   1
+              }
+              Branch {
+                Points        [170, 100]
+                DstComponent  "Relational\nOperator6"
+                DstTerminal   1
+              }
+            }
+          }
+        }
+        Component {
           Type          Subsystem
           Name          "SW A4"
           Show          off
@@ -3668,77 +4181,6 @@ Plecs {
             }
           }
         }
-        Component {
-          Type          Scope
-          Name          "Scope"
-          Show          on
-          Position      [1130, 520]
-          Direction     up
-          Flipped       off
-          LabelPosition south
-          Location      [0, 27; 1366, 754]
-          State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAb"
-"wBvAG0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAA"
-"AA/////wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAVWAAA"
-"AY/wBAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAABVYAAABQAP///wAABVYAAAJV"
-"AAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AA"
-"AAAAAAAAA=="
-          SavedViews    "AAAAAgAAAAA="
-          HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJA"
-"AAAAQAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAAFAAAAZAAAAAgAAABkAAAACQAAAGQAAA"
-"ACAAAAZAAAAAMAAABkAAAFVgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB"
-"wAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAA"
-"AAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAA"
-"AAAAATmAAAAAQAAAAAAAAPoAAAAACQ="
-          PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
-          Axes          "1"
-          TimeRange     "0.0"
-          ScrollingMode "1"
-          SingleTimeAxis "1"
-          Open          "0"
-          Ts            "-1"
-          SampleLimit   "0"
-          XAxisLabel    "Time / s"
-          ShowLegend    "1"
-          Axis {
-            Name          ""
-            AutoScale     1
-            MinValue      0
-            MaxValue      1
-            Signals       {}
-            SignalTypes   [ ]
-            Untangle      0
-            KeepBaseline  off
-            BaselineValue 0
-          }
-          Fourier {
-            SingleXAxis       on
-            AxisLabel         "Frequency / Hz"
-            Scaling           0
-            PhaseDisplay      0
-            ShowFourierLegend off
-            Axis {
-              Name          ""
-              AutoScale     1
-              MinValue      0
-              MaxValue      1
-              Signals       {}
-              Untangle      0
-              KeepBaseline  off
-              BaselineValue 0
-            }
-          }
-        }
-        Component {
-          Type          Reference
-          SrcComponent  "TIC2000_Lib/Control Task\\nTrigger"
-          Name          "Control Task\nTrigger"
-          Show          on
-          Position      [545, 230]
-          Direction     right
-          Flipped       off
-          LabelPosition south
-        }
         Connection {
           Type          Signal
           SrcComponent  "Mux"
@@ -3974,34 +4416,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "SW A2"
-          SrcTerminal   4
-          DstComponent  "Goto14"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "SW A2"
-          SrcTerminal   3
-          DstComponent  "Goto12"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "SW A2"
-          SrcTerminal   2
-          DstComponent  "Goto4"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
-          SrcComponent  "SW A2"
-          SrcTerminal   1
-          DstComponent  "Goto2"
-          DstTerminal   1
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "SW A4"
           SrcTerminal   1
           DstComponent  "Goto15"
@@ -4058,13 +4472,6 @@ Plecs {
         }
         Connection {
           Type          Signal
-          SrcComponent  "From42"
-          SrcTerminal   1
-          DstComponent  "SW A2"
-          DstTerminal   5
-        }
-        Connection {
-          Type          Signal
           SrcComponent  "From45"
           SrcTerminal   1
           DstComponent  "SW A4"
@@ -4106,6 +4513,41 @@ Plecs {
           SrcTerminal   2
           Points        [495, 315; 495, 230]
           DstComponent  "Control Task\nTrigger"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "From42"
+          SrcTerminal   1
+          DstComponent  "SW A2"
+          DstTerminal   5
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "SW A2"
+          SrcTerminal   1
+          DstComponent  "Goto2"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "SW A2"
+          SrcTerminal   2
+          DstComponent  "Goto4"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "SW A2"
+          SrcTerminal   3
+          DstComponent  "Goto12"
+          DstTerminal   1
+        }
+        Connection {
+          Type          Signal
+          SrcComponent  "SW A2"
+          SrcTerminal   4
+          DstComponent  "Goto14"
           DstTerminal   1
         }
       }
@@ -4633,20 +5075,20 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 23; 1920, 979]
+      Location      [0, 27; 1920, 1068]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAC0AAACkvwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAANQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAALwAAApIAAABmAP///wAAAAMAAAeAAAAAivw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAAAAB4AAAABQAP///wAAB4AAAAOhAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQBAAAAAAAAB4AAAABQAP///wAAB4AAAANoAAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
       HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
-"QAAAGQAAAACAAAAZAAAAAMAAABkAAAAAQAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAAFAA"
-"AAZAAAAAgAAABkAAAA2QAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
+"AAAAGQAAAAFAAAAZAAAAAQAAABkAAAABwAAAGQAAAAGAAAAZAAAAAEAAABkAAAAAwAAAGQAAAACAA"
+"AAZAAAAAkAAABkAAAHbwAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAC1AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
-"AAkAAAAAQAAAAAAAAPoAAAAACQ="
+"Aa6AAAAAQAAAAAAAAPoAAAAACQ="
       PlotPalettes  "AAAAAQAAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA"
 "AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
 "AAAAEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAA"
@@ -30780,17 +31222,17 @@ Plecs {
       Direction     up
       Flipped       off
       LabelPosition south
-      Location      [0, 27; 1366, 714]
+      Location      [0, 27; 1366, 754]
       State         "AAAA/wAAAAD9AAAAAgAAAAEAAAAAAAAAAPwCAAAAA/sAAAAQAFoAbwBvA"
 "G0AQQByAGUAYQAAAAAA/////wAAADQA////+wAAABQAUwBhAHYAZQBkAFYAaQBlAHcAcwAAAAAA//"
 "///wAAAGYA////+wAAAAwAVAByAGEAYwBlAHMAAAAAAP////8AAABmAP///wAAAAMAAAAAAAAAAPw"
-"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAAKUAAAA"
+"BAAAAAfsAAAAUAEQAYQB0AGEAVwBpAGQAZwBlAHQAAAAAAP////8AAABQAP///wAABVYAAAK8AAAA"
 "BAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAOAFQAbwBvAGwAQgBhAHIBAAAAAP////8AAAAAA"
 "AAAAA=="
       SavedViews    "AAAAAgAAAAA="
-      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAA"
-"QAAAGQAAAAGAAAAZAAAAAcAAABkAAAABAAAAGQAAAAFAAAAZAAAAAgAAABkAAAACQAAAGQAAAACAA"
-"AAZAAAAAMAAABkAAAAqgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAACGAAA"
+      HeaderState   "AAAA/wAAAAAAAAABAAAAAQAAAAAAAAAAAAAAAAAAAAAL/gMAAAAJAAAAC"
+"AAAAGQAAAAFAAAAZAAAAAQAAABkAAAABwAAAGQAAAAGAAAAZAAAAAEAAABkAAAAAwAAAGQAAAACAA"
+"AAZAAAAAkAAABkAAAAmgAAAAsBAAABAAAAAAAAAAAAAAAAZP////8AAACBAAAAAAAAAAsAAAB2AAA"
 "AAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAA"
 "AAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAQAAAAAAA"
 "AAkAAAAAQAAAAAAAAPoAAAAACQ="

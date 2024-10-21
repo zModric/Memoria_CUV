@@ -2,7 +2,7 @@
  * Header file for: Model base - copiaV3/C2000_28379D
  * Generated with : PLECS 4.8.3
  *                  TI2837x 1.7.4
- * Generated on   : 9 Oct 2024 18:16:58
+ * Generated on   : 14 Oct 2024 11:06:56
  */
 #ifndef PLECS_HEADER_C2000_28379D_h_
 #define PLECS_HEADER_C2000_28379D_h_

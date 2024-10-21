@@ -1,7 +1,7 @@
 /*
  * Hardware configuration file for: TI2837x
  * Generated with                 : PLECS 4.8.3
- * Generated on                   : Wed Oct  9 18:04:10 2024
+ * Generated on                   : Mon Oct 21 09:25:50 2024
  */
 
 /* HAL Includes */
@@ -66,7 +66,7 @@ PIL_CONFIG_DEF(uint32_t, ExtMode_ExtModeSignals_Size,
 
 #define CODE_GUID {0x09, 0x3c, 0x97, 0x5e, 0xdb, 0x2d, 0xb8, 0x40};
 PIL_CONST_DEF(unsigned char, Guid[], CODE_GUID);
-PIL_CONST_DEF(unsigned char, CompiledDate[], "10/09/2024 06:04 PM");
+PIL_CONST_DEF(unsigned char, CompiledDate[], "10/21/2024 09:25 AM");
 PIL_CONST_DEF(unsigned char, CompiledBy[], "PLECS Coder");
 PIL_CONST_DEF(uint16_t, FrameworkVersion, PIL_FRAMEWORK_VERSION);
 PIL_CONST_DEF(char, FirmwareDescription[], "TIC2000 Project (CPU0)");
@@ -123,8 +123,8 @@ float PLXHAL_ADC_getIn(uint16_t aHandle, uint16_t aChannel)
 {
    return PLX_AIN_getInF(AdcHandles[aHandle], aChannel);
 }
-PLX_DAC_Handle_t DacHandles[1];
-PLX_DAC_Obj_t DacObj[1];
+PLX_DAC_Handle_t DacHandles[2];
+PLX_DAC_Obj_t DacObj[2];
 void PLXHAL_DAC_set(uint16_t aHandle, float aValue)
 {
    PLX_DAC_setValF(DacHandles[aHandle], aValue);
@@ -463,7 +463,7 @@ void C2000_28379D_initHal()
    {
       PLX_DAC_sinit();
       int i;
-      for(i=0; i < 1; i++)
+      for(i=0; i < 2; i++)
       {
          DacHandles[i] = PLX_DAC_init(&DacObj[i], sizeof(DacObj[i]));
       }
@@ -476,6 +476,16 @@ void C2000_28379D_initHal()
       PLX_DAC_configure(DacHandles[0], PLX_DAC_A, 1, 3.000000000e+00f);
       PLX_DAC_configureScaling(DacHandles[0], 3.333333333e-01f,
                                0.000000000e+00f, 0.000000000e+00f,
+                               3.300000000e+00f);
+   }
+
+   // configure DACB
+
+   {
+
+      PLX_DAC_configure(DacHandles[1], PLX_DAC_B, 1, 3.000000000e+00f);
+      PLX_DAC_configureScaling(DacHandles[1], 3.000000000e-03f,
+                               5.000000000e-01f, 0.000000000e+00f,
                                3.300000000e+00f);
    }
 

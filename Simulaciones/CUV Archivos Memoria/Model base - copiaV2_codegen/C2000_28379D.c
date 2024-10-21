@@ -2,7 +2,7 @@
  * Implementation file for: Model base - copiaV2/C2000_28379D
  * Generated with         : PLECS 4.8.3
  *                          TI2837x 1.7.4
- * Generated on           : 9 Oct 2024 18:04:10
+ * Generated on           : 21 Oct 2024 09:25:50
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
@@ -83,7 +83,7 @@ struct CScriptStruct
 };
 static struct CScriptStruct C2000_28379D_cScriptStruct[1];
 static const uint32_t C2000_28379D_subTaskPeriod[1]= {
-   /* [0.0002, 0], Base task */
+   /* [0.0002, 0], [0, 0] */
    2
 };
 static uint32_t C2000_28379D_subTaskTick[1];
@@ -101,13 +101,13 @@ static int32_t C2000_28379D_tickHi;
 C2000_28379D_BlockOutputs C2000_28379D_B;
 #if defined(EXTERNAL_MODE) && EXTERNAL_MODE
 const float * const C2000_28379D_ExtModeSignals[] = {
-   &C2000_28379D_B.Control[3]
+   &C2000_28379D_B.Control[4]
 };
 #endif /* defined(EXTERNAL_MODE) */
 const char * C2000_28379D_errorStatus;
 const float C2000_28379D_sampleTime = 0.0001f;
 const char * const C2000_28379D_checksum =
-   "26839ba1eb6a0f37f1753a46e6e0a18cfe25ca86";
+   "6239ea8d7378efbd5388984e8e0910417e6e08de";
 /* Target declarations */
 // tag step function to allow special linking
 #pragma CODE_SECTION(C2000_28379D_step, "step")
@@ -118,7 +118,7 @@ void C2000_28379D_initialize(void)
    C2000_28379D_tickHi = 0;
    C2000_28379D_tickLo = 0;
    /* Initialize sub-task tick counters */
-   C2000_28379D_subTaskTick[0] = 0; /* Base task, [0.0002, 0] */
+   C2000_28379D_subTaskTick[0] = 0; /* [0, 0], [0.0002, 0] */
 
 
    /* Target pre-initialization */
@@ -141,11 +141,12 @@ void C2000_28379D_initialize(void)
          &inputPtrs[0]
       };
       static int numOutputSignals[] = {
-         4
+         5
       };
       static float* outputPtrs[] = {
          &C2000_28379D_B.Control[0], &C2000_28379D_B.Control[1],
-         &C2000_28379D_B.Control[2], &C2000_28379D_B.Control[3]
+         &C2000_28379D_B.Control[2], &C2000_28379D_B.Control[3],
+         &C2000_28379D_B.Control[4]
       };
       static float** outputs[] = {
          &outputPtrs[0]
@@ -397,6 +398,8 @@ void C2000_28379D_step(void)
    C2000_28379D_B.Pot = PLXHAL_ADC_getIn(3, 0);
    /* DAC : 'C2000_28379D/DAC' */
    PLXHAL_DAC_set(0, C2000_28379D_B.Control[3]);
+   /* DAC : 'C2000_28379D/DAC1' */
+   PLXHAL_DAC_set(1, C2000_28379D_B.Control[4]);
 
    /* Sum : 'C2000_28379D/Sum1'
     * incorporates

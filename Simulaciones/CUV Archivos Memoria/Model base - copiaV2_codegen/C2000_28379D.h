@@ -2,7 +2,7 @@
  * Header file for: Model base - copiaV2/C2000_28379D
  * Generated with : PLECS 4.8.3
  *                  TI2837x 1.7.4
- * Generated on   : 9 Oct 2024 18:04:10
+ * Generated on   : 21 Oct 2024 09:25:50
  */
 #ifndef PLECS_HEADER_C2000_28379D_h_
 #define PLECS_HEADER_C2000_28379D_h_
@@ -35,7 +35,7 @@ extern const float C2000_28379D_sampleTime;
 /* Block outputs */
 typedef struct
 {
-   float Control[4];                /* C2000_28379D/Control */
+   float Control[5];                /* C2000_28379D/Control */
    float TriangularWave1;           /* C2000_28379D/SW A2/Triangular Wave1 */
    float TriangularWave2;           /* C2000_28379D/SW A2/Triangular Wave2 */
    float TriangularWave1_1;         /* C2000_28379D/SW A4/Triangular Wave1 */

@@ -2,7 +2,7 @@
  * Implementation file for: Model base - copiaV3/C2000_28379D
  * Generated with         : PLECS 4.8.3
  *                          TI2837x 1.7.4
- * Generated on           : 9 Oct 2024 18:16:58
+ * Generated on           : 14 Oct 2024 11:06:56
  */
 #include "C2000_28379D.h"
 #ifndef PLECS_HEADER_C2000_28379D_h_
@@ -107,7 +107,7 @@ const float * const C2000_28379D_ExtModeSignals[] = {
 const char * C2000_28379D_errorStatus;
 const float C2000_28379D_sampleTime = 5e-05f;
 const char * const C2000_28379D_checksum =
-   "093b8abb176d1e4857b0192886e1c5a958e2761f";
+   "37f0c01b8d5735d0396c2e724b66c352eb5adbe4";
 /* Target declarations */
 // tag step function to allow special linking
 #pragma CODE_SECTION(C2000_28379D_step, "step")

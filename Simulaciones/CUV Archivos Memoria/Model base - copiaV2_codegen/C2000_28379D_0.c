@@ -1,7 +1,7 @@
 /*
  * C-Script file for: C2000_28379D/Control
  * Generated with   : PLECS 4.8.3
- * Generated on     : 9 Oct 2024 18:04:10
+ * Generated on     : 21 Oct 2024 09:25:50
  */
 typedef float real_t;
 #define REAL_MAX FLT_MAX
@@ -34,6 +34,7 @@ typedef float real_t;
 #define Out2 Output(2)
 
 #define Out3 Output(3)
+#define Out4 Output(4)
 
 const float Vgd_r=220;
 const float Vgq_r=0;
@@ -47,52 +48,9 @@ float i1d_k=0, i1d_k0=0, i1d_k1=0;
 float i1q_k=0, i1q_k0=0, i1q_k1=0;
 float id=0, iq=0, theta=0;
 float id_r=0, iq_r=0, Vcd_r=0, Vcq_r=0;
-float g[125], g_opt=10000000;
-float gv[125];
-float gb[125];
-float gg[125];
-//float g[27], g_opt=10000000;
-//float gv[27];
-//float gb[27];
-//float gg[27];
-
+float g_opt=10000000;
 int x=0;
 int x_opt=0;
-
-const float Sa[125]= {
-   -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-   -1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,
-   -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5, -0.5,
-   -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-   0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
-   0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5,
-   0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-   1, 1
-};
-const float Sb[125]= {
-   -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5,
-   0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5,
-   -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1,
-   -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5,
-   0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5, -0.5, -0.5, -0.5, -0.5, 0, 0,
-   0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1, 1, -1, -1, -1, -1, -1, -0.5,
-   -0.5, -0.5, -0.5, -0.5, 0, 0, 0, 0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 1, 1, 1, 1,
-   1
-};
-const float Sc[125]= {
-   -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
-   0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1,
-   -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
-   0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1,
-   -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
-   0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1,
-   -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0, 0.5, 1, -1, -0.5, 0,
-   0.5, 1
-};
-
-//float Sa[27]= {-1,-1,-1,-1,-1,-1,-1,-1,-1,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1};
-//float Sb[27]= {-1,-1,-1,0,0,0,1,1,1,-1,-1,-1,0,0,0,1,1,1,-1,-1,-1,0,0,0,1,1,1};
-//float Sc[27]= {-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1,-1,0,1};
 float comb=0;
 
 float vari1d=0;
@@ -343,6 +301,7 @@ void C2000_28379D_0_cScriptOutput(const struct CScriptStruct *cScriptStruct)
    Out2=Scopt;
 
    Out3=angulo[muestra];
+   Out4=i2d_k1;
 }
 
 void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
@@ -395,28 +354,28 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
          sinma2pi3[muestra]);
 
    /************ Predicción k+1 ************/
-   i1d_k0= (0.05)*(V_d-Vcd) + wh*i1q_k + i1d_k; // h*d1_L1 d1_L1=500;
-   i1q_k0= (0.05)*(V_q-Vcq) - wh*i1d_k + i1q_k;
+   i1d_k0= (0.1)*(V_d-Vcd) + wh*i1q_k + i1d_k; // h*d1_L1 d1_L1=500;
+   i1q_k0= (0.1)*(V_q-Vcq) - wh*i1d_k + i1q_k;
 
-   Vcd_k0=(0.1)*(i1d_k0-i2d_k) + wh*Vcq + Vcd;  // h*d1_c  d1_c=1000;
-   Vcq_k0=(0.1)*(i1q_k0-i2q_k) - wh*Vcd + Vcq;
+   Vcd_k0=(0.2)*(i1d_k0-i2d_k) + wh*Vcq + Vcd;  // h*d1_c  d1_c=1000;
+   Vcq_k0=(0.2)*(i1q_k0-i2q_k) - wh*Vcd + Vcq;
 
-   i2d_k0 = (0.1)*(Vcd_k0-Vgd_r-i2d_k*0.001) + i2d_k + wh*i2q_k; // h*d1_L2  d1_L2=1000;
-   i2q_k0 = (0.1)*(Vcq_k0-Vgq_r-i2q_k*0.001) + i2q_k - wh*i2d_k;
+   i2d_k0 = (0.2)*(Vcd_k0-Vgd_r-i2d_k*0.001) + i2d_k + wh*i2q_k; // h*d1_L2  d1_L2=1000;
+   i2q_k0 = (0.2)*(Vcq_k0-Vgq_r-i2q_k*0.001) + i2q_k - wh*i2d_k;
 
    /*** Calculo preliminar para minimizar calculos en loop ****/
 
-   vari1d=wh*i1q_k0 + i1d_k0 - Vcd_k0*0.05;
-   vari1q=wh*i1d_k0 - i1q_k0 + Vcq_k0*0.05;
+   vari1d=wh*i1q_k0 + i1d_k0 - Vcd_k0*0.1;
+   vari1q=wh*i1d_k0 - i1q_k0 + Vcq_k0*0.1;
 
-   varvcd=wh*Vcq_k0 + Vcd_k0 - i2d_k0*0.1;
-   varvcq=-i2q_k0*0.1 -wh*Vcd_k0 + Vcq_k0;
+   varvcd=wh*Vcq_k0 + Vcd_k0 - i2d_k0*0.2;
+   varvcq=-i2q_k0*0.2 -wh*Vcd_k0 + Vcq_k0;
 
-   vari2d=i2d_k0 + wh*i2q_k0 - (0.1)*(Vgd_r+i2d_k0*0.001);
-   vari2q=i2q_k0 - wh*i2d_k0 - (0.1)*(Vgq_r+i2q_k0*0.001);
+   vari2d=i2d_k0 + wh*i2q_k0 - (0.2)*(Vgd_r+i2d_k0*0.001);
+   vari2q=i2q_k0 - wh*i2d_k0 - (0.2)*(Vgq_r+i2q_k0*0.001);
 
    /**** Reducir combinaciones posibles de Loop ***/
-
+   /* METODO DE SUB-MUESTREO*/
    if(Saopt > -1 && Saopt < 1)
    {
       Sav[0]=Saopt-0.5;
@@ -490,14 +449,14 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
                  (Sav[i]*senos[muestra]+Sbv[j]*sinme2pi3[muestra]+Scv[k]*
                   sinma2pi3[muestra]);
 
-            i1d_k1= (0.05)*(V_d) + vari1d;
-            i1q_k1= (0.05)*(V_q) - vari1q;
+            i1d_k1= (0.1)*(V_d) + vari1d;
+            i1q_k1= (0.1)*(V_q) - vari1q;
 
-            Vcd_k1=(0.1)*(i1d_k1) + varvcd;
-            Vcq_k1=(0.1)*(i1q_k1) - varvcq;
+            Vcd_k1=(0.2)*(i1d_k1) + varvcd;
+            Vcq_k1=(0.2)*(i1q_k1) - varvcq;
 
-            i2d_k1 = (0.1)*(Vcd_k1) + vari2d;
-            i2q_k1 = (0.1)*(Vcq_k1) + vari2q;
+            i2d_k1 = (0.2)*(Vcd_k1) + vari2d;
+            i2q_k1 = (0.2)*(Vcq_k1) + vari2q;
 
             error=
                sqrtf((id_r -
@@ -527,6 +486,49 @@ void C2000_28379D_0_cScriptUpdate(const struct CScriptStruct *cScriptStruct)
          }
       }
    }
+
+   /*Sin Metodo
+      if(Saopt==0){Sav[0]=-1; Sav[1]=0; Sav[2]=1; a=2;}
+      if(Saopt==-1){Sav[0]=-1; Sav[1]=0; a=1;}
+      if(Saopt==1){Sav[0]=0; Sav[1]=1;a=1;}
+
+      if(Sbopt==0){Sbv[0]=-1; Sbv[1]=0; Sbv[2]=1; b=2;}
+      if(Sbopt==-1){Sbv[0]=-1; Sbv[1]=0; b=1;}
+      if(Sbopt==1){Sbv[0]=0; Sbv[1]=1;b=1;}
+
+      if(Scopt==0){Scv[0]=-1; Scv[1]=0; Scv[2]=1; c=2;}
+      if(Scopt==-1){Scv[0]=-1; Scv[1]=0; c=1;}
+      if(Scopt==1){Scv[0]=0; Scv[1]=1;c=1;}
+      g_opt=1e20;
+      for(i=0; i<=a; i+=1){
+           for(j=0; j<=b; j+=1){
+                   for(k=0; k<=c; k+=1){
+
+                           V_d=266.666666*(Sav[i]*cosenos[muestra]+Sbv[j]*cosme2pi3[muestra]+Scv[k]*cosma2pi3[muestra]);
+                           V_q=-266.666666*(Sav[i]*senos[muestra]+Sbv[j]*sinme2pi3[muestra]+Scv[k]*sinma2pi3[muestra]);
+
+                           i1d_k1= (0.1)*(V_d) + vari1d;
+                           i1q_k1= (0.1)*(V_q) - vari1q;
+
+                           Vcd_k1=(0.2)*(i1d_k1) + varvcd;
+                           Vcq_k1=(0.2)*(i1q_k1) - varvcq;
+
+                           i2d_k1 = (0.2)*(Vcd_k1) + vari2d;
+                           i2q_k1 = (0.2)*(Vcq_k1) + vari2q;
+
+                           error=sqrtf((id_r - i1d_k1)*((id_r) - i1d_k1)) + sqrtf((iq_r - i1q_k1)*(iq_r - i1q_k1));
+                           error2=sqrtf((id_r - i2d_k1)*(id_r - i2d_k1)) + sqrtf((iq_r - i2q_k1)*(iq_r - i2q_k1));
+                           error3=sqrtf((Vcd_r - Vcd_k1)*(Vcd_r - Vcd_k1)) + sqrtf((Vcq_r - Vcq_k1)*(Vcq_r - Vcq_k1));
+                           // actualizar combinacion de switch optima
+                           if (0.3333*(error+error2+error3) < g_opt) {
+                           g_opt = 0.3333*(error+error2+error3);
+                           Saopt=Sav[i];
+                                   Sbopt=Sbv[j];
+                                   Scopt=Scv[k];
+                   }
+           }
+      }
+      }*/
 }
 
 void C2000_28379D_0_cScriptDerivative(
